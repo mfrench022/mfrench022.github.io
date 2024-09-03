@@ -1,1 +1,5 @@
-img{width: 70%}
+img{width: 70%;}
+body{font-size: 25px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;}
