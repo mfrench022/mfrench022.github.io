@@ -1,5 +1,11 @@
 img{width: 70%;}
-body{font-size: 25px;
+body{
+    background-color: rgb(218, 166, 255);
+    font-size: 25px;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 20px;}
+    padding: 20px;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
