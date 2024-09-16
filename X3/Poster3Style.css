@@ -2,6 +2,7 @@ body{
     background:#ffffff;
     margin: 0px;
   }
+  
   h1{
     margin:35px;
     top:270px;
@@ -20,7 +21,6 @@ body{
     height:calc(100vh - 70px - 50px);
     width:200vh;
     bottom: 70px;
-    
   }
   
   
