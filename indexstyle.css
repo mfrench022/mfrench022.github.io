@@ -34,5 +34,5 @@ a:hover{
        50% calc(50% + var(--s)/2 + var(--b)/2)/calc(4*var(--s)) calc(var(--s) + var(--b)) repeat-x;
   }
 
-  h1{color:white}
-  h2{color:white}
+  h1{color:rgb(105, 0, 166)}
+  h2{color:rgb(105, 0, 166)}
