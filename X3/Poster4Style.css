@@ -54,6 +54,15 @@ body{
     transition:700ms;
   }
   
+  .rectangle:hover .circle{
+    right: 272px;
+    background:rgb(2, 212, 173);
+    transition:700ms;
+    width: 30vh;
+    height: 30vh;
+}
+
+
   p{
     display: inline;
     font-size: 2vh;
@@ -97,10 +106,5 @@ body{
     bottom: 10vh;
   }
 
-.rectangle:hover .circle{
-    right: 180px;
-    background:rgb(2, 212, 173);
-    transition:700ms;
-}
 
   
