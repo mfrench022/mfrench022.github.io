@@ -35,14 +35,14 @@ body{
   
   p{
     display: inline;
-    font-size: 2vh;
+    font-size: 3vh;
   }
   
   .text1{
     position:absolute;
     margin:12px auto;
-    bottom: 21px;
-    left: 28px;
+    bottom: 1.5vh;
+    left: 2vw;
     color:rgb(138, 206, 194);
     font-family: "Zilla Slab", serif;
   }
@@ -51,8 +51,8 @@ body{
     color:rgb(138, 206, 194);
     position:absolute;
     margin:12px auto;
-    bottom: 21px;
-    right: 28px;
+    bottom: 1.5vh;
+    right: 2vw;
     font-family: "Zilla Slab", serif;
   }
   
