@@ -7,8 +7,9 @@ body{
     font-family: "Fjalla One", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color:white;
 }
-a{color:rgb(105, 0, 166); font-style: bold;}
+a{color:rgb(63, 0, 100); font-style: bold;}
 img{width: 100%}
 
 a:hover{
@@ -34,5 +35,5 @@ a:hover{
        50% calc(50% + var(--s)/2 + var(--b)/2)/calc(4*var(--s)) calc(var(--s) + var(--b)) repeat-x;
   }
 
-  h1{color:rgb(105, 0, 166)}
-  h2{color:rgb(105, 0, 166)}
+  h1{color:rgb(63, 0, 100)}
+  h2{color:rgb(63, 0, 100)}
