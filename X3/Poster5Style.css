@@ -7,7 +7,7 @@ body{
     top:50px;
     font-size: 6vh;
     color: white;
-    position:relative;
+    position:absolute;
     font-family: "Prata", serif;
     line-height: 97%;
     transition:700ms;
@@ -21,14 +21,15 @@ body{
   
 
   .rectangle{
-    background:rgb(110, 82, 201);
+    background:rgb(213, 104, 200);
     border-radius:0%;
     position:absolute;
-    margin: 1vh auto;
+    margin: 10px auto;
     padding:0px;
-    height:80vh;
+    height:calc(100vh - 70px - 50px);
     width:60vh;
-    bottom: 3vh;
+    bottom: 70px;
+    transition:700ms;
     
   }
   
@@ -49,12 +50,14 @@ body{
     background:rgb(138, 206, 194);
     border-radius:50%;
     position:absolute;
+    bottom:0px;
+    right:0px;
     transition:700ms;
   }
   
   .rectangle:hover .circle{
     right: 272px;
-    background:rgb(2, 212, 173);
+    background:rgb(102, 0, 170);
     transition:700ms;
     width: 30vh;
     height: 30vh;
@@ -63,7 +66,6 @@ body{
 
   p{
     display: inline;
-    color:rgb(110, 82, 201);
     font-size: 2vh;
   }
   
@@ -89,6 +91,8 @@ body{
   
   .starburst {
     position:absolute;
+    bottom:160px;
+    left:10px;
     transition:700ms;
     background:white;
     width: 40vh; /* adjust to control the size */
@@ -97,10 +101,16 @@ body{
   }
 
   .rectangle:hover .starburst{
-    background-color: rgb(255, 255, 149);
+    background-color: rgb(190, 60, 175);
     width: 60vh;
     transition:700ms;
     bottom: 10vh;
   }
+
+  .rectangle:hover{
+    border-radius: 30px;
+    transition:700ms;
+  }
+
 
   
