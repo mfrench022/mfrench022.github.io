@@ -7,13 +7,13 @@ body{
     font-family: "Fjalla One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color:white;
+    color:rgba(255, 255, 255, 0.853);
 }
 a{color:rgb(63, 0, 100); font-style: bold;}
 img{width: 100%}
 
 a:hover{
-    color:white;
+    color:rgba(255, 255, 255, 0.853);
     font-size: 40px;
 }
 
@@ -23,7 +23,7 @@ a:hover{
     --b: 16px; /* thickness of the line */
     --m: 0.4; /* curvature of the wave [0 2] */
     
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.853);
     --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
     height: calc(2*var(--R));
     width: 100%;
