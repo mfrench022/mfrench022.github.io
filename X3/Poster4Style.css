@@ -39,11 +39,10 @@ body{
     
     margin: 10px auto; /* 10px on the top and bottom, "auto" to center it on either side */
     padding:20px;
-    
     height:calc(100vh - 40px - 20px); /* 100% of the viewport height, minus 2x padding, minus 2x the margin. */
     width:60vh; /* This is in "vh" units because we always want it to be relative to the height. In this case, it's a 3:5 ratio (60:100) */
   }
-  
+
   .circle{
     width: 40vh;
     height: 40vh;
@@ -111,6 +110,5 @@ body{
     border-radius: 30px;
     transition:700ms;
   }
-
 
   
