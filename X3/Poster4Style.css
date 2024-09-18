@@ -29,6 +29,7 @@ body{
     height:calc(100vh - 70px - 50px);
     width:60vh;
     bottom: 70px;
+    transition:700ms;
     
   }
   
@@ -74,12 +75,12 @@ body{
     bottom: 18px;
     left: 28px;
     font-weight: 600;
-    color:rgb(138, 206, 194);
+    color:rgb(110, 82, 201);
     font-family: "Zilla Slab", serif;
   }
   
   .text2{
-    color:rgb(138, 206, 194);
+    color:rgb(110, 82, 201);
     position:absolute;
     margin:12px auto;
     bottom: 18px;
@@ -100,10 +101,15 @@ body{
   }
 
   .rectangle:hover .starburst{
-    background-color: rgb(255, 255, 149);
+    background-color: rgb(255, 246, 126);
     width: 60vh;
     transition:700ms;
     bottom: 10vh;
+  }
+
+  .rectangle:hover{
+    border-radius: 30px;
+    transition:700ms;
   }
 
 
