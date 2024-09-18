@@ -109,7 +109,7 @@ body{
   }
 
   .rectangle:hover{
-    border-radius: 30px;
+    border-radius: 45px;
     transition:700ms;
   }
 

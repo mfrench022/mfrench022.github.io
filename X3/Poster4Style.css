@@ -36,7 +36,6 @@ body{
   .container{
     background:white;
     position:relative;
-    
     margin: 10px auto; /* 10px on the top and bottom, "auto" to center it on either side */
     padding:20px;
     height:calc(100vh - 40px - 20px); /* 100% of the viewport height, minus 2x padding, minus 2x the margin. */
@@ -107,7 +106,7 @@ body{
   }
 
   .rectangle:hover{
-    border-radius: 30px;
+    border-radius: 45px;
     transition:700ms;
   }
 
