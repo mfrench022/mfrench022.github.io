@@ -2,19 +2,23 @@ body{
     background-color: rgb(218, 166, 255);
     font-size: 25px;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 80vw;
     padding: 20px;
     font-family: "Fjalla One", sans-serif;
     font-weight: 400;
     font-style: normal;
     color:rgba(255, 255, 255, 0.853);
 }
-a{color:rgb(63, 0, 100); font-style: bold;}
+a{color:rgb(63, 0, 100); 
+    font-style: bold;
+    transition: 200ms;
+}
 img{width: 100%}
 
 a:hover{
     color:rgba(255, 255, 255, 0.853);
     font-size: 40px;
+    transition: 200ms;
 }
 
 /* HTML: <div class="wavy-line"></div> */
@@ -26,7 +30,6 @@ a:hover{
     background: rgba(255, 255, 255, 0.853);
     --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
     height: calc(2*var(--R));
-    width: 100%;
     --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
     mask:
       radial-gradient(var(--R) at left 50% bottom calc(-1*var(--m)*var(--s)), var(--_g)) 
@@ -37,3 +40,5 @@ a:hover{
 
   h1{color:rgb(63, 0, 100)}
   h2{color:rgb(63, 0, 100)}
+
+
