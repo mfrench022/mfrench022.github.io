@@ -16,7 +16,7 @@ a{color:rgb(63, 0, 100);
 img{width: 100%}
 
 a:hover{
-    color:rgba(255, 255, 255, 0.853);
+    color:rgba(255, 29, 247, 0.927);
     font-size: 40px;
     transition: 200ms;
 }
