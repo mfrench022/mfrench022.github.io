@@ -29,6 +29,7 @@ a:hover{
     color:rgba(255, 29, 247, 0.927);
     font-size: 40px;
     transition: 200ms;
+    cursor:pointer;
     -webkit-text-stroke: 1.2px white;
 }
 
@@ -68,11 +69,13 @@ h2{
 h1:hover{
     transition: 200ms;
     color:rgba(255, 29, 247, 0.927);
+    cursor:default;
 }
 
 h2:hover{
     transition: 200ms;
     color:rgba(255, 29, 247, 0.927);
+    cursor:default;
 }
 
-
+li{cursor:default;}
