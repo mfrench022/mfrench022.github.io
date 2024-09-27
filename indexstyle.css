@@ -94,10 +94,9 @@ li{cursor:default;}
         color:rgba(255, 255, 255, 0.853);
 }
 
-
     h1{
         color:rgb(0, 126, 126);
-        font-size: 20px;
+        font-size: 30px;
     }
 
      h2{
@@ -140,5 +139,13 @@ li{cursor:default;}
     a{color:rgb(0, 126, 126); 
         font-style: bold;
         transition: 200ms;
+    }
+}
+
+@media (max-width: 400px) {
+
+    h1{
+        color:rgb(0, 126, 126);
+        font-size: 18px;
     }
 }
