@@ -142,10 +142,16 @@ li{cursor:default;}
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
 
     h1{
         color:rgb(0, 126, 126);
         font-size: 18px;
     }
+
+    h2{
+        color:rgb(0, 126, 126);
+        font-size: 18px;
+    }
+
 }
