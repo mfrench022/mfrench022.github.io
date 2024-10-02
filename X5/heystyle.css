@@ -1,0 +1,177 @@
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container5 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container7 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .container8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    background: white;
+  }
+  
+  .box-one {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+  
+  .box-two {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .box-three {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+  
+  .box-four {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(165, 74, 255);
+  }
+  .box-five {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+  
+  .box-six {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(165, 74, 255);
+  }
+  .box-seven {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+  
+  .box-eight {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+  .box-nine {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .box-ten {
+    width: 100%;
+    height: 50px;
+    background-color: cornflowerblue;
+  }
+  
+  .box-eleven {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .box-twelve {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+  }
+  
+  .container4 .box-three {
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .container1 .box-seven {
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .container4 .box-seven {
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .container8 .box-seven {
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .container1 .box-ten {
+    background-color: white;
+  }
+  
+  .container2 .box-ten {
+    background-color: white;
+  }
+  
+  .container3 .box-ten {
+    background-color: white;
+  }
+  
+  .container4 .box-ten {
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .container5 .box-ten {
+    background-color: white;
+  }
+  
+  .container6 .box-ten {
+    background-color: white;
+  }
+  
+  .container7 .box-ten {
+    background-color: white;
+  }
+  
+  .container8 .box-ten {
+    background-color: rgb(165, 74, 255);
+  }
+  
+  .container5 .box-nine {
+    background-color: white;
+  }
+  
+  .container6 .box-nine {
+    background-color: white;
+  }
+  
+  .container7 .box-nine {
+    background-color: white;
+  }
+    
