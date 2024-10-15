@@ -13,7 +13,7 @@ a{color:rgb(63, 0, 100);
 }
 
 img{
-  width: 80vw;
+  width: 90vw;
   filter: grayscale(100%);
   transition: 400ms;
 }
@@ -26,7 +26,7 @@ img:hover {
 
 a:hover{
   color:rgba(255, 29, 247, 0.927);
-  font-size: 40px;
+  font-size: 27px;
   transition: 200ms;
   cursor:pointer;
   -webkit-text-stroke: 1.2px white;
