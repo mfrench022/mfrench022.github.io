@@ -13,7 +13,7 @@ a{color:rgb(63, 0, 100);
 }
 
 img{
-  width: 100%;
+  width: 80vw;
   filter: grayscale(100%);
   transition: 400ms;
 }
