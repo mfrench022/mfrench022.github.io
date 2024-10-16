@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Identity Project</title>
+    <link rel="stylesheet" href="UMidentitystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div class="container2"></div>
+<div class="container1">
+  
+  <div class="box-one">
+  </div>
+    <div class="box-two">
+      <div class="Uleft"></div>
+      <div class="Ucenter"></div>
+      <div class="Uright"></div>
+      <div class="UMtext">
+         <h1>University
+           <br><span>of Miami</span></h1>
+      </div>
+    </div>
+  <div class="box-three">
+  </div>
+</div>
+
+<script type="text/javascript">
+    let colors1 = ["#ff914dba", "#ff6c11ba", "#fea36aba", "#dc5400ba", "#ff6c10ba", "#6bc5a1b8", "#377e62c6", "#004b2dc6", "#1aa36cc6", "#113024c6"]
+    let randomColor1 = Math.floor(Math.random() * colors1.length);
+    let randomColor2 = Math.floor(Math.random() * colors1.length);
+    let randomColor3 = Math.floor(Math.random() * colors1.length);
+    
+    let leftSide = document.querySelector(".Uleft");
+    let rightSide = document.querySelector(".Uright");
+    let centerSide = document.querySelector(".Ucenter");
+
+    window.addEventListener("load", () => {
+        leftSide.style.backgroundColor = colors1[randomColor1];
+        rightSide.style.backgroundColor = colors1[randomColor3];
+        centerSide.style.backgroundColor = colors1[randomColor2];
+    });
+
+</script>
+
+</body>
+</html>
