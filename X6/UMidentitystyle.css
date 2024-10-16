@@ -36,6 +36,9 @@
     background-color: #ff914dba;
     display: inline-block;
     margin: -27px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 41px;
   }
   
   
@@ -45,6 +48,9 @@
     background-color: #ff914dba;
     display: inline-block;
     margin: -27px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+    border-bottom-right-radius: 41px;
   }
   
   .Ucenter {
@@ -53,6 +59,8 @@
     background-color: #6bc5a1b8;
     display: inline-block;
     margin: -27px;
+    border-bottom-left-radius: 41px;
+    border-bottom-right-radius: 41px;
   }
   
   .UMtext {
