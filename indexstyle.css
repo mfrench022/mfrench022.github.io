@@ -218,3 +218,7 @@ display: grid;
 grid-template-columns: 1fr 25fr 0.5fr;
 }
 }
+
+li{
+  line-height: 170%;
+}
