@@ -36,8 +36,8 @@
     background-color: #ff914dba;
     display: inline-block;
     margin: -27px;
-    border-top-right-radius: 11px;
-    border-top-left-radius: 11px;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
     border-bottom-left-radius: 41px;
   }
   
@@ -48,8 +48,8 @@
     background-color: #ff914dba;
     display: inline-block;
     margin: -27px;
-    border-top-right-radius: 11px;
-    border-top-left-radius: 11px;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
     border-bottom-right-radius: 41px;
   }
   
@@ -146,7 +146,7 @@
 
 @media (max-width: 767px) {
     .container1 {
-          grid-template-columns: 2fr 8fr 1fr;
+          grid-template-columns: 3fr 5fr 1fr;
           height: 100vh;
         }
     
