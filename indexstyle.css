@@ -210,12 +210,11 @@ h2{
 
 .container1 {
 display: grid;
-grid-template-columns: 1fr 15fr 1fr;
+grid-template-columns: 1fr 25fr 0.5fr;
 }
 
 .container2 {
 display: grid;
-grid-template-columns: 1fr 25fr 1fr;
+grid-template-columns: 1fr 25fr 0.5fr;
 }
-
 }
