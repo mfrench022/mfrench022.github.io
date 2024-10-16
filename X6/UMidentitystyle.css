@@ -146,7 +146,7 @@
 
 @media (max-width: 767px) {
     .container1 {
-          grid-template-columns: 3fr 5fr 1fr;
+          grid-template-columns: 2fr 5fr 1fr;
           height: 100vh;
         }
     
