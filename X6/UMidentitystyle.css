@@ -77,3 +77,103 @@
   span{
     color: #ff914d;
   }
+
+  @media (max-width: 1422px) {
+.container1 {
+      grid-template-columns: 1fr 5fr 1fr;
+      height: 100vh;
+    }
+
+.Uright {
+  width: 25px;
+  height: 125px;
+  margin: -14.2px;
+}
+
+.Uleft {
+  width: 25px;
+  height: 125px;
+  margin: -14.2px;
+}
+
+.Ucenter {
+  width: 125px;
+  height: 25px;
+  margin: -14.2px;
+}
+
+.UMtext {
+  padding: 35px;
+  font-size: 30px;
+  line-height: 65px;
+}
+
+  }
+
+    @media (max-width: 1422px) {
+.container1 {
+      grid-template-columns: 3fr 5fr 1fr;
+      height: 100vh;
+    }
+
+.Uright {
+  width: 25px;
+  height: 125px;
+  margin: -14.2px;
+}
+
+.Uleft {
+  width: 25px;
+  height: 125px;
+  margin: -14.2px;
+}
+
+.Ucenter {
+  width: 125px;
+  height: 25px;
+  margin: -14.2px;
+}
+
+.UMtext {
+  padding: 35px;
+  font-size: 30px;
+  line-height: 65px;
+}
+.container2{
+  height: 25vh;
+}
+  }
+
+@media (max-width: 767px) {
+    .container1 {
+          grid-template-columns: 2fr 8fr 1fr;
+          height: 100vh;
+        }
+    
+    .Uright {
+      width: 12.5px;
+      height: 62.5px;
+      margin: -8px;
+    }
+    
+    .Uleft {
+      width: 12.5px;
+      height: 62.5px;
+      margin: -8px;
+    }
+    
+    .Ucenter {
+      width: 62.5px;
+      height: 12.5px;
+      margin: -8px;
+    }
+    
+    .UMtext {
+      padding: 17.5px;
+      font-size: 15px;
+      line-height: 32.5px;
+    }
+    .container2{
+      height: 25vh;
+    }
+      }
