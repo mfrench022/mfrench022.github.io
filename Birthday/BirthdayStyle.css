@@ -45,7 +45,7 @@ body{
      margin: 0px;
      display: grid;
      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-     grid-column-gap: 12%;
+     grid-column-gap: 16%;
    }
    
    .column1 {
@@ -180,19 +180,24 @@ body{
 
    @media (max-width: 2000px) {
     .flame1 {
-        left: 3%;
+        left: 15%;
+        width: round(5vw,1px);
       }
       .flame2 {
-        left: 3%;
+        left: 15%;
+        width: round(5vw,1px);
       }
       .flame3 {
-        left: 3%;
+        left: 15%;
+        width: round(5vw,1px);
       }
       .flame4 {
-        left: 3%;
+        left: 15%;
+        width: round(5vw,1px);
       }
       .flame5 {
-        left: 3%;
+        left: 15%;
+        width: round(5vw,1px);
       }
     
     }
@@ -203,18 +208,23 @@ body{
         }
         .flame1 {
             left: 20%;
+            width: round(10vw,1px);
           }
           .flame2 {
             left: 20%;
+            width: round(10vw,1px);
           }
           .flame3 {
             left: 20%;
+            width: round(10vw,1px);
           }
           .flame4 {
             left: 20%;
+            width: round(10vw,1px);
           }
           .flame5 {
             left: 20%;
+            width: round(10vw,1px);
           }
           
 }
