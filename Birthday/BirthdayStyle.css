@@ -40,12 +40,12 @@ body{
    .container2 {
      width: 100vw;
      /* background: rgb(61, 0, 167);; */
-     height: 80vh;
+     height: 75vh;
      padding: 0px;
      margin: 0px;
      display: grid;
      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-     grid-column-gap: 4%;
+     grid-column-gap: 12%;
    }
    
    .column1 {
@@ -88,7 +88,7 @@ body{
    /*   background: purple; */
      position: absolute;
      top: 18%;
-     left: 20%;
+     left: 3%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -109,7 +109,7 @@ body{
      animation: fire 0.7s alternate infinite;
      position: absolute;
      top: 8%;
-     left: 20%;
+     left: 3%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -130,7 +130,7 @@ body{
      position: absolute;
      animation: fire 2s alternate infinite;
      top: 28%;
-     left: 20%;
+     left: 3%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -151,7 +151,7 @@ body{
      position: absolute;
      animation: fire 1s alternate infinite;
      top: 18%;
-     left: 20%;
+     left: 3%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -172,8 +172,30 @@ body{
      position: absolute;
      animation: fire 0.7s alternate infinite;
      top: 3%;
-     left: 20%;
+     left: 3%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
    }   
+
+   @media (max-width: 768px) {
+        .container2{
+            grid-column-gap: 4%;
+        }
+        .flame1 {
+            left: 20%;
+          }
+          .flame2 {
+            left: 20%;
+          }
+          .flame3 {
+            left: 20%;
+          }
+          .flame4 {
+            left: 20%;
+          }
+          .flame5 {
+            left: 20%;
+          }
+          
+}
