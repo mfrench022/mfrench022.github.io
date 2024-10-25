@@ -178,6 +178,25 @@ body{
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
    }   
 
+   @media (max-width: 2000px) {
+    .flame1 {
+        left: 3%;
+      }
+      .flame2 {
+        left: 3%;
+      }
+      .flame3 {
+        left: 3%;
+      }
+      .flame4 {
+        left: 3%;
+      }
+      .flame5 {
+        left: 3%;
+      }
+    
+    }
+   
    @media (max-width: 768px) {
         .container2{
             grid-column-gap: 4%;
