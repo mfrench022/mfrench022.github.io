@@ -1,0 +1,179 @@
+@keyframes fire {
+    from {background-color: #252546;}
+     to {background-color: gold;}
+   }
+   
+h1{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+h2{
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+body{
+    background:#252546;
+    padding: 0px;
+    margin: 0px;
+}
+
+   .container1 {
+     width: 100vw;
+     /* background: rgb(61, 0, 167); */
+     height: 10vh;
+     padding: 0px;
+     margin: 0px;
+   }
+
+   .container3 {
+    width: 100vw;
+    /* background: rgb(61, 0, 167);; */
+    height: 10vh;
+    padding: 0px;
+    margin: 0px;
+  }
+   
+   .container2 {
+     width: 100vw;
+     /* background: rgb(61, 0, 167);; */
+     height: 80vh;
+     padding: 0px;
+     margin: 0px;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     grid-column-gap: 4%;
+   }
+   
+   .column1 {
+   /*   background: grey; */
+     position: relative;
+   }
+   
+   .column2 {
+   /*   background: grey; */
+     position: relative;
+   }
+   
+   .column3 {
+   /*   background: grey; */
+     position: relative;
+   }
+   
+   .column4 {
+   /*   background: grey; */
+     position: relative;
+   }
+   
+   .column5 {
+   /*   background: grey; */
+     position: relative;
+   }
+   
+   .candle1 {
+     width: 100%;
+     height: 70%;
+     background: green;
+     position: absolute;
+     bottom: 0px;
+     border-top-right-radius: 3vw;
+     border-top-left-radius: 3vw;
+   }
+   
+   .flame1 {
+     animation: fire 1.5s alternate infinite;
+   /*   background: purple; */
+     position: absolute;
+     top: 15%;
+     left: 15%;
+     height: round(10vh,1px);
+     width: round(10vw,1px);
+     mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+   }
+   
+   .candle2 {
+     width: 100%;
+     height: 80%;
+     background: green;
+     position: absolute;
+     bottom: 0px;
+     border-top-right-radius: 3vw;
+     border-top-left-radius: 3vw;
+   }
+   
+   .flame2 {
+   /*   background: purple; */
+     animation: fire 0.7s alternate infinite;
+     position: absolute;
+     top: 5%;
+     left: 15%;
+     height: round(10vh,1px);
+     width: round(10vw,1px);
+     mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+   }
+   
+   .candle3 {
+     width: 100%;
+     height: 60%;
+     background: green;
+     position: absolute;
+     bottom: 0px;
+     border-top-right-radius: 3vw;
+     border-top-left-radius: 3vw;
+   }
+   
+   .flame3 {
+   /*   background: purple; */
+     position: absolute;
+     animation: fire 2s alternate infinite;
+     top: 25%;
+     left: 15%;
+     height: round(10vh,1px);
+     width: round(10vw,1px);
+     mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+   }
+   
+   .candle4 {
+     width: 100%;
+     height: 70%;
+     background: green;
+     position: absolute;
+     bottom: 0px;
+     border-top-right-radius: 3vw;
+     border-top-left-radius: 3vw;
+   }
+   
+   .flame4 {
+   /*   background: purple; */
+     position: absolute;
+     animation: fire 1s alternate infinite;
+     top: 15%;
+     left: 15%;
+     height: round(10vh,1px);
+     width: round(10vw,1px);
+     mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+   }
+   
+   .candle5 {
+     width: 100%;
+     height: 85%;
+     background: green;
+     position: absolute;
+     bottom: 0px;
+     border-top-right-radius: 3vw;
+     border-top-left-radius: 3vw;
+   }
+   
+   .flame5 {
+   /*   background: purple; */
+     position: absolute;
+     animation: fire 0.7s alternate infinite;
+     top: 0%;
+     left: 15%;
+     height: round(10vh,1px);
+     width: round(10vw,1px);
+     mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
+   }   
