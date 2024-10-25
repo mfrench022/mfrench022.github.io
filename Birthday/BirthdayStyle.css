@@ -24,7 +24,7 @@ body{
    .container1 {
      width: 100vw;
      /* background: rgb(61, 0, 167); */
-     height: 10vh;
+     height: 5vh;
      padding: 0px;
      margin: 0px;
    }
@@ -32,7 +32,7 @@ body{
    .container3 {
     width: 100vw;
     /* background: rgb(61, 0, 167);; */
-    height: 10vh;
+    height: 5vh;
     padding: 0px;
     margin: 0px;
   }
@@ -87,8 +87,8 @@ body{
      animation: fire 1.5s alternate infinite;
    /*   background: purple; */
      position: absolute;
-     top: 15%;
-     left: 15%;
+     top: 18%;
+     left: 20%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -108,8 +108,8 @@ body{
    /*   background: purple; */
      animation: fire 0.7s alternate infinite;
      position: absolute;
-     top: 5%;
-     left: 15%;
+     top: 8%;
+     left: 20%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -129,8 +129,8 @@ body{
    /*   background: purple; */
      position: absolute;
      animation: fire 2s alternate infinite;
-     top: 25%;
-     left: 15%;
+     top: 28%;
+     left: 20%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -150,8 +150,8 @@ body{
    /*   background: purple; */
      position: absolute;
      animation: fire 1s alternate infinite;
-     top: 15%;
-     left: 15%;
+     top: 18%;
+     left: 20%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
@@ -171,8 +171,8 @@ body{
    /*   background: purple; */
      position: absolute;
      animation: fire 0.7s alternate infinite;
-     top: 0%;
-     left: 15%;
+     top: 3%;
+     left: 20%;
      height: round(10vh,1px);
      width: round(10vw,1px);
      mask: radial-gradient(#0000 71%, #000 72%) 10000% 10000%/99.5% 99.5%;
