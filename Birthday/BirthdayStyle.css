@@ -205,7 +205,7 @@ body{
    @media (max-width: 768px) {
         .container2{
             grid-column-gap: 4%;
-            height: 70vh;
+            height: 65vh;
         }
         .flame1 {
             left: 20%;
