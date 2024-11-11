@@ -15,6 +15,9 @@
 <div class="container1">
   
   <div class="box-one">
+    <div class="button">
+      <center>Click to Change Colors!</center>
+    </div>
   </div>
     <div class="box-two">
       <div class="Uleft"></div>
@@ -30,20 +33,28 @@
 </div>
 
 <script type="text/javascript">
-    let colors1 = ["#ff914dba", "#ff6c11ba", "#fea36aba", "#dc5400ba", "#ff6c10ba", "#6bc5a1b8", "#377e62c6", "#004b2dc6", "#1aa36cc6", "#113024c6"]
+let colors1 = ["#ff914dba", "#ff6c11ba", "#fea36aba", "#dc5400ba", "#ff6c10ba", "#6bc5a1b8", "#377e62c6", "#004b2dc6", "#1aa36cc6", "#113024c6"];
+let leftSide = document.querySelector(".Uleft");
+let rightSide = document.querySelector(".Uright");
+let centerSide = document.querySelector(".Ucenter");
+let button = document.querySelector(".button");
+
+// Function to apply random colors
+function applyRandomColors() {
     let randomColor1 = Math.floor(Math.random() * colors1.length);
     let randomColor2 = Math.floor(Math.random() * colors1.length);
     let randomColor3 = Math.floor(Math.random() * colors1.length);
-    
-    let leftSide = document.querySelector(".Uleft");
-    let rightSide = document.querySelector(".Uright");
-    let centerSide = document.querySelector(".Ucenter");
 
-    window.addEventListener("load", () => {
-        leftSide.style.backgroundColor = colors1[randomColor1];
-        rightSide.style.backgroundColor = colors1[randomColor3];
-        centerSide.style.backgroundColor = colors1[randomColor2];
-    });
+    leftSide.style.backgroundColor = colors1[randomColor1];
+    rightSide.style.backgroundColor = colors1[randomColor3];
+    centerSide.style.backgroundColor = colors1[randomColor2];
+}
+
+// Apply random colors on page load
+window.addEventListener("load", applyRandomColors);
+
+// Apply random colors on button click
+button.addEventListener("click", applyRandomColors);
 
 </script>
 
