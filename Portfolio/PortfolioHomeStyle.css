@@ -11,9 +11,9 @@
       #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
     mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
   }
-  
+
   body {
-    background-color: rgb(155, 92, 161);
+    background-color: #8968CD;
     margin: 0px;
     padding: 0px;
   }
@@ -102,7 +102,7 @@
   .box3 {
     width: 100%;
     height: 100%;
-    margin-top: 40px;
+    margin-top: 65px;
   /*   background-color: red; */
   /*   margin: 10px; */
   }
@@ -110,7 +110,7 @@
   .box33 {
     width: 100%;
     height: 100%;
-    margin-top: 40px;
+    margin-top: 65px;
   /*   background-color: red; */
   /*   margin: 10px; */
   }
@@ -160,7 +160,7 @@
   }
   
   a {
-    color: rgb(155, 92, 161);
+    color: #8968CD;
     text-decoration: none;
     font-family: "Aldrich", sans-serif;
   }
@@ -173,11 +173,11 @@
   }
 
   .coding {
-    background-color: rgb(155, 92, 161);
+    background-color: #8968CD;
   }
 
   .paragraph {
-    background-color: rgb(155, 92, 161);
+    background-color: #8968CD;
   }
 
   .coding:hover {
@@ -192,7 +192,7 @@
   }
 
   .type {
-    background-color: rgb(155, 92, 161);
+    background-color: #8968CD;
   }
 
   .type:hover {
@@ -201,7 +201,7 @@
   }
 
   .brand {
-    background-color: rgb(155, 92, 161);
+    background-color: #8968CD;
   }
 
   .brand:hover {
@@ -210,7 +210,7 @@
   }
 
   .ux {
-    background-color: rgb(155, 92, 161);
+    background-color: #8968CD;
   }
 
   .ux:hover {
