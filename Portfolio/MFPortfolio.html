@@ -7,31 +7,99 @@
     <link rel="stylesheet" href="PortfolioHomeStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
 </head>
 <body>
-    <div class = "row1">
-        <h1><center>Michael French</h1>
+    <div class ="row1"><h1>Michael French</h1></div>
+    <div class ="row2"><h2>communication design student portfolio</h2></div> 
+    <div class ="spacer"></div>
+    <div class="zig-zag-line"></div>
+    <div class ="spacersmall"></div>
+    <div class ="row3">
+      <div class ="side"></div>
+      <div class ="box3">
+        <a href="PortfolioStudent.html"><div class = "button"><h3>recent student work</h3></div></a>
+        <p><ul><li><div class = "coding">creative coding</div></li>
+            <li><div class = "type">typography</div></li>
+            <li><div class = "brand">branding</div></li>
+            <li><div class = "ux">product design</div></li>
+        </ul></p>
       </div>
-        
-      <div class = "row2">
-        <div class = "box6"></div>
-        <div class = "box1"><center><p>Home</p></center></div>
-        <div class = "box2"><center><p>Student Design Work</p></center></div>
-        <div class = "box3"><center><p>Corporate Social Media</p></center></div>
-        <div class = "box4"><center><p>Photography</p></center></div>
-        <div class = "box5"><center><p>About Me</p></center></div>
-        <div class = "box6"></div>
+      <div class ="box4"></div>
+      <div class ="box5"><img src="SquareMockup.png"></div>
+      <div class ="side"></div>
+    </div>
+    <div class ="spacer"></div>  
+    <div class ="spacer"></div>  
+    
+    <div class="zig-zag-line"></div>
+    <div class ="spacer"></div>  
+
+    <div class ="row33">
+      <div class ="side"></div>
+      <div class ="box55"><img src="SocialsMockup.png"></div>
+      <div class ="box4"></div>
+      <div class ="box33">
+        <a href="PortfolioSocial.html"><div class = "button"><h3>social media</h3></div></a>
+        <p><ul><li><div class = "paragraph">prior to my design studies, i spent four years working as director of social media at a boutique pr agency specializing in science communications for life science, biotech, and pharmaceutical companies.</div></li></ul></p></div>
+      <div class ="side"></div>
+    </div>
+
+    <div class ="spacer"></div>  
+    <div class ="spacer"></div>  
+    
+    <div class="zig-zag-line"></div>
+    <div class ="spacer"></div>  
+
+    <div class ="row3">
+        <div class ="side"></div>
+        <div class ="box33">
+          <a href="PortfolioPhotos.html"><div class = "button"><h3>photography</h3></div></a>
+          <p><ul><li><div class = "paragraph">my passion for underwater photography began at a young age and flourished during my time studying marine science and biology at the university of miami.</div></li></ul></p>
+        </div>
+        <div class ="box4"></div>
+        <div class ="box5"><img src="gchawksbill2 copy.jpg"></div>
+        <div class ="side"></div>
       </div>
-        
-      <div class = "spacer"></div>
-        
-      <div class = "row3">
-        <div class = "box6"></div>
-        <div class = "box7"></div>
-        <div class = "box8"></div>
-        <div class = "box9"></div>
-        <div class = "box6"></div>
-      </div>      
+
+    <script>
+        const codingDiv = document.querySelector('.coding');
+        const typeDiv = document.querySelector('.type');
+        const brandDiv = document.querySelector('.brand');
+        const uxDiv = document.querySelector('.ux');
+        const box5Image = document.querySelector('.box5 img');
+
+        codingDiv.addEventListener('mouseenter', () => {
+            box5Image.src = "ummockup2.png";
+        });
+
+        codingDiv.addEventListener('mouseleave', () => {
+            box5Image.src = "SquareMockup.png";
+        });
+
+        typeDiv.addEventListener('mouseenter', () => {
+            box5Image.src = "BookMockup.png";
+        });
+
+        typeDiv.addEventListener('mouseleave', () => {
+            box5Image.src = "SquareMockup.png";
+        });
+
+        brandDiv.addEventListener('mouseenter', () => {
+            box5Image.src = "BusinessCardMockup.png";
+        });
+
+        brandDiv.addEventListener('mouseleave', () => {
+            box5Image.src = "SquareMockup.png";
+        });
+
+        uxDiv.addEventListener('mouseenter', () => {
+            box5Image.src = "uxmockup.png";
+        });
+
+        uxDiv.addEventListener('mouseleave', () => {
+            box5Image.src = "SquareMockup.png";
+        });
+    </script>
 </body>
 </html>

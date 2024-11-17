@@ -1,0 +1,274 @@
+.zig-zag-line {
+    --a: 130deg; /* control the angle */
+    --s: 75px; /* size of the zig-zag */
+    --b: 15px;  /* control the thickness */
+    
+    
+    background: lightblue;
+    height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
+    width: 100%;
+    --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
+      #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
+    mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
+  }
+  
+  body {
+    background-color: rgb(155, 92, 161);
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  h1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 184px;
+    position: absolute;
+    left: -12px;
+    top: 25px;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+    white-space: nowrap;
+    overflow: visible;
+  }
+  
+  h2 {
+    position: absolute;
+    white-space: nowrap;
+    overflow: visible;
+    font-size: 52px;
+    right: 0px;
+    top: -40px;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+    /* line-height: 52px; */
+  }
+  
+  .row1 {
+    /* background-color: red; */
+    height: 200px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .row2 {
+    /* background-color: blue; */
+    height: 50px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .spacer {
+    width: 100%;
+    height: 40px;
+    /* background-color: green; */
+  }
+  
+  .spacersmall {
+    width: 100%;
+    height: 40px;
+  /*   background-color: green; */
+  }
+  
+  .row3 {
+  /*   background-color: blue; */
+    height: 600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr .3fr 9fr 1fr
+  }
+
+  .row33 {
+    /*   background-color: blue; */
+      height: 600px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 9fr .3fr 5fr 1fr
+    }
+  
+  .side {
+    width: 100%;
+    height: 100%;
+  /*   background-color: purple; */
+  }
+  
+  .box3 {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+  /*   background-color: red; */
+  /*   margin: 10px; */
+  }
+
+  .box33 {
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+  /*   background-color: red; */
+  /*   margin: 10px; */
+  }
+  
+  .box4 {
+    width: 100%;
+    height: 100%;
+  /*   background-color: orange; */
+  }
+  
+  h3 {
+    font-size: 40px;
+    font-family: "Aldrich", sans-serif;
+  }
+  
+  .box3 ul {
+    font-weight: 400;
+    font-size: 47px;
+    left: -9px;
+    position: relative;
+    list-style-type: circle;
+    line-height: 65px;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+  }
+
+  .box33 ul {
+    font-weight: 400;
+    font-size: 30px;
+    left: -9px;
+    position: relative;
+    list-style-type: circle;
+    line-height: 40px;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+  }
+  
+  .button {
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .button:hover {
+    background-color: lightblue;
+  }
+  
+  a {
+    color: rgb(155, 92, 161);
+    text-decoration: none;
+    font-family: "Aldrich", sans-serif;
+  }
+
+  .button h3 {
+    position: relative;
+    left: -4px;
+    font-size: 47px;
+    top: 9px;
+  }
+
+  .coding {
+    background-color: rgb(155, 92, 161);
+  }
+
+  .paragraph {
+    background-color: rgb(155, 92, 161);
+  }
+
+  .coding:hover {
+    color: lightblue;
+    cursor: default;
+  }
+
+
+  .coding:hover {
+    color: lightblue;
+    cursor: default;
+  }
+
+  .type {
+    background-color: rgb(155, 92, 161);
+  }
+
+  .type:hover {
+    color: lightblue;
+    cursor: default;
+  }
+
+  .brand {
+    background-color: rgb(155, 92, 161);
+  }
+
+  .brand:hover {
+    color: lightblue;
+    cursor: default;
+  }
+
+  .ux {
+    background-color: rgb(155, 92, 161);
+  }
+
+  .ux:hover {
+    color: lightblue;
+    cursor: default;
+  }
+  
+ .box5 img {
+    width: 100%;
+  }
+
+.box5 {
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex; 
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+}
+
+.box5 img {
+    max-width: 100%; /* Ensure the image scales down if the container is smaller */
+    max-height: 100%; /* Ensure the image doesn't overflow vertically */
+    object-fit: contain; /* Ensures the image maintains aspect ratio while fitting in the container */
+}
+
+.box55 img {
+    width: 100%;
+  }
+
+.box55 {
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex; 
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+}
+
+.box55 img {
+    max-width: 100%; /* Ensure the image scales down if the container is smaller */
+    max-height: 100%; /* Ensure the image doesn't overflow vertically */
+    object-fit: contain; /* Ensures the image maintains aspect ratio while fitting in the container */
+}
+
+@media (max-width: 1625px) {
+
+    .button h3 {
+      position: relative;
+      left: -3px;
+      font-size: 30px;
+      top: 17px;
+    }
+}
+
+@media (max-width: 1039px) {
+
+    .button h3 {
+        position: relative;
+        left: -2px;
+        font-size: 23px;
+        top: 20px;
+    }
+}
+
+
+
+  
+  
