@@ -365,7 +365,7 @@
     line-height: 23px;
   }
 
-  .button h3 {
+.button h3 {
     left: -2px;
     font-size: 23px;
     top: 20px;
@@ -403,7 +403,7 @@
 
   h2 {
     font-size: 20px;
-    top: -10px;
+    top: -5px;
     transition: 200ms;
   }
 
@@ -425,43 +425,90 @@
   }
   
   .row3 {
-    height: 200px;
+    height: 100px;
     width: 100%;
     display: inline;
-    grid-template-columns: 1fr 5fr .3fr 9fr 1fr;
     transition: 200ms;
+    /* background-color: green; */
   }
 
   .row33 {
     height: 200px;
     width: 100%;
     display: inline;
-    grid-template-columns: 1fr 9fr .3fr 5fr 1fr;
     transition: 200ms;
+    /* background-color: green; */
   }
 
   .box5 img {
     height: auto; /* Fill the div vertically */
-    width: 350px;
-    border-radius: 20px;
+    width: 100%;
+    border-radius: 0px;
     transition: 200ms;
 }
 
 .box55 img {
   height: auto; /* Fill the div vertically */
   width: 350px;
-  border-radius: 20px;
+  /* margin-top: 10px; */
+  width: 100%;
+  border-radius: 0px;
   transition: 200ms;
+}
+
+.box5 {
+  border-radius: 0px;
+  transition: 200ms;
+}
+
+.box55 {
+border-radius: 0px;
+transition: 200ms;
 }
  
 .button {
   background-color: white;
   height: 60px;
-  width: 75%;
+  width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
+  margin-left: 25%;
+}
+
+.box3 {
+  width: 92%;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 20px;
   transition: 200ms;
 }
 
+.box33 {
+  width: 92%;
+  height: 200px;
+  margin-top: 10px;
+  margin-left: 20px;
+  transition: 200ms;
+}
+
+.box3 ul {
+  width: 92%;
+  transition: 200ms;
+  margin-left: 27%;
+}
+
+.box33 ul {
+  width: 92%;
+  transition: 200ms;
+}
+
+.paragraph{
+  width: 100%;
+}
+
+.body {
+  width: 100vw;
+}
 }
 
 
