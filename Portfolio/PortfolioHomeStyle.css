@@ -1,5 +1,5 @@
 .zig-zag-line {
-    --a: 130deg; /* control the angle */
+    --a: 144deg; /* control the angle */
     --s: 75px; /* size of the zig-zag */
     --b: 15px;  /* control the thickness */
     
@@ -10,6 +10,7 @@
     --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
       #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
     mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
+    transition: 200ms;
   }
 
   body {
@@ -21,25 +22,27 @@
   h1 {
     padding: 0px;
     margin: 0px;
-    font-size: 192.5px;
+    font-size: 184.5px;
     position: absolute;
     left: -12px;
     top: 28px;
     color: white;
     font-family: "Aldrich", sans-serif;
     white-space: nowrap;
-    overflow: visible;
+    overflow: hidden;
+    transition: 200ms;
   }
   
   h2 {
     position: absolute;
     white-space: nowrap;
-    overflow: visible;
-    font-size: 50.5px;
+    overflow: hidden;
+    font-size: 52px;
     right: 0px;
     top: -34px;
     color: white;
     font-family: "Aldrich", sans-serif;
+    transition: 200ms;
     /* line-height: 52px; */
   }
   
@@ -56,6 +59,9 @@
     height: 200px;
     width: 100%;
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 200ms;
   }
   
   .row2 {
@@ -63,6 +69,8 @@
     height: 50px;
     width: 100%;
     position: relative;
+    transition: 200ms;
+    
   }
   
   .spacer {
@@ -78,11 +86,12 @@
   }
   
   .row3 {
-  /*   background-color: blue; */
+    /* background-color: blue; */
     height: 600px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 5fr .3fr 9fr 1fr
+    grid-template-columns: 1fr 5fr .3fr 9fr 1fr;
+    transition: 200ms;
   }
 
   .row33 {
@@ -90,7 +99,8 @@
       height: 600px;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 9fr .3fr 5fr 1fr
+      grid-template-columns: 1fr 9fr .3fr 5fr 1fr;
+      transition: 200ms;
     }
   
   .side {
@@ -103,6 +113,7 @@
     width: 100%;
     height: 100%;
     margin-top: 65px;
+    transition: 200ms;
   /*   background-color: red; */
   /*   margin: 10px; */
   }
@@ -111,6 +122,7 @@
     width: 100%;
     height: 100%;
     margin-top: 65px;
+    transition: 200ms;
   /*   background-color: red; */
   /*   margin: 10px; */
   }
@@ -118,12 +130,14 @@
   .box4 {
     width: 100%;
     height: 100%;
+    transition: 200ms;
   /*   background-color: orange; */
   }
   
   h3 {
     font-size: 40px;
     font-family: "Aldrich", sans-serif;
+    transition: 200ms;
   }
   
   .box3 ul {
@@ -135,6 +149,7 @@
     line-height: 65px;
     color: white;
     font-family: "Aldrich", sans-serif;
+    transition: 200ms;
   }
 
   .box33 ul {
@@ -146,6 +161,7 @@
     line-height: 40px;
     color: white;
     font-family: "Aldrich", sans-serif;
+    transition: 200ms;
   }
   
   .button {
@@ -153,6 +169,7 @@
     height: 60px;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 200ms;
   }
   
   .button:hover {
@@ -170,6 +187,7 @@
     left: -4px;
     font-size: 47px;
     top: 9px;
+    transition: 200ms;
   }
 
   .coding {
@@ -226,12 +244,16 @@
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
     overflow: hidden; /* Prevent any overflow from the image */
+    border-radius: 20px;
+    transition: 200ms;
 }
 
 .box5 img {
-    height: 100%; /* Fill the div vertically */
-    width: auto; /* Adjust width to maintain aspect ratio */
+    height: auto; /* Fill the div vertically */
+    width: 100%; /* Adjust width to maintain aspect ratio */
     object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+    border-radius: 20px;
+    transition: 200ms;
 }
 
 .box55 {
@@ -242,46 +264,205 @@
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
     overflow: hidden; /* Prevent any overflow from the image */
+    border-radius: 20px;
+    transition: 200ms;
 }
 
 .box55 img {
-    height: 100%; /* Fill the div vertically */
-    width: 100% auto; /* Adjust width to maintain aspect ratio */
+    height: auto; /* Fill the div vertically */
+    width: 100%; /* Adjust width to maintain aspect ratio */
+    transition: 200ms;
+    border-radius: 20px;
     object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
 }
 
-@media (max-width: 1625px) {
-
-    .button h3 {
-      position: relative;
-      left: -3px;
-      font-size: 30px;
-      top: 17px;
-    }
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
 
     .button h3 {
         position: relative;
         left: -2px;
-        font-size: 23px;
-        top: 20px;
+        font-size: 33px;
+        top: 16px;
+        transition: 200ms;
     }
 
     .box3 ul {
         font-size: 33px;
         line-height: 40px;
+        transition: 200ms;
       }
 
       .box33 ul {
         font-size: 20px;
         line-height: 30px;
+        transition: 200ms;
       }
+
+
+      .box5 img {
+        height: 100%; /* Fill the div vertically */
+        width: auto; /* Adjust width to maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+        border-radius: 20px;
+        transition: 200ms;
+    }
+    
+    .box55 img {
+        height: 100%; /* Fill the div vertically */
+        width: auto; /* Adjust width to maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+        border-radius: 20px;
+        transition: 200ms;
+    }
     
 }
 
+@media (max-width: 1032px) {
 
+  h1 {
+    font-size: 100px;
+    left: -7px;
+  }
+
+  h2 {
+    font-size: 35px;
+    top: -15px;
+  }
+
+  .row1 {
+    /* background-color: red; */
+    height: 120px;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .row2 {
+    /* background-color: blue; */
+    height: 30px;
+    width: 100%;
+    position: relative;
+    
+  }
+  
+  .row3 {
+    grid-template-columns: .5fr 5fr .5fr 9fr .5fr;
+    transition: 200ms;
+  }
+
+  .row33 {
+      grid-template-columns: .5fr 9fr .5fr 5fr .5fr;
+      transition: 200ms;
+    }
+
+}
+
+@media (max-width: 759px) {
+  
+  .box33 ul {
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  .button h3 {
+    left: -2px;
+    font-size: 23px;
+    top: 20px;
+}
+
+.box3 ul {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.box3 {
+  margin-top: 145px;
+  transition: 200ms;
+}
+
+.box33 {
+  margin-top: 125px;
+  transition: 200ms;
+}
+}
+
+@media (max-width: 516px) {
+  
+  h1 {
+    font-size: 50px;
+    left: -4px;
+    transition: 200ms;
+  }
+
+  .row1 {
+    /* background-color: red; */
+    height: 65px;
+    transition: 200ms;
+  }
+
+  h2 {
+    font-size: 20px;
+    top: -10px;
+    transition: 200ms;
+  }
+
+  .row2 {
+    /* background-color: blue; */
+    height: 30px;
+    transition: 200ms;
+  }
+
+  .zig-zag-line {
+    --b: 10px;  /* control the thickness */
+    transition: 200ms;
+  }
+  
+  .spacer {
+    width: 100%;
+    height: 20px;
+    /* background-color: green; */
+  }
+  
+  .row3 {
+    height: 200px;
+    width: 100%;
+    display: inline;
+    grid-template-columns: 1fr 5fr .3fr 9fr 1fr;
+    transition: 200ms;
+  }
+
+  .row33 {
+    height: 200px;
+    width: 100%;
+    display: inline;
+    grid-template-columns: 1fr 9fr .3fr 5fr 1fr;
+    transition: 200ms;
+  }
+
+  .box5 img {
+    height: auto; /* Fill the div vertically */
+    width: 350px;
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+.box55 img {
+  height: auto; /* Fill the div vertically */
+  width: 350px;
+  border-radius: 20px;
+  transition: 200ms;
+}
+ 
+.button {
+  background-color: white;
+  height: 60px;
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
+}
+
+}
 
 
   
