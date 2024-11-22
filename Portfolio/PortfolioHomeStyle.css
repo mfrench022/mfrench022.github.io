@@ -390,8 +390,9 @@
 @media (max-width: 516px) {
   
   h1 {
-    font-size: 50px;
-    left: -4px;
+    font-size: 40px;
+    left: -2px;
+    top: 15px;
     transition: 200ms;
   }
 
@@ -402,14 +403,14 @@
   }
 
   h2 {
-    font-size: 20px;
-    top: -5px;
+    font-size: 18px;
+    top: -20px;
     transition: 200ms;
   }
 
   .row2 {
     /* background-color: blue; */
-    height: 30px;
+    height: 10px;
     transition: 200ms;
   }
 
@@ -472,21 +473,21 @@ transition: 200ms;
   width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 200ms;
-  margin-left: 25%;
+  margin-left: 22%;
 }
 
 .box3 {
   width: 92%;
   height: 200px;
-  margin-top: 10px;
+  margin-top: -10px;
   margin-left: 20px;
   transition: 200ms;
 }
 
 .box33 {
   width: 92%;
-  height: 200px;
-  margin-top: 10px;
+  height: 250px;
+  margin-top: 30px;
   margin-left: 20px;
   transition: 200ms;
 }
@@ -494,7 +495,7 @@ transition: 200ms;
 .box3 ul {
   width: 92%;
   transition: 200ms;
-  margin-left: 27%;
+  margin-left: 22%;
 }
 
 .box33 ul {
@@ -506,9 +507,11 @@ transition: 200ms;
   width: 100%;
 }
 
-.body {
-  width: 100vw;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
 }
+
 }
 
 
