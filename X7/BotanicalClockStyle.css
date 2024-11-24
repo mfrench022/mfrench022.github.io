@@ -1,0 +1,97 @@
+body {
+    background-color: lightblue;
+  }
+  
+  .box2{
+    overflow: hidden;
+    position: absolute;
+    height: 70%;
+    width: 30%;
+    bottom: 0px;
+    left: 20%;
+  /*   background-color: red; */
+  }
+  
+  .box1{
+    overflow: hidden;
+    position: absolute;
+    height: 70%;
+    width: 30%;
+    bottom: 0px;
+    right: 20%;
+  /*   background-color: red; */
+  }
+  
+  .flower {
+    overflow: hidden;
+    background-color: rgb(235, 212, 5);
+    position: relative;
+    top: 0px;
+    width: 30%; /* adjust to control the size */
+    aspect-ratio: 1;
+    --g:/9.464% 9.464% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+    mask: 100% 50% var(--g),98.907% 60.396% var(--g),95.677% 70.337% var(--g),90.451% 79.389% var(--g),83.457% 87.157% var(--g),75% 93.301% var(--g),65.451% 97.553% var(--g),55.226% 99.726% var(--g),44.774% 99.726% var(--g),34.549% 97.553% var(--g),25% 93.301% var(--g),16.543% 87.157% var(--g),9.549% 79.389% var(--g),4.323% 70.337% var(--g),1.093% 60.396% var(--g),0% 50% var(--g),1.093% 39.604% var(--g),4.323% 29.663% var(--g),9.549% 20.611% var(--g),16.543% 12.843% var(--g),25% 6.699% var(--g),34.549% 2.447% var(--g),44.774% 0.274% var(--g),55.226% 0.274% var(--g),65.451% 2.447% var(--g),75% 6.699% var(--g),83.457% 12.843% var(--g),90.451% 20.611% var(--g),95.677% 29.663% var(--g),98.907% 39.604% var(--g),radial-gradient(100% 100%,#000 45.02%,#0000 calc(45.02% + 1px));
+  }
+  
+  
+  .flower2 {
+    overflow: hidden;
+    position: relative;
+    margin-top: -17%;
+    width: 70%; /* adjust to control the size */
+    
+    aspect-ratio: 1;
+    --g:/37.02% 37.02% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+    mask: radial-gradient(100% 100%,#000 calc(25.476% - 1px),#0000 25.476%) subtract,97.553% 65.451% var(--g),50% 100% var(--g),2.447% 65.451% var(--g),20.611% 9.549% var(--g),79.389% 9.549% var(--g);
+    
+    background-color: rgb(250, 252, 234);
+  }
+  
+  .circle {
+    overflow: hidden;
+    background-color: rgb(46, 35, 27);
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border-radius: 100%;
+    top: 15%;
+    left: 15%;
+  }
+  
+  .stem {
+    background-color: rgb(2, 46, 2);
+    position: absolute;
+    height: 85%;
+    width: 4%;
+    left: 48%;
+    bottom: -0.0001%;
+    
+  /*   top: -30%; */
+    z-index: -1;
+  }
+
+
+  .stem2 {
+    background-color: rgb(2, 46, 2);
+    position: absolute;
+    height: 92%;
+    width: 4%;
+    left: 48%;
+    bottom: -9.4%;
+    
+  /*   top: -30%; */
+    z-index: -1;
+  }
+  
+  .starburst {
+    left: 30%;
+    top: 30%;
+    
+    position: absolute;
+    width: 40%; /* adjust to control the size */
+    aspect-ratio: 1;
+    clip-path: polygon(79.39% 90.45%,50% 59%,20.61% 90.45%,41.44% 52.78%,2.45% 34.55%,44.71% 42.72%,50% 0%,55.29% 42.72%,97.55% 34.55%,58.56% 52.78%);
+    background-color: rgb(250, 250, 140);
+  }
+
+  

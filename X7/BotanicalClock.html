@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botanical Clock</title>
+    <link rel="stylesheet" href="BotanicalClockStyle.css">
+</head>
+<body>
+    <div class="box2">
+        <center><div class = "flower2">
+          <div class = "starburst"></div>
+        </div></center>
+        <center><div class = "stem2"></div></center>
+        </div>
+      
+      <center><div class="box1">
+        <center><div class = "flower">
+          <div class = "circle"></div>
+        </div></center>
+        <center><div class = "stem"></div></center>
+        </div></center>
+       
+<script type="text/javascript">
+          
+// FLOWERS
+
+function updateBoxes() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const totalMinutesIn24Hours = 24 * 60;
+    const currentMinutes = hours * 60 + minutes;
+
+    function calculateHeight(startHour, endHour, currentMinutes) {
+        const startMinutes = startHour * 60;
+        const endMinutes = (endHour % 24) * 60;
+
+        if (endMinutes > startMinutes) {
+            if (currentMinutes >= startMinutes && currentMinutes <= endMinutes) {
+                return 20 + ((currentMinutes - startMinutes) / (endMinutes - startMinutes)) * 70;
+            }
+        } else {
+            if (currentMinutes >= startMinutes || currentMinutes <= endMinutes) {
+                const adjustedMinutes =
+                    currentMinutes >= startMinutes
+                        ? currentMinutes - startMinutes
+                        : currentMinutes + (totalMinutesIn24Hours - startMinutes);
+                return 20 + (adjustedMinutes / (endMinutes + totalMinutesIn24Hours - startMinutes)) * 70;
+            }
+        }
+        return 0;
+    }
+
+    const heightBox1 = calculateHeight(7, 19, currentMinutes); 
+    const heightBox2 = calculateHeight(19, 7, currentMinutes);
+
+    const box1 = document.querySelector('.box1');
+    const box2 = document.querySelector('.box2');
+
+    box1.style.height = `${heightBox1}%`;
+    box2.style.height = `${heightBox2}%`;
+
+    if (currentMinutes >= 7 * 60 && currentMinutes < 19 * 60) {
+        box1.style.display = 'block';
+        box2.style.display = 'none';
+    } else {
+        box1.style.display = 'none';
+        box2.style.display = 'block';
+    }
+}
+
+updateBoxes();
+setInterval(updateBoxes, 60000);
+
+          // BACKGROUND
+
+          function updateBackground() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+
+    const totalMinutesIn24Hours = 24 * 60;
+    const currentMinutes = hours * 60 + minutes;
+
+
+    let lightness;
+    if (hours >= 12) {
+
+        lightness = 90 - ((currentMinutes - 720) / (720)) * 80; 
+    } else {
+        lightness = 10 + (currentMinutes / 720) * 80;
+    }
+
+    document.body.style.backgroundColor = `hsl(270, 50%, ${lightness}%)`;
+}
+
+updateBackground();
+setInterval(updateBackground, 60000);
+
+
+</script>
+     
+</body>
+</html>

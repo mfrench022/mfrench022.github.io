@@ -1,288 +1,247 @@
 .zig-zag-line {
-    --a: 130deg; /* control the angle */
-    --s: 75px; /* size of the zig-zag */
-    --b: 15px;  /* control the thickness */
-    
-    
-    background: lightblue;
-    height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
-    width: 100%;
-    --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
-      #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
-    mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
-  }
+  --a: 144deg; /* control the angle */
+  --s: 75px; /* size of the zig-zag */
+  --b: 15px;  /* control the thickness */
   
-  body {
-    background-color: rgb(155, 92, 161);
-    margin: 0px;
-    padding: 0px;
-  }
   
-  h1 {
-    padding: 0px;
-    margin: 0px;
-    font-size: 192.5px;
-    position: absolute;
-    left: -12px;
-    top: 28px;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-    white-space: nowrap;
-    overflow: visible;
-  }
-  
-  h2 {
-    position: absolute;
-    white-space: nowrap;
-    overflow: visible;
-    font-size: 50.5px;
-    right: 0px;
-    top: -34px;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-    /* line-height: 52px; */
-  }
-  
-  h1:hover {
-    cursor: default;
-  }
+  background: lightblue;
+  height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
+  width: 100%;
+  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
+    #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
+  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
+  transition: 200ms;
+}
 
-  h2:hover {
-    cursor: default;
-  }
+body {
+  background-color: #8968CD;
+  margin: 0px;
+  padding: 0px;
+}
 
-  .row1 {
-    /* background-color: red; */
-    height: 200px;
-    width: 100%;
-    position: relative;
-  }
+h1 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 184.5px;
+  position: absolute;
+  left: -12px;
+  top: 28px;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 200ms;
+}
+
+h2 {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 52px;
+  right: 0px;
+  top: -34px;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+  /* line-height: 52px; */
+}
+
+h1:hover {
+  cursor: default;
+}
+
+h2:hover {
+  cursor: default;
+}
+
+.row1 {
+  /* background-color: red; */
+  height: 200px;
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 200ms;
+}
+
+.row2 {
+  /* background-color: blue; */
+  height: 50px;
+  width: 100%;
+  position: relative;
+  transition: 200ms;
   
-  .row2 {
-    /* background-color: blue; */
-    height: 50px;
-    width: 100%;
-    position: relative;
-  }
-  
-  .spacer {
-    width: 100%;
-    height: 40px;
-    /* background-color: green; */
-  }
-  
-  .spacersmall {
-    width: 100%;
-    height: 40px;
-  /*   background-color: green; */
-  }
+}
+
+.spacer {
+  width: 100%;
+  height: 40px;
+  /* background-color: green; */
+}
+
+.spacersmall {
+  width: 100%;
+  height: 40px;
+/*   background-color: green; */
+}
   
   .row3 {
-  /*   background-color: blue; */
-    height: 600px;
+    /* background-color: blue; */
+    height: 300px;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 5fr .3fr 9fr 1fr
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .row33 {
-    /*   background-color: blue; */
-      height: 600px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 9fr .3fr 5fr 1fr
-    }
-  
-  .side {
+  .box1 {
     width: 100%;
     height: 100%;
-  /*   background-color: purple; */
+    /* background-color: red; */
   }
-  
+
+  .box2 {
+    width: 100%;
+    height: 100%;
+    /* background-color: orange; */
+  }
+
   .box3 {
     width: 100%;
     height: 100%;
-    margin-top: 40px;
-  /*   background-color: red; */
-  /*   margin: 10px; */
+    /* background-color: yellow; */
   }
 
-  .box33 {
-    width: 100%;
-    height: 100%;
-    margin-top: 40px;
-  /*   background-color: red; */
-  /*   margin: 10px; */
-  }
-  
   .box4 {
     width: 100%;
     height: 100%;
-  /*   background-color: orange; */
-  }
-  
-  h3 {
-    font-size: 40px;
-    font-family: "Aldrich", sans-serif;
-  }
-  
-  .box3 ul {
-    font-weight: 400;
-    font-size: 47px;
-    left: -9px;
-    position: relative;
-    list-style-type: circle;
-    line-height: 65px;
-    color: white;
-    font-family: "Aldrich", sans-serif;
+    /* background-color: blue; */
   }
 
-  .box33 ul {
-    font-weight: 400;
-    font-size: 30px;
-    left: -9px;
-    position: relative;
-    list-style-type: circle;
-    line-height: 40px;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-  }
-  
-  .button {
-    background-color: white;
-    height: 60px;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  .button:hover {
-    background-color: lightblue;
-  }
-  
-  a {
-    color: rgb(155, 92, 161);
-    text-decoration: none;
-    font-family: "Aldrich", sans-serif;
-  }
-
-  .button h3 {
-    position: relative;
-    left: -4px;
-    font-size: 47px;
-    top: 9px;
-  }
-
-  .coding {
-    background-color: rgb(155, 92, 161);
-  }
-
-  .paragraph {
-    background-color: rgb(155, 92, 161);
-  }
-
-  .coding:hover {
-    color: lightblue;
-    cursor: default;
-  }
-
-
-  .coding:hover {
-    color: lightblue;
-    cursor: default;
-  }
-
-  .type {
-    background-color: rgb(155, 92, 161);
-  }
-
-  .type:hover {
-    color: lightblue;
-    cursor: default;
-  }
-
-  .brand {
-    background-color: rgb(155, 92, 161);
-  }
-
-  .brand:hover {
-    color: lightblue;
-    cursor: default;
-  }
-
-  .ux {
-    background-color: rgb(155, 92, 161);
-  }
-
-  .ux:hover {
-    color: lightblue;
-    cursor: default;
-  }
-  
-  .box5 {
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow;  */
-    display: flex; /* Enable flexbox for alignment */
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    overflow: hidden; /* Prevent any overflow from the image */
-}
-
-.box5 img {
-    height: 100%; /* Fill the div vertically */
-    width: auto; /* Adjust width to maintain aspect ratio */
+img {
+    height: auto; /* Fill the div vertically */
+    width: 100%; /* Adjust width to maintain aspect ratio */
     object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+    border-radius: 20px;
+    transition: 200ms;
 }
 
-.box55 {
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex; /* Enable flexbox for alignment */
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    overflow: hidden; /* Prevent any overflow from the image */
-}
-
-.box55 img {
-    height: 100%; /* Fill the div vertically */
-    width: 100% auto; /* Adjust width to maintain aspect ratio */
-    object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
-}
-
-@media (max-width: 1625px) {
-
-    .button h3 {
-      position: relative;
-      left: -3px;
-      font-size: 30px;
-      top: 17px;
-    }
-}
-
-@media (max-width: 1200px) {
+  @media (max-width: 1320px) {
 
     .button h3 {
         position: relative;
         left: -2px;
-        font-size: 23px;
-        top: 20px;
+        font-size: 33px;
+        top: 16px;
+        transition: 200ms;
     }
 
     .box3 ul {
         font-size: 33px;
         line-height: 40px;
+        transition: 200ms;
       }
 
       .box33 ul {
         font-size: 20px;
         line-height: 30px;
+        transition: 200ms;
       }
+
+
+      .box5 img {
+        height: 100%; /* Fill the div vertically */
+        width: auto; /* Adjust width to maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+        border-radius: 20px;
+        transition: 200ms;
+    }
     
+    .box55 img {
+        height: 100%; /* Fill the div vertically */
+        width: auto; /* Adjust width to maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+        border-radius: 20px;
+        transition: 200ms;
+    }
+    
+}
+
+@media (max-width: 1032px) {
+
+  h1 {
+    font-size: 100px;
+    left: -7px;
+  }
+
+  h2 {
+    font-size: 35px;
+    top: -15px;
+  }
+
+  .row1 {
+    /* background-color: red; */
+    height: 120px;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .row2 {
+    /* background-color: blue; */
+    height: 30px;
+    width: 100%;
+    position: relative;
+    
+  }
+
+}
+
+@media (max-width: 516px) {
+  
+  h1 {
+    font-size: 40px;
+    left: -2px;
+    top: 15px;
+    transition: 200ms;
+  }
+
+  .row1 {
+    /* background-color: red; */
+    height: 65px;
+    transition: 200ms;
+  }
+
+  h2 {
+    font-size: 18px;
+    top: -20px;
+    transition: 200ms;
+  }
+
+  .row2 {
+    /* background-color: blue; */
+    height: 10px;
+    transition: 200ms;
+  }
+
+  .zig-zag-line {
+    --b: 10px;  /* control the thickness */
+    transition: 200ms;
+  }
+  
+  .spacer {
+    width: 100%;
+    height: 20px;
+    /* background-color: green; */
+  }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 }
 
 
 
-
-  
   
