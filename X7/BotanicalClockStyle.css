@@ -44,7 +44,7 @@ body {
     --g:/37.02% 37.02% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
     mask: radial-gradient(100% 100%,#000 calc(25.476% - 1px),#0000 25.476%) subtract,97.553% 65.451% var(--g),50% 100% var(--g),2.447% 65.451% var(--g),20.611% 9.549% var(--g),79.389% 9.549% var(--g);
     
-    background-color: rgb(250, 252, 234);
+    background-color: rgb(235, 236, 228);
   }
   
   .circle {
@@ -75,8 +75,8 @@ body {
     background-color: rgb(2, 46, 2);
     position: absolute;
     height: 92%;
-    width: 4%;
-    left: 48%;
+    width: 3%;
+    left: 49%;
     bottom: -9.4%;
     
   /*   top: -30%; */
@@ -91,7 +91,7 @@ body {
     width: 40%; /* adjust to control the size */
     aspect-ratio: 1;
     clip-path: polygon(79.39% 90.45%,50% 59%,20.61% 90.45%,41.44% 52.78%,2.45% 34.55%,44.71% 42.72%,50% 0%,55.29% 42.72%,97.55% 34.55%,58.56% 52.78%);
-    background-color: rgb(250, 250, 140);
+    background-color: rgb(244, 224, 4);
   }
 
   
