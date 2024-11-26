@@ -8,6 +8,12 @@
 </head>
 <body>
     <div class="box2">
+        <div class="ruler">
+            <div class="rulerdash5"></div>
+            <div class="rulerdash6"></div>
+            <div class="rulerdash7"></div>
+            <div class="rulerdash8"></div>
+        </div>
         <center><div class = "flower2">
           <div class = "starburst"></div>
         </div></center>
@@ -15,6 +21,12 @@
         </div>
       
       <center><div class="box1">
+        <div class="ruler">
+            <div class="rulerdash1"></div>
+            <div class="rulerdash2"></div>
+            <div class="rulerdash3"></div>
+            <div class="rulerdash4"></div>
+        </div>
         <center><div class = "flower">
           <div class = "circle"></div>
         </div></center>
@@ -99,6 +111,38 @@ setInterval(updateBoxes, 60000);
 
 updateBackground();
 setInterval(updateBackground, 60000);
+
+// CLOCK
+
+function updateTimeInRuler() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Format: HH:MM
+    
+    const rulerDivs = document.querySelectorAll('.ruler');
+    rulerDivs.forEach(ruler => {
+        let timeDisplay = ruler.querySelector('.time-display'); // Look for an existing time display element
+        if (!timeDisplay) {
+            // Create a new element if it doesn't exist
+            timeDisplay = document.createElement('div');
+            timeDisplay.classList.add('time-display');
+            timeDisplay.style.position = 'absolute';
+            timeDisplay.style.top = '0';
+            timeDisplay.style.left = '50%';
+            timeDisplay.style.transform = 'translateX(-50%)';
+            timeDisplay.style.color = 'white';
+            timeDisplay.style.fontWeight = 'bold';
+            timeDisplay.style.fontSize = '1.2em';
+            timeDisplay.style.textAlign = 'center';
+            ruler.appendChild(timeDisplay);
+        }
+        timeDisplay.textContent = timeString; // Update the time
+    });
+}
+
+// Call the function initially and then at regular intervals
+updateTimeInRuler();
+setInterval(updateTimeInRuler, 1000); // Updates every second
+
 
 
 </script>
