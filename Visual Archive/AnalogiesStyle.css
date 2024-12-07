@@ -1,0 +1,99 @@
+h1{
+    font-size: 70px;
+    font-weight: 700;
+    margin: 24px;
+    margin-top: 48%;
+}
+
+h2{
+    font-size: 21px;
+    margin: 24px;
+}
+
+body{
+    background-color: #000000;
+    /* font-size: 15px; */
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+    color:rgba(255, 255, 255, 0.853);
+  }
+
+  .photorow {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
+    /* background-color: yellow; */
+    height: 30vw;
+  }
+
+  .headerrow {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
+    /* background-color: yellow; */
+    height: 30vw;
+  }
+  
+  .gutter {
+    /* background-color: pink; */
+    width: 100%;
+  }
+  
+  .human {
+    background-color: #330666;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nature {
+    background-color: #35592b;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .graphic {
+    background-color: #badaf3;
+    width: 100%;
+    text-align: center;
+  }
+
+  .headerrow .human {
+    text-align: left;
+  }
+
+  .headerrow .graphic {
+    text-align: left;
+  }
+
+  .headerrow .nature {
+    text-align: left;
+  }
+  
+  span {
+    opacity: 0;
+    bottom: 0px;
+    font-size: 40px;
+    transition: 300ms;
+  }
+
+  img {
+    height: 27vw;
+    position: relative;
+  }
+
+  .nature:hover span {
+    opacity: 1;
+    transition: 300ms;
+  }
+
+  .graphic:hover span {
+    opacity: 1;
+    transition: 300ms;
+  }
+
+  .human:hover span {
+    opacity: 1;
+    transition: 300ms;
+  }
+
+  
+  
