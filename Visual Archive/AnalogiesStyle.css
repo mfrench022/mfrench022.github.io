@@ -82,12 +82,13 @@ body{
     opacity: 0;
     font-size: 1.3vw;
     transition: 300ms;
-    margin-left: 0.8vw;
+    margin-left: 0.7vw;
   }
 
   img {
     height: 27vw;
     position: relative;
+    transition: 300ms;
   }
 
 
@@ -109,15 +110,36 @@ body{
   .spacer {
     width: 100%;
     height: 0.5vw;
+    transition: 300ms;
     /* background-color: aquamarine; */
+  }
+
+  .spacer2 {
+    width: 100%;
+    height: 2.1vw;
+    transition: 300ms;
+    /* background-color: aqua; */
   }
 
   @media (max-width: 800px) {
 
     span {
         opacity: 1;
+        transition: 300ms;
     }
 
+    .spacer {
+        width: 100%;
+        height: 0vw;
+        transition: 300ms;
+        /* background-color: aquamarine; */
+      }
+
+      .spacer2 {
+        width: 100%;
+        height: 4.3vw;
+        transition: 300ms;
+      }
 
   }
 
