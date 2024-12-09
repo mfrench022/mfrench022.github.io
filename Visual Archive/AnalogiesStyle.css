@@ -179,7 +179,7 @@ body{
 
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 550px) {
 
     span {
         opacity: 1;
@@ -200,7 +200,7 @@ body{
       }
 
       h1{
-        font-size: 6.1vw;
+        font-size: 5vw;
         font-weight: 700;
         margin-top: 11vw;
         font-style: italic;
@@ -214,7 +214,7 @@ body{
     }
     
     h3 {
-        margin-top: -10vw;
+        margin-top: -8.0vw;
         font-size: 0.9vw;
         transition: 300ms;
     }
