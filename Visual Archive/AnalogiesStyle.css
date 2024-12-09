@@ -56,6 +56,7 @@ body{
     /* background-color: yellow; */
     height: 30vw;
     background-color: #330666;
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001833);
   }
   
   .gutter {
@@ -79,6 +80,18 @@ body{
     background-color: #524ca9;
     width: 100%;
     text-align: left;
+  }
+
+  .photorow .human {
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001833);
+  }
+
+  .photorow .nature {
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001833);
+  }
+
+  .photorow .graphic {
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001833);
   }
 
   .headerrow .human {
