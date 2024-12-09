@@ -3,20 +3,24 @@ h1{
     font-weight: 700;
     margin-top: 11vw;
     font-style: italic;
+    transition: 300ms;
 }
 
 h2{
     font-size: 1.25vw;
     margin-top: 3vw;
+    transition: 300ms;
 }
 
 h3 {
     margin-top: -6.8vw;
     font-size: 1.1vw;
+    transition: 300ms;
 }
 
 a {
     color: white;
+    transition: 300ms;
 }
 
 ul {
@@ -24,6 +28,7 @@ ul {
     margin: 0;
     padding: 0;
     font-size: 0.6vw;
+    transition: 300ms;
   }
 
 .nature h2 {
@@ -169,6 +174,61 @@ body{
       .spacer2 {
         width: 100%;
         height: 4.3vw;
+        transition: 300ms;
+      }
+
+  }
+
+  @media (max-width: 450px) {
+
+    span {
+        opacity: 1;
+        transition: 300ms;
+    }
+
+    .spacer {
+        width: 100%;
+        height: 0.01vw;
+        transition: 300ms;
+        /* background-color: aquamarine; */
+      }
+
+      .spacer2 {
+        width: 100%;
+        height: 11vw;
+        transition: 300ms;
+      }
+
+      h1{
+        font-size: 6.1vw;
+        font-weight: 700;
+        margin-top: 11vw;
+        font-style: italic;
+        transition: 300ms;
+    }
+    
+    h2{
+        font-size: 1.2vw;
+        margin-top: 3vw;
+        transition: 300ms;
+    }
+    
+    h3 {
+        margin-top: -10vw;
+        font-size: 0.9vw;
+        transition: 300ms;
+    }
+    
+    a {
+        color: white;
+        transition: 300ms;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.426vw;
         transition: 300ms;
       }
 
