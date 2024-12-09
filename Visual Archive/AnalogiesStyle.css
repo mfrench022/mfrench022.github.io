@@ -31,7 +31,9 @@ ul {
 }
 
 body{
-    background-color: #15032a;
+    
+    background: rgb(21,3,42);
+    background: linear-gradient(90deg, rgba(21,3,42,1) 0%, rgba(46,12,85,1) 50%, rgba(69,16,130,1) 100%);
     /* font-size: 15px; */
     font-family: "Old Standard TT", serif;
     font-weight: 400;
