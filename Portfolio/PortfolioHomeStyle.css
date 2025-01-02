@@ -193,28 +193,35 @@
 
   .coding:hover {
     color: lightblue;
-    cursor: default;
+    cursor: none;
   }
 
+  h1:hover {
+    cursor: pointer;
+  }
 
   .coding:hover {
     color: lightblue;
-    cursor: default;
+    cursor: none;
   }
 
   .type:hover {
     color: lightblue;
-    cursor: default;
+    cursor: none;
   }
 
   .brand:hover {
     color: lightblue;
-    cursor: default;
+    cursor: none;
   }
 
   .ux:hover {
     color: lightblue;
-    cursor: default;
+    cursor: none;
+  }
+
+  .licontainer:hover {
+    cursor: none;
   }
   
   .box5 {
