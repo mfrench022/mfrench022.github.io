@@ -14,7 +14,8 @@
   }
 
   body {
-    background-color: #8968CD;
+    background: rgb(183,119,219);
+    background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
     margin: 0px;
     padding: 0px;
   }
@@ -190,14 +191,6 @@
     transition: 200ms;
   }
 
-  .coding {
-    background-color: #8968CD;
-  }
-
-  .paragraph {
-    background-color: #8968CD;
-  }
-
   .coding:hover {
     color: lightblue;
     cursor: default;
@@ -207,10 +200,6 @@
   .coding:hover {
     color: lightblue;
     cursor: default;
-  }
-
-  .type {
-    background-color: #8968CD;
   }
 
   .type:hover {
@@ -218,17 +207,9 @@
     cursor: default;
   }
 
-  .brand {
-    background-color: #8968CD;
-  }
-
   .brand:hover {
     color: lightblue;
     cursor: default;
-  }
-
-  .ux {
-    background-color: #8968CD;
   }
 
   .ux:hover {
@@ -511,7 +492,6 @@ html, body {
   width: 100%;
   overflow-x: hidden;
 }
-
 }
 
 
