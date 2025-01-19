@@ -1,7 +1,7 @@
 .zig-zag-line {
   --a: 144deg; /* control the angle */
-  --s: 75px; /* size of the zig-zag */
-  --b: 15px;  /* control the thickness */
+  --s: 5vw; /* size of the zig-zag */
+  --b: 0.9vw;  /* control the thickness */
   
   
   background: lightblue;
@@ -14,19 +14,23 @@
 }
 
 body {
-  background: rgb(183,119,219);
+  min-height: 100vh; 
   background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1 {
   padding: 0px;
   margin: 0px;
-  font-size: 184.5px;
+  font-size: 10vw;
   position: absolute;
-  left: -12px;
-  top: 28px;
+  left: -0.8vw;
+  top: 2.6vw;
   color: white;
   font-family: "Aldrich", sans-serif;
   white-space: nowrap;
@@ -38,13 +42,12 @@ h2 {
   position: absolute;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 52px;
-  right: 0px;
-  top: -34px;
+  font-size: 3.145vw;
+  right: -0.19vw;
+  top: -2.5vw;
   color: white;
   font-family: "Aldrich", sans-serif;
   transition: 200ms;
-  /* line-height: 52px; */
 }
 
 h1:hover {
@@ -57,7 +60,7 @@ h2:hover {
 
 .row1 {
   /* background-color: red; */
-  height: 200px;
+  height: 12.2vw;
   width: 100%;
   position: relative;
   white-space: nowrap;
@@ -67,7 +70,7 @@ h2:hover {
 
 .row2 {
   /* background-color: blue; */
-  height: 50px;
+  height: 3vw;
   width: 100%;
   position: relative;
   transition: 200ms;
@@ -76,14 +79,8 @@ h2:hover {
 
 .spacer {
   width: 100%;
-  height: 40px;
+  height: 2vw;
   /* background-color: green; */
-}
-
-.spacersmall {
-  width: 100%;
-  height: 40px;
-/*   background-color: green; */
 }
   
   .row3 {
