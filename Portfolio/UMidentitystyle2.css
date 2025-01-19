@@ -1,0 +1,107 @@
+.container1 {
+    display: grid;
+    grid-template-columns: 2.5fr 5fr 1fr;
+    background: white;
+    height: 100vh;
+  }
+  
+  .container2{
+    display: grid;
+    grid-template-columns: 1fr;
+    background: white;
+    height: 17vh;
+  }
+  
+  .box-one {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+  }
+
+  .button {
+    position: absolute;
+    background-color: rgb(143, 214, 255);
+    border-radius: 41px;
+    height: 70px;
+    width: 250px;
+    left: 30px;
+    line-height: 70px;
+    box-shadow: 5px 5px 5px rgba(28, 28, 28, 0.399);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .button:hover {
+    cursor: pointer;
+  }
+
+  .box-two {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  
+  .box-three {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  
+  .Uleft {
+    width: 76px;
+    height: 250px;
+    background-color: #ff914dba;
+    display: inline-block;
+    position: fixed;
+    /* margin: -40px; */
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 41px;
+  }
+  
+  
+  .Uright {
+    width: 76px;
+    height: 250px;
+    background-color: #ff914dba;
+    display: inline-block;
+    position: fixed;
+    margin: 175px;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+    border-bottom-right-radius: 41px;
+    top: -13px;
+  }
+  
+  .Ucenter {
+    width: 250px;
+    height: 50px;
+    top: 362px;
+    background-color: #6bc5a1b8;
+    display: inline-block;
+    position: fixed;
+    /* margin: -40px; */
+    border-bottom-left-radius: 41px;
+    border-bottom-right-radius: 41px;
+  }
+  
+  .UMtext {
+    display: inline-block;
+    position: fixed;
+    /* padding-top: 85px; */
+    top: -224px;
+    margin: 287px;
+    font-size: 70px;
+    line-height: 130px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 900;
+    letter-spacing: -2px;  
+    font-style: normal;
+    color: #377E62;
+  }
+
+  span{
+    color: #ff914d;
+  }
+
+ 

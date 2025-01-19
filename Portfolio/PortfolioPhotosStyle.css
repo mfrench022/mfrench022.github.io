@@ -134,6 +134,19 @@ html, body {
   padding: 0;
 }
 
+.spacer h3 {
+  font-size: 0.7vw;
+  margin-left: 4.3vw;
+  position: static;
+  color: white;
+}
+
+h3 {
+  font-size: 3.145vw;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
 @media (max-width: 1320px) {
 
 }
