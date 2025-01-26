@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding: 0;
+    cursor: none;
+    background: rgb(147,109,68);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+.oceanback {
+    background-color: lightblue;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ocean {
+    background: rgb(3,1,36);
+    background: linear-gradient(0deg, rgba(3,1,36,1) 0%, rgba(9,0,124,1) 23%, rgba(125,206,222,1) 100%);
+    width: 100vw;
+    height: 500vw;
+    position: relative;
+}
+
+.seafloor {
+    background: rgb(147,109,68);
+    background: linear-gradient(0deg, rgba(147,109,68,1) 0%, rgba(222,176,125,1) 100%);
+    width: 100vw;
+    height: 15vw;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.clamback1 {
+    /* shape obtained from css-shape.com */
+    width: 16vw;
+    aspect-ratio: 1;
+    --g:/14.796% 14.796% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+    mask: 100% 50% var(--g),96.985% 67.101% var(--g),88.302% 82.139% var(--g),75% 93.301% var(--g),58.682% 99.24% var(--g),41.318% 99.24% var(--g),25% 93.301% var(--g),11.698% 82.139% var(--g),3.015% 67.101% var(--g),0% 50% var(--g),3.015% 32.899% var(--g),11.698% 17.861% var(--g),25% 6.699% var(--g),41.318% 0.76% var(--g),58.682% 0.76% var(--g),75% 6.699% var(--g),88.302% 17.861% var(--g),96.985% 32.899% var(--g),radial-gradient(100% 100%,#000 41.955%,#0000 calc(41.955% + 1px));
+    Position: absolute;
+    bottom: 15vw;
+    left: 42vw;
+    background: rgb(150,150,150);
+    background: linear-gradient(0deg, rgba(150,150,150,1) 0%, rgba(99,99,99,1) 100%);
+    z-index: 2;
+  }
+
+  .clamback2 {
+    background: rgb(150,150,150);
+    background: linear-gradient(0deg, rgba(150,150,150,1) 0%, #7d7d7d 100%);
+    width: 16vw;
+    height: 8vw;
+    position: absolute;
+    bottom: 15vw;
+    border-bottom-left-radius: 300vw;
+    border-bottom-right-radius: 300vw;
+    left: 42vw;
+    z-index: 3;
+  }
+
+  .clambottom {
+    background: rgb(150,150,150);
+    background: linear-gradient(180deg, rgba(150,150,150,1) 0%, rgb(63, 63, 63) 100%);
+    width: 16vw;
+    height: 16vw;
+    position: absolute;
+    bottom: 2vw;
+    border-radius: 100%;
+    z-index: 1;
+    left: 42vw;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+  }
+
+  .pearl {
+    /* shape obtained from css-shape.com */
+    z-index: 1;
+    left: 46vw;
+    width: 8vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 11vw;
+    background: 
+      radial-gradient(circle at 40% 30%,#0000 4%,57%,#000 90%) 
+      #ffaae0;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+    z-index: 4;
+  }
+
+  .fish {
+    position: relative;
+    width: 15vw;
+    height: 7vw;
+    /* margin-left: 10vw; */
+    /* background-color: green; */
+    z-index: 5;
+  }
+
+  .fishbody {
+    position: absolute;
+    width: 11vw;
+    height: 4vw;
+    background: rgb(255, 95, 15);
+    background: linear-gradient(187deg, rgb(255, 95, 15) 0%, rgba(255,167,114,1) 100%);
+    border-top-right-radius: 100vw;
+    border-bottom-right-radius: 40vw;
+    border-top-left-radius: 70vw;
+    border-bottom-left-radius: 70vw;
+    z-index: 2;
+    top: 1.5vw;
+    right: 0;
+  }
+
+  .eye {
+    width: .7vw;
+    height: .7vw;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    right: 1.4vw;
+    top: 1vw;
+    z-index: 3;
+  }
+
+  .mouth {
+    height: 0.2vw;
+    width: 2vw;
+    background-color: black;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0.9vw;
+    z-index: 3;
+  }
+
+  .dorsalfin {
+  /* shape obtained from css-shape.com */
+  --p: 30%;
+  height: 1.5vw;
+  aspect-ratio: 5/1;
+  clip-path: polygon(0 0,calc(100% - var(--p)) 0,100% 100%,var(--p) 100%);
+  background: rgba(255, 224, 22, 0.572);
+  margin-bottom: 4vw;
+  position: absolute;
+  top: -1.5vw;
+  z-index: -1;
+}
+
+.pecfin1 {
+    /* shape obtained from css-shape.com */
+    --p: 30%;
+    height: 1.5vw;
+    aspect-ratio: 1.8/1;
+    clip-path: polygon(var(--p) 0,100% 0,calc(100% - var(--p)) 100%,0 100%);
+    background: rgba(255, 224, 22, 0.572);
+    margin-bottom: 4vw;
+    position: absolute;
+    bottom: -5.5vw;
+    z-index: -1;
+    left: 5.6vw;
+  }
+
+
+.pecfin2 {
+    /* shape obtained from css-shape.com */
+    --p: 40%;
+    height: 1vw;
+    aspect-ratio: 1.2/1;
+    clip-path: polygon(var(--p) 0,100% 0,calc(100% - var(--p)) 100%,0 100%);
+    background: rgba(255, 224, 22, 0.572);
+    margin-bottom: 4vw;
+    position: absolute;
+    bottom: -5vw;
+    z-index: -1;
+    left: 2vw;
+  }
+
+  
+.caudalfin {
+    /* shape obtained from css-shape.com */
+    position: absolute;
+    left: 0vw;
+    top: .5vw;
+    rotate: -90deg;
+    height: 6vw; 
+    aspect-ratio: 1;
+    --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+               mask-border: var(--_m);
+    clip-path: polygon(-41% 0,50% 91%, 141% 0);
+    /* background: rgba(255, 68, 0, 0.572)f; */
+    background-color: rgba(255, 224, 22, 0.572);
+  }
+
+  @supports not (-webkit-mask-box-image: var(--_m)) { 
+    .heart {
+      mask:
+       radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+       radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+       conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    }
+  }

@@ -1,0 +1,224 @@
+body{
+  background-color: rgb(218, 166, 255);
+  font-size: 25px;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:rgba(255, 255, 255, 0.853);
+}
+
+a{color:rgb(63, 0, 100); 
+  font-style: bold;
+  transition: 200ms;
+}
+
+img{
+  width: 90vw;
+  filter: grayscale(100%);
+  transition: 400ms;
+}
+
+img:hover {
+  filter: grayscale(0%);
+  transition: 400ms;
+  border-radius: 100px;
+}
+
+a:hover{
+  color:rgba(255, 29, 247, 0.927);
+  font-size: 27px;
+  transition: 200ms;
+  cursor:pointer;
+  -webkit-text-stroke: 1.2px white;
+}
+
+.wavy-line {
+  --s: 50px; /* size of the wave */
+  --b: 16px; /* thickness of the line */
+  --m: 0.4; /* curvature of the wave [0 2] */
+  transition: 200ms;
+  background: rgba(255, 255, 255, 0.853);
+  --R: calc(var(--s)*sqrt(var(--m)*var(--m) + 1) + var(--b)/2);
+  height: calc(2*var(--R));
+  --_g: #0000 calc(99% - var(--b)), #000 calc(101% - var(--b)) 99%, #0000 101%;
+  mask:
+    radial-gradient(var(--R) at left 50% bottom calc(-1*var(--m)*var(--s)), var(--_g)) 
+     calc(50% - 2*var(--s)) calc(50% - var(--s)/2 - var(--b)/2)/calc(4*var(--s)) calc(var(--s) + var(--b)) repeat-x,
+    radial-gradient(var(--R) at left 50% top calc(-1*var(--m)*var(--s)),var(--_g)) 
+     50% calc(50% + var(--s)/2 + var(--b)/2)/calc(4*var(--s)) calc(var(--s) + var(--b)) repeat-x;
+}
+
+.wavy-line:hover{
+background:rgba(255, 29, 247, 0.927);
+transition: 200ms;
+}
+
+h1{
+  color:rgb(63, 0, 100);
+  transition: 200ms;
+}
+
+h2{
+  color:rgb(63, 0, 100);
+  transition: 200ms;
+}
+
+h1:hover{
+  transition: 200ms;
+  color:rgba(255, 29, 247, 0.927);
+  cursor:default;
+}
+
+h2:hover{
+  transition: 200ms;
+  color:rgba(255, 29, 247, 0.927);
+  cursor:default;
+}
+
+li{cursor:default;}
+
+@keyframes spinny {
+0% {
+  transform: rotate(0deg);
+}
+
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes spinny2 {
+0% {
+  transform: rotate(0deg);
+}
+
+100% {
+  transform: rotate(-360deg);
+}
+}
+
+.flowers-left {
+animation: spinny 3s linear infinite;
+display: inline-block;
+}
+
+.flowers-right {
+animation: spinny2 3s linear infinite;
+display: inline-block;
+}
+
+.container1 {
+display: grid;
+grid-template-columns: 1fr 9fr 1fr;
+}
+
+.container2 {
+display: grid;
+grid-template-columns: 1fr 9fr 1fr;
+}
+
+.box1 {
+width: 100%;
+height: auto;
+}
+
+.box2 {
+width: 100%;
+height: auto;
+}
+
+@media (max-width: 768px) {
+ 
+  .container1 {
+display: grid;
+grid-template-columns: 1fr 15fr 1fr;
+}
+
+.container2 {
+display: grid;
+grid-template-columns: 1fr 15fr 1fr;
+}
+
+body{
+    background-color: rgb(255, 166, 215);
+    font-size: 15px;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:rgba(255, 255, 255, 0.853);
+}
+
+h1{
+    color:rgb(0, 126, 126);
+    font-size: 30px;
+}
+
+ h2{
+    color:rgb(0, 126, 126);
+}
+
+h1:hover{
+    transition: 200ms;
+    color:rgb(50, 255, 255);
+    cursor:default;
+}
+
+h2:hover{
+    transition: 200ms;
+    color:rgb(50, 255, 255);
+    cursor:default;
+}
+
+.wavy-line:hover{
+background:rgb(50, 255, 255);
+transition: 200ms;
+  }
+
+.wavy-line {
+    --s: 32px; /* size of the wave */
+    --b: 9px; /* thickness of the line */
+    --m: 0.4; /* curvature of the wave [0 2] */
+    
+    transition: 200ms;
+    background: rgb(0, 126, 126);
+}
+a:hover{
+    color:rgb(50, 255, 255);
+    font-size: 40px;
+    transition: 200ms;
+    cursor:pointer;
+    -webkit-text-stroke: 1.2px white;
+}
+
+a{color:rgb(0, 126, 126); 
+    font-style: bold;
+    transition: 200ms;
+}
+}
+
+@media (max-width: 460px) {
+
+h1{
+    color:rgb(0, 126, 126);
+    font-size: 18px;
+}
+
+h2{
+    color:rgb(0, 126, 126);
+    font-size: 18px;
+}
+
+.container1 {
+display: grid;
+grid-template-columns: 1fr 25fr 0.5fr;
+}
+
+.container2 {
+display: grid;
+grid-template-columns: 1fr 25fr 0.5fr;
+}
+}
+
+li{
+  line-height: 170%;
+}

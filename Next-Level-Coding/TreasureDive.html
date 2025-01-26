@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gamestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
+    <title>Treasure Dive</title>
+</head>
+<body>
+    <div class="oceanback">
+        <div class="ocean">
+            <div class="seafloor"></div>
+            <div class="clamback1"></div>
+            <div class="clamback2"></div>
+            <div class="clambottom"></div>
+            <a href="TreasureDiveCongrats.html"><div class="pearl"></div><a>
+        </div>
+    </div>
+    <div class="fish">
+        <div class="fishbody">
+            <div class="eye"></div>
+            <div class="dorsalfin"></div>
+            <div class="pecfin1"></div>
+            <div class="pecfin2"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="caudalfin"></div>
+    </div>
+
+<script>
+
+// Fish Movement (Initial code written by me, editing and support from AI)
+const fish = document.querySelector('.fish');
+
+const scrollSpeed = 4;
+
+document.addEventListener('mousemove', (event) => {
+    const mouseX = event.pageX;
+    const mouseY = event.pageY;
+
+    const fishWidth = fish.offsetWidth;
+
+    fish.style.position = 'absolute';
+    fish.style.left = `${mouseX - fishWidth}px`;
+    fish.style.top = `${mouseY}px`;
+    fish.style.transform = `translateY(-50%)`;
+
+    const viewportHeight = window.innerHeight;
+
+    if (event.clientY < viewportHeight * 0.25) {
+        window.scrollBy(0, -scrollSpeed);
+    } else if (event.clientY > viewportHeight * 0.75) {
+        window.scrollBy(0, scrollSpeed);
+    }
+});
+
+// Fish and Bubble Movement (Tracking collisions and redirection)
+// const fish = document.querySelector('.fish');
+const ocean = document.querySelector('.ocean');
+
+// Store bubbles in an array
+let bubbles = [];
+
+document.addEventListener('mousemove', (event) => {
+    const mouseX = event.pageX;
+    const mouseY = event.pageY;
+
+    const fishWidth = fish.offsetWidth;
+
+    fish.style.position = 'absolute';
+    fish.style.left = `${mouseX - fishWidth}px`;
+    fish.style.top = `${mouseY}px`;
+    fish.style.transform = `translateY(-50%)`;
+
+    const viewportHeight = window.innerHeight;
+
+    if (event.clientY < viewportHeight * 0.25) {
+        window.scrollBy(0, -scrollSpeed);
+    } else if (event.clientY > viewportHeight * 0.75) {
+        window.scrollBy(0, scrollSpeed);
+    }
+
+    // Check for collisions with bubbles
+    checkCollision();
+});
+
+// Collision Detection Function
+function checkCollision() {
+    const fishRect = fish.getBoundingClientRect();
+
+    // Loop through all the bubbles
+    for (let i = 0; i < bubbles.length; i++) {
+        const bubble = bubbles[i];
+        const bubbleRect = bubble.getBoundingClientRect();
+
+        // Check if the fish and bubble overlap
+        if (
+            fishRect.left < bubbleRect.right &&
+            fishRect.right > bubbleRect.left &&
+            fishRect.top < bubbleRect.bottom &&
+            fishRect.bottom > bubbleRect.top
+        ) {
+            // If they do, redirect to the link
+            window.location.href = "TreasureDiveFail.html";
+            return; // exit after the first collision
+        }
+    }
+}
+
+// Bubble Effects (Generate Bubbles)
+function generateBubbles() {
+    // Calculate the total height of the webpage
+    const pageHeight = document.body.scrollHeight;
+
+    for (let i = 0; i < 4; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        // Set a random horizontal position for the bubble
+        const randomLeft = Math.random() * 100; // Random percentage across the width
+        bubble.style.left = `${randomLeft}vw`;
+
+        // Set the initial position at the bottom of the ocean
+        bubble.style.bottom = '0px';
+
+        // Append the bubble to the ocean
+        ocean.appendChild(bubble);
+
+        // Store the bubble reference to check later
+        bubbles.push(bubble);
+
+        // Calculate a duration that ensures the bubble reaches the top
+        const duration = pageHeight / 300; // Adjust speed here (smaller divisor = faster)
+
+        // Set the animation with the calculated duration
+        bubble.style.animation = `floatUp ${duration}s linear`;
+
+        // Ensure the bubble is removed after the animation completes
+        setTimeout(() => {
+            bubble.remove();
+            // Remove the bubble from the tracking array
+            const index = bubbles.indexOf(bubble);
+            if (index > -1) {
+                bubbles.splice(index, 1);
+            }
+        }, duration * 2000);
+    }
+}
+
+// Generate bubbles every second
+setInterval(generateBubbles, 1400);
+
+
+</script>
+</body>
+</html>
