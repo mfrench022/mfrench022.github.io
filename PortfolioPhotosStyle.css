@@ -1,16 +1,7 @@
 .zig-zag-line {
-  --a: 144deg; /* control the angle */
-  --s: 5vw; /* size of the zig-zag */
-  --b: 0.9vw;  /* control the thickness */
-  
-  
-  background: lightblue;
-  height: calc(var(--b) + var(--s)/(2*tan(var(--a)/2)));
   width: 100%;
-  --_g:var(--s) repeat-x conic-gradient(from calc(var(--a)/-2) at bottom,
-    #0000,#000 1deg calc(var(--a) - 1deg),#0000 var(--a));
-  mask: 50% calc(-1*var(--b))/var(--_g) exclude,50%/var(--_g);
-  transition: 200ms;
+  height: 1vw;
+  background-color: lightblue;
 }
 
 body {
