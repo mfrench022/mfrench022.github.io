@@ -57,11 +57,9 @@ document.addEventListener('mousemove', (event) => {
     }
 });
 
-// Fish and Bubble Movement (Tracking collisions and redirection)
-// const fish = document.querySelector('.fish');
+// Fish and Bubble Movement (Initial code written by me, editing and support from AI)
 const ocean = document.querySelector('.ocean');
 
-// Store bubbles in an array
 let bubbles = [];
 
 document.addEventListener('mousemove', (event) => {
@@ -83,65 +81,53 @@ document.addEventListener('mousemove', (event) => {
         window.scrollBy(0, scrollSpeed);
     }
 
-    // Check for collisions with bubbles
     checkCollision();
 });
 
-// Collision Detection Function
+// Collision Detection (Initial code written by me, editing and support from AI)
 function checkCollision() {
     const fishRect = fish.getBoundingClientRect();
 
-    // Loop through all the bubbles
     for (let i = 0; i < bubbles.length; i++) {
         const bubble = bubbles[i];
         const bubbleRect = bubble.getBoundingClientRect();
 
-        // Check if the fish and bubble overlap
         if (
             fishRect.left < bubbleRect.right &&
             fishRect.right > bubbleRect.left &&
             fishRect.top < bubbleRect.bottom &&
             fishRect.bottom > bubbleRect.top
         ) {
-            // If they do, redirect to the link
             window.location.href = "TreasureDiveFail.html";
-            return; // exit after the first collision
+            return;
         }
     }
 }
 
-// Bubble Effects (Generate Bubbles)
+// Bubble Effects (Initial code written by me, editing and support from AI)
 function generateBubbles() {
-    // Calculate the total height of the webpage
     const pageHeight = document.body.scrollHeight;
 
     for (let i = 0; i < 4; i++) {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
 
-        // Set a random horizontal position for the bubble
-        const randomLeft = Math.random() * 100; // Random percentage across the width
+        const randomLeft = Math.random() * 100;
         bubble.style.left = `${randomLeft}vw`;
 
-        // Set the initial position at the bottom of the ocean
         bubble.style.bottom = '0px';
 
-        // Append the bubble to the ocean
         ocean.appendChild(bubble);
 
-        // Store the bubble reference to check later
         bubbles.push(bubble);
 
-        // Calculate a duration that ensures the bubble reaches the top
-        const duration = pageHeight / 300; // Adjust speed here (smaller divisor = faster)
+        const duration = pageHeight / 300; 
 
-        // Set the animation with the calculated duration
         bubble.style.animation = `floatUp ${duration}s linear`;
 
-        // Ensure the bubble is removed after the animation completes
         setTimeout(() => {
             bubble.remove();
-            // Remove the bubble from the tracking array
+
             const index = bubbles.indexOf(bubble);
             if (index > -1) {
                 bubbles.splice(index, 1);
@@ -150,7 +136,6 @@ function generateBubbles() {
     }
 }
 
-// Generate bubbles every second
 setInterval(generateBubbles, 1400);
 
 
