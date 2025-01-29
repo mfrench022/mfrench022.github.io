@@ -52,7 +52,7 @@ document.addEventListener('mousemove', (event) => {
 
     if (event.clientY < viewportHeight * 0.25) {
         window.scrollBy(0, -scrollSpeed);
-    } else if (event.clientY > viewportHeight * 0.75) {
+    } else if (event.clientY > viewportHeight * 0.45) {
         window.scrollBy(0, scrollSpeed);
     }
 });
@@ -77,14 +77,14 @@ document.addEventListener('mousemove', (event) => {
 
     if (event.clientY < viewportHeight * 0.25) {
         window.scrollBy(0, -scrollSpeed);
-    } else if (event.clientY > viewportHeight * 0.75) {
+    } else if (event.clientY > viewportHeight * 0.45) {
         window.scrollBy(0, scrollSpeed);
     }
 
     checkCollision();
 });
 
-// Collision Detection (Initial code written by me, editing and support from AI)
+// Collision Detection (Code writted with support from AI)
 function checkCollision() {
     const fishRect = fish.getBoundingClientRect();
 
@@ -108,7 +108,7 @@ function checkCollision() {
 function generateBubbles() {
     const pageHeight = document.body.scrollHeight;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
 
@@ -132,7 +132,7 @@ function generateBubbles() {
             if (index > -1) {
                 bubbles.splice(index, 1);
             }
-        }, duration * 2000);
+        }, duration * 2400);
     }
 }
 
