@@ -108,14 +108,14 @@ function checkCollision() {
 function generateBubbles() {
     const pageHeight = document.body.scrollHeight;
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
 
         const randomLeft = Math.random() * 100;
         bubble.style.left = `${randomLeft}vw`;
 
-        bubble.style.bottom = '0px';
+        bubble.style.bottom = '0vw';
 
         ocean.appendChild(bubble);
 

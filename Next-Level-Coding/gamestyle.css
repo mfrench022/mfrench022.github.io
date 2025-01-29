@@ -21,7 +21,7 @@ body::-webkit-scrollbar {
     background: rgb(147,109,68);
     background: linear-gradient(0deg, rgba(147,109,68,1) 0%, rgba(222,176,125,1) 100%);
     width: 100vw;
-    height: 15vw;
+    height: 25vw;
     position: absolute;
     bottom: 0px;
     z-index: 2;
@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
     --g:/14.796% 14.796% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
     mask: 100% 50% var(--g),96.985% 67.101% var(--g),88.302% 82.139% var(--g),75% 93.301% var(--g),58.682% 99.24% var(--g),41.318% 99.24% var(--g),25% 93.301% var(--g),11.698% 82.139% var(--g),3.015% 67.101% var(--g),0% 50% var(--g),3.015% 32.899% var(--g),11.698% 17.861% var(--g),25% 6.699% var(--g),41.318% 0.76% var(--g),58.682% 0.76% var(--g),75% 6.699% var(--g),88.302% 17.861% var(--g),96.985% 32.899% var(--g),radial-gradient(100% 100%,#000 41.955%,#0000 calc(41.955% + 1px));
     Position: absolute;
-    bottom: 15vw;
+    bottom: 25vw;
     left: 42vw;
     background: rgb(150,150,150);
     background: linear-gradient(0deg, rgba(150,150,150,1) 0%, rgba(99,99,99,1) 100%);
@@ -47,7 +47,7 @@ body::-webkit-scrollbar {
     width: 16vw;
     height: 8vw;
     position: absolute;
-    bottom: 15vw;
+    bottom: 25vw;
     border-bottom-left-radius: 300vw;
     border-bottom-right-radius: 300vw;
     left: 42vw;
@@ -60,7 +60,7 @@ body::-webkit-scrollbar {
     width: 16vw;
     height: 16vw;
     position: absolute;
-    bottom: 2vw;
+    bottom: 12vw;
     border-radius: 100%;
     z-index: 2;
     left: 42vw;
@@ -75,7 +75,7 @@ body::-webkit-scrollbar {
     aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
-    bottom: 11vw;
+    bottom: 21vw;
     background: 
       radial-gradient(circle at 40% 30%,#0000 4%,57%,#000 90%) 
       #ffaae0;
@@ -232,7 +232,7 @@ a:hover {
   position: absolute;
   background: rgb(255,29,240);
   background: radial-gradient(circle, rgba(255,29,240,1) 0%, rgba(130,0,65,1) 69%);
-  z-index: 1;
+  z-index: 5;
   pointer-events: none; /* Prevent interaction with bubbles */
   animation-fill-mode: forwards; /* Ensure the animation stays at its final position */
   aspect-ratio: 1;
