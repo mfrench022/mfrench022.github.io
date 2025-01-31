@@ -5,7 +5,7 @@
 }
 
 body {
-  min-height: 100vh; 
+  /* min-height: 100vh;  */
   background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
   margin: 0;
   padding: 0;
