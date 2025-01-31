@@ -163,6 +163,7 @@ body::-webkit-scrollbar {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: 200ms;
     border-top-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
   }
   
   .button:hover {
@@ -290,7 +291,7 @@ html, body {
   position: static;
   color: white;
 }
-
+/* 
 @media (max-width: 700px) {
   
   .box3 ul {
@@ -302,6 +303,6 @@ html, body {
     font-size: 1.5vw;
     left: -4vw;
   }
-}
+} */
   
   
