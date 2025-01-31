@@ -1,6 +1,6 @@
 .zig-zag-line {
   width: 100%;
-  height: 1vw;
+  height: 0.5vw;
   background-color: lightblue;
   transition: 200ms;
   }
