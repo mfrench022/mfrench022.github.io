@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poster Test 1</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #3c3c3c;
+        cursor: url('grammy.png'), auto;
+      }
+    </style>
 </head>
 <body>
     
@@ -32,8 +44,8 @@ function setup() {
 
   // Hide the cursor and replace it with a picture of
   // a paintbrush.
-  noCursor();
-  cursor('grammy.png', 90, -10);
+  // noCursor();
+  // cursor('grammy.png', 90, -10);
 
   // Load the top image (the black-and-white image).
   image(topImg, 0, 0);
