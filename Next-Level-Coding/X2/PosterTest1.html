@@ -14,49 +14,37 @@
         justify-content: center;
         align-items: center;
         background: #3c3c3c;
-        cursor: url('grammy.png'), auto;
       }
     </style>
+
 </head>
 <body>
-    
-
-
 <script>
 
-// Define the global variables: bottomImg and topImg.
-let bottomImg, topImg;
+// Base code pulled from P5 online library: https://p5js.org/examples/imported-media-copy-image-data/
+let bottomImg, topImg, cursorImg;
 
 function preload() {
-  // Preload the images from the canvas's assets directory.
-  // The bottomImg is the photograph with color,
-  // and the topImg is the black-and-white photograph.
   bottomImg = loadImage('color.png');
   topImg = loadImage('sketch.png');
+  cursorImg = loadImage('cursor.png');
 }
 
 function setup() {
-  // describe(
-  //   'Black-and-white photograph of Beyonce. The cursor, when dragged across the canvas, adds color to the photograph.'
-  // );
-
   createCanvas(800, 800);
-
-  // Hide the cursor and replace it with a picture of
-  // a paintbrush.
-  // noCursor();
-  // cursor('grammy.png', 90, -10);
-
-  // Load the top image (the black-and-white image).
+  noCursor(); 
   image(topImg, 0, 0);
 }
-function mouseDragged() {
-  // Using the copy() function, copy the bottom image
-  // on top of the top image when you drag your cursor
-  // across the canvas.
-  copy(bottomImg, mouseX, mouseY, 40, 40, mouseX, mouseY, 40, 40);
+
+function draw() {
+  clear();
+  image(topImg, 0, 0);
+  image(cursorImg, mouseX, mouseY);
 }
 
+function mouseDragged() {
+  copy(bottomImg, mouseX, mouseY, 40, 40, mouseX, mouseY, 40, 40);
+}
 
 </script>
 
