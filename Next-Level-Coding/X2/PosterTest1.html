@@ -28,7 +28,7 @@ function setup() {
     'Black-and-white photograph of Beyonce. The cursor, when dragged across the canvas, adds color to the photograph.'
   );
 
-  createCanvas(1400, 1400);
+  createCanvas(1000, 1000);
 
   // Hide the cursor and replace it with a picture of
   // a paintbrush.
@@ -42,7 +42,7 @@ function mouseDragged() {
   // Using the copy() function, copy the bottom image
   // on top of the top image when you drag your cursor
   // across the canvas.
-  copy(bottomImg, mouseX, mouseY, 20, 20, mouseX, mouseY, 20, 20);
+  copy(bottomImg, mouseX, mouseY, 40, 40, mouseX, mouseY, 40, 40);
 }
 
 
