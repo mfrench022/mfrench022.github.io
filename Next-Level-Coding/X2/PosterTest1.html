@@ -15,26 +15,20 @@
 // Define the global variables: bottomImg and topImg.
 let bottomImg, topImg;
 
-// function preload() {
-//   // Preload the images from the canvas's assets directory.
-//   // The bottomImg is the photograph with color,
-//   // and the topImg is the black-and-white photograph.
-//   bottomImg = loadImage('color.png');
-//   topImg = loadImage('sketch.png');
-// }
-
 function preload() {
-  bottomImg = loadImage('color.jpg', img => console.log('Color image loaded'), err => console.error('Error loading color image', err));
-  topImg = loadImage('sketch.jpg', img => console.log('Sketch image loaded'), err => console.error('Error loading sketch image', err));
+  // Preload the images from the canvas's assets directory.
+  // The bottomImg is the photograph with color,
+  // and the topImg is the black-and-white photograph.
+  bottomImg = loadImage('color.png');
+  topImg = loadImage('sketch.png');
 }
-
 
 function setup() {
   describe(
-    'Black-and-white photograph of a parrot. The cursor, when dragged across the canvas, adds color to the photograph.'
+    'Black-and-white photograph of Beyonce. The cursor, when dragged across the canvas, adds color to the photograph.'
   );
 
-  createCanvas(2048, 2048);
+  createCanvas(1400, 1400);
 
   // Hide the cursor and replace it with a picture of
   // a paintbrush.
