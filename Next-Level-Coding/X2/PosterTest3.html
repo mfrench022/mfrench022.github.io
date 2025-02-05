@@ -5,42 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poster Test 3</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
-
-    <style>
-           body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #000000;
-        overflow: hidden;
-        /* cursor: url('cursor.png') 30 30, auto; */
-      }
-
-      .container {
-        position: relative;
-        
-      }
-
-      .image {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        left: -800px;
-      }
-
-
-    </style>
 </head>
 
 <body>
-<!-- <div class ='container'>
-    <div class ='image'>
-        <img src="Beyonce_fullbanner2-2.png">
-    </div>
-</div> -->
 
 <script>
 let img;  // Variable to hold the image
@@ -51,24 +18,20 @@ let springing = 0.0009;
 
 function preload() {
   img = loadImage('Grammy2.png'); // Replace with the correct path to your PNG file
-//   topImg = loadImage('Beyonce_fullbanner2-2.png');
 }
 
 function setup() {
   createCanvas(800, 800);
-//   canvas.style('background-color', 'transparent');
   centerX = width / 2;
   centerY = height / 2;
   noStroke();
-  image(topImg, 0, 0);
 }
 
 function draw() {
-    // clear();
-
+  background(0, 50);
   moveImage();
   imageMode(CENTER);
-  image(img, centerX, centerY, img.width / 1, img.height / 1); // Display image at center
+  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
 }
 
 function moveImage() {
