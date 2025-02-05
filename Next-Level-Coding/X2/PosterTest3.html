@@ -46,10 +46,11 @@ function setup() {
 }
 
 function draw() {
-  background(0, 50);
+  background(0, 50); // Clear canvas with transparency
+  image(img2, 0, 0, width, height); // Display 'cowboy.png' as full background
   moveImage();
   imageMode(CENTER);
-  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
+  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display moving image
 }
 
 function moveImage() {
