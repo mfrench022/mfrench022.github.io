@@ -36,11 +36,11 @@
 </head>
 
 <body>
-<div class ='container'>
+<!-- <div class ='container'>
     <div class ='image'>
         <img src="Beyonce_fullbanner2-2.png">
     </div>
-</div>
+</div> -->
 
 <script>
 let img;  // Variable to hold the image
@@ -51,6 +51,7 @@ let springing = 0.0009;
 
 function preload() {
   img = loadImage('Grammy2.png'); // Replace with the correct path to your PNG file
+  topImg = loadImage('Beyonce_fullbanner2-2.png');
 }
 
 function setup() {
@@ -59,6 +60,7 @@ function setup() {
   centerX = width / 2;
   centerY = height / 2;
   noStroke();
+  image(topImg, 0, 0);
 }
 
 function draw() {
