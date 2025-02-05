@@ -14,9 +14,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: none; /* Ensures default cursor is hidden */
         }
     </style>
-
 </head>
 
 <body>
@@ -30,7 +30,7 @@ let damping = 0.98;
 let springing = 0.0009;
 
 function preload() {
-  img = loadImage('Grammy2.png'); // Replace with the correct path
+  img = loadImage('Grammy2.png'); // Replace with correct path
   cursorImg = loadImage('whitehorsecursor.png'); // Replace with your cursor image file
 }
 
@@ -39,17 +39,17 @@ function setup() {
   centerX = width / 2;
   centerY = height / 2;
   noStroke();
-  noCursor(); // Hide default cursor
+  noCursor(); // Hides the default cursor
 }
 
 function draw() {
   background(0, 50);
   moveImage();
   imageMode(CENTER);
-  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
+  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display main image
 
   // Draw custom cursor at mouse position
-  image(cursorImg, mouseX, mouseY, cursorImg.width / 2, cursorImg.height / 2);
+  image(cursorImg, mouseX, mouseY, 40, 40); // Adjust size if needed
 }
 
 function moveImage() {
