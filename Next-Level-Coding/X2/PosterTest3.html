@@ -19,18 +19,19 @@
 
 </head>
 
-
 <body>
 
 <script>
-let img;  // Variable to hold the image
+let img;  // Main image
+let cursorImg; // Cursor image
 let centerX, centerY;
 let accelX = 0.0, accelY = 0.0;
 let damping = 0.98;
 let springing = 0.0009;
 
 function preload() {
-  img = loadImage('Grammy2.png'); // Replace with the correct path to your PNG file
+  img = loadImage('Grammy2.png'); // Replace with the correct path
+  cursorImg = loadImage('whitehorsecursor.png'); // Replace with your cursor image file
 }
 
 function setup() {
@@ -38,6 +39,7 @@ function setup() {
   centerX = width / 2;
   centerY = height / 2;
   noStroke();
+  noCursor(); // Hide default cursor
 }
 
 function draw() {
@@ -45,6 +47,9 @@ function draw() {
   moveImage();
   imageMode(CENTER);
   image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
+
+  // Draw custom cursor at mouse position
+  image(cursorImg, mouseX, mouseY, cursorImg.width / 2, cursorImg.height / 2);
 }
 
 function moveImage() {
