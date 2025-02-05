@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poster Test 3</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+
+    <style>
+           body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000000;
+        /* cursor: url('cursor.png') 30 30, auto; */
+      }
+    </style>
 </head>
+
 <body>
 <div class ='container'></div>
 
@@ -21,7 +34,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(710, 400);
+  createCanvas(800, 800);
   centerX = width / 2;
   centerY = height / 2;
   noStroke();
