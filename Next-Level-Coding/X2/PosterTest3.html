@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Test 3</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+</head>
+<body>
+<div class ='container'></div>
+
+<script>
+let img;  // Variable to hold the image
+let centerX, centerY;
+let accelX = 0.0, accelY = 0.0;
+let damping = 0.98;
+let springing = 0.0009;
+
+function preload() {
+  img = loadImage('Grammy2.png'); // Replace with the correct path to your PNG file
+}
+
+function setup() {
+  createCanvas(710, 400);
+  centerX = width / 2;
+  centerY = height / 2;
+  noStroke();
+}
+
+function draw() {
+  background(0, 50);
+  moveImage();
+  imageMode(CENTER);
+  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
+}
+
+function moveImage() {
+  let deltaX = (mouseX - centerX) * springing;
+  let deltaY = (mouseY - centerY) * springing;
+
+  accelX += deltaX;
+  accelY += deltaY;
+
+  centerX += accelX;
+  centerY += accelY;
+
+  accelX *= damping;
+  accelY *= damping;
+}
+</script>
+
+</body>
+</html>
