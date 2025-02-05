@@ -14,13 +14,33 @@
         justify-content: center;
         align-items: center;
         background: #000000;
+        overflow: hidden;
         /* cursor: url('cursor.png') 30 30, auto; */
       }
+
+      .container {
+        position: relative;
+        
+      }
+
+      .image {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        left: -800px;
+      }
+
+
     </style>
 </head>
 
 <body>
-<div class ='container'></div>
+<div class ='container'>
+    <div class ='image'>
+        <img src="Beyonce_fullbanner2-2.png">
+    </div>
+</div>
 
 <script>
 let img;  // Variable to hold the image
