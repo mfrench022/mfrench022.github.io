@@ -23,10 +23,7 @@
 <body>
 
 <script>
-// Base code pulled from P5 online library: https://p5js.org/examples/math-and-physics-soft-body/
-
 let img;  // Variable to hold the image
-let img2;
 let centerX, centerY;
 let accelX = 0.0, accelY = 0.0;
 let damping = 0.98;
@@ -34,7 +31,6 @@ let springing = 0.0009;
 
 function preload() {
   img = loadImage('Grammy2.png'); // Replace with the correct path to your PNG file
-  img2 = loadImage('cowboy.png')
 }
 
 function setup() {
@@ -42,15 +38,13 @@ function setup() {
   centerX = width / 2;
   centerY = height / 2;
   noStroke();
-  image(img2, 0, 100);
 }
 
 function draw() {
-  background(0, 50); // Clear canvas with transparency
-  image(img2, 0, 0, width * 0.8, height * 0.8); // 80% of the canvas size
+  background(0, 50);
   moveImage();
   imageMode(CENTER);
-  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display moving image
+  image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
 }
 
 function moveImage() {
