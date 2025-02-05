@@ -31,7 +31,7 @@ let springing = 0.0009;
 
 function preload() {
   img = loadImage('Grammy2.png'); // Replace with the correct path
-  cursorImg = loadImage('whitehorsecursor.png'); // Replace with your cursor image file
+  cursorImg = loadImage('cursor.png'); // Replace with your cursor image file
 }
 
 function setup() {
@@ -49,7 +49,7 @@ function draw() {
   image(img, centerX, centerY, img.width / 2, img.height / 2); // Display image at center
 
   // Draw custom cursor at mouse position
-  image(cursorImg, mouseX, mouseY, cursorImg.width, cursorImg.height;
+  image(cursorImg, mouseX, mouseY, cursorImg.width / 2, cursorImg.height / 2);
 }
 
 function moveImage() {
