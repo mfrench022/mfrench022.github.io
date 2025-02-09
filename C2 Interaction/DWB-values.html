@@ -4,56 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Without Borders | Our Values</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kxf2qym.css">
 
     <style>
+      body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .button {
+            width: 8vw;
+            height: 3vw;
+            background-color: none;
+            position: fixed;
+            right: 2vw;
+            top: 2.5vw;
+            border: 0.2vw solid #23408f;
+            z-index: 8;
+            transition: 400ms;
+        }
+
+        .button:hover {
+            background-color: #3e54a599;
+            border: 0.2vw solid white;
+            transition: 400ms;
+        }
+
+        .button:hover p{
+            color: white;
+            transition: 400ms;
+        }
+
         .homebutton {
-            width: 80px;
-            height: 40px;
-            background-color: lightcoral;
-            align-items: center;
-            justify-content: center;
-            line-height: 40px;
-            position: absolute;
-            right: 20px;
-            top: 10px;
+            width: 3vw;
+            height: 3vw;
+            background-color: none;
+            position: fixed;
+            left: 2vw;
+            top: 2.5vw;
+            border: 0.2vw solid #23408f;
+            z-index: 8;
+            transition: 400ms;
+        }
+
+        .homebutton h2 {
+            font-size: 3vw;
+            margin: 0;
+            line-height: 2.7vw;
+            color: #23408f;
+            margin-bottom: 1vw;;
+        }
+
+
+        .homebutton:hover {
+            background-color: #3e54a599;
+            border: 0.2vw solid white;
+            transition: 400ms;
+        }
+
+        .homebutton:hover h2{
+            color: white;
+            transition: 400ms;
         }
 
         .container {
             position: relative;
             width: 100%;
-            height: 100%;
-            padding-left: 10px;
+            height: 65vw;
+            padding: 0px;
+            /* background-color: #303c66; */
+            margin: 0px;
+            overflow: hidden;
         }
 
-        .homebutton p {
-            margin-left: 12px;
-            margin-top: 1px;
+        .button p {
+            line-height: 1vw;
+            z-index: 9;
+            color: #23408f;
+            transition: 400ms;
+            font-size: 1vw;
+        }
+
+        h1 {
+        font-family: "fenwick", sans-serif;
+        font-weight: 700;
+        }
+
+        h2 {
+        font-family: "fenwick", sans-serif;
+        font-weight: 400;
+        font-size: 1.5vw;
+        }
+
+        p {
+        font-family: "fenwick", sans-serif;
+        font-weight: 300;
+        font-size: 1.2vw;
+        }
+      
+        .imagetext {
+            position: absolute;
+            top: -5.5vw;
+            z-index: 0;
+            /* background-color: green; */
+            height: 71vw;
+        }
+
+        .imagetext img {
+         width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            transition: 400ms;
+        }
+
+        a:hover {
+            cursor: pointer;
+            transition: 400ms;
+        }
+
+        .header {
+            font-size: 3vw;
+            position: absolute;
+            left: 8vw;
+            top: 1.4vw;
+            color: #23408f;
+        }
+
+        .row1 {
+            width: 96vw;
+            margin-left: 2vw;
+            height: 48vw;
+            position: absolute;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 2vw;
+            /* background-color: yellow; */
+        }
+
+        .column1{
+            width: 100%;
+            position: relative;
+            margin-top: 3.5vw;
+            /* background-color: red; */
+        }
+
+        .column2{
+            width: 100%;
+            position: relative;
+            /* background-color: orange; */
+            margin-top: 10vw;
+        }
+
+        .column3{
+            width: 100%;
+            position: relative;
+            margin-top: -1vw;
+            /* background-color: green; */
+        }
+
+        .column4{
+            width: 100%;
+            position: relative;
+            /* background-color: blue; */
+            margin-top: 15.5vw;
+        }
+
+        .column5{
+            width: 100%;
+            position: relative;
+            /* background-color: purple; */
+            margin-top: 5.4vw;
         }
     </style>
 </head>
 
 <body>
+    <div class = "container">
+        <a href = "DWB-contents.html"><div class = "button"><center><p>Contents</p></center></div></a>
+        <a href = "DWB-home.html"><div class = "homebutton"><center><h2>⌂</h2></center></div></a>
+        <div class="header">
+            <h1>OUR VALUES</h1>
+        </div>
+     
+        <div class="row1">
+            <div class="column1">
+                <h2>We are committed to bearing witness</h2>
+                <p>We believe that the principles of impartiality and neutrality are not synonymous with silence. When the world turns its back on crises, we are duty-bound to raise our voices and speak out on behalf of our patients. Our decision to do so is always guided by our mission to do no harm, preserve respect and dignity, and protect life and health.</p>  
+            </div>
 
-<div class = "container">
-    <h1>Vision Values Action [Large background text with feather effect]</h1> <br>
-    <h2>Our Values</h2> <br>
-    <h2>We are transparent and accountable</h2> <br>
-    <p>Accountability is at the core of MSF’s identity. We strive to be as open and transparent as possible when it comes to the work we do and the money we spend. Our financial independence ensures that the aid we provide is not used to further any government’s political or military goals. Most of our funding comes from small donations; 98 percent of the money we raised globally in 2025 came from individual donors and private institutions. MSF USA does not accept any government funding.</p> <br>
+            <div class="column2">
+                <h2>We are transparent and accountable</h2>
+                <p>Accountability is at the core of MSF’s identity. We strive to be as open and transparent as possible when it comes to the work we do and the money we spend. Our financial independence ensures that the aid we provide is not used to further any government’s political or military goals. Most of our funding comes from small donations; 98 percent of the money we raised globally in 2025 came from individual donors and private institutions. MSF USA does not accept any government funding.</p>  
+            </div>
 
-    <h2>We are committed to bearing witness</h2> <br>
-    <p>We believe that the principles of impartiality and neutrality are not synonymous with silence. When the world turns its back on crises, we are duty-bound to raise our voices and speak out on behalf of our patients. Our decision to do so is always guided by our mission to do no harm, preserve respect and dignity, and protect life and health.</p> <br>
+            <div class="column3">
+                <h2>We are independent, impartial, and neutral</h2>
+                <p>Doctors Without Borders/ Médecins Sans Frontières (MSF) offers medical humanitarian assistance to people based solely on need, irrespective of race, religion, gender, or political affiliation. Our teams of doctors, nurses, logisticians, and other frontline workers are often among the first on the scene when peoples’ lives are upended by conflict, disease outbreaks, or natural or human-made disasters.</p>
+            </div>
 
-    <h2>We are independent, impartial, and neutral</h2> <br>
-    <p>Doctors Without Borders/Médecins Sans Frontières (MSF) offers medical humanitarian assistance to people based solely on need, irrespective of race, religion, gender, or political affiliation. Our teams of doctors, nurses, logisticians, and other frontline workers are often among the first on the scene when peoples’ lives are upended by conflict, disease outbreaks, or natural or human-made disasters.</p> <br>
+            <div class="column4">
+                <h2>We are guided by medical ethics</h2> 
+                <p>Above all, MSF’s goal is to do no harm. We’re committed to providing the highest quality medical care possible—no matter where we’re working—and to acting in our patients’ best interests, respecting their rights to dignity, confidentiality, informed consent, and to make their own decisions.</p> 
+            </div>
 
-    <h2>We are committed to diversity, equity, and inclusion</h2> <br>
-    <p>With over 69,000 staff members of 169 nationalities working in more than 70 countries around the world, we recognize that diversity, equity, and inclusion are inextricably linked to the success of our medical humanitarian mission. We are making changes across our organization to better reflect this incredible diversity and build one global workforce by challenging operational structures, creating more opportunities for locally hired staff, reevaluating compensation and benefits policies, and more.</p> <br>
-
-    <h2>We are guided by medical ethics</h2> <br>
-    <p>Above all, MSF’s goal is to do no harm. We’re committed to providing the highest quality medical care possible—no matter where we’re working—and to acting in our patients’ best interests, respecting their rights to dignity, confidentiality, informed consent, and to make their own decisions.</p> <br>
-
-    <a href = "DWB-contents.html"><div class = "homebutton"><p>Contents</p></div></a>
-</div>
-
+            <div class="column5">
+                <h2>We are committed to diversity, equity, and inclusion</h2> 
+                <p>With over 69,000 staff members of 169 nationalities working in more than 70 countries around the world, we recognize that diversity, equity, and inclusion are inextricably linked to the success of our medical humanitarian mission. We are making changes across our organization to better reflect this incredible diversity and build one global workforce by challenging operational structures, creating more opportunities for locally hired staff, reevaluating compensation and benefits policies, and more.</p> 
+            </div>
+        </div>
+        <div class = "imagetext"><img src = "VVA.png"></div>
+    </div>
 </body>
 </html>
