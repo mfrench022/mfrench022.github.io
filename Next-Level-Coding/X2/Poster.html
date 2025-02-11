@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Test 3</title>
+
+    <style>
+        body {
+            /* background-color: black; */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: none; /* Ensures default cursor is hidden */
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            /* background-color: yellow; */
+            position: relative;
+        }
+
+        .toprow {
+            width: 100%;
+            height: 50vh;
+            background-color: red;
+            position: absolute;
+            top: 0;
+        }
+
+        .starrow {
+            width: 100%;
+            height: 10vh;
+            background-color: blue;
+            position: absolute;
+            top: 50vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .bottomrow{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            background-color: yellow;
+            position: absolute;
+            width: 100%;
+            height: 40vh;
+            top: 60vh;
+        }
+
+        .column1 {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+        }
+
+        .column1 {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+        }
+
+        .column2 {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+        /* HTML: <div class="star"></div> */
+.star {
+  width: 100%;  
+  aspect-ratio: 1;
+  background: #ffffff;
+  clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+   ); 
+  /* or more simple
+  clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%); 
+   */
+}
+    </style>
+</head>
+
+<div class = "container">
+    <div class="toprow"></div>
+    <div class="starrow">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    <div class="bottomrow">
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+        <div class="column1"></div>
+        <div class="column2"></div>
+    </div>
+</div>
+
+<script>
+    let img;  // Main image
+    // let cursorImg; // Cursor image
+    let centerX, centerY;
+    let accelX = 0.0, accelY = 0.0;
+    let damping = 0.98;
+    let springing = 0.0009;
+    
+    function preload() {
+    //   img = loadImage('Grammy2.png'); // Replace with correct path
+    //   cursorImg = loadImage('whitehorsecursor.png'); // Replace with your cursor image file
+    }
+    
+    function setup() {
+      createCanvas(800, 800);
+      centerX = width / 2;
+      centerY = height / 2;
+      noStroke();
+    //   noCursor(); // Hides the default cursor
+    }
+    
+    function draw() {
+      background(0, 50);
+      moveImage();
+      imageMode(CENTER);
+      image(img, centerX, centerY, img.width / 2, img.height / 2); // Display main image
+    
+      // Draw custom cursor at mouse position
+      image(cursorImg, mouseX, mouseY, 40, 40); // Adjust size if needed
+    }
+    
+    function moveImage() {
+      let deltaX = (mouseX - centerX) * springing;
+      let deltaY = (mouseY - centerY) * springing;
+    
+      accelX += deltaX;
+      accelY += deltaY;
+    
+      centerX += accelX;
+      centerY += accelY;
+    
+      accelX *= damping;
+      accelY *= damping;
+    }
+    </script>
+
+
+<body>
+
+</body>
+</html>

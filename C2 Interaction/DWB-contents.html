@@ -4,94 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Without Borders | Contents</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kxf2qym.css">
 
     <style>
-
-        .button {
-            width: 80px;
-            height: 40px;
-            background-color: white;
-            align-items: center;
-            justify-content: center;
-            line-height: 40px;
-            position: absolute;
-            right: 20px;
-            top: 10px;
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            padding-left: 10px;
-        }
-
-        .button p {
-            margin-left: 20px;
-            margin-top: 1px;
-        }
-
-        .movement {
-            position: absolute;
-            top: 100px;
-            right: 20px;
-            height: 400px;
-            width: 900px;
-            background-color: white;
-            padding: 30px;
-        }
-
         body {
-            background-color: lightblue;
-            margin: 0px;
-            padding: 0px;
-            margin-left: 100px;
+              margin: 0px;
+              padding: 0px;
+              background-color: #3e54a599;
+              overflow-y: hidden;
+          }
+  
+          .button {
+              width: 3vw;
+              height: 3vw;
+              background-color: none;
+              position: fixed;
+              left: 1.6vw;
+              top: .1vw;
+              /* border: 0.2vw solid #23408f00; */
+              z-index: 8;
+              transition: 400ms;
+          }
+  
+          kbd {
+              font-size: 3.5vw;
+              transition: 400ms;
+              color: #23408f;
+          }
+  
+          .button:hover kbd {
+              color: #3e54a599;
+              transition: 400ms;
+          }
+  
+          .homebutton {
+              width: 3vw;
+              height: 3vw;
+              background-color: none;
+              position: fixed;
+              right: 2vw;
+              top: .7vw;
+              border: 0.2vw solid #23408f00;
+              z-index: 8;
+              transition: 400ms;
+          }
+  
+          .homebutton h2 {
+              font-size: 3vw;
+              margin: 0;
+              line-height: 2.7vw;
+              color: #23408f;
+              margin-bottom: 1vw;
+          }
+  
+  
+          .homebutton:hover {
+              background-color: #3e54a599;
+              border: 0.2vw solid rgba(255, 255, 255, 0);
+              transition: 400ms;
+          }
+  
+          .homebutton:hover h2{
+              color: white;
+              transition: 400ms;
+          }
+  
+          .container {
+              position: relative;
+              width: 100%;
+              height: 65vw;
+              padding: 0px;
+              background-color: white;
+              margin: 0px;
+              overflow: hidden;
+          }
+  
+          h1 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 700;
+          color: #23408f;
+          }
+  
+          h2 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 400;
+          font-size: 1.5vw;
+          color: #23408f;
+          }
+  
+          p {
+          font-family: "fenwick", sans-serif;
+          font-weight: 300;
+          font-size: 1.2vw;
+          }
+  
+          .header {
+              font-size: 3vw;
+              position: absolute;
+              left: 8vw;
+              top: 1.4vw;
+              color: #23408f;
+              z-index: 7;
+          }
+
+          .contentspanel {
+            background-color: #3e54a599;
+            width: 28.15vw;
+            height: 100%;
+            margin-top: 0vw;
+            padding-top: 18vw;
+            z-index: 6;
+          }
+
+          .global {
+            position: absolute;
+            height: 100%;
+            width: 100vw;
+            right: 0;
+          }
+
+          .global img {
+            height: 102%;
+            margin-top: -5vw;
+            margin-left: 18vw;
+          }
+
+          .row1 {
+            width: 67.85vw;
+            right: 2vw;
+            height: 68vw;
+            position: absolute;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 2vw;
+            /* background-color: yellow; */
         }
 
-        .block {
-            width: 75px;
-            height: 100vh;
-            left: -100px;
-            position: absolute;
-            background-color: white;
-            top: -25px;
+        .column1{
+            width: 100%;
+            position: relative;
+            padding-top: 35vw;
+            z-index: 2;
+            transition: 400ms;
+            /* background-color: red; */
         }
-    </style>
+
+        .column2{
+            width: 100%;
+            position: relative;
+            padding-top: 20.7vw;
+            z-index: 2;
+            transition: 400ms;
+            /* background-color: orange; */
+        }
+
+        .column3{
+            width: 100%;
+            position: relative;
+            padding-top: 14.8vw;
+            z-index: 2;
+            transition: 400ms;
+            /* background-color: green; */
+        }
+
+        /* a {
+              text-decoration: none;
+              transition: 400ms;
+          }
+  
+          a:hover {
+              cursor: pointer;
+              transition: 400ms;
+          }
+  
+      li a{
+              font-size: 1.47vw;
+              font-weight: 300;
+              line-height: 3.5vw;
+              font-family: "fenwick", sans-serif;
+              font-weight: 400;
+              color: white;
+              margin-left: 1vw;
+              z-index: 7;
+          }
+
+          ul {
+            list-style: none;
+          }
+           */
+      </style>
 
 </head>
 <body>
 
-<div class = "container">
-    <div class = "block"></div>
-    <h1>Contents [Panel to slide out from right side on button click and cover the majority of the Home page]</h1><p>Technically this will not be its own page, but a slide out menu within the Home page</p> <br>
-    <h2></h2>
-    <p>
-        <ul>
-            <li><a href = "DWB-action.html">Recent Highlights</a></li>
-            <li><a href = "DWB-values.html">Our Values</a></li>
-            <li><a href = "DWB-null.html">From the Global Director</a></li>
-            <li><a href = "DWB-null.html">Celebrating Our Benefators</a></li>
-            <li><a href = "DWB-null.html">Overview</a></li>
-            <li><a href = "DWB-null.html">New Initiatives</a></li>
-            <li><a href = "DWB-null.html">Future Challenges</a></li>
-        </ul>
-       ------------------------------------------------------------------------------
-        <ul>
-            <li><a href = "DWB-financeoverview.html">Financials</a><br></li>
-        </ul>
-    </p>
-    
-    <a href = "DWB-home.html"><div class = "button"><p>Home</p></div></a>
 
-    <div class ="movement">
-        <h1>A Global Movement [Large background text with feather effect]</h1><br>
-        <p>
-            Doctors Without Borders/Médecins Sans Frontières (MSF) was founded in 1971 in France by a group of doctors and journalists in the wake of war and famine in Biafra, Nigeria. Their aim was to establish an independent organization that focused on delivering emergency medical humanitarian aid quickly, effectively, and impartially. <br><br>
-            Three hundred volunteers made up the organization when it was founded, including doctors, nurses, logistics experts, and other staff, including the 13 founding members. MSF was established on the belief that all people should have access to high quality health care, regardless of gender, race, religion, creed, or political affiliation. From the start, our teams made a commitment not just to care for patients but to bear witness to their experiences and speak out to call attention to the problems driving emergency needs. <br><br>
-            Over the past five decades, MSF has grown from a group of a few hundred volunteers to an international movement of more than 69,000 staff providing over 16 million medical consultations in more than 70 countries every year. But the core values of humanitarianism, independence, neutrality, and impartiality that brought those original members together in 1971 continue to drive our work.
-        </p>
+    <div class = "container">
+        <div class = "global"><img src="global.png"></div>
+        <a href = "DWB-home.html"><div class = "homebutton"><center><h2>𖠿</h2></center></div></a>
+        <div class="header">
+            <h1>CONTENTS</h1>
+        </div>
+
+        <div class="contentspanel">
+            <ul>
+                <li><a href="DWB-action.html">Recent Highlights</a></li>
+                <li><a href="DWB-values.html">Our Values</a></li>
+                <li><a href = "DWB-null.html">From the Global Director</a></li>
+                <li><a href = "DWB-null.html">Celebrating Our Benefators</a></li>
+                <li><a href = "DWB-null.html">Overview</a></li>
+                <li><a href = "DWB-null.html">New Initiatives</a></li>
+                <li><a href = "DWB-null.html">Future Challenges</a></li>
+                <br><br>
+                <li><a href = "DWB-financeoverview.html">Financials</a></li>
+            </ul>
+        </div>
+
+        <div class="row1">
+            <div class="column1"><p>Doctors Without Borders/
+                Médecins Sans Frontières (MSF) was founded in 1971 in France
+                by a group of doctors and journalists in the wake of war and famine
+                in Biafra, Nigeria. Their aim was to establish an independent organization that focused on delivering emergency medical humanitarian aid quickly, effectively, and impartially.</p></div>
+            <div class="column2"><p>Three hundred volunteers made up the organization when it was founded, including doctors, nurses, logistics experts, and other staff, including the 13 founding members. MSF was established on the belief that all people should have access to high quality health care, regardless of gender, race, religion, creed, or political affiliation. From the start, our teams made a commitment not just to care for patients but to bear witness to their experiences and speak out to call attention to the problems driving emergency needs.</p></div>
+            <div class="column3"><p>Over the past five decades, MSF has grown from a group of a few hundred volunteers to an international movement of more than 69,000 staff providing over 16 million medical consultations in more than 70 countries every year. But the core values of humanitarianism, independence, neutrality, and impartiality that brought those original members together in 1971 continue to drive our work.</p></div>
+        </div>
     </div>
-</div>
-
 </body>
 </html>
