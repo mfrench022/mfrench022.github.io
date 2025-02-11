@@ -11,27 +11,60 @@
             margin: 0px;
             padding: 0px;
             background-color: white;
+            overflow-x: hidden;
         }
 
         .button {
-            width: 8vw;
+            width: 3vw;
             height: 3vw;
             background-color: none;
             position: fixed;
-            right: 2vw;
-            top: 2.5vw;
-            border: 0.2vw solid #23408f;
+            left: 1.6vw;
+            top: .1vw;
+            /* border: 0.2vw solid #23408f00; */
             z-index: 8;
             transition: 400ms;
         }
 
-        .button:hover {
-            background-color: #3e54a599;
-            border: 0.2vw solid white;
+        kbd {
+            font-size: 3.5vw;
+            transition: 400ms;
+            color: #23408f;
+        }
+
+        .button:hover kbd {
+            color: #3e54a599;
             transition: 400ms;
         }
 
-        .button:hover p{
+        .homebutton {
+            width: 3vw;
+            height: 3vw;
+            background-color: none;
+            position: fixed;
+            right: 2vw;
+            top: .7vw;
+            border: 0.2vw solid #23408f00;
+            z-index: 8;
+            transition: 400ms;
+        }
+
+        .homebutton h2 {
+            font-size: 3vw;
+            margin: 0;
+            line-height: 2.7vw;
+            color: #23408f;
+            margin-bottom: 1vw;
+        }
+
+
+        .homebutton:hover {
+            background-color: #3e54a599;
+            border: 0.2vw solid rgba(255, 255, 255, 0);
+            transition: 400ms;
+        }
+
+        .homebutton:hover h2{
             color: white;
             transition: 400ms;
         }
@@ -43,13 +76,6 @@
             padding: 0px;
             /* background-color: #303c66; */
             margin: 0px;
-        }
-
-        .button p {
-            line-height: 1vw;
-            z-index: 9;
-            color: #23408f;
-            transition: 400ms;
         }
 
         h1 {
@@ -94,29 +120,29 @@
         .msf {
             position: fixed;
             z-index: 3;
-            top: 1vw;
-            left: 2vw;
-            color: #23408f;
+            top: 0.1vw;
+            right: 2vw;
+            color: #3e54a599;
         }
 
         .review {
             position: absolute;
             z-index: 3;
-            top: 38.7vw;
-            right: 15vw;
+            top: 15.5vw;
+            left: 20vw;
             /* background-color: #3e54a59e; */
-            text-align: center;
-            line-height: 0.005vw;
+            text-align: right;
+            line-height: 0.3vw;
         }
 
         .review h1 {
-            font-size: 3.5vw;
+            font-size: 3.07vw;
             /* line-height: 0.01vw; */
             color: #23408f;
         }
 
         .review p {
-            font-size: 1.18vw;
+            font-size: 1.05vw;
             color: #23408f;
             /* line-height: 0.01vw; */
         }
@@ -137,14 +163,15 @@
         }
 
         .row1 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            /* display: grid; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
             z-index: 5;
             margin-left: 2vw;
-            grid-column-gap: 2vw;
+            /* padding-bottom: 2vw; */
+            /* grid-column-gap: 2vw; */
             width: 96vw;
             height: 53vw;
-            bottom: -91.3vw;
+            bottom: -89.5vw;
             position: absolute;
         }
 
@@ -155,26 +182,12 @@
             position: relative;
         }
 
-        .block2 {
-            /* background-color: red; */
-            width: 100%;
-            z-index: 6;
-            position: relative;
-        }
-
-        .block3 {
-            /* background-color: green; */
-            width: 100%;
-            z-index: 6;
-            position: relative;
-        }
-
         .imageframe1 {
             background-color: #3e54a599;
             width: 100%;
-            height: 21.5vw;
+            height: 42vw;
             position: absolute;
-            top: 8vw;
+            top: 9vw;
             z-index: 7;
             margin: 0;
             padding: 0vw;
@@ -183,110 +196,17 @@
         }
 
         .imageframe1 img {
-            width: 26.5vw;
+            width: 92vw;
             z-index: 8;
             overflow: hidden;
             margin: 2vw;
+            margin-top: 2vw;
             
         }
 
         .imageframe1:hover {
             background-color: rgba(255, 255, 255, 0.444);
             transition: 400ms;
-        }
-
-        .block1 h2 a {
-            position: absolute;
-            top: 31vw;
-            color: white;
-            padding: 2vw;
-            background-color: #3e54a599;
-            font-size: 1.15vw;
-        }
-
-        .imageframe2 {
-            background-color: #3e54a599;
-            width: 100%;
-            height: 21.5vw;
-            position: absolute;
-            top: 22vw;
-            z-index: 7;
-            margin: 0;
-            padding: 0vw;
-            overflow: hidden;
-            transition: 400ms;
-        }
-
-        .imageframe2 img {
-            width: 26.5vw;
-            z-index: 8;
-            overflow: hidden;
-            margin: 2vw;
-            
-        }
-
-        .imageframe2:hover {
-            background-color: rgba(255, 255, 255, 0.444);
-            transition: 400ms;
-        }
-
-        .block2 h2 a {
-            position: absolute;
-            top: 45vw;
-            color: white;
-            padding: 2vw;
-            background-color: #3e54a599;
-            font-size: 1.15vw;
-        }
-
-        .imageframe3 {
-            background-color: #3e54a599;
-            width: 100%;
-            height: 21.5vw;
-            position: absolute;
-            top: 12vw;
-            z-index: 7;
-            margin: 0;
-            padding: 0vw;
-            overflow: hidden;
-            transition: 400ms;
-        }
-
-        .imageframe3:hover {
-            background-color: rgba(255, 255, 255, 0.444);
-            transition: 400ms;
-        }
-
-        .imageframe3 img {
-            width: 26.5vw;
-            z-index: 8;
-            overflow: hidden;
-            margin: 2vw;
-            
-        }
-
-        .block3 h2 a {
-            position: absolute;
-            top: 35vw;
-            color: white;
-            padding: 2vw;
-            background-color: #3e54a599;
-            font-size: 1.15vw;
-        }
-
-        .block3:hover a {
-            background-color: rgba(255, 255, 255, 0.444);
-            color: #23408f;
-        }
-
-        .block2:hover a {
-            background-color: rgba(255, 255, 255, 0.444);
-            color: #23408f;
-        }
-
-        .block1:hover a {
-            background-color: rgba(255, 255, 255, 0.444);
-            color: #23408f;
         }
 
         a {
@@ -298,46 +218,82 @@
             cursor: pointer;
             transition: 400ms;
         }
+
+        .headline {
+            position: absolute;
+            background-color: #23408f;
+            margin-left: 2vw;
+            bottom: 4vw;
+            padding-left: 2vw;
+            padding-right: 2vw;
+        }
+
+        .headline a {
+            color: white;
+        }
+
+        .imageframe1 > div {
+         display: none;
+        }
+
+        .imageframe1 > div:first-child {
+        display: block;
+        }
+
     </style>
 
 </head>
 <body>
 <div class = "container">
-    <a href = "DWB-contents.html"><div class = "button"><center><p>Contents</p></center></div></a>
+    <a href = "DWB-contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
     <div class = "boatimage"><img src = "imagehome.png"></div>
     <div class = "imagetext"><img src = "DWBtext.png"></div>
     <div class = "msf"><h2>Médecins Sans Frontières [MSF] USA</h2></div>
-    <div class ="review"><h1>Year in Review</h1><br><p>for the fiscal year ending February 15, 2025</p> </div> <br>
+    <div class ="review"><h1>Year in Review</h1><p>for the fiscal year ending February 15, 2025</p> </div> <br>
     <div class ="highlightblock">
         <img src = "Block.png">
     </div>
     <div class ="row1">
-        <div class ="block1">
-            <a href="DWB-action.html">
-                <div class ="imageframe1">
-                    <img src ="sudan.jpg">
-                </div>
-            </a>
-            <h2><a href="DWB-action.html">Sudan: Nearly 10,000 children vaccinated amid deadly measles outbreak</a></h2>
-        </div>   
-        <div class ="block2">
-            <a href="DWB-action.html">
-                <div class ="imageframe2">
-                    <img src ="mozambique.jpg">
-                </div>
-            </a>
-            <h2><a href="DWB-action.html">Cyclone Chido raises needs in conflict-hit Mozambique</a></h2>
-        </div>   
-        <div class ="block3">
-            <a href="DWB-action.html">
-                <div class ="imageframe3">
-                    <img src ="Haiti.jpg">
-                </div>
-            </a>
-            <h2><a href="DWB-action.html">Haiti: A call to support survivors of sexual violence</a> </h2>
-        </div>   
+        <div class ="imageframe1">
+            <div class="highlight1">
+            <div class="headline"><h2><a href="DWB-action.html">Sudan: Nearly 10,000 children vaccinated amid deadly measles outbreak</a></h2></div>
+            <a href="DWB-action.html"><img src ="SudanHome.jpg"></a>
+            </div>
+
+            <div class="highlight2">
+            <div class="headline"><h2><a href="DWB-action.html">Cyclone Chido raises needs in conflict-hit Mozambique</a></h2></div>
+            <a href="DWB-action.html"><img src ="mozambiqueHome.jpg"></a>
+            </div>
+
+            <div class="highlight3">
+            <div class="headline"><h2><a href="DWB-action.html">Haiti: A call to support survivors of sexual violence</a></h2></div>
+            <a href="DWB-action.html"><img src ="HaitiHome.jpg"></a>
+            </div>
+
+        </div>
     </div>  
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let highlights = document.querySelectorAll(".imageframe1 > div");
+        let index = 0;
+
+        function rotateHighlights() {
+            highlights.forEach((highlight, i) => {
+                highlight.style.display = i === index ? "block" : "none";
+            });
+            index = (index + 1) % highlights.length;
+        }
+
+        // Initialize the first visible highlight
+        rotateHighlights();
+
+        // Rotate every 4 seconds
+        setInterval(rotateHighlights, 5000);
+    });
+</script>
+
 
 </body>
 </html>

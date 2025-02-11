@@ -13,25 +13,25 @@
         }
 
         .button {
-            width: 8vw;
+            width: 3vw;
             height: 3vw;
             background-color: none;
             position: fixed;
-            right: 2vw;
-            top: 2.5vw;
-            border: 0.2vw solid #23408f;
+            left: 1.6vw;
+            top: .1vw;
+            /* border: 0.2vw solid #23408f00; */
             z-index: 8;
             transition: 400ms;
         }
 
-        .button:hover {
-            background-color: #3e54a599;
-            border: 0.2vw solid white;
+        kbd {
+            font-size: 3.5vw;
             transition: 400ms;
+            color: #23408f;
         }
 
-        .button:hover p{
-            color: white;
+        .button:hover kbd {
+            color: #3e54a599;
             transition: 400ms;
         }
 
@@ -40,9 +40,9 @@
             height: 3vw;
             background-color: none;
             position: fixed;
-            left: 2vw;
-            top: 2.5vw;
-            border: 0.2vw solid #23408f;
+            right: 2vw;
+            top: .7vw;
+            border: 0.2vw solid #23408f00;
             z-index: 8;
             transition: 400ms;
         }
@@ -52,13 +52,13 @@
             margin: 0;
             line-height: 2.7vw;
             color: #23408f;
-            margin-bottom: 1vw;;
+            margin-bottom: 1vw;
         }
 
 
         .homebutton:hover {
             background-color: #3e54a599;
-            border: 0.2vw solid white;
+            border: 0.2vw solid rgba(255, 255, 255, 0);
             transition: 400ms;
         }
 
@@ -77,14 +77,6 @@
             overflow: hidden;
         }
 
-        .button p {
-            line-height: 1vw;
-            z-index: 9;
-            color: #23408f;
-            transition: 400ms;
-            font-size: 1vw;
-        }
-
         h1 {
         font-family: "fenwick", sans-serif;
         font-weight: 700;
@@ -94,6 +86,7 @@
         font-family: "fenwick", sans-serif;
         font-weight: 400;
         font-size: 1.5vw;
+        color: #23408f;
         }
 
         p {
@@ -183,8 +176,8 @@
 
 <body>
     <div class = "container">
-        <a href = "DWB-contents.html"><div class = "button"><center><p>Contents</p></center></div></a>
-        <a href = "DWB-home.html"><div class = "homebutton"><center><h2>⌂</h2></center></div></a>
+        <a href = "DWB-contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
+        <a href = "DWB-home.html"><div class = "homebutton"><center><h2>𖠿</h2></center></div></a>
         <div class="header">
             <h1>OUR VALUES</h1>
         </div>

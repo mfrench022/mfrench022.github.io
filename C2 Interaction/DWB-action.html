@@ -10,28 +10,29 @@
       body {
             margin: 0px;
             padding: 0px;
+            background-color: #3e54a599;
         }
 
         .button {
-            width: 8vw;
+            width: 3vw;
             height: 3vw;
             background-color: none;
             position: fixed;
-            right: 2vw;
-            top: 2.5vw;
-            border: 0.2vw solid #23408f;
+            left: 1.6vw;
+            top: .1vw;
+            /* border: 0.2vw solid #23408f00; */
             z-index: 8;
             transition: 400ms;
         }
 
-        .button:hover {
-            background-color: #3e54a599;
-            border: 0.2vw solid white;
+        kbd {
+            font-size: 3.5vw;
             transition: 400ms;
+            color: #23408f;
         }
 
-        .button:hover p{
-            color: white;
+        .button:hover kbd {
+            color: #3e54a599;
             transition: 400ms;
         }
 
@@ -40,9 +41,9 @@
             height: 3vw;
             background-color: none;
             position: fixed;
-            left: 2vw;
-            top: 2.5vw;
-            border: 0.2vw solid #23408f;
+            right: 2vw;
+            top: .7vw;
+            border: 0.2vw solid #23408f00;
             z-index: 8;
             transition: 400ms;
         }
@@ -52,13 +53,13 @@
             margin: 0;
             line-height: 2.7vw;
             color: #23408f;
-            margin-bottom: 1vw;;
+            margin-bottom: 1vw;
         }
 
 
         .homebutton:hover {
             background-color: #3e54a599;
-            border: 0.2vw solid white;
+            border: 0.2vw solid rgba(255, 255, 255, 0);
             transition: 400ms;
         }
 
@@ -72,28 +73,22 @@
             width: 100%;
             height: 65vw;
             padding: 0px;
-            /* background-color: #303c66; */
+            background-color: white;
             margin: 0px;
             overflow: hidden;
-        }
-
-        .button p {
-            line-height: 1vw;
-            z-index: 9;
-            color: #23408f;
-            transition: 400ms;
-            font-size: 1vw;
         }
 
         h1 {
         font-family: "fenwick", sans-serif;
         font-weight: 700;
+        color: #23408f;
         }
 
         h2 {
         font-family: "fenwick", sans-serif;
         font-weight: 400;
         font-size: 1.5vw;
+        color: #23408f;
         }
 
         p {
@@ -148,7 +143,24 @@
             width: 100%;
             position: relative;
             padding-top: 22.5vw;
+            z-index: 2;
+            transition: 400ms;
             /* background-color: red; */
+        }
+
+        .column1:hover {
+            background-color: #3e54a52a;
+            transition: 400ms;
+        }
+
+        .column2:hover {
+            background-color: #3e54a52a;
+            transition: 400ms;
+        }
+
+        .column3:hover {
+            background-color: #3e54a52a;
+            transition: 400ms;
         }
 
         .column2{
@@ -156,12 +168,16 @@
             position: relative;
             /* background-color: orange; */
             margin-top: -0.4vw;
+            z-index: 2;
+            transition: 400ms;
         }
 
         .column3{
             width: 100%;
             position: relative;
             padding-top: 22.5vw;
+            z-index: 2;
+            transition: 400ms;
             /* background-color: green; */
         }
 
@@ -176,7 +192,7 @@
             height: 21.5vw;
             position: absolute;
             top: 0vw;
-            z-index: 7;
+            z-index: 1;
             margin: 0;
             padding: 0vw;
             overflow: hidden;
@@ -196,7 +212,7 @@
             height: 21.5vw;
             position: absolute;
             bottom: 2.1vw;
-            z-index: 7;
+            z-index: 4;
             margin: 0;
             padding: 0vw;
             overflow: hidden;
@@ -216,7 +232,7 @@
             height: 21.5vw;
             position: absolute;
             top: 0vw;
-            z-index: 7;
+            z-index: 4;
             margin: 0;
             padding: 0vw;
             overflow: hidden;
@@ -240,14 +256,15 @@
             font-weight: 400;
         }
 
+        
     </style>
 </head>
 
 
 <body>
     <div class = "container">
-        <a href = "DWB-contents.html"><div class = "button"><center><p>Contents</p></center></div></a>
-        <a href = "DWB-home.html"><div class = "homebutton"><center><h2>⌂</h2></center></div></a>
+        <a href = "DWB-contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
+        <a href = "DWB-home.html"><div class = "homebutton"><center><h2>𖠿</h2></center></div></a>
         <div class="header">
             <h1>RECENT HIGHLIGHTS</h1>
         </div>
