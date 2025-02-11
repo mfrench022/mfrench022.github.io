@@ -27,7 +27,7 @@
 
         .toprow {
             width: 100%;
-            height: 26vw;
+            height: 31vw;
             background-color: #f8f8f8;
             position: absolute;
             top: 0;
@@ -39,7 +39,7 @@
             height: 4vw;
             background-color: blue;
             position: absolute;
-            top: 26vw;
+            top: 31vw;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             z-index: -5;
@@ -54,7 +54,7 @@
             position: absolute;
             width: 100%;
             height: 25vw;
-            top: 30vw;
+            top: 35vw;
             z-index: -5;
         }
 
@@ -128,10 +128,21 @@
         ); 
         }
 
+        .square {
+            height: 100vh;
+            aspect-ratio: 1;
+            background-color: yellow;
+            position: fixed;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            
+        }
+
     </style>
 </head>
 
 
+<div class = "square"></div>
 <div class = "container">
 <div class = "grain">
     <div class="toprow"></div>
@@ -204,7 +215,7 @@
     }
     
     function setup() {
-      createCanvas(925, 925);
+      createCanvas(900, 900);
       centerX = width / 2;
       centerY = height / 2;
       noStroke();
@@ -218,7 +229,7 @@
       image(img, centerX, centerY, img.width / 2, img.height / 2); // Display main image
     
       // Draw custom cursor at mouse position
-      image(cursorImg, mouseX, mouseY, 40, 40); // Adjust size if needed
+      image(cursorImg, mouseX, mouseY, 80, 80); // Adjust size if needed
     }
     
     function moveImage() {
