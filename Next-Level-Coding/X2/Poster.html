@@ -27,8 +27,8 @@
 
         .toprow {
             width: 100%;
-            height: 50vh;
-            background-color: red;
+            height: 26vw;
+            background-color: #f8f8f8;
             position: absolute;
             top: 0;
             z-index: -5;
@@ -36,31 +36,26 @@
 
         .starrow {
             width: 100%;
-            height: 10vh;
+            height: 4vw;
             background-color: blue;
             position: absolute;
-            top: 50vh;
+            top: 26vw;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             z-index: -5;
-            padding: 1vh;
+            padding: 0.5vw;
+            padding-top: 0.75vw;
         }
 
         .bottomrow{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            background-color: yellow;
+            /* background-color: yellow; */
             position: absolute;
             width: 100%;
-            height: 40vh;
-            top: 60vh;
+            height: 25vw;
+            top: 30vw;
             z-index: -5;
-        }
-
-        .column1 {
-            width: 100%;
-            height: 100%;
-            background-color: red;
         }
 
         .column1 {
@@ -74,10 +69,54 @@
             height: 100%;
             background-color: white;
         }
-        /* HTML: <div class="star"></div> */
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+            z-index: 300;
+            transform: translateZ(0);
+        }
+
+        .grain::before {
+            content: "";
+            top: -10rem;
+            left: -10rem;
+            width: calc(100% + 20rem);
+            height: calc(100% + 20rem);
+            z-index: 9999;
+            position: fixed;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+            opacity: 0.15;
+            pointer-events: none;
+            -webkit-animation: noise 1s steps(2) infinite;
+            animation: noise 1s steps(2) infinite;
+        }
+
+@-webkit-keyframes noise {
+    to { transform: translate3d(-7rem, 0, 0); }
+}
+
+@keyframes noise {
+    0% { transform: translate3d(0, 9rem, 0); }
+    10% { transform: translate3d(-1rem, -4rem, 0); }
+    20% { transform: translate3d(-8rem, 2rem, 0); }
+    30% { transform: translate3d(9rem, -9rem, 0); }
+    40% { transform: translate3d(-2rem, 7rem, 0); }
+    50% { transform: translate3d(-9rem, -4rem, 0); }
+    60% { transform: translate3d(2rem, 6rem, 0); }
+    70% { transform: translate3d(7rem, -8rem, 0); }
+    80% { transform: translate3d(-9rem, 1rem, 0); }
+    90% { transform: translate3d(6rem, -5rem, 0); }
+    to { transform: translate3d(-7rem, 0, 0); }
+}
+
 .star {
-  width: 80%;  
-  aspect-ratio: 1;
+  width: 75%;  
+  height: 70%;
   background: #ffffff;
   clip-path: polygon(50% 0,
     calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
@@ -85,14 +124,14 @@
     calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
     calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
    ); 
-  /* or more simple
-  clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%); 
-   */
 }
+
     </style>
 </head>
 
+
 <div class = "container">
+<div class = "grain">
     <div class="toprow"></div>
     <div class="starrow">
         <div class="star"></div>
@@ -146,6 +185,7 @@
         <div class="column1"></div>
         <div class="column2"></div>
     </div>
+</div>
 </div>
 
 <script>
