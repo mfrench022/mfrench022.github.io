@@ -144,15 +144,15 @@
 
 <script>
     let img;  // Main image
-    // let cursorImg; // Cursor image
+    let cursorImg; // Cursor image
     let centerX, centerY;
     let accelX = 0.0, accelY = 0.0;
     let damping = 0.98;
     let springing = 0.0009;
     
     function preload() {
-    //   img = loadImage('Grammy2.png'); // Replace with correct path
-    //   cursorImg = loadImage('whitehorsecursor.png'); // Replace with your cursor image file
+      img = loadImage('Grammy2.png'); // Replace with correct path
+      cursorImg = loadImage('whitehorsecursor.png'); // Replace with your cursor image file
     }
     
     function setup() {
@@ -160,7 +160,7 @@
       centerX = width / 2;
       centerY = height / 2;
       noStroke();
-    //   noCursor(); // Hides the default cursor
+      noCursor(); // Hides the default cursor
     }
     
     function draw() {
@@ -188,7 +188,7 @@
     }
     </script>
 
-
+    
 <body>
 
 </body>
