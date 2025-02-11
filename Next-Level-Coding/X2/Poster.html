@@ -70,6 +70,7 @@
             background-color: white;
         }
 
+        /* Grain effect originially developed by Valord Productions on Codepen */
         .grain {
             position: fixed;
             top: 0;
@@ -96,35 +97,36 @@
             animation: noise 1s steps(2) infinite;
         }
 
-@-webkit-keyframes noise {
-    to { transform: translate3d(-7rem, 0, 0); }
-}
+        @-webkit-keyframes noise {
+            to { transform: translate3d(-7rem, 0, 0); }
+        }
 
-@keyframes noise {
-    0% { transform: translate3d(0, 9rem, 0); }
-    10% { transform: translate3d(-1rem, -4rem, 0); }
-    20% { transform: translate3d(-8rem, 2rem, 0); }
-    30% { transform: translate3d(9rem, -9rem, 0); }
-    40% { transform: translate3d(-2rem, 7rem, 0); }
-    50% { transform: translate3d(-9rem, -4rem, 0); }
-    60% { transform: translate3d(2rem, 6rem, 0); }
-    70% { transform: translate3d(7rem, -8rem, 0); }
-    80% { transform: translate3d(-9rem, 1rem, 0); }
-    90% { transform: translate3d(6rem, -5rem, 0); }
-    to { transform: translate3d(-7rem, 0, 0); }
-}
+        @keyframes noise {
+            0% { transform: translate3d(0, 9rem, 0); }
+            10% { transform: translate3d(-1rem, -4rem, 0); }
+            20% { transform: translate3d(-8rem, 2rem, 0); }
+            30% { transform: translate3d(9rem, -9rem, 0); }
+            40% { transform: translate3d(-2rem, 7rem, 0); }
+            50% { transform: translate3d(-9rem, -4rem, 0); }
+            60% { transform: translate3d(2rem, 6rem, 0); }
+            70% { transform: translate3d(7rem, -8rem, 0); }
+            80% { transform: translate3d(-9rem, 1rem, 0); }
+            90% { transform: translate3d(6rem, -5rem, 0); }
+            to { transform: translate3d(-7rem, 0, 0); }
+        }
 
-.star {
-  width: 75%;  
-  height: 70%;
-  background: #ffffff;
-  clip-path: polygon(50% 0,
-    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
-    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
-    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
-    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
-   ); 
-}
+        /* Shape obtained from css-shapes.com */
+        .star {
+        width: 75%;  
+        height: 70%;
+        background: #ffffff;
+        clip-path: polygon(50% 0,
+            calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+            calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+        ); 
+        }
 
     </style>
 </head>
@@ -202,7 +204,7 @@
     }
     
     function setup() {
-      createCanvas(800, 800);
+      createCanvas(1000, 1000);
       centerX = width / 2;
       centerY = height / 2;
       noStroke();
