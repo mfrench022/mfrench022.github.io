@@ -308,19 +308,22 @@
     let canvasWidth = 0.42 * windowWidth; // 42vw
     let canvasHeight = 0.54 * windowHeight; // 24vw
     cnv = createCanvas(canvasWidth, canvasHeight);
-    
-    let canvasX = (windowWidth - canvasWidth) / 2; // Centering on X-axis
-    // let canvasY = 0.45 * windowHeight; 
-    let canvasY = 0.455 * windowHeight; // 24vw from the top
-    
+
+    let canvasX = (windowWidth - canvasWidth) / 2;
+    let canvasY = 0.455 * windowHeight;
+
     cnv.position(canvasX, canvasY);
-    
+
+    centerX = canvasWidth / 2;  // Initialize centerX
+    centerY = canvasHeight / 2; // Initialize centerY
+
     updateCanvasPosition();
     window.addEventListener('resize', updateCanvasPosition);
 
     noStroke();
     noCursor();
 }
+
 
 
 function updateCanvasPosition() {
