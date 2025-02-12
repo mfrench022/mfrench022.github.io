@@ -213,21 +213,21 @@
 
         .margin1 {
             height: 115%;
-            width: 24vw;
+            width: 28.5vw;
             position: fixed;
-            background-color: #f8f8f8;
+            background-color: white;
             left: 0px;
-            z-index: 5;
+            z-index: 100;
             /* margin-top: 24vw; */
         }
 
         .margin2 {
             height: 115%;
-            width: 24vw;
+            width: 28.5vw;
             position: fixed;
-            background-color: #f8f8f8;
+            background-color: white;
             right: 0px;
-            z-index: 5;
+            z-index: 100;
             /* margin-top: 24vw; */
         }
 
@@ -238,24 +238,11 @@
             transform: translate(-50%, -50%);
         }
 
-        .canvas-container {
-    position: absolute;
-    width: 42vw;  /* Match canvas size */
-    height: 54vh; /* Match canvas size */
-    top: 45.5vh;  /* Position same as canvas */
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden; /* Prevents starbursts from overflowing */
-    pointer-events: none; /* Prevent interaction issues */
-}
-
     </style>
 </head>
-<div class="canvas-container">
-    <div id="p5-canvas"></div>  <!-- This is where the p5.js canvas is placed -->
-</div>
-
 <div class="nyt">
+    <div class="margin1"></div>
+    <div class="margin2"></div>
     <div class="nyt1"><img src="nyt1.png"></div>
     <div class="nyt2"><img src="nyt2.png"></div>
     <div class="nyt3"><img src="nyt3.png"></div>
@@ -394,27 +381,26 @@ function updateCanvasPosition() {
     }
 
     function createStarburst() {
-    let starburst = document.createElement('div');
-    starburst.classList.add('starburst');
+        let starburst = document.createElement('div');
+        starburst.classList.add('starburst');
 
-    // Assign random size between 4vw and 6vw
-    let size = random(4, 6) + 'vw';
-    starburst.style.width = size;
-    starburst.style.height = size;
+        // Assign random size between 4vw and 6vw
+        let size = random(4, 6) + 'vw';
+        starburst.style.width = size;
+        starburst.style.height = size;
 
-    // Assign alternating colors
-    starburst.style.backgroundColor = colors[colorIndex];
-    colorIndex = (colorIndex + 1) % colors.length;
+        // Assign alternating colors
+        starburst.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
 
-    // Assign random position strictly within the canvas bounds
-    let x = random(0, canvasWidth - parseFloat(size));
-    let y = random(0, canvasHeight - parseFloat(size));
-    starburst.style.left = `${x}px`;
-    starburst.style.top = `${y}px`;
+        // Assign random position within the canvas
+        let x = random(canvasX, canvasX + canvasWidth);
+        let y = random(canvasY, canvasY + canvasHeight);
+        starburst.style.left = `${x}px`;
+        starburst.style.top = `${y}px`;
 
-    document.querySelector('.canvas-container').appendChild(starburst);
-}
-
+        document.body.appendChild(starburst);
+    }
 
     setInterval(() => {
     document.querySelectorAll('.starburst').forEach(starburst => starburst.remove());
