@@ -29,18 +29,33 @@
         let colorIndex = 0;
         const colors = ['#9b2426', '#f8f8f8', '#2b3384'];
 
+        let cnv, canvasX, canvasY, canvasWidth, canvasHeight;
+
         function preload() {
             img = loadImage('Grammy2.png');
             cursorImg = loadImage('whitehorsecursor2.png');
         }
 
         function setup() {
-            let cnv = createCanvas(895, 545);
-            cnv.position((windowWidth - width) / 2, 0);
+            cnv = createCanvas(895, 545);
+            cnv.position((windowWidth - width) / 2, 0); // Centers the canvas horizontally
+
+            updateCanvasPosition();
+            window.addEventListener('resize', updateCanvasPosition); // Update canvas bounds on window resize
+            
             centerX = width / 3;
             centerY = height / 2;
             noStroke();
             noCursor();
+        }
+
+        function updateCanvasPosition() {
+            // Get current canvas position
+            let rect = cnv.elt.getBoundingClientRect();
+            canvasX = rect.left;
+            canvasY = rect.top;
+            canvasWidth = rect.width;
+            canvasHeight = rect.height;
         }
 
         function draw() {
@@ -96,9 +111,9 @@
             starburst.style.backgroundColor = colors[colorIndex];
             colorIndex = (colorIndex + 1) % colors.length;
 
-            // Assign random position within canvas
-            let x = random(windowWidth * 0.1, windowWidth * 0.9);
-            let y = random(50, windowHeight - 50);
+            // Assign random position within the canvas
+            let x = random(canvasX, canvasX + canvasWidth);
+            let y = random(canvasY, canvasY + canvasHeight);
             starburst.style.left = `${x}px`;
             starburst.style.top = `${y}px`;
 
