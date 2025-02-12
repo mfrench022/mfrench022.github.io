@@ -32,7 +32,7 @@
         .toprow {
             width: 100%;
             height: 31vw;
-            /* background-color: #000000; */
+            background-color: #000000;
             position: fixed;
             top: 0;
             z-index: 1;
@@ -220,9 +220,7 @@
     let centerX, centerY;
     let accelX = 0.0, accelY = 0.0;
     let damping = 0.98;
-    let springing = 0.0009;
-    let words = ['this ain’t texas', 'cowboy carter', 'ameriican requiem', 'blackbiird', '16 carriages', 'protector', 'my rose', 'smoke hour', 'texas hold ’em', 'bodyguard', 'dolly p', 'jolene', 'daugter', 'spaghettii', 'alligator tears', 'just for fun', 'ii most wanted', 'levii’s jeans', 'flamenco', 'the linda martell show', 'ya ya', 'oh louisiana', 'desert eagle', 'riiverdance', 'ii hands ii heaven', 'tyrant', 'sweet☆honey☆bucin’', 'amen', 'they used to say I spoke "too country"', 'the legacy is the last thing i do', 'i first saw your face in your father’s gaze', 'so be fond of your flaws, dear', 'it’s a real-life boogie and a real-life hoedown', 'i’m bout to lose it, turn around and john wayne that ass', 'honey bee', 'jolene, i know i’m a queen', 'if you crozs me, i’m just like my father', 'all the same to me, plain jane, spaghetti', 'somethin’ ’bout those tears of yours, how does it feel to be adored?', 'and everywhere i go, they know my name', 'i’ll be your shotgun rider ’til the day i die', 'boy i’ll let you be my levi’s jeans', 'realize that you don’t know what you got until it’s gone', 'baby, if you ain’t got no ritz get the fuck up out the south', 'everything bigger in texas', 'staring down the barrel of my gun, yes i shot you down', 'i’m a stallion runnin’, no candle in the wind', 'i hated you once, i envy you now', 'A-O-T-Y, i ain’t win (that’s cool)', 'ameriican requiem'];
-    
+    let springing = 0.0009;    
     
     function preload() {
       img = loadImage('Grammy2.png'); // Replace with correct path
@@ -235,8 +233,6 @@
       centerY = height / 2;
       noStroke();
       noCursor(); // Hides the default cursor
-      textFont('Sancreek');
-      textAlign(CENTER, CENTER);
     }
     
     function draw() {
