@@ -8,24 +8,25 @@
 </head>
 
 <style>
+    /* Ensures starbursts are behind the canvas */
     .starburst {
         position: absolute;
         aspect-ratio: 1;
         clip-path: polygon(99.73% 55.23%,57.47% 52.87%,90.45% 79.39%,55.03% 56.22%,70.34% 95.68%,51.25% 57.9%,44.77% 99.73%,47.13% 57.47%,20.61% 90.45%,43.78% 55.03%,4.32% 70.34%,42.1% 51.25%,0.27% 44.77%,42.53% 47.13%,9.55% 20.61%,44.97% 43.78%,29.66% 4.32%,48.75% 42.1%,55.23% 0.27%,52.87% 42.53%,79.39% 9.55%,56.22% 44.97%,95.68% 29.66%,57.9% 48.75%);
         transform: translate(-50%, -50%);
+        z-index: 1; /* Starbursts are at the lowest level */
     }
 
-    body {
-        cursor: none;
-    }
-
-    cursor {
-        z-index: 1000;
-        cursor: none;
+    /* The p5.js canvas must be positioned and have a higher z-index */
+    #canvas-container {
+        position: relative;
+        z-index: 10; /* Ensures it's above the starbursts */
     }
 </style>
 
 <body>
+
+    <div id="canvas-container"></div> <!-- Wraps the canvas for better control -->
 
     <script>
         let img, cursorImg;
@@ -47,11 +48,12 @@
 
         function setup() {
             cnv = createCanvas(895, 545);
+            cnv.parent('canvas-container'); // Place the canvas inside the div
             cnv.position((windowWidth - width) / 2, 0); // Centers the canvas horizontally
 
             updateCanvasPosition();
             window.addEventListener('resize', updateCanvasPosition); // Update canvas bounds on window resize
-            
+
             centerX = width / 3;
             centerY = height / 2;
             noStroke();
