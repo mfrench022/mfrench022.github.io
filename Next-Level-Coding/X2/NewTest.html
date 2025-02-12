@@ -156,7 +156,7 @@
             background-color: #f8f8f8;
             left: 0px;
             z-index: 5;
-            margin-top: 24vw;
+            /* margin-top: 24vw; */
         }
 
         .margin2 {
@@ -166,7 +166,7 @@
             background-color: yellow;
             right: 0px;
             z-index: 5;
-            margin-top: 24vw;
+            /* margin-top: 24vw; */
         }
 
     </style>
@@ -229,15 +229,14 @@
     }
     
     function setup() {
-  let cnv = createCanvas(890, 545); // Creates the canvas
-  cnv.position((windowWidth - width) / 2, 0); // Centers horizontally and aligns to the top
-  centerX = width / 3;
-  centerY = height / 2;
-  noStroke();
-  noCursor(); // Hides the default cursor
-}
+        let cnv = createCanvas(895, 545); // Creates the canvas
+        cnv.position((windowWidth - width) / 2, 0); // Centers horizontally and aligns to the top
+        centerX = width / 3;
+        centerY = height / 2;
+        noStroke();
+        noCursor(); // Hides the default cursor
+    }
 
-    
     function draw() {
       background(0, 50);
       moveImage();
