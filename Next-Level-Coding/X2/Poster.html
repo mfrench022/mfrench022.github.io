@@ -234,9 +234,10 @@
         canvas.style("top", "50%");
         canvas.style("left", "50%");
         canvas.style("transform", "translate(-50%, -50%)"); // Center the canvas
+        canvas.style("z-index", "1000"); // Ensure it's on top
+        canvas.style("pointer-events", "none"); // Ensures it doesn’t interfere with other interactions
     }
 
-    
     function draw() {
         clear(); // Clears canvas instead of background()
         moveImage();
