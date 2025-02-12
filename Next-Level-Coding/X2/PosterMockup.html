@@ -13,6 +13,10 @@
             margin: 0;
             padding: 0;
             background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* overflow: hidden; */
         }
 
         .nyt {
@@ -22,6 +26,7 @@
             margin: 0;
             padding: 0;
             position: relative;
+            z-index: 100;
         }
 
         .nyt1 {
@@ -30,6 +35,7 @@
             /* background-color: yellow; */
             position: absolute;
             top: 0;
+            
         }
 
         .nyt1 img {
@@ -54,6 +60,7 @@
             background-color: red;
             position: absolute;
             bottom: 0;
+            z-index: 300;
         }
 
         .nyt3 img {
@@ -61,67 +68,230 @@
         }
 
         .placeholder {
-            width: 42vw;
-            aspect-ratio: 1;
             position: absolute;
             background-color: red;
             left: 29vw;
             top: 24vw;
+            width: 42vw;
+            aspect-ratio: 1;
         }
+
+
+        .container {
+            height: 100vh;
+            aspect-ratio: 1;
+            /* backgrounxd-color: #2b3384; */
+            position: fixed;
+            z-index: -1;
+            /* margin-left: 23.5vw; */
+            overflow: hidden;
+        }
+
+        .toprow {
+            width: 100%;
+            height: 25vw;
+            /* background-color: #000000; */
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            /* margin-left: 23.5vw; */
+        }
+
+        .starrow {
+            width: 100%;
+            height: 3vw;
+            background-color: #2b3384;
+            position: absolute;
+            top: 24vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            z-index: 2;
+            margin-left: 0vw;
+            margin-top: 0.75vw;
+            padding-top: 0.25vw;
+            padding-left: 0.3vw;
+        }
+
+        .bottomrow{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            /* background-color: yellow; */
+            position: absolute;
+            width: 100%;
+            height: 25vw;
+            top: 27.25vw;
+            z-index: 3;
+            /* margin-left: -0.35vw; */
+        }
+
+        .column1 {
+            width: 100%;
+            height: 100%;
+            background-color: #9b2426;
+        }
+
+        .column2 {
+            width: 100%;
+            height: 100%;
+            background-color: #f8f8f8;
+        }
+
+        /* Grain effect originially developed by Valord Productions on Codepen @ https://codepen.io/ValentinBossens/pen/BaKRwea?editors=1100 */
+        .grain {
+            position: absolute;
+            pointer-events: none;
+            z-index: 3;
+            transform: translateZ(0);
+            margin-left: 23.5vw;
+            overflow: hidden;
+            right: 0vw;
+            top: 0vw;
+            width: 42vw;
+            aspect-ratio: 1;
+        }
+
+        .grain::before {
+            content: "";
+            top: -10rem;
+            left: -10rem;
+            width: calc(100% + 20rem);
+            height: calc(100% + 20rem);
+            z-index: 4;
+            position: fixed;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+            opacity: 0.15;
+            pointer-events: none;
+            -webkit-animation: noise 1s steps(2) infinite;
+            animation: noise 1s steps(2) infinite;
+        }
+
+        @-webkit-keyframes noise {
+            to { transform: translate3d(-7rem, 0, 0); }
+        }
+
+        @keyframes noise {
+            0% { transform: translate3d(0, 9rem, 0); }
+            10% { transform: translate3d(-1rem, -4rem, 0); }
+            20% { transform: translate3d(-8rem, 2rem, 0); }
+            30% { transform: translate3d(9rem, -9rem, 0); }
+            40% { transform: translate3d(-2rem, 7rem, 0); }
+            50% { transform: translate3d(-9rem, -4rem, 0); }
+            60% { transform: translate3d(2rem, 6rem, 0); }
+            70% { transform: translate3d(7rem, -8rem, 0); }
+            80% { transform: translate3d(-9rem, 1rem, 0); }
+            90% { transform: translate3d(6rem, -5rem, 0); }
+            to { transform: translate3d(-7rem, 0, 0); }
+        }
+
+        /* Shape obtained from css-shapes.com */
+        .star {
+        width: 75%;  
+        height: 65%;
+        background: #f8f8f8;
+        clip-path: polygon(50% 0,
+            calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+            calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+            calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+        ); 
+        }
+
+        .square {
+            width: 51.5vw;
+            aspect-ratio: 1;
+            position: fixed;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .margin1 {
+            height: 115%;
+            width: 24vw;
+            position: fixed;
+            background-color: #f8f8f8;
+            left: 0px;
+            z-index: 5;
+            /* margin-top: 24vw; */
+        }
+
+        .margin2 {
+            height: 115%;
+            width: 24vw;
+            position: fixed;
+            background-color: #f8f8f8;
+            right: 0px;
+            z-index: 5;
+            /* margin-top: 24vw; */
+        }
+
+        .starburst {
+            position: absolute;
+            aspect-ratio: 1;
+            clip-path: polygon(100% 50.63%,54.74% 51.6%,90.08% 79.9%,52.89% 54.08%,64.85% 97.74%,49.94% 55%,33.95% 97.35%,47.01% 54.01%,9.18% 78.88%,45.23% 51.49%,0% 49.37%,45.26% 48.4%,9.92% 20.1%,47.11% 45.92%,35.15% 2.26%,50.06% 45%,66.05% 2.65%,52.99% 45.99%,90.82% 21.12%,54.77% 48.51%);
+            transform: translate(-50%, -50%);
+        }
+
 
     </style>
 </head>
 
+<!-- <div class = "margin1"></div>
+<div class = "margin2"></div> -->
+
+
 <div class="nyt">
     <div class="nyt1"><img src="nyt1.png"></div>
     <div class="nyt2"><img src="nyt2.png"></div>
-    <div class="placeholder"></div>
     <div class="nyt3"><img src="nyt3.png"></div>
+    <div class="placeholder">
+        <div class = "grain">
+            <div class = "container"></div>
+                <div class="toprow"></div>
+                <div class="starrow">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+                <div class="bottomrow">
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                    <div class="column2"></div>
+                    <div class="column1"></div>
+                </div>
+            </div>
+            </div>
+            <div class = "square"></div>
+    </div>
 
 </div>
-
-<!-- <div class = "margin1"></div>
-<div class = "margin2"></div>
-<div class = "grain">
-<div class = "container"></div>
-    <div class="toprow"></div>
-    <div class="starrow">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
-    <div class="bottomrow">
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-        <div class="column2"></div>
-        <div class="column1"></div>
-    </div>
-</div>
-</div>
-<div class = "square"></div> -->
 
 <!-- <script>
     let img, cursorImg;
