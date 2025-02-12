@@ -289,7 +289,7 @@
 </div>
 
 <script>
-    let img, cursorImg;
+   let img, cursorImg;
     let centerX, centerY;
     let accelX = 0.0, accelY = 0.0;
     let damping = 0.98;
@@ -324,7 +324,7 @@
 }
 
 
-    function updateCanvasPosition() {
+function updateCanvasPosition() {
         // Get current canvas position
         let rect = cnv.elt.getBoundingClientRect();
         canvasX = rect.left;
