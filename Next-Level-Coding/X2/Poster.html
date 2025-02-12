@@ -46,15 +46,15 @@
             position: fixed;
             top: 31vw;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             z-index: 2;
             margin-left: 0.1vw;
-            margin-top: 0.55vw;
+            margin-top: 0.75vw;
         }
 
         .bottomrow{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             /* background-color: yellow; */
             position: fixed;
             width: 102%;
@@ -125,7 +125,7 @@
         /* Shape obtained from css-shapes.com */
         .star {
         width: 75%;  
-        height: 70%;
+        height: 65%;
         background: #f8f8f8;
         clip-path: polygon(50% 0,
             calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
@@ -193,6 +193,7 @@
         <div class="star"></div>
         <div class="star"></div>
         <div class="star"></div>
+        <div class="star"></div>
     </div>
     <div class="bottomrow">
         <div class="column1"></div>
@@ -209,6 +210,7 @@
         <div class="column2"></div>
         <div class="column1"></div>
         <div class="column2"></div>
+        <div class="column1"></div>
     </div>
 </div>
 </div>
@@ -234,10 +236,8 @@
         canvas.style("top", "50%");
         canvas.style("left", "50%");
         canvas.style("transform", "translate(-50%, -50%)"); // Center the canvas
-        canvas.style("z-index", "1000"); // Ensure it's on top
-        canvas.style("pointer-events", "none"); // Ensures it doesn’t interfere with other interactions
     }
-
+    
     function draw() {
         clear(); // Clears canvas instead of background()
         moveImage();
