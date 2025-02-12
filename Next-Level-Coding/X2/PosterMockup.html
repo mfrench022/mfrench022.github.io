@@ -57,7 +57,7 @@
         .nyt3 {
             width: 100%;
             height: 48vw;
-            background-color: red;
+            /* background-color: red; */
             position: absolute;
             bottom: 0;
             /* z-index: 300; */
@@ -69,7 +69,7 @@
 
         .placeholder {
             position: absolute;
-            background-color: red;
+            background-color: rgba(255, 0, 0, 0.336);
             left: 29vw;
             top: 24vw;
             width: 42vw;
@@ -307,17 +307,19 @@
     }
 
     function setup() {
-        cnv = createCanvas(895, 549);
-        cnv.position((windowWidth - width) / 2, 0); // Centers the canvas horizontally
+    let canvasWidth = 0.42 * windowWidth; // 42vw
+    let canvasHeight = 0.24 * windowHeight; // 24vw
+    cnv = createCanvas(canvasWidth, canvasHeight);
+    
+    let canvasX = (windowWidth - canvasWidth) / 2; // Centering on X-axis
+    let canvasY = 0.24 * windowHeight; // 24vw from the top
+    
+    cnv.position(canvasX, canvasY);
+    
+    updateCanvasPosition();
+    window.addEventListener('resize', updateCanvasPosition);
+}
 
-        updateCanvasPosition();
-        window.addEventListener('resize', updateCanvasPosition); // Update canvas bounds on window resize
-        
-        centerX = width / 3;
-        centerY = height / 2;
-        noStroke();
-        noCursor();
-    }
 
     function updateCanvasPosition() {
         // Get current canvas position
@@ -359,7 +361,7 @@
     }
 
     function collidesWithImg() {
-        let imgWidth = img.width / 2.5;
+        let imgWidth = img.width / 2;
         let imgHeight = img.height / 2;
 
         return mouseX > centerX - imgWidth / 2 &&
