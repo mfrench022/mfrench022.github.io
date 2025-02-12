@@ -218,25 +218,13 @@
       cursorImg = loadImage('whitehorsecursor2.png'); // Replace with your cursor image file
     }
     
-    // function setup() {
-    //   createCanvas(885, 885);
-    //   centerX = width / 2;
-    //   centerY = height / 2;
-    //   noStroke();
-    //   noCursor(); // Hides the default cursor
-    // }
-
     function setup() {
-    let canvas = createCanvas(885, 885); 
-    canvas.parent("square"); // Attach canvas to the div with class "square"
-    canvas.style("display", "block"); // Ensure no extra spacing
-    canvas.style("position", "absolute"); // Position it absolutely within the div
-    canvas.style("top", "50%");
-    canvas.style("left", "50%");
-    canvas.style("transform", "translate(-50%, -50%)"); // Center the canvas
-    canvas.style("z-index", "1000"); // Ensure it's on top
-    canvas.style("pointer-events", "none"); // Ensures it doesn’t interfere with other interactions
-}
+      createCanvas(885, 885);
+      centerX = width / 2;
+      centerY = height / 2;
+      noStroke();
+      noCursor(); // Hides the default cursor
+    }
     
     function draw() {
       background(0, 50);
