@@ -169,6 +169,13 @@
             /* margin-top: 24vw; */
         }
 
+        .starburst {
+        position: absolute;
+        aspect-ratio: 1;
+        clip-path: polygon(99.73% 55.23%,57.47% 52.87%,90.45% 79.39%,55.03% 56.22%,70.34% 95.68%,51.25% 57.9%,44.77% 99.73%,47.13% 57.47%,20.61% 90.45%,43.78% 55.03%,4.32% 70.34%,42.1% 51.25%,0.27% 44.77%,42.53% 47.13%,9.55% 20.61%,44.97% 43.78%,29.66% 4.32%,48.75% 42.1%,55.23% 0.27%,52.87% 42.53%,79.39% 9.55%,56.22% 44.97%,95.68% 29.66%,57.9% 48.75%);
+        transform: translate(-50%, -50%);
+    }
+
     </style>
 </head>
 
@@ -216,53 +223,108 @@
 <div class = "square"></div>
 
 <script>
-    let img;  // Main image
-    let cursorImg; // Cursor image
+    let img, cursorImg;
     let centerX, centerY;
     let accelX = 0.0, accelY = 0.0;
     let damping = 0.98;
-    let springing = 0.0009;    
-    
+    let springing = 0.0009;
+    let lastSpawnTime = 0;
+    let spawnDelay = 300; // 300ms delay to prevent too many starbursts at once
+    let colorIndex = 0;
+    const colors = ['#9b2426', '#f8f8f8', '#2b3384'];
+
+    let cnv, canvasX, canvasY, canvasWidth, canvasHeight;
+
     function preload() {
-      img = loadImage('Grammy2.png'); // Replace with correct path
-      cursorImg = loadImage('whitehorsecursor2.png'); // Replace with your cursor image file
+        img = loadImage('Grammy2.png');
+        cursorImg = loadImage('whitehorsecursor2.png');
     }
-    
+
     function setup() {
-        let cnv = createCanvas(895, 545); // Creates the canvas
-        cnv.position((windowWidth - width) / 2, 0); // Centers horizontally and aligns to the top
+        cnv = createCanvas(895, 545);
+        cnv.position((windowWidth - width) / 2, 0); // Centers the canvas horizontally
+
+        updateCanvasPosition();
+        window.addEventListener('resize', updateCanvasPosition); // Update canvas bounds on window resize
+        
         centerX = width / 3;
         centerY = height / 2;
         noStroke();
-        noCursor(); // Hides the default cursor
+        noCursor();
+    }
+
+    function updateCanvasPosition() {
+        // Get current canvas position
+        let rect = cnv.elt.getBoundingClientRect();
+        canvasX = rect.left;
+        canvasY = rect.top;
+        canvasWidth = rect.width;
+        canvasHeight = rect.height;
     }
 
     function draw() {
-      background(0, 50);
-      moveImage();
-      imageMode(CENTER);
-      image(img, centerX, centerY, img.width / 2, img.height / 2); // Display main image
-    
-      // Draw custom cursor at mouse position
-      image(cursorImg, mouseX, mouseY, 60, 60); // Adjust size if needed
-    }
-    
-    function moveImage() {
-      let deltaX = (mouseX - centerX) * springing;
-      let deltaY = (mouseY - centerY) * springing;
-    
-      accelX += deltaX;
-      accelY += deltaY;
-    
-      centerX += accelX;
-      centerY += accelY;
-    
-      accelX *= damping;
-      accelY *= damping;
-    }
-    </script>
+        background(0, 50);
+        moveImage();
+        imageMode(CENTER);
+        image(img, centerX, centerY, img.width / 2, img.height / 2);
 
-    
+        // Draw custom cursor
+        image(cursorImg, mouseX, mouseY, 60, 60);
+
+        // Check for collision and create a starburst if needed
+        if (collidesWithImg() && millis() - lastSpawnTime > spawnDelay) {
+            createStarburst();
+            lastSpawnTime = millis();
+        }
+    }
+
+    function moveImage() {
+        let deltaX = (mouseX - centerX) * springing;
+        let deltaY = (mouseY - centerY) * springing;
+
+        accelX += deltaX;
+        accelY += deltaY;
+
+        centerX += accelX;
+        centerY += accelY;
+
+        accelX *= damping;
+        accelY *= damping;
+    }
+
+    function collidesWithImg() {
+        let imgWidth = img.width / 2;
+        let imgHeight = img.height / 2;
+
+        return mouseX > centerX - imgWidth / 2 &&
+               mouseX < centerX + imgWidth / 2 &&
+               mouseY > centerY - imgHeight / 2 &&
+               mouseY < centerY + imgHeight / 2;
+    }
+
+    function createStarburst() {
+        let starburst = document.createElement('div');
+        starburst.classList.add('starburst');
+
+        // Assign random size between 4vw and 6vw
+        let size = random(4, 6) + 'vw';
+        starburst.style.width = size;
+        starburst.style.height = size;
+
+        // Assign alternating colors
+        starburst.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+
+        // Assign random position within the canvas
+        let x = random(canvasX, canvasX + canvasWidth);
+        let y = random(canvasY, canvasY + canvasHeight);
+        starburst.style.left = `${x}px`;
+        starburst.style.top = `${y}px`;
+
+        document.body.appendChild(starburst);
+    }
+</script>
+
 <body>
 
 </body>
