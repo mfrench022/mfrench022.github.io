@@ -15,23 +15,19 @@
             justify-content: center;
             align-items: center;
             cursor: none
-            /* overflow: hidden; */
         }
 
         .nyt {
             width: 100%;
             height: 115vw;
-            /* background-color: blue; */
             margin: 0;
             padding: 0;
             position: relative;
-            /* z-index: 500; */
         }
 
         .nyt1 {
             width: 100%;
             height: 2.5vw;
-            /* background-color: yellow; */
             position: fixed;
             top: 0;
             z-index: 12;
@@ -44,7 +40,6 @@
         .nyt2 {
             width: 100%;
             height: 20vw;
-            /* background-color: blue; */
             position: absolute;
             top: 5vw;
             z-index: 11;
@@ -57,10 +52,8 @@
         .nyt3 {
             width: 100%;
             height: 48vw;
-            /* background-color: red; */
             position: absolute;
             bottom: 0;
-            /* z-index: 300; */
         }
 
         .nyt3 img {
@@ -69,7 +62,6 @@
 
         .placeholder {
             position: absolute;
-            /* background-color: rgb(240, 23, 23); */
             left: 29vw;
             top: 24vw;
             width: 42vw;
@@ -81,28 +73,23 @@
         .container {
             height: 100vh;
             aspect-ratio: 1;
-            /* backgrounxd-color: #2b3384; */
             position: fixed;
             z-index: -1;
-            /* margin-left: 23.5vw; */
             overflow: hidden;
         }
 
         .toprow {
             width: 100%;
             height: 25vw;
-            /* background-color: #000000; */
             position: absolute;
             top: 0;
             z-index: 0;
-            /* margin-left: 23.5vw; */
         }
 
         .starrow {
             width: 100%;
             height: 3vw;
             background-color: #2b3384;
-            /* background-color: yellowgreen; */
             position: absolute;
             top: 24vw;
             display: grid;
@@ -117,13 +104,11 @@
         .bottomrow{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            /* background-color: yellow; */
             position: absolute;
             width: 100%;
             height: 25vw;
             top: 27.25vw;
             z-index: 3;
-            /* margin-left: -0.35vw; */
         }
 
         .column1 {
@@ -186,17 +171,17 @@
             to { transform: translate3d(-7rem, 0, 0); }
         }
 
-        /* Shape obtained from css-shapes.com */
+        /* Star shape obtained from css-shapes.com */
         .star {
-        width: 75%;  
-        height: 65%;
-        background: #f8f8f8;
-        clip-path: polygon(50% 0,
-            calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
-            calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
-            calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
-            calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
-        ); 
+            width: 75%;  
+            height: 65%;
+            background: #f8f8f8;
+            clip-path: polygon(50% 0,
+                calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+                calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+                calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+                calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn))) 
+            ); 
         }
 
         .square {
@@ -220,7 +205,6 @@
             left: 0vw;
             z-index: 10;
             top: 0;
-            /* margin-top: 24vw; */
         }
 
         .margin2 {
@@ -231,7 +215,6 @@
             right: 0vw;
             z-index: 10;
             top: 0;
-            /* margin-top: 24vw; */
         }
 
         .margin3 {
@@ -241,9 +224,9 @@
             background-color: white;
             top: 0vw;
             z-index: 10;
-            /* margin-top: 24vw; */
         }
 
+        /* Starburst shape obtained from css-shapes.com */
         .starburst {
             position: absolute;
             aspect-ratio: 1;
@@ -252,12 +235,14 @@
         }
 
     </style>
+
 </head>
+
 <div class="nyt">
-   
     <div class="nyt1"><img src="nyt1.png"></div>
     <div class="nyt2"><img src="nyt2.png"></div>
     <div class="nyt3"><img src="nyt3.png"></div>
+
     <div class="placeholder">
         <div class = "grain">
             <div class = "container"></div>
@@ -279,6 +264,7 @@
                     <div class="star"></div>
                     <div class="star"></div>
                 </div>
+
                 <div class="bottomrow">
                     <div class="column1"></div>
                     <div class="column2"></div>
@@ -296,18 +282,23 @@
                     <div class="column2"></div>
                     <div class="column1"></div>
                 </div>
-            </div>
-            </div>
-            <div class = "square"></div>
+
+        </div>
     </div>
-    <div class="margin3"></div>
+    <div class = "square"></div>
 </div>
 
+<div class="margin3"></div>
 <div class="margin1"></div>
 <div class="margin2"></div>
 
 <script>
-   let img, cursorImg;
+
+// Soft body physics modified from p5.js example: https://p5js.org/examples/math-and-physics-soft-body/
+
+// Some AI chat bot support utilized to optimize p5.js function
+
+    let img, cursorImg;
     let centerX, centerY;
     let accelX = 0.0, accelY = 0.0;
     let damping = 0.98;
@@ -325,8 +316,8 @@
     }
 
     function setup() {
-    let canvasWidth = 0.42 * windowWidth; // 42vw
-    let canvasHeight = 0.54 * windowHeight; // 24vw
+    let canvasWidth = 0.42 * windowWidth; 
+    let canvasHeight = 0.54 * windowHeight;
     cnv = createCanvas(canvasWidth, canvasHeight);
 
     let canvasX = (windowWidth - canvasWidth) / 2;
@@ -334,8 +325,8 @@
 
     cnv.position(canvasX, canvasY);
 
-    centerX = canvasWidth / 2;  // Initialize centerX
-    centerY = canvasHeight / 2; // Initialize centerY
+    centerX = canvasWidth / 2;  
+    centerY = canvasHeight / 2; 
 
     updateCanvasPosition();
     window.addEventListener('resize', updateCanvasPosition);
@@ -347,7 +338,6 @@
 
 
 function updateCanvasPosition() {
-        // Get current canvas position
         let rect = cnv.elt.getBoundingClientRect();
         canvasX = rect.left;
         canvasY = rect.top;
@@ -361,10 +351,8 @@ function updateCanvasPosition() {
         imageMode(CENTER);
         image(img, centerX, centerY, img.width / 2, img.height / 2);
 
-        // Draw custom cursor
         image(cursorImg, mouseX, mouseY, 60, 60);
 
-        // Check for collision and create a starburst if needed
         if (collidesWithImg() && millis() - lastSpawnTime > spawnDelay) {
             createStarburst();
             lastSpawnTime = millis();
@@ -399,16 +387,13 @@ function updateCanvasPosition() {
         let starburst = document.createElement('div');
         starburst.classList.add('starburst');
 
-        // Assign random size between 4vw and 6vw
         let size = random(4, 6) + 'vw';
         starburst.style.width = size;
         starburst.style.height = size;
 
-        // Assign alternating colors
         starburst.style.backgroundColor = colors[colorIndex];
         colorIndex = (colorIndex + 1) % colors.length;
 
-        // Assign random position within the canvas
         let x = random(canvasX, canvasX + canvasWidth);
         let y = random(canvasY, canvasY + canvasHeight);
         starburst.style.left = `${x}px`;
@@ -418,8 +403,8 @@ function updateCanvasPosition() {
     }
 
     setInterval(() => {
-    document.querySelectorAll('.starburst').forEach(starburst => starburst.remove());
-}, 45000);
+        document.querySelectorAll('.starburst').forEach(starburst => starburst.remove());
+        }, 45000);
 
 </script>
 
