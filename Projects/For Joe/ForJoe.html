@@ -156,6 +156,9 @@ function draw() {
     balls[i].move();
     balls[i].display();
   }
+
+
+
   checkForShake();
 }
 
@@ -257,9 +260,22 @@ class Ball {
   // Draw the ball on the canvas, given its randomized diameter
   // and current coordinates calculated with the methods listed above.
   display() {
-    ellipse(this.x, this.y, this.diameter, this.diameter);
-    // nostroke();
-  }
+    push();
+    fill(255, 0, 0); // Red hearts
+    noStroke();      // Remove outline
+    translate(this.x, this.y); // Move the heart to the ball's position
+    scale(this.diameter / 30); // Scale the heart based on the ball's size
+
+    // Draw heart shape
+    beginShape();
+    vertex(0, 0);
+    bezierVertex(0, -20, 40, -10, 0, 25);
+    vertex(0, 0);
+    bezierVertex(0, -20, -40, -10, 0, 25);
+    endShape(CLOSE);
+
+    pop();
+}
 }
 </script>
 
