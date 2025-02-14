@@ -4,8 +4,359 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Without Borders | Statements of Financial Position</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kxf2qym.css">
 
     <style>
+        body {
+              margin: 0px;
+              padding: 0px;
+              /* background-color: #3e54a599; */
+              /* overflow-y: hidden; */
+          }
+  
+          .button {
+            width: 3vw;
+            height: 3vw;
+            /* background-color: yellow; */
+            position: fixed;
+            left: 1.6vw;
+            top: .1vw;
+            /* border: 0.2vw solid #23408f00; */
+            z-index: 80;
+            transition: 400ms;
+        }
+
+        kbd {
+            font-size: 3.5vw;
+            transition: 400ms;
+            color: #3e54a599;
+        }
+
+        .button:hover kbd {
+            color: #23408f;
+            transition: 400ms;
+            font-size: 4.5vw;
+        }
+
+        .homebutton {
+            width: 3vw;
+            height: 3vw;
+            background-color: none;
+            position: fixed;
+            right: 2vw;
+            top: .7vw;
+            border: 0.2vw solid #23408f00;
+            z-index: 8;
+            transition: 400ms;
+        }
+
+        
+        .homebutton h2 {
+            font-size: 3vw;
+            margin: 0;
+            line-height: 2.7vw;
+            color: white;
+            margin-bottom: 1vw;
+        }
+
+
+        .homebutton:hover {
+            background-color: #ffffff99;
+            border: 0.2vw solid rgba(255, 255, 255, 0);
+            transition: 400ms;
+        }
+
+        .homebutton:hover h2{
+            color: #23408f;
+            transition: 400ms;
+        }
+
+          .container {
+              position: relative;
+              width: 100%;
+              height: 90.5vw;
+              padding: 0px;
+              /* background-color: yellowgreen; */
+              margin: 0px;
+              overflow: hidden;
+          }
+  
+          h1 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 700;
+          color: #23408f;
+          }
+  
+          h2 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 400;
+          font-size: 1.47vw;
+          color: #23408f;
+          }
+  
+          p {
+          font-family: "fenwick", sans-serif;
+          font-weight: 300;
+          font-size: 0.95vw;
+          }
+  
+          .header {
+              font-size: 3vw;
+              position: fixed;
+              left: 8vw;
+              top: 1.4vw;
+              color: #23408f;
+              z-index: 10;
+          }
+
+          .contentspanel {
+            background-color: #3e54a599;
+            width: 28.15vw;
+            height: 100%;
+            margin-top: 0vw;
+            padding-top: 4.3vw;
+            position: fixed;
+            right: 0;
+            /* z-index: 10; */
+          }
+
+          .global {
+            position: fixed;
+            height: 124%;
+            width: 100vw;
+            left: -9vw;
+            z-index: -10;
+            top: 0vw;
+          }
+
+          .global img {
+            height: 100%;
+            margin-top: -5vw;
+            /* margin-right: 2vw; */
+          }
+
+          .row1 {
+            width: 67.85vw;
+            left: 2vw;
+            height: 100%;
+            position: absolute;
+            top: 1vw;
+            display: grid;
+            grid-template-columns: 0.5fr 3fr 1fr 1fr 1fr;
+            grid-column-gap: 2vw;
+            /* background-color: yellow; */
+        }
+
+        .spacer {
+            width: 100%
+        }
+        
+        
+        .column1{
+            width: 100%;
+            position: relative;
+            margin-top: 16vw;
+            /* background-color: red; */
+        }
+
+        .column2{
+            width: 100%;
+            position: relative;
+            /* background-color: orange; */
+            margin-top: 16vw;
+        }
+
+        .column1 p {
+            /* text-align: right; */
+            line-height: 1.9vw;
+        }
+
+        .column2 p {
+            text-align: right;
+            line-height: 1.9vw;
+        }
+
+        .column2 h2 {
+            text-align: right;
+        }
+
+        .column3 p {
+            text-align: right;
+            line-height: 1.9vw;
+        }
+
+        .column3 h2 {
+            text-align: right;
+        }
+
+        .column3{
+            width: 100%;
+            position: relative;
+            margin-top: 16vw;
+            /* background-color: green; */
+        }
+
+        span {
+            font-size: 0.95vw;
+            font-weight: 400;
+            color: black;
+        }
+
+        span.white {
+            opacity: 0;
+        }
+
+        .highlight {
+            z-index: -10;
+            width: 10vw; 
+            height: 90vw;
+            position: absolute;
+            background-color: #3e54a552;
+            top: 17vw;
+            left: 38.5vw;
+        }
+
+      </style>
+
+</head>
+<body>
+
+
+    <div class = "container">
+        <!-- <div class = "global"><img src="VVA.png"></div> -->
+        <div class = "highlight"></div>
+        <a href = "Contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
+        <a href = "index.html"><div class = "homebutton"><center><h2>𖠿</h2></center></div></a>
+        
+        <div class="contentspanel">
+        </div>
+        <div class="header">
+            <h1>FINANCIAL POSITION</h1>
+        </div>
+
+    
+
+        <div class="row1">
+            <div class="spacer"></div>
+            <div class="column1">
+                <h2>Assets</h2>
+                <p>Cash and cash equivalents<br>
+                    Short-term investments, at fair value<br>
+                    MSF USA network receivables<br>
+                    Contributions receivable<br>
+                    Pledges receivable, net<br>
+                    Loan receivable<br>
+                    Prepaid expenses and other assets<br>
+                    Long-term investments, at fair value<br>
+                    Fixed assets, net</p>
+                    <h2>Total Assets</h2>
+                    <br>
+                    
+                <h2>Liabilities and Net Assets</h2>
+                <p><span>Liabilities</span></p>
+                <p>Grants payable<br>
+                    Accounts payable and accrued expenses<br>
+                    MSF USA network payables<br>
+                    Capitalized lease obligation<br>
+                    Revocable endowment<br>
+                    Annuity and other life income agreement obligations</p>
+                    <p><span>Total Liabilities</span></p><br>
+
+                <p><span>Net Assets</span></p>
+                <p><span>Without donor restrictions:</span><br>
+                    Undesignated<br>
+                    Board-designated for reserves<br>
+                    Total without restrictions<br>
+                    With donor restrictions<br> 
+                    <p><span>Total Net Assets</span></p>
+                    <br>
+                    <h2>Total Liabilities and Net Assets</h2>
+
+            </div>
+
+            <div class="column2">
+                <h2>2025</h2>
+                <p>$ 85,388,166<br>
+                    175,743,014<br>
+                    4,565,217<br>
+                    88,559,179<br>
+                    2,959,770<br>
+                    23,124,678<br>
+                    8,130,906<br>
+                    58,951,377<br>
+                    54,544,902</p>
+                    <h2><span>$ 501,967,209</span></h2>
+                    <br>
+
+                <span class = "white"><h2>>White</h2>
+                <p>White</p></span>
+                <p>$ 197,113,804<br>
+                    17,190,143<br>
+                    409,441<br>
+                    73,919<br>
+                    3,250,000<br>
+                    20,340,390<br></p>
+                    <h2><span>$ 238,377,697</span></h2>
+
+                    <span class = "white"><h2>>White</h2>
+                        <p>White</p></span>
+                <p>$ 201,809,360<br>
+                    2,029,864<br>
+                    203,839,224<br>
+                    59,750,288</p>
+                    <h2><span>$ 263,589,512</span></h2>
+
+                    <br>
+                    <h2><span>$ 501,967,209</span></h2>
+                    
+            </div>
+
+            <div class="column3">
+                <h2>2024</h2> 
+                <p>$ 77,563,028<br>
+                    161,443,272<br>
+                    4,692,735<br>
+                    38,944,539<br>
+                    4,210,494<br>
+                    22,088,420<br>
+                    15,601,349<br>
+                    54,337,906<br>
+                    57,138,061</p>
+                    <h2><span>$ 436,019,804</span></h2>
+                    <br>
+
+                    <span class = "white"><h2>>White</h2>
+                        <p>White</p></span>
+                        <p>$ 49,102,638<br>
+                            21,666,616<br>
+                            279,745<br>
+                            1,662<br>
+                            3,250,000<br>
+                            19,209,076<br>
+                            </p>
+                            <h2><span>$ 93,509,737</span></h2>
+        
+                            <span class = "white"><h2>>White</h2>
+                                <p>White</p></span>
+                        <p>$ 295,824,157<br>
+                            1,829,537<br>
+                            297,653,694<br>
+                            44,856,373<br>
+                            </p>
+                            <h2><span>$ 263,589,512</span></h2>
+        
+                            <br>
+                            <h2><span>$ 436,019,804</span></h2>
+
+            </div>
+            <div class="spacer"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+<style>
         .homebutton {
             width: 80px;
             height: 40px;
@@ -40,4 +391,4 @@
 </div>
 
 </body>
-</html>
+</html> -->
