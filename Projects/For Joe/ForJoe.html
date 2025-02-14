@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kxf2qym.css">
+
+    <style>
+
+        .body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(238, 156, 210);
+
+        }
+
+        .container {
+            width: 100vw;
+            height: 2000vw;
+            position: fixed;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(238, 156, 210);
+            /* overflow: hidden; */
+        }
+
+        .poster {
+            background-color: rgb(238, 156, 210);
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin: 0vw;
+            padding: 0;
+            padding-top: 15vw;
+        }
+
+        .grain {
+            /* position: absolute; */
+            pointer-events: none;
+            /* z-index: 30; */
+            transform: translateZ(0);
+            /* margin-left: 23.5vw; */
+            overflow: hidden;
+            width: 100%;
+            height: 200vw;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(238, 156, 210);
+            padding-top: 30vw;
+            /* aspect-ratio: 1; */
+            /* overflow: hidden; */
+            
+        }
+
+        .grain::before {
+            content: "";
+            top: -10rem;
+            left: -10rem;
+            width: calc(100% + 20rem);
+            height: calc(100% + 20rem);
+            /* z-index: 4; */
+            position: fixed;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+            opacity: 0.15;
+            pointer-events: none;
+            -webkit-animation: noise 1s steps(2) infinite;
+            animation: noise 1s steps(2) infinite;
+        }
+
+        @-webkit-keyframes noise {
+            to { transform: translate3d(-7rem, 0, 0); }
+        }
+
+        @keyframes noise {
+            0% { transform: translate3d(0, 9rem, 0); }
+            10% { transform: translate3d(-1rem, -4rem, 0); }
+            20% { transform: translate3d(-8rem, 2rem, 0); }
+            30% { transform: translate3d(9rem, -9rem, 0); }
+            40% { transform: translate3d(-2rem, 7rem, 0); }
+            50% { transform: translate3d(-9rem, -4rem, 0); }
+            60% { transform: translate3d(2rem, 6rem, 0); }
+            70% { transform: translate3d(7rem, -8rem, 0); }
+            80% { transform: translate3d(-9rem, 1rem, 0); }
+            90% { transform: translate3d(6rem, -5rem, 0); }
+            to { transform: translate3d(-7rem, 0, 0); }
+        }
+
+        h1 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 600;
+          color: #ffffff;
+          font-size: 5vw;
+          }
+
+        span {
+            font-size: 25vw;
+        }
+  
+
+    </style>
+</head>
+<body>
+<div class = "grain">
+        <center><h1>HAPPY VALENTINE'S DAY,<br>
+        <span>JOEY</span><br><br><br><br>LOVE, MICHAEL</h1></center>
+  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+<script>
+    // Define the global variables.
+// The balls variable will contain all the
+// balls in the canvas.
+let balls = [];
+
+// The threshold variable will be used to check
+// if the mobile device has been moved enough to
+// initiate a response.
+let threshold = 30;
+
+// accChangeX and accChangeY will measure the acceleration
+// when the mobile device is moved.
+let accChangeX = 0;
+let accChangeY = 0;
+
+// accChangeT will be used to calculate the overall change
+// for the mobile device's position.
+let accChangeT = 0;
+
+function setup() {
+  describe(
+    'Twenty circles that bounce around in the canvas whenever the mobile device is tilted.'
+  );
+
+  createCanvas(windowWidth, windowHeight); // Make canvas full screen
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0, 0); // Align to top-left corner
+  canvas.style('z-index', '10'); // Ensure it appears above other elements
+  canvas.style('pointer-events', 'none'); // Make sure it doesn’t interfere with clicks
+
+  // Create 20 instances of the Ball class.
+  for (let i = 0; i < 20; i++) {
+    balls.push(new Ball());
+  }
+}
+
+function draw() {
+  background(0);
+  clear ();
+
+  // For each ball created, move the ball
+  // in response to the measurements gathered
+  // by the checkForShake() function.
+  for (let i = 0; i < balls.length; i++) {
+    balls[i].move();
+    balls[i].display();
+  }
+  checkForShake();
+}
+
+function checkForShake() {
+  // Calculate the total change for accelerationX and accelerationY.
+  accChangeX = abs(accelerationX - pAccelerationX);
+  accChangeY = abs(accelerationY - pAccelerationY);
+
+  // Calculate the overall change in the mobile device's acceleration.
+  accChangeT = accChangeX + accChangeY;
+
+  // If the overall change meets or is greater than the threshold,
+  // call the shake() and turn() methods and change the direction
+  // and speed of each ball.
+  if (accChangeT >= threshold) {
+    for (let i = 0; i < balls.length; i++) {
+      balls[i].shake();
+      balls[i].turn();
+    }
+  }
+  // If the overall change doesn't meet the threshold,
+  // gradually slow down the ball movement.
+  else {
+    for (let i = 0; i < balls.length; i++) {
+      balls[i].stopShake();
+      balls[i].turn();
+      balls[i].move();
+    }
+  }
+}
+
+// Create the Ball class.
+class Ball {
+  constructor() {
+    // Make each ball created have a random size, speed, and starting
+    // placement in the canvas.
+    this.x = random(width);
+    this.y = random(height);
+    this.diameter = random(10, 30);
+    this.xspeed = random(-2, 2);
+    this.yspeed = random(-2, 2);
+    this.direction = 0.7;
+
+    // oxspeed will be used to calculate the decrease in speed in the
+    // stopShake() method.
+    this.oxspeed = this.xspeed;
+    this.oyspeed = this.yspeed;
+  }
+
+  // Whenever the ball's move() method is called,
+  // multiply its speed and direction of movement
+  // and have that equal its new placement in the canvas.
+  move() {
+    this.x += this.xspeed * this.direction;
+    this.y += this.yspeed * this.direction;
+  }
+
+  // If the ball ever touches the edge of the canvas,
+  // have it bounce off the edge.
+  turn() {
+    if (this.x < 0) {
+      this.x = 0;
+      this.direction = -this.direction;
+    } else if (this.y < 0) {
+      this.y = 0;
+      this.direction = -this.direction;
+    } else if (this.x > width - 20) {
+      this.x = width - 20;
+      this.direction = -this.direction;
+    } else if (this.y > height - 20) {
+      this.y = height - 20;
+      this.direction = -this.direction;
+    }
+  }
+
+  // Whenever the ball's shake() method is called,
+  // add to the speed of the ball based on
+  // the change in the accelerationX value.
+  shake() {
+    this.xspeed += random(5, accChangeX / 3);
+    this.yspeed += random(5, accChangeX / 3);
+  }
+
+  // Whenever the ball's stopShake() method is called,
+  // gradually slow down its speed.
+  stopShake() {
+    if (this.xspeed > this.oxspeed) {
+      this.xspeed -= 0.6;
+    } else {
+      this.xspeed = this.oxspeed;
+    }
+    if (this.yspeed > this.oyspeed) {
+      this.yspeed -= 0.6;
+    } else {
+      this.yspeed = this.oyspeed;
+    }
+  }
+
+  // Draw the ball on the canvas, given its randomized diameter
+  // and current coordinates calculated with the methods listed above.
+  display() {
+    ellipse(this.x, this.y, this.diameter, this.diameter);
+    // nostroke();
+  }
+}
+</script>
+
+
+</body>
+</html>
