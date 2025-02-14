@@ -263,6 +263,7 @@
                     <div class="star"></div>
                     <div class="star"></div>
                     <div class="star"></div>
+                    <!-- <div class="starburst" data-destination-x="100" data-destination-y="200"></div> -->
                 </div>
 
                 <div class="bottomrow">
@@ -396,11 +397,24 @@ function updateCanvasPosition() {
 
         let x = random(canvasX, canvasX + canvasWidth);
         let y = random(canvasY, canvasY + canvasHeight);
+
+        // let destX = random(canvasX, canvasX + canvasWidth);
+        // let destY = random(canvasY, canvasY + canvasHeight);
+
         starburst.style.left = `${x}px`;
         starburst.style.top = `${y}px`;
 
+        // starbust.setAttribute("data-destination-x", 100);
+
         document.body.appendChild(starburst);
     }
+    // for every set interval
+    // loop through the starbust dom elements
+    // for each one
+    // get the data-* attributes
+    // change the .left position and .top position to be one pixel closer
+
+    // ALL TALIA CODE COMMENTED OUT: FIGURE OUT AND UPDATE
 
     setInterval(() => {
         document.querySelectorAll('.starburst').forEach(starburst => starburst.remove());

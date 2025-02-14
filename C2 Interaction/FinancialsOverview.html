@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Without Borders | Financials at a Glance</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kxf2qym.css">
+
+    <style>
+        body {
+              margin: 0px;
+              padding: 0px;
+              /* background-color: #3e54a599; */
+              overflow-y: hidden;
+          }
+  
+          .button {
+              width: 3vw;
+              height: 3vw;
+              background-color: none;
+              position: fixed;
+              left: 1.6vw;
+              top: .1vw;
+              /* border: 0.2vw solid #23408f00; */
+              z-index: 8;
+              transition: 400ms;
+          }
+  
+          kbd {
+              font-size: 3.5vw;
+              transition: 400ms;
+              color: #23408f;
+          }
+  
+          .button:hover kbd {
+              color: #3e54a599;
+              transition: 400ms;
+          }
+  
+          .homebutton {
+              width: 3vw;
+              height: 3vw;
+              background-color: none;
+              position: fixed;
+              right: 2vw;
+              top: .7vw;
+              border: 0.2vw solid #23408f00;
+              z-index: 8;
+              transition: 400ms;
+          }
+  
+          .homebutton h2 {
+              font-size: 3vw;
+              margin: 0;
+              line-height: 2.7vw;
+              color: #23408f;
+              margin-bottom: 1vw;
+          }
+  
+  
+          .homebutton:hover {
+              background-color: #3e54a599;
+              border: 0.2vw solid rgba(255, 255, 255, 0);
+              transition: 400ms;
+          }
+  
+          .homebutton:hover h2{
+              color: white;
+              transition: 400ms;
+          }
+  
+          .container {
+              position: relative;
+              width: 100%;
+              height: 65vw;
+              padding: 0px;
+              /* background-color: white; */
+              margin: 0px;
+              overflow: hidden;
+          }
+  
+          h1 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 700;
+          color: #23408f;
+          }
+  
+          h2 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 400;
+          font-size: 1.5vw;
+          color: #23408f;
+          }
+  
+          p {
+          font-family: "fenwick", sans-serif;
+          font-weight: 300;
+          font-size: 0.95vw;
+          }
+  
+          .header {
+              font-size: 3vw;
+              position: absolute;
+              left: 8vw;
+              top: 1.4vw;
+              color: #23408f;
+              /* z-index: 1; */
+          }
+
+          .contentspanel {
+            background-color: #3e54a599;
+            width: 28.15vw;
+            height: 100%;
+            margin-top: 0vw;
+            padding-top: 18.7vw;
+            /* z-index: 10; */
+          }
+
+          .global {
+            position: absolute;
+            height: 100%;
+            width: 100vw;
+            right: 0;
+            z-index: -10;
+          }
+
+          .global img {
+            height: 102%;
+            margin-top: -5vw;
+            margin-left: 18vw;
+          }
+
+          .row1 {
+            width: 67.85vw;
+            right: 2vw;
+            height: 68vw;
+            position: absolute;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-column-gap: 2vw;
+            /* background-color: yellow; */
+        }
+
+        .column1{
+            width: 100%;
+            position: relative;
+            padding-top: 32.5vw;
+            /* z-index: 2; */
+            transition: 400ms;
+            /* background-color: red; */
+        }
+
+        .column2{
+            width: 43vw;
+            position: relative;
+            padding-top: 0.1vw;
+            height: 32vw;
+            /* z-index: 2; */
+            transition: 400ms;
+            /* background-color: #23408f; */
+            background-color: #3e54a599;
+            margin-top: 20vw;
+            padding-left: 2vw;
+        }
+
+        a {
+              text-decoration: none;
+              transition: 400ms;
+          }
+  
+          a:hover {
+              /* cursor: pointer; */
+              transition: 400ms;
+              color: #23408f;
+          }
+  
+      li a{
+              font-size: 1.47vw;
+              font-weight: 300;
+              line-height: 2.22vw;
+              font-family: "fenwick", sans-serif;
+              font-weight: 400;
+              color: white;
+              margin-left: 0vw;
+              margin-right: 2vw;
+              /* cursor: pointer; */
+              /* z-index: 7; */
+          }
+
+          ul {
+            list-style: none;
+          }
+
+          /* span:hover a {
+            color: white;
+          } */
+
+          .button {
+            width: 3vw;
+            height: 3vw;
+            /* background-color: yellow; */
+            position: fixed;
+            left: 1.6vw;
+            top: .1vw;
+            /* border: 0.2vw solid #23408f00; */
+            z-index: 80;
+            transition: 400ms;
+        }
+
+        kbd {
+            font-size: 3.5vw;
+            transition: 400ms;
+            color: #ffffff99;
+        }
+
+        .button:hover kbd {
+            color: #ffffff;
+            transition: 400ms;
+            font-size: 4.5vw;
+        }
+
+        h3 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 400;
+          font-size: 1.6vw;
+          color: white;
+          line-height: 3.45vw;
+          transition: 400ms;
+          
+          }
+
+          .column2 h2 {
+            color: #23408f;
+            font-weight:800;
+            font-size: 2.03vw;
+            transition: 400ms;
+          }
+
+          .button2 {
+            position: absolute;
+            width: 14vw;
+            height: 4vw;
+            background-color:  #ffffff99;
+            left: 55vw;
+            bottom: 18vw;
+            z-index: 20;
+            transition: 400ms;
+          }
+
+          .button2 p {
+            color: #23408f;
+            line-height: 2vw;
+            margin-left: 2vw;
+            transition: 400ms;
+          }
+
+          .button2:hover {
+            background-color: white;
+            transition: 400ms;
+          }
+
+          .button3 {
+            position: absolute;
+            width: 12vw;
+            height: 4vw;
+            background-color:  #3e54a599;
+            left: 30.15vw;
+            bottom: 18vw;
+            z-index: 20;
+            transition: 400ms;
+          }
+
+          .button3 p {
+            color: white;
+            line-height: 2vw;
+            margin-left: 2vw;
+            transition: 400ms;
+          }
+
+          .button3:hover {
+            background-color: #23408f;
+            transition: 400ms;
+          }
+
+          .column1 h2 {
+            font-family: "fenwick", sans-serif;
+            font-weight: 300;
+            font-size: 0.95vw;
+            color: #23408f;
+          }
+
+          .column1 span {
+            font-size: 0.865vw;
+            font-style: italic;
+            color: #23408f;
+            font-family: "fenwick", sans-serif;
+            font-weight: 300;
+          }
+
+      </style>
+
+</head>
+<body>
+
+
+    <div class = "container">
+        <a href = "Financial-Statements.html"><div class="button2"><p>See the Full Report</p></div></a>
+        <a href = "Independent-Auditors-Report.html"><div class = "button3"><p>Read the Letter</p></div></a>
+        <div class = "global"><img src="global.png"></div>
+        <div class="contentspanel">
+            <ul>
+                <li><a href="Financial-Statements.html">Financial Statements</a></li><br><br>
+                <li><a href="Independent-Auditors-Report.html">Auditor's Report</a></li><br><br>
+                <span><li><a href = "null.html">Statements of Activities</a></li><br><br>
+                <li><a href = "null.html">Statements of Functional Expenses</a></li><br><br>
+                <li><a href = "null.html">Statements of Cash Flows</a></li><br><br>
+                <li><a href = "null.html">Notes to Financial Statements</a></li></span>
+            </ul>
+        </div>
+        
+        <!-- <div class = "global"><img src="global.png"></div> -->
+        <a href = "Contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
+        <a href = "index.html"><div class = "homebutton"><center><h2>𖠿</h2></center></div></a>
+        <div class="header">
+            <h1>FINANCIALS</h1>
+        </div>
+        <div class="row1">
+            <div class="column1">
+                <h2>To the Board of Directors of Médecins Sans Frontières USA, Inc.<br><br><span>Doing Business As<br></span>Doctors Without Borders USA, Inc.<br><br>Baker Tilley | Submitted May 16, 2025 <br><br></h2>
+            </div>
+            <div class="column2">
+                <h2>Overview of 2025 Financial Position</h2><br>
+        <h3>
+            Total Assets: $ 501,967,209<br>
+            Total Liabilities: $ 238,377,697<br>
+            Total Net Assets: $ 263,589,512<br>
+            Total Liabilities and Net Assets: $ 501,967,209<br>
+        </h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
+    <style>
+
+        .homebutton {
+            width: 80px;
+            height: 40px;
+            background-color: lightcoral;
+            align-items: center;
+            justify-content: center;
+            line-height: 40px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding-left: 10px;
+        }
+
+        .homebutton p {
+            margin-left: 12px;
+            margin-top: 1px;
+        }
+
+
+        .button {
+            width: 125px;
+            height: 40px;
+            background-color: lightblue;
+            line-height: 40px;
+            /* position: absolute;
+            right: 20px;
+            top: 10px; */
+        }
+
+        .button2 {
+            width: 150px;
+            height: 40px;
+            background-color: white;
+            line-height: 40px;
+            /* position: absolute;
+            right: 20px;
+            top: 10px; */
+        }
+
+        .button p {
+            margin-left: 12px;
+            /* margin-top: 20px; */
+        }
+
+        .button2 p {
+            margin-left: 12px;
+            /* margin-top: 20px; */
+        }
+
+        .finance {
+            background-color: lightblue;
+            height: 400px;
+            width: 900px;
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            padding-left: 30px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+<div class = "container">
+    <h1>Financials at a Glance</h1><br>
+    <h2>To the Board of Directors of Médecins Sans Frontières USA, Inc.<br>d/b/a Doctors Without Borders USA, Inc.<br>Baker Tilley | Submitted May 16, 2025 <br></h2>
+    <a href = "Independent-Auditors-Report.html"><div class = "button"><p>Read the Letter</p></div></a>
+    <h2><br> <br> Financial Statements<br>
+        Statements of Activities<br>
+        Statements of Functional Expenses<br>
+        Statements of Cash Flows<br>
+        Notes to Financial Statements<br></h2>
+    <div class = "finance">
+        <h1>Overview of 2025 Financial Position</h1><br>
+        <h2>
+            Total Assets: $ 501,967,209<br>
+            Total Liabilities: $ 238,377,697<br>
+            Total Net Assets: $ 263,589,512<br>
+            Total Liabilities and Net Assets: $ 501,967,209
+        </h2><br>
+        <a href = "Financial-Statements.html"><div class = "button2"><p>See the Full Report</p></div></a>
+    </div>
+    <a href = "Contents.html"><div class = "homebutton"><p>Contents</p></div></a>
+</div>
+</body>
+</html> -->
