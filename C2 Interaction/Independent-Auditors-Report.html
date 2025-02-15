@@ -4,7 +4,289 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Without Borders | Independent Auditor’s Report</title>
+    <link rel="stylesheet" href="https://use.typekit.net/kxf2qym.css">
 
+    <style>
+        body {
+              margin: 0px;
+              padding: 0px;
+              /* background-color: #3e54a599; */
+              overflow-y: hidden;
+          }
+  
+          .button {
+            width: 3vw;
+            height: 3vw;
+            /* background-color: yellow; */
+            position: fixed;
+            left: 1.6vw;
+            top: .1vw;
+            /* border: 0.2vw solid #23408f00; */
+            z-index: 80;
+            transition: 400ms;
+        }
+
+        kbd {
+            font-size: 3.5vw;
+            transition: 400ms;
+            color: #3e54a599;
+        }
+
+        .button:hover kbd {
+            color: #23408f;
+            transition: 400ms;
+            font-size: 4.5vw;
+        }
+
+        .homebutton {
+            width: 3vw;
+            height: 3vw;
+            background-color: none;
+            position: fixed;
+            right: 2vw;
+            top: .7vw;
+            border: 0.2vw solid #23408f00;
+            z-index: 8;
+            transition: 400ms;
+        }
+
+        
+        .homebutton h2 {
+            font-size: 1vw;
+            margin: 0;
+            line-height: 3.1vw;
+            color: white;
+            margin-bottom: 1vw;
+        }
+
+
+        .homebutton:hover {
+            background-color: #ffffff99;
+            border: 0.2vw solid rgba(255, 255, 255, 0);
+            transition: 400ms;
+        }
+
+        .homebutton:hover h2{
+            color: #23408f;
+            transition: 400ms;
+        }
+
+          .container {
+              position: relative;
+              width: 100%;
+              height: 65vw;
+              padding: 0px;
+              /* background-color: white; */
+              margin: 0px;
+              overflow: hidden;
+          }
+  
+          h1 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 700;
+          color: #23408f;
+          }
+  
+          h2 {
+          font-family: "fenwick", sans-serif;
+          font-weight: 400;
+          font-size: 1.2vw;
+          color: #23408f;
+          }
+  
+          p {
+          font-family: "fenwick", sans-serif;
+          font-weight: 300;
+          font-size: 0.95vw;
+          }
+
+          ul {
+          font-family: "fenwick", sans-serif;
+          font-weight: 300;
+          font-size: 0.95vw;
+          }
+
+          span {
+            font-weight: 100;
+            font-size: 0.73vw;
+            line-height: -0.2vw;
+            color: black
+          }
+  
+          .header {
+              font-size: 3vw;
+              position: absolute;
+              left: 8vw;
+              top: 1.4vw;
+              color: #23408f;
+              /* z-index: 1; */
+          }
+
+          .contentspanel {
+            background-color: #3e54a599;
+            width: 24.15vw;
+            height: 100%;
+            margin-top: 0vw;
+            padding-top: 21.6vw;
+            position: absolute;
+            right: 0;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            /* z-index: 10; */
+          }
+
+          .global {
+            position: absolute;
+            height: 100%;
+            width: 100vw;
+            left: -9vw;
+            z-index: -10;
+            top: 0vw;
+          }
+
+          .global img {
+            height: 100%;
+            margin-top: -5vw;
+            /* margin-right: 2vw; */
+          }
+
+          .row1 {
+            width: 67.85vw;
+            left: 2vw;
+            height: 68vw;
+            position: absolute;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr 1fr;
+            grid-column-gap: 2vw;
+            /* background-color: yellow; */
+        }
+
+        .column1{
+            width: 100%;
+            position: relative;
+            margin-top: 17vw;
+            /* background-color: red; */
+        }
+
+        .column2{
+            width: 100%;
+            position: relative;
+            /* background-color: orange; */
+            margin-top: 17vw;
+        }
+
+        .column3{
+            width: 100%;
+            position: relative;
+            margin-top: 24.2vw;
+            /* background-color: green; */
+        }
+
+        .column4{
+            width: 100%;
+            position: relative;
+            /* background-color: blue; */
+            margin-top: 20.3vw;
+        }
+
+        .contentspanel img {
+            width: 24.15vw;
+            margin: 2vw;
+            /* height: 100%; */
+            
+            /* overflow: hidden; */
+        }
+
+        .contentspanel h2 {
+            color: white;
+            font-size: 1vw;
+        }
+
+        .contentspanel span {
+            font-size: 0.865vw;
+            font-style: italic;
+            font-family: "fenwick", sans-serif;
+            font-weight: 300;
+            color: white
+        }
+
+        ul {
+            list-style-image: url('bulletsmall.png');
+            list-style-position: outside;
+            margin-left: -1.2vw;
+            }
+
+        li {
+            padding-left: 0.6vw;
+            margin-bottom: 0.65vw;
+        }
+
+        .column1 p {
+            margin-bottom: 4.8svw;
+        }
+
+      </style>
+
+</head>
+<body>
+
+
+    <div class = "container">
+        <!-- <div class = "global"><img src="global.png"></div> -->
+        <a href = "Contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
+        <a href = "index.html"><div class = "homebutton"><center><h2>DWB</h2></center></div></a>
+        
+        <div class="contentspanel">
+                <h2>To the Board of Directors of Médecins Sans Frontières USA, Inc.<br><br><span>Doing Business As<br></span>Doctors Without Borders USA, Inc.<br><br>Baker Tilley | Submitted May 16, 2025 <br><br></h2>
+            <!-- <img src ="doctor.jpg"> -->
+        </div>
+        <div class="header">
+            <h1>IND. AUDITOR’S REPORT</h1>
+        </div>
+
+    
+
+        <div class="row1">
+            <div class="column1">
+                <h2>Auditors’ Responsibilities for the Audit of the Financial Statements</h2>
+                <p>Our objectives are to obtain reasonable assurance about whether the financial statements as a whole are free from material misstatement. Reasonable assurance is a high level of assurance but is not absolute assurance and therefore is not a guarantee that an audit conducted in accordance with GAAS will always detect a material misstatement when it exists. Misstatements are considered material if there is a substantial likelihood that, individually or in the aggregate, they would influence the judgment made by a reasonable user based on the financial statements.</p>
+
+                <h2><span>Baker Tilly US, LLP, trading as Baker Tilly, is a member of the global network of Baker Tilly International Ltd., the members of which are separate and independent legal entities. © 2020-2022 Baker Tilly US, LLP</span></h2>
+            </div>
+
+            <div class="column2">
+                <h2>In performing an audit in accordance with GAAS, we:</h2>
+                <p>
+                    <ul>
+                        <li>Identify and assess the risks of material misstatement of the financial statements, whether due to fraud or error, and design and perform audit procdures responsive to those risks. Such procedures include examining, on a test basis, evidence regarding the amounts and disclosures in the financial statements.</li>
+            
+                        <li>Obtain an understanding of internal control relevant to the audit in order to design audit procedures that are appropriate in the circumstances.</li>
+            
+                        <li>Evaluate the appropriateness of accounting policies used and the reasonableness of significant accounting estimates made by management, as well as evaluate the overall presentation of the financial statements.</li>
+            
+                        <li>Conclude whether, in our judgment, there are conditions or events that raise substantial doubt about MSF USA’s ability to continue as a going concern for a reasonable period.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="column3">
+
+                <h2>Conclusion</h2> 
+                <p>The accompanying financial statements present fairly, in all material respects, the financial position of MSF USA as of February 15, 2025, and the changes in its net assets and its cash flows for the year then ended in accordance with accounting principles generally accepted in the United States of America (GAAP).</p>
+                
+            </div>
+
+            <div class="column4">
+                <h2>Basis for Opinion</h2> 
+                <p>We conducted our audit in accordance with auditing standards generally accepted in the United States of America (GAAS). We are required to be independent of MSF USA and to meet our other ethical responsibilities, in accordance with the relevant ethical requirements relating to our audit. We believe that the audit evidence we have obtained is sufficient and appropriate to provide a basis for our audit opinion.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- 
     <style>
         .homebutton {
             width: 80px;
@@ -66,4 +348,4 @@
 </div>
 
 </body>
-</html>
+</html> -->
