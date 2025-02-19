@@ -14,7 +14,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: none
+            cursor: none;
+            /* overflow: none; */
         }
 
         .nyt {
@@ -398,33 +399,46 @@ function updateCanvasPosition() {
         let x = random(canvasX, canvasX + canvasWidth);
         let y = random(canvasY, canvasY + canvasHeight);
 
-        // let destX = random(canvasX, canvasX + canvasWidth);
-        // let destY = random(canvasY, canvasY + canvasHeight);
+        let destX = random(canvasX, canvasX + canvasWidth);
+        let destY = random(canvasY, canvasY + canvasHeight);
 
         starburst.style.left = `${x}px`;
         starburst.style.top = `${y}px`;
 
-        // starburst.setAttribute("data-destination-x", 100);
+        starburst.setAttribute("data-destination-x", 100);
+        starburst.setAttribute("data-destination-y", 100);
 
         document.body.appendChild(starburst);
+
+        
     }
 
-    // for (let setInterval) {
-    //     starburst.getAttribute("data-destination-x", 100);
-
-
-    // }
-
-    // for every set interval
-    // loop through the starbust dom elements
-    // for each one
-    // get the data-* attributes
-    // change the .left position and .top position to be one pixel closer
-
-
     setInterval(() => {
-        document.querySelectorAll('.starburst').forEach(starburst => starburst.remove());
-        }, 45000);
+    document.querySelectorAll('.starburst').forEach(starburst => {
+        let currentLeft = parseFloat(starburst.style.left) || 0;
+        let currentTop = parseFloat(starburst.style.top) || 0;
+
+        let destinationX = parseFloat(starburst.getAttribute("data-destination-x")) || currentLeft;
+        let destinationY = parseFloat(starburst.getAttribute("data-destination-y")) || currentTop;
+
+        let easingFactor = 0.0019; // Adjust for faster/slower movement (lower = smoother)
+
+        let newLeft = currentLeft + (destinationX + currentLeft) * easingFactor;
+        let newTop = currentTop + (destinationY - currentTop) * easingFactor;
+
+        starburst.style.left = `${newLeft}px`;
+        starburst.style.top = `${newTop}px`;
+
+        // Check if the starburst is out of bounds
+        if (
+            newLeft < canvasX || newLeft > canvasX + canvasWidth ||
+            newTop < canvasY || newTop > canvasY + canvasHeight
+        ) {
+            starburst.remove(); // Remove from DOM when out of bounds
+        }
+    });
+}, 10); // Smooth animation refresh rate
+
 
 </script>
 
