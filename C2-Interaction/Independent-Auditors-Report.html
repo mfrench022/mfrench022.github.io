@@ -74,7 +74,7 @@
           .container {
               position: relative;
               width: 100%;
-              height: 65vw;
+              height: 100vh;
               padding: 0px;
               /* background-color: white; */
               margin: 0px;
@@ -137,10 +137,25 @@
             padding-right: 2vw;
             /* z-index: 10; */
           }
-
+/* 
           .global {
             position: absolute;
             height: 100%;
+            width: 100vw;
+            left: -9vw;
+            z-index: -10;
+            top: 0vw;
+          }
+
+          .global img {
+            height: 100%;
+            margin-top: -5vw;
+            margin-left: 5vw;
+          } */
+
+          .global {
+            position: fixed;
+            height: 124%;
             width: 100vw;
             left: -9vw;
             z-index: -10;
@@ -156,7 +171,7 @@
           .row1 {
             width: 67.85vw;
             left: 2vw;
-            height: 68vw;
+            height: 100%;
             position: absolute;
             bottom: 0;
             display: grid;
@@ -235,7 +250,7 @@
 <body>
     <div class = "container">
         <div class = "global"><img src="DWB2.png"></div>
-        <a href = "Contents.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
+        <a href = "FinancialsOverview.html"><div class = "button"><center><kbd>&#9776;</kbd></center></div></a>
         <a href = "index.html"><div class = "homebutton"><center><h2>DWB</h2></center></div></a>
         
         <div class="contentspanel">

@@ -73,11 +73,11 @@
           .container {
               position: relative;
               width: 100%;
-              height: 71vw;
+              height: 100vh;
               padding: 0px;
               /* background-color: white; */
               margin: 0px;
-              overflow: hidden;
+              /* overflow-y: hidden; */
           }
   
           h1 {
@@ -137,9 +137,9 @@
           .row1 {
             width: 67.85vw;
             left: 2vw;
-            height: 68vw;
+            height: 100%;
             position: fixed;
-            bottom: -12.5vw;
+            /* bottom: -12.5vw; */
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-column-gap: 2vw;
@@ -149,7 +149,7 @@
         .column1{
             width: 100%;
             position: relative;
-            margin-top: 23.5vw;
+            top: 23.5vw;
             z-index: 2;
             transition: 400ms;
             /* background-color: red; */
@@ -159,7 +159,7 @@
             width: 100%;
             position: relative;
             /* background-color: orange; */
-            margin-top: 17vw;
+            top: 17vw;
             z-index: 2;
             transition: 400ms;
         }
@@ -167,7 +167,7 @@
         .column3{
             width: 100%;
             position: relative;
-            margin-top: 28.7vw;
+            top: 28.7vw;
             z-index: 2;
             transition: 400ms;
             /* background-color: green; */
@@ -207,6 +207,7 @@
             left: 2vw;
             top: 16vw;
             transition: 400ms;
+            overflow: hidden;
         }
 
         .screen2 {
@@ -218,6 +219,7 @@
             position: absolute;
             left: 2vw;
             top: 34.3vw;
+            overflow: hidden;
             transition: 400ms;
         }
 
@@ -232,6 +234,8 @@
             top: 52.6vw;
             transition: 400ms;
         }
+
+     
 
         .column1:hover ~ .contentspanel .screen1 {
     opacity: 0;
