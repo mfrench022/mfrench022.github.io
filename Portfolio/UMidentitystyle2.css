@@ -110,4 +110,30 @@ body {
     color: #ff914d;
   }
 
+  .block {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+}
+
+.blocktext {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%);
+    font-size: 4vw;
+    text-align: center;
+}
+
+
+@media  (max-width: 1400px), (max-height: 600px) {
+ .block {
+    opacity: 1;
+ }
+}
+
  

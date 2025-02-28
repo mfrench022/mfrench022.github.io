@@ -4,14 +4,422 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael French | Portfolio</title>
-    <link rel="stylesheet" href="PortfolioStudentStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
+
+    <style>
+        .zig-zag-line {
+  width: 100%;
+  height: 1vw;
+  background-color: lightblue;
+}
+
+body {
+  /* min-height: 100vh;  */
+  background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 10vw;
+  position: absolute;
+  left: -0.8vw;
+  top: 2.6vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 200ms;
+}
+
+h2 {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 3.145vw;
+  right: -0.19vw;
+  top: -2.5vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.socials {
+  width: 25vw;
+  height: 100%;
+  /* background-color: green; */
+}
+
+.socials h2 {
+  position: absolute;
+  overflow: hidden;
+  font-size: 1.9vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+  left: 0;
+  top: -0.8vw;
+}
+
+h1:hover {
+  cursor: pointer;
+}
+
+h2:hover {
+  cursor: default;
+}
+
+.row1 {
+  /* background-color: red; */
+  height: 12.2vw;
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 200ms;
+}
+
+.row2 {
+  /* background-color: blue; */
+  height: 3vw;
+  width: 100%;
+  position: relative;
+  transition: 200ms;
+  
+}
+
+.spacer {
+  width: 100%;
+  height: 2vw;
+  /* background-color: green; */
+}
+
+.row3, .row3vid {
+  /* background-color: blue; */
+  height: 36.8vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 5fr .3fr 9fr 0.7fr;
+  transition: 200ms;
+}
+
+.row33 {
+  /*   background-color: blue; */
+    height: 36.8vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.7fr 9fr .3fr 5fr 0.7fr;
+    transition: 200ms;
+  }
+
+.side {
+  width: 100%;
+  height: 100%;
+/*   background-color: purple; */
+}
+
+.box33 {
+  width: 100%;
+  height: 10vw;
+  transition: 200ms;
+  margin-top: 4.2vw;
+  /* background-color: red; */
+  /* overflow: scroll; */
+/*   margin: 10px; */
+}
+
+.box4 {
+  width: 100%;
+  height: 100%;
+  transition: 200ms;
+/*   background-color: orange; */
+}
+
+h3 {
+  font-size: 2.145vw;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.box3 ul {
+  font-weight: 400;
+  font-size: 3.145vw;
+  left: -0.75vw;
+  position: relative;
+  list-style-type: none;
+  line-height: 5vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.box33 ul {
+  font-weight: 400;
+  font-size: 1.8vw;
+  left: -0.75vw;
+  position: relative;
+  list-style-type: none;
+  line-height: 2.5vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.button {
+  background-color: white;
+  height: 4vw;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+h3 {
+  color: #8968CD;
+  text-decoration: none;
+  font-family: "Aldrich", sans-serif;
+}
+
+.button h3 {
+  position: relative;
+  left: 1.5vw;
+  font-size: 3.145vw;
+  top: 0.75vw;
+  transition: 200ms;
+  color: #8968CD;
+}
+
+.button2 {
+  background-color: white;
+  height: 4vw;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+.button2 h3 {
+  position: relative;
+  left: 1.5vw;
+  font-size: 3.145vw;
+  top: 0.75vw;
+  transition: 200ms;
+  color: #8968CD;
+}
+
+.box5 {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow;  */
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  overflow: hidden; /* Prevent any overflow from the image */
+  transition: 200ms;
+  position: relative;
+  margin: auto;
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+.box5 img {
+  height: auto; /* Fill the div vertically */
+  width: 100%; /* Adjust width to maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+  transition: 200ms;
+}
+
+.box5vid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+.box5vid img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it fully covers the div */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+}
+
+.box5vid video {
+  width: 100%;
+  height: 90%;
+  object-fit: cover; /* Ensures video fills the container */
+}
+
+.row3vid:hover img {
+  opacity: 0;
+}
+
+.box55 {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  overflow: hidden; /* Prevent any overflow from the image */
+  transition: 200ms;
+  position: relative;
+  margin: auto;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+.box55 img {
+  height: auto; /* Fill the div vertically */
+  width: 100%; /* Adjust width to maintain aspect ratio */
+  transition: 200ms;
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+}
+
+
+.box555 {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  overflow: hidden; /* Prevent any overflow from the image */
+  transition: 200ms;
+  position: relative;
+  margin: auto;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+  background-color: white;
+}
+
+.box555 img {
+  height: auto; /* Fill the div vertically */
+  width: 100%; /* Adjust width to maintain aspect ratio */
+  transition: 200ms;
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+}
+
+html, body {
+width: 100%;
+overflow-x: hidden;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+.spacer h3 {
+  font-size: 0.7vw;
+  margin-left: 4.3vw;
+  position: static;
+  color: white;
+}
+
+a {
+  color: lightblue;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container4, .slideshow-container3, .slideshow-container2, .slideshow-container1 {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slideshow-container3 img, .slideshow-container1 img {
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+.slideshow-container4 img, .slideshow-container2 img {
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -2.4vw;
+  padding: 1vw;
+  color: #8968CD;
+  font-weight: bold;
+  font-size: 3vw;
+  transition: 0.6s ease;
+  border-radius: 0 1vw 1vw 0;
+  user-select: none;
+  background-color: rgba(255, 255, 255, 0.219);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 1vw 0 0 1vw;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: #8a68cdb8;
+  color: white;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media (max-width: 700px) {
+
+  .box3 ul {
+    font-size: 2.8vw;
+    left: -4vw;
+  }
+  
+  .box33 ul {
+    font-size: 1.5vw;
+    left: -4vw;
+  }
+  }
+    </style>
 </head>
 <body>
     <a href ="index.html"><div class ="row1"><h1>Michael French</h1></div></a>
-    <div class ="row2"><h2>recent student work</h2></div>
+    <div class ="row2"><h2>recent student work</h2>
+        <div class = "socials"><h2>
+          <a href="mailto:mfrench022@gmail.com">contact</a> | <a href="https://www.instagram.com/michaelfrenchdesign/" target="_blank">instagram</a> | <a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank">linkedin</a>
+        </h2></div>
+    </div>
     <div class ="spacer"></div>
     <div class="zig-zag-line"></div>
     <div class ="spacer"></div>
@@ -23,38 +431,105 @@
             <p><ul><li><div class = "paragraph">user research, mapping user flow, wireframe development, user testing, brand design, and <a href="https://www.figma.com/proto/4OAKHUTANDL2sL9wmm0O2M/MF_PrototypeV3_Styled?page-id=0%3A1&node-id=1-3&p=f&viewport=599%2C398%2C0.1&t=5M3EiQObgrc0EvGI-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2" target="_blank">final prototype</a> development for an app designed to address urbanization's impacts on both human and ecological health</div></li></ul></p>
         </div>
         <div class ="box4"></div>
-            <div class="slideshow-container">
-
-            <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">
-                <img src="Portfolio/Rooted Mockup.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides fade">
-                <img src="Portfolio/Product Overview.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides fade">
-                <img src="Portfolio/Initial Wireframe Design.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlides fade">
-                    <img src="Portfolio/Gestural Designs.jpg" style="width:100%">
-                    </div>
-
-                <div class="mySlides fade">
-                    <img src="Portfolio/Revised Wireframe Design.jpg" style="width:100%">
-                </div>
-            
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+        <div class="slideshow-container4">
+          <div class="mySlides-4 fade">
+              <img src="Portfolio/Rooted Mockup.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides-4 fade">
+              <img src="Portfolio/Product Overview.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides-4 fade">
+              <img src="Portfolio/Initial Wireframe Design.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides-4 fade">
+              <img src="Portfolio/Gestural Designs.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides-4 fade">
+              <img src="Portfolio/Revised Wireframe Design.jpg" style="width:100%">
+          </div>
+      
+          <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+      </div>
           
         <div class ="side"></div>
         </div>
     <div class ="spacer"></div>
     <div class ="spacer"></div> 
+    
+    <div class="zig-zag-line"></div>
+    <div class ="spacer"></div>  
+
+    <div class ="row33">
+        <div class ="side"></div>
+        <!-- THIS ONE: -->
+        <div class="slideshow-container1">
+          <div class="mySlides-1 fade">
+              <img src="Portfolio/DWBMockup.jpg" style="width:100%">
+          </div>
+          <div class="mySlides-1 fade">
+              <img src="Portfolio/DWBscreenmockup.jpg" style="width:100%">
+          </div>
+          <div class="mySlides-1 fade">
+              <img src="Portfolio/DWBWebfull.gif" style="width:100%">
+          </div>
+          <div class="mySlides-1 fade">
+            <img src="Portfolio/DWB1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides-1 fade">
+          <img src="Portfolio/DWB2.jpg" style="width:100%">
+      </div>
+      <div class="mySlides-1 fade">
+        <img src="Portfolio/DWB3.jpg" style="width:100%">
+    </div>
+    <div class="mySlides-1 fade">
+      <img src="Portfolio/DWB4.jpg" style="width:100%">
+  </div>
+          <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+      </div>
+      
+        <div class ="box4"></div>
+        <div class ="box33">
+            <div class = "button2"><h3>annual report</h3></div>
+        <p><ul><li><div class = "paragraph">typography, web + interaction design for doctors without borders' yearly financial reporting</div></li></ul></p></div>
+        <div class ="side"></div>
+    </div>
+<!-- 
+    <div class ="spacer"></div>  -->
+    <div class ="spacer"></div> 
+    
+    <div class="zig-zag-line"></div>
+    <div class ="spacer"></div>  
+
+    <div class ="row3">
+        <div class ="side"></div>
+        <div class ="box33">
+            <div class = "button"><h3>beyoncé</h3></div>
+            <p><ul><li><div class = "paragraph"><a href = "NLC/X2/Poster.html">editorial artwork</a> for a new york times' op-ed designed with creative coding in order to engage the reader</div></li></ul></p>
+        </div>
+        <div class ="box4"></div>
+        <!-- THIS ONE: -->
+        <div class="slideshow-container2">
+          <div class="mySlides-2 fade">
+              <img src="Portfolio/beyoncemockup.jpg" style="width:100%">
+          </div>
+          <div class="mySlides-2 fade">
+              <img src="Portfolio/beyoncegif.gif" style="width:100%">
+          </div>
+          <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+      </div>
+      
+        <div class ="side"></div>
+        </div>
+   
+    <div class ="spacer"></div>
+    <!-- <div class ="spacer"></div>  -->
     
     <div class="zig-zag-line"></div>
     <div class ="spacer"></div>  
@@ -94,10 +569,24 @@
 
     <div class ="row33">
         <div class ="side"></div>
-        <div class ="box555"><img src="Portfolio/GeneratorDemo.gif"></div>
+        <!-- THIS ONE: -->
+        <div class="slideshow-container3">
+          <div class="mySlides-3 fade">
+              <img src="Portfolio/ummockup1.jpg" style="width:100%">
+          </div>
+          <div class="mySlides-3 fade">
+              <img src="Portfolio/ummockup2.jpg" style="width:100%">
+          </div>
+          <div class="mySlides-3 fade">
+              <img src="Portfolio/GeneratorDemo.gif" style="width:100%">
+          </div>
+          <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+      </div>
+      
         <div class ="box4"></div>
         <div class ="box33">
-            <div class = "button2"><h3>umiami logo</h3></div>
+            <div class = "button2"><h3>umiami</h3></div>
         <p><ul><li><div class = "paragraph">logo redesign for the university of miami using only creative coding, with a focus on creating a <a href="Portfolio/UMProjectPort.html" target="_blank">generative design with various permutations</a></div></li></ul></p></div>
         <div class ="side"></div>
     </div>
@@ -160,14 +649,36 @@
 
     <div class ="row33">
         <div class ="side"></div>
-        <div class ="box55"><img src="Portfolio/JJMockup.png"></div>
+        <div class ="box55"><img src="Portfolio/JJMockup.jpg"></div>
         <div class ="box4"></div>
         <div class ="box33">
-            <div class = "button2"><h3>jack johnson</h3></div>
-        <p><ul><li><div class = "paragraph">a design exercise in following a hypothetical client brief: create an earthy, digitally-lightweight poster and instagram story to promote a benefit concert raising money for wildfire recovery aid in Hawaii</div></li></ul></p></div>
+            <div class = "button2"><h3>lokahi</h3></div>
+        <p><ul><li><div class = "paragraph">a design exercise in following a hypothetical client brief: create an earthy, digitally-lightweight poster and instagram story to promote a benefit concert raising money for wildfire recovery aid in hawaii</div></li></ul></p></div>
         <div class ="side"></div>
     </div>
+    <div class ="spacer"></div> 
+    <!-- <div class ="spacer"></div>  -->
+    
+    <div class="zig-zag-line"></div>
+    <div class ="spacer"></div>  
 
+    <div class ="row3vid">
+        <div class ="side"></div>
+        <div class ="box33">
+            <div class = "button"><h3>lyric video</h3></div>
+            <p><ul><li><div class = "paragraph">lyric video + motion design for "what do you do for a living? i do my best." by iamnotshane feat. EMME</div></li></ul></p>
+        </div>
+        <div class ="box4"></div>
+        <div class ="box5vid">
+          <img src ="Portfolio/WYDFL_Thumbnail.jpg">
+          <video controls>
+            <source src="Portfolio/WYDFL_V1.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class ="side"></div>
+        </div>
     <div class ="spacer"></div> 
     <!-- <div class ="spacer"></div>  -->
     <div class ="spacer">
@@ -175,38 +686,34 @@
     </div> 
     
     <script>
-        let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-}
-
-
-
-    </script>
+      let slideIndexes = [1, 1, 1, 1]; // Now includes the original slideshow (index 0)
+  
+      function plusSlides(n, slideshowNum) {
+          showSlides(slideIndexes[slideshowNum - 1] += n, slideshowNum);
+      }
+  
+      function showSlides(n, slideshowNum) {
+          let i;
+          let slides = document.getElementsByClassName(`mySlides-${slideshowNum}`);
+          if (n > slides.length) {slideIndexes[slideshowNum - 1] = 1}
+          if (n < 1) {slideIndexes[slideshowNum - 1] = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          slides[slideIndexes[slideshowNum - 1] - 1].style.display = "block";
+      }
+  
+      // Initialize all slideshows
+      function initSlideshows() {
+          for (let i = 1; i <= slideIndexes.length; i++) {
+              showSlides(1, i);
+          }
+      }
+  
+      document.addEventListener("DOMContentLoaded", initSlideshows);
+  </script>
+  
+  
     
     </body>
     </html>

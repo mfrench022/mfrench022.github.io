@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEN Logo Test #1</title>
+
+    <style>
+
+.container {
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+}
+
+.square {
+  width: 610px;
+  height: 265px;
+  background-color: #E1192C;
+  position: relative;
+}
+
+.g2line, .g2fill {
+    position: absolute;
+    left: 64px;
+    top: 43.5px;
+    width: 22.3%;
+}
+
+.g1fill, .g1line {
+    position: absolute;
+    left: 64px;
+    bottom: 43.5px;
+    width: 22.5%;
+}
+
+.e1fill, .e1line {
+    position: absolute;
+    left: 240px;
+    bottom: 43.5px;
+    width: 20%;
+}
+
+.e2fill, .e2line {
+    position: absolute;
+    left: 240px;
+    top: 43.5px;
+    width: 20%;
+}
+
+.n1fill, .n1line {
+    position: absolute;
+    right: 163.5px;
+    height: 67.3%;
+    bottom: 43.5px;
+}
+
+.n2fill, .n2line {
+    position: absolute;
+    right: 64px;
+    height: 67%;
+    top: 43.2px;
+}
+
+@keyframes flyOutDown {
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+@keyframes flyInDown {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flyOutUp {
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes flyInUp {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+</style>
+
+</head>
+<body>
+    <br><br><br><br><br><br>
+    <div class = "container">
+        <div class = "square">
+                <img class="g1fill" src = "SVGs/G1fill.svg">
+                <img class="g2fill" src = "SVGs/G2fill.svg">
+                <img class="g1line" src = "SVGs/G1line.svg">
+                <img class="g2line" src = "SVGs/G2line.svg">
+
+                <img class="e1fill" src = "SVGs/E1fill.svg">
+                <img class="e2fill" src = "SVGs/E2fill.svg">
+                <img class="e1line" src = "SVGs/E1line.svg">
+                <img class="e2line" src = "SVGs/E2line.svg">
+
+                <img class="n1fill" src = "SVGs/N1fill.svg">
+                <img class="n2fill" src = "SVGs/N2fill.svg">
+                <img class="n1line" src = "SVGs/N1line.svg">
+                <img class="n2line" src = "SVGs/N2line.svg">
+            </div>
+        </div>
+    </div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const letterPairs = [
+        ["g1fill", "g1line"],
+        ["g2fill", "g2line"],
+        ["e1fill", "e1line"],
+        ["e2fill", "e2line"],
+        ["n1fill", "n1line"],
+        ["n2fill", "n2line"],
+    ];
+
+    // Define correct animation groups
+    const flyOutDownPairs = ["g1fill", "g1line", "e1fill", "e1line", "n1fill", "n1line"]; // Moves down
+    const flyOutUpPairs = ["g2fill", "g2line", "e2fill", "e2line", "n2fill", "n2line"]; // Moves up
+
+    function swapLetter() {
+        let pairIndex = Math.floor(Math.random() * letterPairs.length);
+        let [first, second] = letterPairs[pairIndex].map((cls) => document.querySelector(`.${cls}`));
+
+        // Determine which element is currently visible (not hidden)
+        let visible = first.classList.contains("hidden") ? second : first;
+        let hidden = visible === first ? second : first;
+
+        // Determine correct animation for the selected pair
+        let flyOutAnim = flyOutDownPairs.includes(visible.className) ? "flyOutDown" : "flyOutUp";
+        let flyInAnim = flyOutDownPairs.includes(hidden.className) ? "flyInUp" : "flyInDown"; // Corrected fly-in logic
+
+        // Animate the visible piece out
+        visible.style.animation = `${flyOutAnim} 1s forwards`;
+
+        setTimeout(() => {
+            visible.classList.add("hidden");
+            hidden.classList.remove("hidden");
+            hidden.style.animation = `${flyInAnim} 1s forwards`;
+        }, 1000); // Swap after flyOut animation completes
+    }
+
+    // Initially hide all alternate versions
+    letterPairs.forEach(([first, second]) => {
+        document.querySelector(`.${second}`).classList.add("hidden");
+    });
+
+    // Run swap every 30 seconds indefinitely
+    setInterval(swapLetter, 3000);
+});
+
+
+</script>
+
+</body>
+</html>

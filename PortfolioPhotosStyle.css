@@ -135,9 +135,28 @@ h3 {
   transition: 200ms;
 }
 
-@media (max-width: 1320px) {
-
+.socials {
+  width: 25vw;
+  height: 100%;
+  /* background-color: green; */
 }
+
+.socials h2 {
+  position: absolute;
+  overflow: hidden;
+  font-size: 1.9vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+  left: 0;
+  top: -0.8vw;
+}
+
+.socials a {
+  
+    color: lightblue;
+    text-decoration: underline;
+  }
 
 
 

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gamestyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
+    <title>Treasure Dive</title>
+</head>
+<body>
+    <div class="oceanback">
+        <div class="ocean">
+            <div class="seafloor"></div>
+            <div class="clamback1"></div>
+            <div class="clamback2"></div>
+            <div class="clambottom"></div>
+            <a href="TreasureDiveCongrats.html"><div class="pearl"></div><a>
+        </div>
+    </div>
+    <div class="fish">
+        <div class="fishbody">
+            <div class="eye"></div>
+            <div class="dorsalfin"></div>
+            <div class="pecfin1"></div>
+            <div class="pecfin2"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="caudalfin"></div>
+    </div>
+
+<script>
+
+// Fish Movement (Initial code written by me, editing and support from AI)
+const fish = document.querySelector('.fish');
+
+const scrollSpeed = 4;
+
+document.addEventListener('mousemove', (event) => {
+    const mouseX = event.pageX;
+    const mouseY = event.pageY;
+
+    const fishWidth = fish.offsetWidth;
+
+    fish.style.position = 'absolute';
+    fish.style.left = `${mouseX - fishWidth}px`;
+    fish.style.top = `${mouseY}px`;
+    fish.style.transform = `translateY(-50%)`;
+
+    const viewportHeight = window.innerHeight;
+
+    if (event.clientY < viewportHeight * 0.25) {
+        window.scrollBy(0, -scrollSpeed);
+    } else if (event.clientY > viewportHeight * 0.45) {
+        window.scrollBy(0, scrollSpeed);
+    }
+});
+
+// Fish and Bubble Movement (Initial code written by me, editing and support from AI)
+const ocean = document.querySelector('.ocean');
+
+let bubbles = [];
+
+document.addEventListener('mousemove', (event) => {
+    const mouseX = event.pageX;
+    const mouseY = event.pageY;
+
+    const fishWidth = fish.offsetWidth;
+
+    fish.style.position = 'absolute';
+    fish.style.left = `${mouseX - fishWidth}px`;
+    fish.style.top = `${mouseY}px`;
+    fish.style.transform = `translateY(-50%)`;
+
+    const viewportHeight = window.innerHeight;
+
+    if (event.clientY < viewportHeight * 0.25) {
+        window.scrollBy(0, -scrollSpeed);
+    } else if (event.clientY > viewportHeight * 0.45) {
+        window.scrollBy(0, scrollSpeed);
+    }
+
+    checkCollision();
+});
+
+// Collision Detection (Code writted with support from AI)
+function checkCollision() {
+    const fishRect = fish.getBoundingClientRect();
+
+    for (let i = 0; i < bubbles.length; i++) {
+        const bubble = bubbles[i];
+        const bubbleRect = bubble.getBoundingClientRect();
+
+        if (
+            fishRect.left < bubbleRect.right &&
+            fishRect.right > bubbleRect.left &&
+            fishRect.top < bubbleRect.bottom &&
+            fishRect.bottom > bubbleRect.top
+        ) {
+            window.location.href = "TreasureDiveFail.html";
+            return;
+        }
+    }
+}
+
+// Bubble Effects (Initial code written by me, editing and support from AI)
+function generateBubbles() {
+    const pageHeight = document.body.scrollHeight;
+
+    for (let i = 0; i < 4; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        const randomLeft = Math.random() * 100;
+        bubble.style.left = `${randomLeft}vw`;
+
+        bubble.style.bottom = '0vw';
+
+        ocean.appendChild(bubble);
+
+        bubbles.push(bubble);
+
+        const duration = pageHeight / 300; 
+
+        bubble.style.animation = `floatUp ${duration}s linear`;
+
+        setTimeout(() => {
+            bubble.remove();
+
+            const index = bubbles.indexOf(bubble);
+            if (index > -1) {
+                bubbles.splice(index, 1);
+            }
+        }, duration * 2400);
+    }
+}
+
+setInterval(generateBubbles, 1400);
+
+
+</script>
+</body>
+</html>

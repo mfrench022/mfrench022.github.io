@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Test 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sancreek&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000000;
+        font-family: "Sancreek", serif;
+        /* cursor: url('cursor.png') 30 30, auto; */
+      }
+
+      h2 {
+        color: white;
+        font-family: "Sancreek", serif;
+      }
+
+      .container {
+        position: relative;
+        /* background: blue; */
+      }
+
+      .circle {
+        border-radius: 100%;
+        position: absolute;
+        left: 225px;
+        top: -130px;
+        width: 250px;
+        height: 250px;
+        z-index: -2;
+        background: rgb(28,22,0);
+        background: radial-gradient(circle, rgba(28,22,0,0) 28%, rgba(239,191,4,1) 67%);
+      }
+
+      .button {
+        position: absolute;
+        background-color: white;
+        width: 185px;
+        height: 55px;
+        left: -450px;
+        top: -250px;
+      }
+
+      h1 {
+        color: black;
+        line-height: 15px;
+        margin-left: 10px;
+      }
+
+      .stem {
+        width: 30px;
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        left: 320px;
+        top: 110px;
+        z-index: -5;
+        border-style: solid;
+        border-width: 15px;
+        border-color: #efbf04;
+        border-top-width: 0px;;
+      }
+
+        .base {
+        --p: 40px;
+        height: 180px;
+        aspect-ratio: 3/2;
+        clip-path: polygon(var(--p) 0,calc(100% - var(--p)) 0,100% 100%,0 100%);
+        background: black;
+        left: 200px;
+        top: 175px;
+        position: absolute;
+        z-index: -4;
+        border-style: solid;
+        border-width: 15px;
+        border-color: #efbf04;
+        }
+
+        /* h2:hover {
+            cursor: pointer;
+        } */
+
+    </style>
+
+</head>
+<body>
+<div class ='container'>
+    <div class ='circle'></div>
+    <div class ='stem'></div>
+    <div class ='base'></div>
+    <!-- <div class ='button'><h1>Randomize</h1></div> -->
+</div>
+
+<script>
+
+    let words = ['this ain’t texas', 'cowboy carter', 'ameriican requiem', 'blackbiird', '16 carriages', 'protector', 'my rose', 'smoke hour', 'texas hold ’em', 'bodyguard', 'dolly p', 'jolene', 'daugter', 'spaghettii', 'alligator tears', 'just for fun', 'ii most wanted', 'levii’s jeans', 'flamenco', 'the linda martell show', 'ya ya', 'oh louisiana', 'desert eagle', 'riiverdance', 'ii hands ii heaven', 'tyrant', 'sweet☆honey☆bucin’', 'amen', 'they used to say I spoke "too country"', 'the legacy is the last thing i do', 'i first saw your face in your father’s gaze', 'so be fond of your flaws, dear', 'it’s a real-life boogie and a real-life hoedown', 'i’m bout to lose it, turn around and john wayne that ass', 'honey bee', 'jolene, i know i’m a queen', 'if you crozs me, i’m just like my father', 'all the same to me, plain jane, spaghetti', 'somethin’ ’bout those tears of yours, how does it feel to be adored?', 'and everywhere i go, they know my name', 'i’ll be your shotgun rider ’til the day i die', 'boy i’ll let you be my levi’s jeans', 'realize that you don’t know what you got until it’s gone', 'baby, if you ain’t got no ritz get the fuck up out the south', 'everything bigger in texas', 'staring down the barrel of my gun, yes i shot you down', 'i’m a stallion runnin’, no candle in the wind', 'i hated you once, i envy you now', 'A-O-T-Y, i ain’t win (that’s cool)', 'ameriican requiem'];
+    
+    let wordCount = 9; 
+    let colors = ['red', 'white', 'blue'];
+    
+    function setup() {
+      let canvas = createCanvas(700, 700);
+      canvas.style('background-color', 'transparent');
+      textFont('Sancreek');
+      textAlign(CENTER, CENTER);
+      noLoop();
+
+
+  // noCursor();
+  // cursor('CURSOR.png', 30, -10);
+    }
+    
+    function draw() {
+      clear();
+    
+      let centerX = width / 2;
+      let centerY = height / 2;
+      let radius = 170;
+    
+      for (let i = 0; i < wordCount; i++) {
+        let angle = random(TWO_PI);
+        let x = centerX + cos(angle) * radius;
+        let y = centerY + sin(angle) * radius;
+        
+        let word = random(words);
+        let textSizeVal = random(16, 48);
+        let textColor = colors[i % colors.length];
+    
+        push();
+        translate(x, y);
+        rotate(angle + HALF_PI);
+        textSize(textSizeVal);
+        fill(textColor);
+        text(word, 0, 0);
+        pop();
+      }
+    }
+    
+    function mouseMoved() {
+      redraw();
+    }
+
+    </script>
+    
+    
+</body>
+</html>

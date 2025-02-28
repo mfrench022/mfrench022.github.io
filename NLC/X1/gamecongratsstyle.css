@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+.oceanback {
+    background-color: lightblue;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ocean {
+    background: rgb(3,1,36);
+    background: linear-gradient(0deg, rgba(3,1,36,1) 0%, rgba(9,0,124,1) 23%, rgba(125,206,222,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.seafloor {
+    background: rgb(147,109,68);
+    background: linear-gradient(0deg, rgba(147,109,68,1) 0%, rgba(222,176,125,1) 100%);
+    width: 100vw;
+    height: 10vh;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.clamback1 {
+    /* shape obtained from css-shape.com */
+    width: 12vw;
+    aspect-ratio: 1;
+    --g:/14.796% 14.796% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+    mask: 100% 50% var(--g),96.985% 67.101% var(--g),88.302% 82.139% var(--g),75% 93.301% var(--g),58.682% 99.24% var(--g),41.318% 99.24% var(--g),25% 93.301% var(--g),11.698% 82.139% var(--g),3.015% 67.101% var(--g),0% 50% var(--g),3.015% 32.899% var(--g),11.698% 17.861% var(--g),25% 6.699% var(--g),41.318% 0.76% var(--g),58.682% 0.76% var(--g),75% 6.699% var(--g),88.302% 17.861% var(--g),96.985% 32.899% var(--g),radial-gradient(100% 100%,#000 41.955%,#0000 calc(41.955% + 1px));
+    Position: absolute;
+    bottom: 12vw;
+    right: 10vw;
+    background: rgb(150,150,150);
+    background: linear-gradient(0deg, rgba(150,150,150,1) 0%, rgba(99,99,99,1) 100%);
+    z-index: 2;
+  }
+
+  .clamback2 {
+    background: rgb(150,150,150);
+    background: linear-gradient(0deg, rgba(150,150,150,1) 0%, #7d7d7d 100%);
+    width: 12vw;
+    height: 6vw;
+    position: absolute;
+    bottom: 12vw;
+    border-bottom-left-radius: 300vw;
+    border-bottom-right-radius: 300vw;
+    right: 10vw;
+    z-index: 3;
+  }
+
+  .clambottom {
+    background: rgb(150,150,150);
+    background: linear-gradient(180deg, rgba(150,150,150,1) 0%, rgb(63, 63, 63) 100%);
+    width: 12vw;
+    height: 12vw;
+    position: absolute;
+    bottom: 2vw;
+    border-radius: 100%;
+    z-index: 1;
+    right: 10vw;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+  }
+
+  .pearl {
+    /* shape obtained from css-shape.com */
+    z-index: 1;
+    right: 4vw;
+    width: 6vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 11vw;
+    background: 
+      radial-gradient(circle at 40% 30%,#0000 4%,57%,#000 90%) 
+      #ffaae0;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+    z-index: 4;
+    bottom: 19vw;
+  }
+
+  .bubble {
+    width: 6vw;
+    height: 6vw;
+    bottom: 19vw;
+    right: 2vw;
+    position: absolute;
+    background: rgb(255,29,240);
+    background: radial-gradient(circle, rgba(255,29,240,1) 0%, rgba(130,0,65,1) 69%);
+    z-index: 4;
+    pointer-events: none; /* Prevent interaction with bubbles */
+    animation-fill-mode: forwards; /* Ensure the animation stays at its final position */
+    aspect-ratio: 1;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+    clip-path: polygon(100% 50%,68.77% 52.97%,97.55% 65.45%,66.93% 58.63%,90.45% 79.39%,63.44% 63.44%,79.39% 90.45%,58.63% 66.93%,65.45% 97.55%,52.97% 68.77%,50% 100%,47.03% 68.77%,34.55% 97.55%,41.37% 66.93%,20.61% 90.45%,36.56% 63.44%,9.55% 79.39%,33.07% 58.63%,2.45% 65.45%,31.23% 52.97%,0% 50%,31.23% 47.03%,2.45% 34.55%,33.07% 41.37%,9.55% 20.61%,36.56% 36.56%,20.61% 9.55%,41.37% 33.07%,34.55% 2.45%,47.03% 31.23%,50% 0%,52.97% 31.23%,65.45% 2.45%,58.63% 33.07%,79.39% 9.55%,63.44% 36.56%,90.45% 20.61%,66.93% 41.37%,97.55% 34.55%,68.77% 47.03%);
+  }
+
+  .bubble2 {
+    width: 6vw;
+    height: 6vw;
+    bottom: 19vw;
+    right: 9vw;
+    position: absolute;
+    background: rgb(255,29,240);
+    background: radial-gradient(circle, rgba(255,29,240,1) 0%, rgba(130,0,65,1) 69%);
+    z-index: 4;
+    pointer-events: none; /* Prevent interaction with bubbles */
+    animation-fill-mode: forwards; /* Ensure the animation stays at its final position */
+    aspect-ratio: 1;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+    clip-path: polygon(100% 50%,68.77% 52.97%,97.55% 65.45%,66.93% 58.63%,90.45% 79.39%,63.44% 63.44%,79.39% 90.45%,58.63% 66.93%,65.45% 97.55%,52.97% 68.77%,50% 100%,47.03% 68.77%,34.55% 97.55%,41.37% 66.93%,20.61% 90.45%,36.56% 63.44%,9.55% 79.39%,33.07% 58.63%,2.45% 65.45%,31.23% 52.97%,0% 50%,31.23% 47.03%,2.45% 34.55%,33.07% 41.37%,9.55% 20.61%,36.56% 36.56%,20.61% 9.55%,41.37% 33.07%,34.55% 2.45%,47.03% 31.23%,50% 0%,52.97% 31.23%,65.45% 2.45%,58.63% 33.07%,79.39% 9.55%,63.44% 36.56%,90.45% 20.61%,66.93% 41.37%,97.55% 34.55%,68.77% 47.03%);
+  }
+
+  .bubble3 {
+    width: 6vw;
+    height: 6vw;
+    bottom: 19vw;
+    right: 16vw;
+    position: absolute;
+    background: rgb(255,29,240);
+    background: radial-gradient(circle, rgba(255,29,240,1) 0%, rgba(130,0,65,1) 69%);
+    z-index: 4;
+    pointer-events: none; /* Prevent interaction with bubbles */
+    animation-fill-mode: forwards; /* Ensure the animation stays at its final position */
+    aspect-ratio: 1;
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+    clip-path: polygon(100% 50%,68.77% 52.97%,97.55% 65.45%,66.93% 58.63%,90.45% 79.39%,63.44% 63.44%,79.39% 90.45%,58.63% 66.93%,65.45% 97.55%,52.97% 68.77%,50% 100%,47.03% 68.77%,34.55% 97.55%,41.37% 66.93%,20.61% 90.45%,36.56% 63.44%,9.55% 79.39%,33.07% 58.63%,2.45% 65.45%,31.23% 52.97%,0% 50%,31.23% 47.03%,2.45% 34.55%,33.07% 41.37%,9.55% 20.61%,36.56% 36.56%,20.61% 9.55%,41.37% 33.07%,34.55% 2.45%,47.03% 31.23%,50% 0%,52.97% 31.23%,65.45% 2.45%,58.63% 33.07%,79.39% 9.55%,63.44% 36.56%,90.45% 20.61%,66.93% 41.37%,97.55% 34.55%,68.77% 47.03%);
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.579);
+    filter: drop-shadow(1vw 1vw 1vw #19191993);
+    width: 40vw;
+    height: 27vw;
+    position: absolute;
+    left: 30vw;
+    top: 8vw;
+    border-radius: 1vw;
+  }
+
+  h1 {
+    margin-left: 2vw;
+    margin-top: 4vw;
+    font-size: 6.3vw;
+    font-family: "Macondo Swash Caps", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 3vw;
+    color: rgba(9,0,124,1)
+  }
+
+p {
+    margin-left: 2.25vw;
+    margin-right: 2vw;
+    margin-top: 2.5vw;
+    font-size: 2.25vw;
+    font-family: "Ubuntu Mono", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(9,0,124,1)
+  }
+
+a {
+    font-size: 2vw;
+    font-family: "Macondo Swash Caps", serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-items: center;
+    line-height: 3vw;
+    text-decoration: none;
+    color: white;
+  }
+
+  .button1 {
+    width: 17vw;
+    height: 3vw;
+    border-radius: 1vw;
+    background:#ffaae0;
+    filter: drop-shadow(.3vw .3vw .3vw #19191993);
+    position: absolute;
+    left: 2vw;
+    bottom: 3.4vw;
+  }
+
+  .button2 {
+    width: 17vw;
+    height: 3vw;
+    border-radius: 1vw;
+    background:#ffaae0;
+    filter: drop-shadow(.3vw .3vw .3vw #19191993);
+    position: absolute;
+    right: 2vw;
+    bottom: 3.4vw;
+  }
+
+
+  .button1:hover {
+    background-color: white;
+    color: rgba(9,0,124,1)
+  }
+
+  .button2:hover {
+    background-color: white;
+    color: rgba(9,0,124,1)
+  }
