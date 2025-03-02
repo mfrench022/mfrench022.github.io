@@ -26,6 +26,7 @@
     font-family: "Aldrich", sans-serif;
     white-space: nowrap;
     overflow: hidden;
+    letter-spacing: 0.01vw;
     transition: 200ms;
   }
   
@@ -43,6 +44,7 @@
   
   h1:hover {
     cursor: pointer;
+    color: lightblue;
   }
   
   h2:hover {
