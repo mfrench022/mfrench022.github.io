@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
     font-size: 10vw;
     letter-spacing: 0.01vw;
     position: absolute;
-    left: -0.8vw;
+    left: -0.9vw;
     top: 2.6vw;
     color: white;
     font-family: "Aldrich", sans-serif;
@@ -48,7 +48,7 @@ body::-webkit-scrollbar {
     white-space: nowrap;
     overflow: hidden;
     font-size: 3.145vw;
-    right: -0.19vw;
+    right: -0.3vw;
     top: -2.5vw;
     color: white;
     font-family: "Aldrich", sans-serif;
@@ -156,16 +156,17 @@ body::-webkit-scrollbar {
     transition: 200ms;
   }
 
-  .box33 ul {
+  .paragraph p {
     font-weight: 400;
-    font-size: 1.8vw;
-    left: -0.75vw;
+    font-size: 2.2vw;
+    left: 1.8vw;
     position: relative;
     list-style-type: none;
-    line-height: 2.5vw;
+    line-height: 2.8vw;
     color: white;
     font-family: "Aldrich", sans-serif;
     transition: 200ms;
+    margin-right: 2vw;
   }
   
   .button {
@@ -335,18 +336,40 @@ html, body {
   }
   
 
-@media (max-width: 700px) {
-  
-  .box3 ul {
-    font-size: 2.8vw;
-    left: -4vw;
-  }
+@media (max-width: 900px) {
 
-  .box33 ul {
-    font-size: 1.5vw;
-    left: -4vw;
-  }
-} 
+.box3 ul {
+  font-size: 2.8vw;
+  left: -3vw;
+}
+
+.box33 ul {
+  font-size: 1.5vw;
+  left: -3vw;
+}
+}
+
+@media (max-width: 430px) {
+
+.box3 ul {
+  font-size: 2.8vw;
+  left: -8vw;
+  margin: none;
+  padding: none;
+}
+
+   
+}
+
+h1, h2, h3, p, a, span {
+    font-family: 'Aldrich', sans-serif;
+    font-weight: normal; 
+    letter-spacing: normal;
+}
+
+h2 {
+  letter-spacing: .005vw;
+}
   
   
     </style>
@@ -391,7 +414,7 @@ html, body {
       <div class ="box33">
         <a href="https://michaelfrenchmedia.com/" target="_blank">
             <div class = "button2"><h3>social media</h3></div></a>
-        <p><ul><li><div class = "paragraph">prior to my design studies, i spent four years working as director of social media at a boutique pr agency specializing in science communications for life science, biotech, and pharmaceutical companies</div></li></ul></p></div>
+       <div class = "paragraph"> <p>prior to my design studies, i spent four years working as director of social media at a boutique pr agency specializing in science communications for life science, biotech, and pharmaceutical companies</p></div></div>
       <div class ="side"></div>
     </div>
 
@@ -405,7 +428,7 @@ html, body {
         <div class ="side"></div>
         <div class ="box33">
           <a href="PortfolioPhotos.html"><div class = "button"><h3>photography</h3></div></a>
-          <p><ul><li><div class = "paragraph">my passion for underwater photography began at a young age and flourished during my time studying marine science and biology at the university of miami</div></li></ul></p>
+          <div class = "paragraph"><p>my passion for underwater photography began at a young age and flourished during my time studying marine science and biology at the university of miami</p></div>
         </div>
         <div class ="box4"></div>
         <div class ="box5"><img src="Portfolio/gchawksbill2 copy.jpg"></div>
