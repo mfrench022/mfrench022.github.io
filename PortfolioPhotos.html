@@ -4,13 +4,363 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael French | Portfolio</title>
-    <link rel="stylesheet" href="PortfolioPhotosStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
+<style>
+.zig-zag-line {
+  width: 100%;
+  height: 1vw;
+  background-color: lightblue;
+}
+
+body {
+  /* min-height: 100vh;  */
+  background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+  font-size: 10vw;
+  position: absolute;
+  left: -0.8vw;
+  top: 2.6vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 200ms;
+}
+
+h2 {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 3.145vw;
+  right: -0.19vw;
+  top: -2.5vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+h1:hover {
+  cursor: pointer;
+}
+
+h2:hover {
+  cursor: default;
+}
+
+.row1 {
+  /* background-color: red; */
+  height: 12.2vw;
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 200ms;
+}
+
+.row2 {
+  /* background-color: blue; */
+  height: 3vw;
+  width: 100%;
+  position: relative;
+  transition: 200ms;
+  
+}
+
+.spacer {
+  width: 100%;
+  height: 2vw;
+  /* background-color: green; */
+}
+
+.row3 {
+  /* background-color: blue; */
+  height: 36.8vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.7fr 5fr .3fr 9fr 0.7fr;
+  transition: 200ms;
+}
+
+.row33 {
+  /*   background-color: blue; */
+    height: 36.8vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.7fr 9fr .3fr 5fr 0.7fr;
+    transition: 200ms;
+  }
+
+.side {
+  width: 100%;
+  height: 100%;
+/*   background-color: purple; */
+}
+
+.box33 {
+  width: 100%;
+  height: 10vw;
+  transition: 200ms;
+  margin-top: 4.2vw;
+  /* background-color: red; */
+  /* overflow: scroll; */
+/*   margin: 10px; */
+}
+
+.box4 {
+  width: 100%;
+  height: 100%;
+  transition: 200ms;
+/*   background-color: orange; */
+}
+
+h3 {
+  font-size: 2.145vw;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.box3 ul {
+  font-weight: 400;
+  font-size: 3.145vw;
+  left: -0.75vw;
+  position: relative;
+  list-style-type: none;
+  line-height: 5vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.box33 ul {
+  font-weight: 400;
+  font-size: 1.8vw;
+  left: -0.75vw;
+  position: relative;
+  list-style-type: none;
+  line-height: 2.5vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+}
+
+.button {
+  background-color: white;
+  height: 4vw;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+h3 {
+  color: #8968CD;
+  text-decoration: none;
+  font-family: "Aldrich", sans-serif;
+}
+
+.button h3 {
+  position: relative;
+  left: 1.5vw;
+  font-size: 3.145vw;
+  top: 0.75vw;
+  transition: 200ms;
+  color: #8968CD;
+}
+
+.button2 {
+  background-color: white;
+  height: 4vw;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 200ms;
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+.button2 h3 {
+  position: relative;
+  left: 1.5vw;
+  font-size: 3.145vw;
+  top: 0.75vw;
+  transition: 200ms;
+  color: #8968CD;
+}
+
+.box5 {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow;  */
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  overflow: hidden; /* Prevent any overflow from the image */
+  transition: 200ms;
+  position: relative;
+  margin: auto;
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+.box5 img {
+  height: auto; /* Fill the div vertically */
+  width: 100%; /* Adjust width to maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+  transition: 200ms;
+}
+
+.box55 {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  overflow: hidden; /* Prevent any overflow from the image */
+  transition: 200ms;
+  position: relative;
+  margin: auto;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
+.box55 img {
+  height: auto; /* Fill the div vertically */
+  width: 100%; /* Adjust width to maintain aspect ratio */
+  transition: 200ms;
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+}
+
+.box555 {
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: center; /* Horizontally center the image */
+  align-items: center; /* Vertically center the image */
+  overflow: hidden; /* Prevent any overflow from the image */
+  transition: 200ms;
+  position: relative;
+  margin: auto;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+  background-color: black;
+}
+
+.box555 img {
+  height: auto; /* Fill the div vertically */
+  width: 100%; /* Adjust width to maintain aspect ratio */
+  transition: 200ms;
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+}
+
+html, body {
+width: 100%;
+overflow-x: hidden;
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+.spacer h3 {
+  font-size: 0.7vw;
+  margin-left: 4.3vw;
+  position: static;
+  color: white;
+}
+
+a {
+  color: lightblue;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.slideshow-container img {
+  border-top-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -2.4vw;
+  padding: 1vw;
+  color: white;
+  font-weight: bold;
+  font-size: 3vw;
+  transition: 0.6s ease;
+  border-radius: 0 1vw 1vw 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 1vw 0 0 1vw;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: #8a68cdb8;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media (max-width: 700px) {
+
+  .box3 ul {
+    font-size: 2.8vw;
+    left: -4vw;
+  }
+  
+  .box33 ul {
+    font-size: 1.5vw;
+    left: -4vw;
+  }
+  }
+
+</style>
+
 </head>
 <body>
-    <a href ="michaelfrench.co"><div class ="row1"><h1>Michael French</h1></div></a>
+    <a href ="index.html"><div class ="row1"><h1>Michael French</h1></div></a>
     <div class ="row2"><h2>underwater photography</h2>
         <div class = "socials"><h2>
             <a href="mailto:michael@michaelfrench.co">contact</a> | <a href="https://www.instagram.com/michaelfrenchdesign/" target="_blank">instagram</a> | <a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank">linkedin</a>
@@ -98,5 +448,11 @@
     <div class ="spacer">
         <h3>Site by Michael French</h3>
     </div> 
+
+    <script>
+        if (window.location.pathname.endsWith("index.html")) {
+    window.location.replace("/");
+  }
+    </script>
 </body>
 </html>
