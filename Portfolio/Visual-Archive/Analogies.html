@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analogies | A Visual Archive</title>
+    <link rel="stylesheet" href="AnalogiesStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+    h1{
+    font-size: 6.1vw;
+    font-weight: 700;
+    margin-top: 11vw;
+    font-style: italic;
+    transition: 300ms;
+}
+
+h2{
+    font-size: 1.20vw;
+    margin-top: 3vw;
+    transition: 300ms;
+}
+
+h3 {
+    margin-top: -6.8vw;
+    font-size: 1.1vw;
+    transition: 300ms;
+}
+
+a {
+    color: white;
+    transition: 300ms;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.6vw;
+    transition: 300ms;
+  }
+
+.nature h2 {
+    margin-top: 3vw;
+}
+
+body{
+    
+    background: rgb(21,3,42);
+    background: linear-gradient(90deg, rgba(21,3,42,1) 0%, rgba(46,12,85,1) 50%, rgba(69,16,130,1) 100%);
+    /* font-size: 15px; */
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+    color:rgba(255, 255, 255, 0.853);
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .photorow {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
+    /* background-color: yellow; */
+    height: 30vw;
+  }
+
+  .headerrow {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
+    /* background-color: yellow; */
+    height: 30vw;
+    background-color: #330666;
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001859);
+  }
+  
+  .gutter {
+    /* background-color: pink; */
+    width: 100%;
+  }
+  
+  .human {
+    background-color: #330666;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .nature {
+    background-color: #35592b;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .graphic {
+    background-color: #524ca9;
+    width: 100%;
+    text-align: left;
+  }
+
+  .photorow .human {
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001859);
+  }
+
+  .photorow .nature {
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001859);
+  }
+
+  .photorow .graphic {
+    filter: drop-shadow(0.5vw 0.6vw 0.7vw #00001859);
+  }
+
+  .headerrow .human {
+    text-align: left;
+    background-color: #330666;
+  }
+
+  .headerrow .graphic {
+    text-align: left;
+    background-color: #330666;
+  }
+
+  .headerrow .nature {
+    text-align: left;
+    background-color: #330666;
+  }
+  
+  span {
+    opacity: 0;
+    font-size: 1vw;
+    transition: 300ms;
+    margin-left: 0.7vw;
+  }
+
+  img {
+    height: 27vw;
+    position: relative;
+    transition: 300ms;
+  }
+
+
+  .nature:hover span {
+    opacity: 1;
+    transition: 300ms;
+  }
+
+  .graphic:hover span {
+    opacity: 1;
+    transition: 300ms;
+  }
+
+  .human:hover span {
+    opacity: 1;
+    transition: 300ms;
+  }
+
+  .spacer {
+    width: 100%;
+    height: 0.78vw;
+    transition: 300ms;
+    /* background-color: aquamarine; */
+  }
+
+  .spacer2 {
+    width: 100%;
+    height: 2.1vw;
+    transition: 300ms;
+    /* background-color: aqua; */
+  }
+
+  @media (max-width: 800px) {
+
+    span {
+        opacity: 1;
+        transition: 300ms;
+    }
+
+    .spacer {
+        width: 100%;
+        height: 0vw;
+        transition: 300ms;
+        /* background-color: aquamarine; */
+      }
+
+      .spacer2 {
+        width: 100%;
+        height: 4.3vw;
+        transition: 300ms;
+      }
+
+  }
+
+  @media (max-width: 550px) {
+
+    span {
+        opacity: 1;
+        transition: 300ms;
+    }
+
+    .spacer {
+        width: 100%;
+        height: 0.01vw;
+        transition: 300ms;
+        /* background-color: aquamarine; */
+      }
+
+      .spacer2 {
+        width: 100%;
+        height: 11vw;
+        transition: 300ms;
+      }
+
+      h1{
+        font-size: 5vw;
+        font-weight: 700;
+        margin-top: 11vw;
+        font-style: italic;
+        transition: 300ms;
+    }
+    
+    h2{
+        font-size: 1vw;
+        margin-top: 4vw;
+        transition: 300ms;
+    }
+    
+    h3 {
+        margin-top: -8.0vw;
+        font-size: 0.9vw;
+        transition: 300ms;
+    }
+    
+    a {
+        color: white;
+        transition: 300ms;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.34vw;
+        transition: 300ms;
+      }
+
+  }
+
+  
+
+  
+  
+</style>
+
+</head>
+<body>
+    <div class = "spacer2"></div>
+    <div class = "headerrow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <h1>Analogies</h1><br><h3>An Archive by Michael French</h3>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <h2>Analogies is an archive comparing natural and man-made structures and their associated functions. In biology, structure almost always dictates function. For example, the arm of a tree branching off from its trunk improves the tree’s ability to photosynthesize by allowing leaves to hang further away from the main body of the tree trunk – thus increasing surface area. Interestingly, man-made structures that are analogous to those seen in nature often mirror those structures’ natural function. A crane boom has a similar structure to the branch of a tree, and thus serves an analogous function of hanging something away from the main body of the structure – in this case, it is hanging the crane’s hook instead of leaves.</h2>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <h2>Each entry was photographed with a digital camera from a similar angle, then processed using a threshold effect to emphasize the overall structure. In some cases, additional photos including scientific imagery and microscopy were sourced from the internet and treated with the same process. Each analogy is presented alongside a graphical mockup isolating the most basic form of the analogous structure. The graphical mockup is captioned with the analogous structure’s potential function. Through this archive, I hope to highlight the ways in which human design takes inspiration from nature in order to achieve a common functional goal.</h2>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+    <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Crane Arm.png">
+            <div class = "spacer"></div>
+            <span>1.1 | Man-made Structure | Crane Boom</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Tree Branch.png">
+            <div class = "spacer"></div>
+            <span>1.2 | Natural Structure | Tree Branch</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Arm.png">
+            <div class = "spacer"></div>
+            <span>1.3 | Analogous Funtion | Extension</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Bricks.png">
+            <div class = "spacer"></div>
+            <span>2.1 | Man-made Structure | Bricks</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Plant Cells.png">
+            <div class = "spacer"></div>
+            <span>2.2 | Natural Structure | Elodea (Aquatic Plant) Cells</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Support.png">
+            <div class = "spacer"></div>
+            <span>2.3 | Analogous Funtion | Rigid Wall</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Colander.png">
+            <div class = "spacer"></div>
+            <span>3.1 | Man-made Structure | Colander</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="coral zoanthid.png">
+            <div class = "spacer"></div>
+            <span>3.2 | Natural Structure | Zoanthid Coral</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Filtration.png">
+            <div class = "spacer"></div>
+            <span>3.3 | Analogous Funtion | Filtration</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Road.png">
+            <div class = "spacer"></div>
+            <span>4.1 | Man-made Structure | Road</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="River.png">
+            <div class = "spacer"></div>
+            <span>4.2 | Natural Structure | River</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Curved Path.png">
+            <div class = "spacer"></div>
+            <span>4.3 | Analogous Funtion | Winding Path</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Rope.png">
+            <div class = "spacer"></div>
+            <span>5.1 | Man-made Structure | Rope</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Capuchin Monkey Tail.png">
+            <div class = "spacer"></div>
+            <span>5.2 | Natural Structure | Capuchin Monkey Tail</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Grip.png">
+            <div class = "spacer"></div>
+            <span>5.3 | Analogous Funtion | Grip</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Hub Cap.png">
+            <div class = "spacer"></div>
+            <span>6.1 | Man-made Structure | Hub Cap</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Umbrella Plant.png">
+            <div class = "spacer"></div>
+            <span>6.2 | Natural Structure | Umbrella Plant</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Spokes.png">
+            <div class = "spacer"></div>
+            <span>6.3 | Analogous Funtion | Spokes</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Mesh Strainer.png">
+            <div class = "spacer"></div>
+            <span>7.1 | Man-made Structure | Mesh Strainer</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Dolichopodid Eye.png">
+            <div class = "spacer"></div>
+            <span>7.2 | Natural Structure | Dolichopodid (Fly) Eye</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Tesselation.png">
+            <div class = "spacer"></div>
+            <span>7.3 | Analogous Funtion | Tesselation</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Straw.png">
+            <div class = "spacer"></div>
+            <span>8.1 | Man-made Structure | Straw</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Orchid Stem.png">
+            <div class = "spacer"></div>
+            <span>8.2 | Natural Structure | Orchid Stem</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Water Transportation.png">
+            <div class = "spacer"></div>
+            <span>8.3 | Analogous Funtion | Water Transportation</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Bird Spikes.png">
+            <div class = "spacer"></div>
+            <span>9.1 | Man-made Structure | Bird Spikes</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Squirrelfish Spines.png">
+            <div class = "spacer"></div>
+            <span>9.2 | Natural Structure | Squirrelfish Spines</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Repel.png">
+            <div class = "spacer"></div>
+            <span>9.3 | Analogous Funtion | Repel</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="polyurethane foam.png">
+            <div class = "spacer"></div>
+            <span>10.1 | Man-made Structure | Polyurethane Foam</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Hawksbill Sea Turtle Flipper.png">
+            <div class = "spacer"></div>
+            <span>10.2 | Natural Structure | Hawksbill Sea Turtle Flipper</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Reticulation.png">
+            <div class = "spacer"></div>
+            <span>10.3 | Analogous Funtion | Reticulation</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Stained Glass.png">
+            <div class = "spacer"></div>
+            <span>11.1 | Man-made Structure | Stained Glass</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Cicada Wing.png">
+            <div class = "spacer"></div>
+            <span>11.2 | Natural Structure | Cicada Wing</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Mosaic.png">
+            <div class = "spacer"></div>
+            <span>11.3 | Analogous Funtion | Mosaic</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Lamp Post.png">
+            <div class = "spacer"></div>
+            <span>12.1 | Man-made Structure | Lamp Post</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Tree Trunk.png">
+            <div class = "spacer"></div>
+            <span>12.2 | Natural Structure | Tree Trunk</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Elevate.png">
+            <div class = "spacer"></div>
+            <span>12.3 | Analogous Funtion | Elevate</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Pliers.png">
+            <div class = "spacer"></div>
+            <span>13.1 | Man-made Structure | Pliers</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Ant Mandibles.png">
+            <div class = "spacer"></div>
+            <span>13.2 | Natural Structure | Leaf-Cutting Ant Mandibles</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Clamp.png">
+            <div class = "spacer"></div>
+            <span>13.3 | Analogous Funtion | Clamp</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Diving Fin.png">
+            <div class = "spacer"></div>
+            <span>14.1 | Man-made Structure | Diving Fin</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Frog Foot.png">
+            <div class = "spacer"></div>
+            <span>14.2 | Natural Structure | Leopard Frog Foot</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Underwater Thrust.png">
+            <div class = "spacer"></div>
+            <span>14.3 | Analogous Funtion | Underwater Thrust</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Shirt.png">
+            <div class = "spacer"></div>
+            <span>15.1 | Man-made Structure | Tee Shirt</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Lionfish.png">
+            <div class = "spacer"></div>
+            <span>15.2 | Natural Structure | Lionfish</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Stripes.png">
+            <div class = "spacer"></div>
+            <span>15.3 | Analogous Funtion | Stripes</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Binocular Lens.png">
+            <div class = "spacer"></div>
+            <span>16.1 | Man-made Structure | Binocular Lens</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Human Eye.png">
+            <div class = "spacer"></div>
+            <span>16.2 | Natural Structure | Human Eye</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Sight.png">
+            <div class = "spacer"></div>
+            <span>16.3 | Analogous Funtion | Sight</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Airplane Wing.png">
+            <div class = "spacer"></div>
+            <span>17.1 | Man-made Structure | Airplane Wing</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Osprey Wing.png">
+            <div class = "spacer"></div>
+            <span>17.2 | Natural Structure | Osprey Wing</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Lift.png">
+            <div class = "spacer"></div>
+            <span>17.3 | Analogous Funtion | Lift</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Mesh Net.png">
+            <div class = "spacer"></div>
+            <span>18.1 | Man-made Structure | Mesh Net</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Gorgonia.png">
+            <div class = "spacer"></div>
+            <span>18.2 | Natural Structure | Gorgonia Coral</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Filtration2.png">
+            <div class = "spacer"></div>
+            <span>18.3 | Analogous Funtion | Straining</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Table Leg.png">
+            <div class = "spacer"></div>
+            <span>19.1 | Man-made Structure | Table Leg</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Dog Foot.png">
+            <div class = "spacer"></div>
+            <span>19.2 | Natural Structure | Dog Foot</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Support2.png">
+            <div class = "spacer"></div>
+            <span>19.3 | Analogous Funtion | Support</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Sailboat Rudder.png">
+            <div class = "spacer"></div>
+            <span>20.1 | Man-made Structure | Sailboat Rudder</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Porkfish Caudal Fin.png">
+            <div class = "spacer"></div>
+            <span>20.2 | Natural Structure | Porkfish Caudal Fin</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Steering.png">
+            <div class = "spacer"></div>
+            <span>20.3 | Analogous Funtion | Steering</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Helicopter Propeller.png">
+            <div class = "spacer"></div>
+            <span>21.1 | Man-made Structure | Helicopter Propeller</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Norway Maple Seeds.png">
+            <div class = "spacer"></div>
+            <span>21.2 | Natural Structure | Norway Maple Seeds</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Thrust.png">
+            <div class = "spacer"></div>
+            <span>21.3 | Analogous Funtion | Thrust</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Knit Textile.png">
+            <div class = "spacer"></div>
+            <span>22.1 | Man-made Structure | Knit Textile</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Honeycomb.png">
+            <div class = "spacer"></div>
+            <span>22.2 | Natural Structure | Honeycomb</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="hexagonal efficiency.png">
+            <div class = "spacer"></div>
+            <span>22.3 | Analogous Funtion | Hexagonal Efficiency</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Scrub Brush.png">
+            <div class = "spacer"></div>
+            <span>23.1 | Man-made Structure | Scrub Brush</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Pine Needles.png">
+            <div class = "spacer"></div>
+            <span>23.2 | Natural Structure | Pitch Pine Needles</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Surface Area.png">
+            <div class = "spacer"></div>
+            <span>23.3 | Analogous Funtion | Surface Area</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Hydraulic Press.png">
+            <div class = "spacer"></div>
+            <span>24.1 | Man-made Structure | Hydraulic Press</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Human Teeth.png">
+            <div class = "spacer"></div>
+            <span>24.2 | Natural Structure | Human Teeth</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Smashing.png">
+            <div class = "spacer"></div>
+            <span>24.3 | Analogous Funtion | Smashing</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Suction Cup.png">
+            <div class = "spacer"></div>
+            <span>25.1 | Man-made Structure | Suction Cup</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Carribean Octopus Sucker.png">
+            <div class = "spacer"></div>
+            <span>25.2 | Natural Structure | Carribean Octopus Sucker</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Suction.png">
+            <div class = "spacer"></div>
+            <span>25.3 | Analogous Funtion | Suction</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Grilled Cheese.png">
+            <div class = "spacer"></div>
+            <span>26.1 | Man-made Structure | Grilled Cheese Sandwich</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Phospholipid Bilayer.png">
+            <div class = "spacer"></div>
+            <span>26.2 | Natural Structure | Phospholipid Bilayer</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Layers.png">
+            <div class = "spacer"></div>
+            <span>26.3 | Analogous Funtion | Layers</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Blanket.png">
+            <div class = "spacer"></div>
+            <span>27.1 | Man-made Structure | Fuzzy Blanket</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Hair.png">
+            <div class = "spacer"></div>
+            <span>27.2 | Natural Structure | Human Hair</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Insulation.png">
+            <div class = "spacer"></div>
+            <span>27.3 | Analogous Funtion | Insulation</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Bowl.png">
+            <div class = "spacer"></div>
+            <span>28.1 | Man-made Structure | Ceramic Bowl</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Barrel Sponge.png">
+            <div class = "spacer"></div>
+            <span>28.2 | Natural Structure | Barrel Sponge</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Contain.png">
+            <div class = "spacer"></div>
+            <span>28.3 | Analogous Funtion | Contain</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Solar Panel.png">
+            <div class = "spacer"></div>
+            <span>29.1 | Man-made Structure | Solar Panel</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Leaf.png">
+            <div class = "spacer"></div>
+            <span>29.2 | Natural Structure | Fig Tree Leaf</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Sun Absorbtion.png">
+            <div class = "spacer"></div>
+            <span>29.3 | Analogous Funtion | Sun Absorbtion</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Camo Print Shirt.png">
+            <div class = "spacer"></div>
+            <span>30.1 | Man-made Structure | Printed Tee Shirt</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Frog skin.png">
+            <div class = "spacer"></div>
+            <span>30.2 | Natural Structure | Leopard Frog Skin</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="camouflage.png">
+            <div class = "spacer"></div>
+            <span>30.3 | Analogous Funtion | Camouflage</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Flashlight.png">
+            <div class = "spacer"></div>
+            <span>31.1 | Man-made Structure | Flashlight</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Moon.png">
+            <div class = "spacer"></div>
+            <span>31.2 | Natural Structure | The Sun</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Light.png">
+            <div class = "spacer"></div>
+            <span>31.3 | Analogous Funtion | Light Production</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Spike Strip.png">
+            <div class = "spacer"></div>
+            <span>32.1 | Man-made Structure | Spike Strip</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Rose Bush Thorns.png">
+            <div class = "spacer"></div>
+            <span>32.2 | Natural Structure | Rose Bush Thorns</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Piercing.png">
+            <div class = "spacer"></div>
+            <span>32.3 | Analogous Funtion | Piercing</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Excavator Arm.png">
+            <div class = "spacer"></div>
+            <span>33.1 | Man-made Structure | Hydraulic Excavator Arm</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Human Bicep.png">
+            <div class = "spacer"></div>
+            <span>33.2 | Natural Structure | Human Bicep</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Weight Lifting.png">
+            <div class = "spacer"></div>
+            <span>33.3 | Analogous Funtion | Lifting Weight</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "photorow">
+        <div class = "gutter"></div>
+        <div class = "human">
+            <img src="Chicago at Night.png">
+            <div class = "spacer"></div>
+            <span>34.1 | Man-made Structure | Chicago at Night</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "nature">
+            <img src="Stars.png">
+            <div class = "spacer"></div>
+            <span>34.2 | Natural Structure | Stars</span>
+        </div>
+        <div class = "gutter"></div>
+        <div class = "graphic">
+            <img src="Night Lights.png">
+            <div class = "spacer"></div>
+            <span>34.3 | Analogous Funtion | Night Lights</span>
+        </div>
+        <div class = "gutter"></div>
+      </div>
+      <div class = "spacer2"></div>
+
+      <div class = "headerrow">
+          <div class = "gutter"></div>
+          <div class = "human">
+                <h2>Sourced Images</h2>
+                <ul>
+                    <li><a href="https://www.reddit.com/r/botany/comments/xllw00/question_what_are_the_ovals_on_this_elodea_leaf/" target="_blank">2.2 | Elodea(Aquatic Plant) Cells</a></li>
+                    <li><a href="https://www.shutterstock.com/search/curved-road-top-view" target="_blank">4.1 | Road</a></li>
+                    <li><a href="https://stock.adobe.com/205839976" target="_blank">4.2 | River</a></li>
+                    <li><a href="https://www.nikonsmallworld.com/galleries/2010-photomicrography-competition/dolichopodid-sp.-fly-eyes" target="_blank">7.2 | Dolichopodid (Fly) Eye</a></li>
+                    <li><a href="https://www.fxi.com/reticulation" target="_blank">10.1 | Polyurethane Foam</a></li>
+                    <li><a href="https://www.etsy.com/listing/185379582/angel-stained-glass-window-panel" target="_blank">11.1 | Stained Glass</span></a></li>
+                    <li><a href="https://www.washingtonpost.com/local/the-wings-of-war-some-people-believed-cicadas-carried-a-dire-warning/2021/05/31/513141d2-c223-11eb-9a8d-f95d7724967c_story.html" target="_blank">11.2 | Cicada Wing</span></a></li>
+                    <li><a href="https://stock.adobe.com/images/close-up-of-pliers-on-white-background/285960832?asset_id=285960832" target="_blank">13.1 | Pliers</span></a></li>
+                    <li><a href="https://www.sciencenews.org/article/ants-metal-infused-sharp-jaws-biology" target="_blank">13.2 | Leaf-Cutting Ant Mandibles</span></a></li>
+                    <li><a href="https://www.walmart.com/ip/Kids-Adjustable-Flippers-Fins-Swimming-Diving-Learning-Tools-Blue/2654117623" target="_blank">14.1 | Diving Fin</span></a></li>
+                    <li><a href="https://australian.museum/blog-archive/science/put-your-hands-up-and-best-foot-forward/" target="_blank">14.2 | Leopard Frog Foot</span></a></li>
+                    <li><a href="https://www.storyblocks.com/video/stock/plane-flying-closely-overhead-5qbxzpv" target="_blank">17.1 | Airplane Wing</span></a></li>
+                    <li><a href="https://www.alibaba.com/product-detail/100-Recycled-Polyester-Round-Hole-Mesh_62529199463.html" target="_blank">18.1 | Mesh Net</span></a></li>
+                    <li><a href="https://www.thesprucecrafts.com/identifying-antique-furniture-foot-styles-4072015">19.1 | Table Leg</span></a></li>
+                    <li><a href="https://www.koinoniadogs.com/blog/teaching-a-dog-to-enjoy-nail-trims" target="_blank">19.2 | Dog Foot</span></a></li>
+                    <li><a href="https://smallboatrestoration.blogspot.com/2013/02/old-style-sunfish-rudder-and-tiller.html" target="_blank">20.1 | Sailboat Rudder</span></a></li>
+                    <li><a href="https://stock.adobe.com/images/maple-seeds-on-white-background-isolated/375087910?prev_url=detail" target="_blank">21.2 | Norway Maple Seeds</span></a></li>
+                    <li><a href="https://www.knittingstitchpatterns.com/2014/09/classic-aran-honeycomb.html" target="_blank">22.1 | Knit Textile</span></a></li>
+                    <li><a href="https://www.dadant.com/learn/why-do-honeycombs-look-that-way/" target="_blank">22.2 | Honeycomb</span></a></li>
+                    <li><a href="https://www.istockphoto.com/video/the-ball-from-the-big-tennis-presses-hydraulic-press-close-up-gm1066252310-285130524" target="_blank">24.1 | Hydraulic Press</span></a></li>
+                    <li><a href="https://www.youtube.com/watch?v=XXMxihOh8ps" target="_blank">25.2 | Carribean Octopus Sucker</span></a></li>
+                    <li><a href="https://www.thoughtco.com/phospholipids-373561" target="_blank">26.2 | Phospholipid Bilayer</span></a></li>
+                    <li><a href="https://en.tongwei.com.cn/news/355.html" target="_blank">29.1 | Solar Panel</span></a></li>
+                    <li><a href="https://davesnewyork.com/products/rothco-camouflage-tee-woodland" target="_blank">30.1 | Printed Tee Shirt</span></a></li>
+                    <li><a href="https://www.istockphoto.com/photo/frog-gm144228307-3647275?searchscope=image%2Cfilm" target="_blank">30.2 | Leopard Frog Skin</span></a></li>
+                    <li><a href="https://stock.adobe.com/images/spike-strip/52184340?asset_id=52184340" target="_blank">32.1 | Spike Strip</span></a></li>
+                    <li><a href="https://www.istockphoto.com/photo/single-excavator-boom-gm821545426-133864845?searchscope=image%2Cfilm" target="_blank">33.1 | Hydraulic Excavator Arm</span></a></li>
+                    <li><a href="https://www.saatchiart.com/art/Photography-CITY-LIGHTS-AT-NIGHT-MICHIGAN-AVENUE-CHICAGO-DOWNTOWN-AERIAL-VIEW-CHICAGO-ILLINOIS-Limited-Edition-of-55/1048370/8134300/view" target="_blank">34.1 | Chicago at Night</span></a></li>
+
+                </ul>
+          </div>
+          <div class = "gutter"></div>
+          <div class = "graphic">
+              <h2>All other photos and graphics are by me.</h2>
+          </div>
+          <div class = "gutter"></div>
+          <div class = "nature">
+            <h1>Analogies</h1><br><h3>An Archive by Michael French</h3>
+          </div>
+          <div class = "gutter"></div>
+        </div>
+        <div class = "spacer2"></div>
+</body>
+</html>
