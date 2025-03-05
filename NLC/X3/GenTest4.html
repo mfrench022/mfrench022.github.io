@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEN Logo Test #3</title>
+
+    <style>
+
+.container {
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+}
+
+.square {
+  width: 510px;
+  height: 200px;
+  background-color: #E1192C;
+  position: relative;
+  z-index: -200;
+
+  &:after {
+      border: 10px solid #E1192C;
+      content: "";
+      inset: 0;
+      position: absolute;
+        
+      filter: url(#noise);
+      z-index: -200;
+    }
+}
+
+
+.g2line, .g2fill {
+    position: absolute;
+    left: 35px;
+    top: -2px;
+    height: 69.5%;
+    aspect-ratio: 1;
+}
+
+.g1fill, .g1line {
+    position: absolute;
+    left: 35px;
+    bottom: 7.5px;
+    height: 69.5%;
+    aspect-ratio: 1;
+}
+
+.e1fill, .e1line {
+    position: absolute;
+    left: 200px;
+    bottom: 30px;
+    width: 22.3%;
+    aspect-ratio: 1;
+}
+
+.e2fill, .e2line {
+    position: absolute;
+    left: 200px;
+    top: -3.5px;
+    width: 22.3%;
+    aspect-ratio: 1;
+}
+
+.n1fill, .n1line {
+    position: absolute;
+    right: 72px;
+    height: 63.5%;
+    bottom: 38.5px;
+    aspect-ratio: 1;
+}
+
+.n2fill, .n2line {
+    position: absolute;
+    right: 17.25px;
+    height: 63.5%;
+    bottom: 38.5px;
+    aspect-ratio: 1;
+}
+
+@keyframes flyOutDown {
+    to {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
+@keyframes flyInDown {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flyOutUp {
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+@keyframes flyInUp {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+</style>
+
+</head>
+<body>
+    <br><br><br><br><br><br>
+    <div class = "container">
+        <div class = "square">
+                <img class="g1fill" src = "NewSVGs/Asset 36.svg">
+                <img class="g2fill" src = "NewSVGs/Asset 35.svg">
+                <img class="g1line" src = "NewSVGs/Asset 30.svg">
+                <img class="g2line" src = "NewSVGs/Asset 29.svg">
+
+                <img class="e1fill" src = "NewSVGs/Asset 33.svg">
+                <img class="e2fill" src = "NewSVGs/Asset 34.svg">
+                <img class="e1line" src = "NewSVGs/Asset 27.svg">
+                <img class="e2line" src = "NewSVGs/Asset 28.svg">
+
+                <img class="n1fill" src = "NewSVGs/Asset 32.svg">
+                <img class="n2fill" src = "NewSVGs/Asset 31.svg">
+                <img class="n1line" src = "NewSVGs/Asset 26.svg">
+                <img class="n2line" src = "NewSVGs/Asset 25.svg">
+            </div>
+        </div>
+    </div>
+
+    <!-- SVG Filter Effect modified from Ben Gammon on Codepen: https://bengammon.co.uk/rough-css-borders-with-svg-filters/ -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0" width="0">
+        <defs>
+            <filter id="noise">
+                <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="4" />
+                <feDisplacementMap in="SourceGraphic" scale="0" />
+            </filter>
+        </defs>
+    </svg>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const letterPairs = [
+        ["g1fill", "g1line"],
+        ["g2fill", "g2line"],
+        ["e1fill", "e1line"],
+        ["e2fill", "e2line"],
+        ["n1fill", "n1line"],
+        ["n2fill", "n2line"],
+    ];
+
+    const flyOutDownPairs = ["g1fill", "g1line", "e1fill", "e1line", "n1fill", "n1line"];
+    const flyOutUpPairs = ["g2fill", "g2line", "e2fill", "e2line", "n2fill", "n2line"];
+    
+    let filterScale = 0; // Start at 0 
+    const displacementMap = document.querySelector("feDisplacementMap");
+    
+    function swapLetter() {
+        let pairIndex = Math.floor(Math.random() * letterPairs.length);
+        let [first, second] = letterPairs[pairIndex].map(cls => document.querySelector(`.${cls}`));
+
+        let visible = first.classList.contains("hidden") ? second : first;
+        let hidden = visible === first ? second : first;
+
+        let flyOutAnim = flyOutDownPairs.includes(visible.className) ? "flyOutDown" : "flyOutUp";
+        let flyInAnim = flyOutDownPairs.includes(hidden.className) ? "flyInUp" : "flyInDown";
+
+        visible.style.animation = `${flyOutAnim} 1s forwards`;
+        
+        setTimeout(() => {
+            visible.classList.add("hidden");
+            hidden.classList.remove("hidden");
+            hidden.style.animation = `${flyInAnim} 1s forwards`;
+        }, 1000);
+        
+        // Increase filter scale by 1
+        filterScale++;
+        displacementMap.setAttribute("scale", filterScale);
+    }
+
+    letterPairs.forEach(([first, second]) => {
+        document.querySelector(`.${second}`).classList.add("hidden");
+    });
+
+    setInterval(swapLetter, 1000);
+});
+
+
+
+</script>
+
+</body>
+</html>
