@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const flyOutDownPairs = ["g1fill", "g1line", "e1fill", "e1line", "n1fill", "n1line"];
     const flyOutUpPairs = ["g2fill", "g2line", "e2fill", "e2line", "n2fill", "n2line"];
     
-    let filterScale = 0; // Start at 0 
+    let filterScale = 1;
     const displacementMap = document.querySelector("feDisplacementMap");
     
     function swapLetter() {
@@ -190,7 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
             hidden.style.animation = `${flyInAnim} 1s forwards`;
         }, 1000);
         
-        // Increase filter scale by 1
         filterScale++;
         displacementMap.setAttribute("scale", filterScale);
     }
@@ -199,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(`.${second}`).classList.add("hidden");
     });
 
-    setInterval(swapLetter, 1000);
+    setInterval(swapLetter, 500);
 });
 
 
