@@ -93,7 +93,7 @@ body::-webkit-scrollbar {
     height: 36.8vw;
     width: 100%;
     display: grid;
-    grid-template-columns: 0.7fr 5fr .3fr 9fr 0.7fr;
+    grid-template-columns: 0.35fr 5fr .3fr 9fr 0.35fr;
     transition: 200ms;
   }
 
@@ -102,7 +102,7 @@ body::-webkit-scrollbar {
       height: 36.8vw;
       width: 100%;
       display: grid;
-      grid-template-columns: 0.7fr 9fr .3fr 5fr 0.7fr;
+      grid-template-columns: 0.35fr 9fr .3fr 5fr 0.35fr;
       transition: 200ms;
     }
   
@@ -132,10 +132,10 @@ body::-webkit-scrollbar {
   }
   
   .box4 {
-    width: 100%;
+    width: 2vw;
     height: 100%;
     transition: 200ms;
-  /*   background-color: orange; */
+    /* background-color: orange; */
   }
   
   h3 {
@@ -147,26 +147,27 @@ body::-webkit-scrollbar {
   .box3 ul {
     font-weight: 400;
     font-size: 3.145vw;
-    left: -0.75vw;
+    left: -2.2vw;
     position: relative;
-    list-style-type: none;
     line-height: 5vw;
     color: white;
     font-family: "Aldrich", sans-serif;
     transition: 200ms;
+    padding-left: 2.3vw;
+    list-style-type: none
   }
 
   .paragraph p {
     font-weight: 400;
     font-size: 2.2vw;
-    left: 1.8vw;
+    /* left: 1.8vw; */
     position: relative;
     list-style-type: none;
     line-height: 2.8vw;
     color: white;
     font-family: "Aldrich", sans-serif;
     transition: 200ms;
-    margin-right: 2vw;
+    margin-right: 1vw;
   }
   
   .button {
@@ -195,7 +196,7 @@ body::-webkit-scrollbar {
     position: relative;
     left: 1.5vw;
     font-size: 3.145vw;
-    top: 0.75vw;
+    top: 0.7vw;
     transition: 200ms;
   }
 
@@ -219,7 +220,7 @@ body::-webkit-scrollbar {
     position: relative;
     left: 1.5vw;
     font-size: 3.145vw;
-    top: 0.75vw;
+    top: 0.7vw;
     transition: 200ms;
   }
 
@@ -266,14 +267,14 @@ body::-webkit-scrollbar {
     align-items: center; /* Vertically center the image */
     overflow: hidden; /* Prevent any overflow from the image */
     transition: 200ms;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
 }
 
 .box5 img {
     height: auto; /* Fill the div vertically */
     width: 100%; /* Adjust width to maintain aspect ratio */
     object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
-    border-top-right-radius: 1vw;
-    border-bottom-left-radius: 1vw;
     transition: 200ms;
 }
 
@@ -286,14 +287,14 @@ body::-webkit-scrollbar {
     align-items: center; /* Vertically center the image */
     overflow: hidden; /* Prevent any overflow from the image */
     transition: 200ms;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
 }
 
 .box55 img {
     height: auto; /* Fill the div vertically */
     width: 100%; /* Adjust width to maintain aspect ratio */
     transition: 200ms;
-    border-top-right-radius: 1vw;
-    border-bottom-left-radius: 1vw;
     object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
 }
 
@@ -334,44 +335,6 @@ html, body {
     color: lightblue;
     text-decoration: underline;
   }
-  
-
-@media (max-width: 900px) {
-
-.box3 ul {
-  font-size: 2.8vw;
-  left: -3vw;
-}
-
-.box33 ul {
-  font-size: 1.5vw;
-  left: -3vw;
-}
-}
-
-@media (max-width: 430px) {
-
-.box3 ul {
-  font-size: 2.8vw;
-  left: -8vw;
-  margin: none;
-  padding: none;
-}
-
-   
-}
-
-@media (max-width: 400px) {
-
-.box3 ul {
-  font-size: 2.2vw;
-  left: -10vw;
-  margin: none;
-  padding: none;
-}
-
-   
-}
 
 h2, h3, p, a, span {
     font-family: 'Aldrich', sans-serif;
@@ -439,7 +402,7 @@ h2 {
     <div class ="row3">
       <div class ="side"></div>
       <div class ="box33">
-        <a href="socialmedia.html"><div class = "button"><h3>science comms</h3></div></a>
+        <a href="scicomms.html"><div class = "button"><h3>science comms</h3></div></a>
         <div class = "paragraph"><p>prior to my design studies, i spent four years working as director of social media at a boutique pr agency specializing in science communications for life science, biotech, and pharmaceutical companies</p></div>
       </div>
       <div class ="box4"></div>

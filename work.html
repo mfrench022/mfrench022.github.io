@@ -119,16 +119,16 @@ h2:hover {
   height: 36.8vw;
   width: 100%;
   display: grid;
-  grid-template-columns: 0.7fr 5fr .3fr 9fr 0.7fr;
+  grid-template-columns: 0.35fr 5fr .3fr 9fr 0.35fr;
   transition: 200ms;
 }
 
 .row33 {
-  /*   background-color: blue; */
+    /* background-color: blue; */
     height: 36.8vw;
     width: 100%;
     display: grid;
-    grid-template-columns: 0.7fr 9fr .3fr 5fr 0.7fr;
+    grid-template-columns: 0.35fr 9fr .3fr 5fr 0.35fr;
     transition: 200ms;
   }
 
@@ -142,17 +142,17 @@ h2:hover {
   width: 100%;
   height: 10vw;
   transition: 200ms;
-  margin-top: 4.2vw;
+  margin-top: 2vw;
   /* background-color: red; */
   /* overflow: scroll; */
 /*   margin: 10px; */
 }
 
 .box4 {
-  width: 100%;
+  width: 2vw;
   height: 100%;
   transition: 200ms;
-/*   background-color: orange; */
+  /* background-color: orange; */
 }
 
 h3 {
@@ -161,29 +161,16 @@ h3 {
   transition: 200ms;
 }
 
-.box3 ul {
-  font-weight: 400;
-  font-size: 3.145vw;
-  left: -0.75vw;
-  position: relative;
-  list-style-type: none;
-  line-height: 5vw;
-  color: white;
-  font-family: "Aldrich", sans-serif;
-  transition: 200ms;
-}
-
 .paragraph p {
     font-weight: 400;
-    font-size: 1.8vw;
-    left: 1.8vw;
+    font-size: 2vw;
     position: relative;
     list-style-type: none;
     line-height: 2.65vw;
     color: white;
     font-family: "Aldrich", sans-serif;
     transition: 200ms;
-    margin-right: 2.6vw;
+    margin-right: 0.8vw;
   }
 
 .button {
@@ -206,7 +193,7 @@ h3 {
   position: relative;
   left: 1.5vw;
   font-size: 3.145vw;
-  top: 0.75vw;
+  top: 0.7vw;
   transition: 200ms;
   color: #8968CD;
 }
@@ -225,7 +212,7 @@ h3 {
   position: relative;
   left: 1.5vw;
   font-size: 3.145vw;
-  top: 0.75vw;
+  top: 0.7vw;
   transition: 200ms;
   color: #8968CD;
 }
@@ -352,17 +339,22 @@ a {
 
 /* Slideshow container */
 .slideshow-container4, .slideshow-container3, .slideshow-container2, .slideshow-container1 {
-  max-width: 1000px;
+  /* max-width: 1000px; */
   position: relative;
   margin: auto;
+  height: 100%; /* Fill the div vertically */
+  width: auto; /* Adjust width to maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
+  transition: 200ms;
+  overflow: hidden;
 }
 
-.slideshow-container3 img, .slideshow-container1 img {
+.slideshow-container3, .slideshow-container1 {
   border-top-left-radius: 1vw;
   border-bottom-right-radius: 1vw;
 }
 
-.slideshow-container4 img, .slideshow-container2 img {
+.slideshow-container4, .slideshow-container2 {
   border-top-right-radius: 1vw;
   border-bottom-left-radius: 1vw;
 }
@@ -479,8 +471,7 @@ a {
         <div class ="side"></div>
         </div>
     <div class ="spacer"></div>
-    <div class ="spacer2"></div> 
-    
+  
     <div class="zig-zag-line"></div>
     <div class ="spacer"></div>  
 
@@ -673,7 +664,7 @@ a {
         <div class ="box4"></div>
         <div class ="box33">
             <div class = "button2"><h3>lokahi</h3></div>
-        <div class = "paragraph"><p>a design exercise in following a hypothetical client brief: create an earthy, digitally-lightweight poster and instagram story to promote a benefit concert raising money for wildfire recovery aid in hawaii</p></div></div>
+        <div class = "paragraph"><p>a design exercise in following a hypothetical client brief: create an earthy, digitally-lightweight poster and instagram story to promote a concert benefitting wildfire recovery aid in hawaii</p></div></div>
         <div class ="side"></div>
     </div>
     <div class ="spacer"></div> 
