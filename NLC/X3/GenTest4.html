@@ -191,14 +191,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
         
         filterScale++;
-        displacementMap.setAttribute("scale", filterScale);
+        displacementMap.setAttribute("scale", filterScale*5);
     }
 
     letterPairs.forEach(([first, second]) => {
         document.querySelector(`.${second}`).classList.add("hidden");
     });
 
-    setInterval(swapLetter, 1500);
+    setInterval(swapLetter, 2500);
 });
 
 
