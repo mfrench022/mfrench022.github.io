@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taylor Guitars | Custom Packaging Generator</title>
+  <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css" />
+
+  <style>
+    .box {
+      width: 320px;
+      height: 800px;
+      left: 50%;
+      position: fixed;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      background: linear-gradient(150deg, #B73125, transparent 30%),
+                  linear-gradient(330deg, #CB8D2E, transparent 30%),
+                  linear-gradient(225deg, #EEB741, #F3C6B0, #B73125, #CB8D2E);
+    }
+
+    .model {
+      font-family: dogma-bold, sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      position: absolute;
+      left: 15px;
+      bottom: 100px;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    .logoheader {
+      font-family: dogma-bold, sans-serif;
+      font-weight: 700;
+      font-size: 60px;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .logosubhead {
+      font-family: century-gothic, sans-serif;
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      right: 15px;
+      top: 72px;
+      letter-spacing: 3.8px;
+    }
+
+    .guitarbody {
+      scale: 85%;
+    }
+
+    .guitarbody img {
+      position: absolute;
+      top: -150px;
+      left: 30px;
+    }
+
+    .soundhole {
+      border-radius: 100%;
+      aspect-ratio: 1;
+      width: 160px;
+      border: 8px solid white;
+      position: absolute;
+      left: -70px;
+      top: 340px;
+      z-index: 20;
+    }
+
+    #wood {
+      position: absolute;
+      left: 0;
+      top: 0;
+      scale: 109%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .strings {
+      scale: 80%;
+      position: absolute;
+      left: -47px;
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+      top: -50px;
+    }
+
+    #woodback {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      mix-blend-mode: overlay;
+    }
+
+    .controls {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      background: rgba(255,255,255,0.9);
+      padding: 10px;
+      border-radius: 10px;
+      font-family: sans-serif;
+    }
+
+    .controls label {
+      display: block;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    .controls select {
+      width: 160px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="controls">
+    <label>Shape:
+      <select id="shape">
+        <option>GS Mini</option>
+        <option>Grand Auditorium</option>
+        <option>Grand Concert</option>
+        <option>Dreadnought</option>
+      </select>
+    </label>
+
+    <label>Cutaway:
+      <select id="cutaway">
+        <option>Venetian</option>
+        <option>Beveled</option>
+        <option>None</option>
+      </select>
+    </label>
+
+    <label>Wood Type:
+      <select id="woodType">
+        <option>Rosewood</option>
+        <option>Koa</option>
+        <option>Spruce</option>
+        <option>Mahogany</option>
+      </select>
+    </label>
+
+    <label>Strings:
+      <select id="strings">
+        <option>6 Strings</option>
+        <option>12 Strings</option>
+      </select>
+    </label>
+
+    <label>Tone:
+      <select id="tone">
+        <option>Rich</option>
+        <option>Warm</option>
+        <option>Sweet</option>
+        <option>Cool</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="box" id="box">
+    <img id="woodback" src="SVGs/mahogplank.jpg" />
+    <div class="logoheader">Taylor</div>
+    <div class="logosubhead">Guitars</div>
+    <div class="model">Academy 12e</div>
+    <div class="guitarbody" id="guitarbody">
+      <img id="guitarBodyImg" src="SVGs/ConcertNone.svg" />
+    </div>
+    <div class="soundhole">
+      <img id="wood" src="SVGs/Mahogany.png" />
+    </div>
+    <div class="strings" id="stringsDiv">
+      <img id="stringsImg" src="SVGs/6string.svg" />
+    </div>
+  </div>
+
+  <script>
+    const shapeSelect = document.getElementById('shape');
+    const cutawaySelect = document.getElementById('cutaway');
+    const woodSelect = document.getElementById('woodType');
+    const stringsSelect = document.getElementById('strings');
+    const toneSelect = document.getElementById('tone');
+
+    const guitarBodyImg = document.getElementById('guitarBodyImg');
+    const woodImg = document.getElementById('wood');
+    const woodBackImg = document.getElementById('woodback');
+    const stringsImg = document.getElementById('stringsImg');
+    const box = document.getElementById('box');
+
+    function updateDisplay() {
+      const shape = shapeSelect.value;
+      const cutaway = cutawaySelect.value;
+      const wood = woodSelect.value;
+      const strings = stringsSelect.value;
+      const tone = toneSelect.value;
+
+      // Guitar shape + cutaway combo
+      const shapeMap = {
+        "GS Mini": "GSM",
+        "Grand Auditorium": "Auditorium",
+        "Grand Concert": "Concert",
+        "Dreadnought": "Dread"
+      };
+      const svgPath = `SVGs/${shapeMap[shape]}${cutaway}.svg`;
+      guitarBodyImg.src = svgPath;
+
+      // Wood type image updates
+      const woodMap = {
+        Rosewood: ["SVGs/Rosewoodplank.jpg", "SVGs/Rosewood.png"],
+        Koa: ["SVGs/Koaplank.jpg", "SVGs/Koa.png"],
+        Spruce: ["SVGs/spruceplank.jpg", "SVGs/Spruce.png"],
+        Mahogany: ["SVGs/mahogplank.jpg", "SVGs/Mahogany.png"]
+      };
+      woodBackImg.src = woodMap[wood][0];
+      woodImg.src = woodMap[wood][1];
+
+      // Strings
+      stringsImg.src = strings === "12 Strings" ? "SVGs/12string.svg" : "SVGs/6string.svg";
+
+      // Tone background
+      const toneMap = {
+        Rich: `linear-gradient(150deg, #572977, transparent 30%),
+               linear-gradient(330deg, #1C2855, transparent 30%),
+               linear-gradient(225deg, #093B25, #07353B, #1C2855, #07353B)`,
+        Warm: `linear-gradient(150deg, #B73125, transparent 30%),
+               linear-gradient(330deg, #CB8D2E, transparent 30%),
+               linear-gradient(225deg, #EEB741, #F3C6B0, #B73125, #CB8D2E)`,
+        Sweet: `linear-gradient(150deg, #E65F77, transparent 30%),
+                linear-gradient(330deg, #F1AAAB, transparent 30%),
+                linear-gradient(225deg, #FBFBEB, #F9E5C2, #E65F77, #F9E5C2)`,
+        Cool: `linear-gradient(150deg, #464B89, transparent 30%),
+               linear-gradient(330deg, #56A36B, transparent 30%),
+               linear-gradient(225deg, #235C79, #3D9DCF, #464B89, #3D9DCF)`
+      };
+      box.style.background = toneMap[tone];
+    }
+
+    shapeSelect.addEventListener('change', updateDisplay);
+    cutawaySelect.addEventListener('change', updateDisplay);
+    woodSelect.addEventListener('change', updateDisplay);
+    stringsSelect.addEventListener('change', updateDisplay);
+    toneSelect.addEventListener('change', updateDisplay);
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg width="2500" height="5890" viewBox="0 0 2500 5890" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_33_124)">
+<path d="M465 -882V-200.995L480.095 1361.54C1034.68 1361.54 1511.38 1508.89 1636.95 1937.91C1762.51 2366.92 1560.95 2734.19 1576.91 3037.12C1612.24 3712.29 2167.17 4114.38 2245.73 5097.8C2287.59 5623.4 2013.13 6122.4 1608.81 6349" stroke="white" stroke-width="50" stroke-miterlimit="10"/>
+<rect width="485" height="5890" fill="white"/>
+<rect x="465" y="1768" width="1108" height="4122" fill="white"/>
+<ellipse cx="1019" cy="1940" rx="611" ry="458" fill="white"/>
+<ellipse cx="801" cy="1843" rx="611" ry="458" fill="white"/>
+<ellipse cx="563" cy="1804" rx="611" ry="458" fill="white"/>
+<ellipse cx="1239.05" cy="2262.01" rx="611" ry="458" transform="rotate(96.0703 1239.05 2262.01)" fill="white"/>
+<ellipse cx="1182.05" cy="2529.01" rx="611" ry="458" transform="rotate(96.0703 1182.05 2529.01)" fill="white"/>
+<ellipse cx="1449.32" cy="5252.1" rx="1073.06" ry="804.353" transform="rotate(96.0703 1449.32 5252.1)" fill="white"/>
+<ellipse cx="1378.32" cy="4981.1" rx="1073.06" ry="804.353" transform="rotate(96.0703 1378.32 4981.1)" fill="white"/>
+<ellipse cx="865.318" cy="3745.1" rx="1073.06" ry="804.353" transform="rotate(96.0703 865.318 3745.1)" fill="white"/>
+<rect x="982.668" y="3797" width="750.095" height="1071" transform="rotate(-25.1708 982.668 3797)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_33_124">
+<rect width="2500" height="5890" fill="white"/>
+</clipPath>
+</defs>
+</svg>

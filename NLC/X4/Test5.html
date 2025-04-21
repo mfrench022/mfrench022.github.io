@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Guitars | Packaging Test 5</title>
+    <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css">
+
+
+    <style>
+    .model {
+      font-family: dogma-bold, sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      position: absolute;
+      left: 15px;
+      bottom: 100px;
+      color: #32190c;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+
+    .logoheader {
+      font-family: dogma-bold, sans-serif;
+      font-weight: 700;
+      font-size: 50px;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      color: white;
+      letter-spacing: 2px;
+    }
+
+    .logosubhead {
+      font-family: century-gothic, sans-serif;
+      color: white;
+      font-size: 15px;
+      position: absolute;
+      right: 15px;
+      top: 63px;
+      letter-spacing: 3.8px;
+    }
+
+    .guitarbody {
+      scale: 7.3%;
+      z-index: 0;
+    }
+
+    .guitarbody img {
+      position: absolute;
+      top: -500px;
+      left: -2300px;
+    }
+
+    .soundhole {
+      border-radius: 100%;
+      aspect-ratio: 1;
+      width: 160px;
+      border: 13px solid #32190c;
+      position: absolute;
+      left: -80px;
+      top: 340px;
+      z-index: 20;
+    }
+
+    .soundhole img {
+      scale: 1%;
+    }
+
+    #wood {
+      position: absolute;
+      left: 0;
+      top: 0;
+      scale: 109%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .strings {
+      scale: 80%;
+      position: absolute;
+      left: -33px;
+      width: 100px;
+      height: 100px;
+      top: -50px;
+    }
+
+    #woodback {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #565656;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.box {
+  position: relative;
+  width: 320px;
+  height: 800px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+#woodback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  object-fit: overlay;
+  z-index: 0;
+  mix-blend-mode: luminosity;
+}
+
+.label {
+  font-family: century-gothic, sans-serif;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  max-width: 320px;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+    </style>
+</head>
+<body>
+    <div class="grid-container" id="guitarGrid"></div>
+  </body>
+  
+
+  <script>
+    let sheetID = "1Wqmvea50sNQHG-7WRSM50j7fCD7oIddsHbx-11qmtLg";
+    let tabName = 'Sheet1';
+    let opensheet_uri = `https://opensheet.elk.sh/${sheetID}/${tabName}`;
+    
+    fetch(opensheet_uri)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(entry => {
+                const { Shape, Cutaway, BodyWood, Strings, Model, Tone } = entry;
+    
+                const box = document.createElement('div');
+                box.className = 'box';
+                box.style.background = getToneGradient(Tone);
+
+                const woodBack = document.createElement('img');
+                woodBack.id = 'woodback';
+                woodBack.src = getWoodPlank(BodyWood);
+                box.appendChild(woodBack);
+
+                const logoHeader = document.createElement('div');
+                logoHeader.className = 'logoheader';
+                logoHeader.innerText = 'Taylor';
+                box.appendChild(logoHeader);
+    
+                const logoSubhead = document.createElement('div');
+                logoSubhead.className = 'logosubhead';
+                logoSubhead.innerText = 'Guitars';
+                box.appendChild(logoSubhead);
+    
+                const modelDiv = document.createElement('div');
+                modelDiv.className = 'model';
+                modelDiv.innerText = Model;
+                box.appendChild(modelDiv);
+    
+                const guitarBody = document.createElement('div');
+                guitarBody.className = 'guitarbody';
+                guitarBody.id = 'guitarbody';
+    
+                const guitarBodyImg = document.createElement('img');
+                guitarBodyImg.src = getGuitarBody(Shape, Cutaway);
+                guitarBody.appendChild(guitarBodyImg);
+                box.appendChild(guitarBody);
+    
+                const soundhole = document.createElement('div');
+                soundhole.className = 'soundhole';
+    
+                const woodImg = document.createElement('img');
+                woodImg.id = 'wood';
+                woodImg.src = getWoodTexture(BodyWood);
+                soundhole.appendChild(woodImg);
+                box.appendChild(soundhole);
+    
+                const stringsDiv = document.createElement('div');
+                stringsDiv.className = 'strings';
+                stringsDiv.id = 'stringsDiv';
+    
+                const stringsImg = document.createElement('img');
+                stringsImg.id = 'stringsImg';
+                stringsImg.src = getStringsImg(Strings);
+                stringsDiv.appendChild(stringsImg);
+                box.appendChild(stringsDiv);
+    
+                document.getElementById("guitarGrid").appendChild(box);
+
+                const label = document.createElement("div");
+                label.className = "label";
+                label.innerHTML = `
+                <strong>Shape:</strong> ${Shape} &nbsp; <br> 
+                <strong>Cutaway:</strong> ${Cutaway} &nbsp; <br> 
+                <strong>Wood:</strong> ${BodyWood} &nbsp; <br> 
+                <strong>Strings:</strong> ${Strings} &nbsp; <br> 
+                <strong>Tone:</strong> ${Tone}
+                `;
+                const wrapper = document.createElement("div");
+                wrapper.style.display = "flex";
+                wrapper.style.flexDirection = "column";
+                wrapper.style.alignItems = "center";
+                wrapper.appendChild(box);
+                wrapper.appendChild(label);
+
+                document.getElementById("guitarGrid").appendChild(wrapper);
+            });
+        })
+        .catch(err => {
+            console.log("Something went wrong!", err);
+        });
+
+
+function getGuitarBody(shape, cutaway) {
+    const key = `${shape}|${cutaway}`;
+    const map = {
+        "GS Mini|Venetian Cutaway": "SVGs/GSMVenetian.png",
+        "GS Mini|Beveled Cutaway": "SVGs/GSMBeveled.png",
+        "GS Mini|No Cutaway": "SVGs/GSMNone.png",
+        "Grand Auditorium|Venetian Cutaway": "SVGs/AuditoriumVenetian.png",
+        "Grand Auditorium|Beveled Cutaway": "SVGs/AuditoriumBeveled.png",
+        "Grand Auditorium|No Cutaway": "SVGs/AuditoriumNone.png",
+        "Grand Concert|Venetian Cutaway": "SVGs/ConcertVenetian.png",
+        "Grand Concert|Beveled Cutaway": "SVGs/ConcertBeveled.png",
+        "Grand Concert|No Cutaway": "SVGs/ConcertNone.png",
+        "Dreadnought|Venetian Cutaway": "SVGs/DreadVenetian.png",
+        "Dreadnought|Beveled Cutaway": "SVGs/DreadBeveled.png",
+        "Dreadnought|No Cutaway": "SVGs/DreadNone.png"
+    };
+    return map[key] || "SVGs/ConcertNone.svg";
+}
+
+    
+    function getWoodPlank(wood) {
+        const map = {
+            "Rosewood": "SVGs/Rosewoodplank.jpg",
+            "Koa": "SVGs/Koaplank.jpg",
+            "Spruce": "SVGs/spruceplank.jpg",
+            "Mahogany": "SVGs/mahogplank.jpg"
+        };
+        return map[wood] || "SVGs/mahogplank.jpg";
+    }
+    
+    function getWoodTexture(wood) {
+        const map = {
+            "Rosewood": "SVGs/Rosewood.png",
+            "Koa": "SVGs/Koa.png",
+            "Spruce": "SVGs/Spruce.png",
+            "Mahogany": "SVGs/Mahogany.png"
+        };
+        return map[wood] || "SVGs/Mahogany.png";
+    }
+    
+    function getStringsImg(strings) {
+        return strings === "12 Strings" ? "SVGs/12string.svg" : "SVGs/6string.svg";
+    }
+    
+    function getToneGradient(tone) {
+        const map = {
+            "Rich": `linear-gradient(150deg, #572977, transparent 30%),
+                    linear-gradient(330deg, #1C2855, transparent 30%),
+                    linear-gradient(225deg, #093B25, #07353B, #1C2855, #07353B)`,
+            "Warm": `linear-gradient(150deg, #B73125, transparent 30%),
+                    linear-gradient(330deg, #CB8D2E, transparent 30%),
+                    linear-gradient(225deg, #EEB741, #F3C6B0, #B73125, #CB8D2E)`,
+            "Sweet": `linear-gradient(150deg, #E65F77, transparent 30%),
+                    linear-gradient(330deg, #F1AAAB, transparent 30%),
+                    linear-gradient(225deg, #FBFBEB, #F9E5C2, #E65F77, #F9E5C2)`,
+            "Cool": `linear-gradient(150deg, #464B89, transparent 30%),
+                    linear-gradient(330deg, #56A36B, transparent 30%),
+                    linear-gradient(225deg, #235C79, #3D9DCF, #464B89, #3D9DCF)`
+        };
+        return map[tone] || map["Warm"];
+    }
+    </script>
+    
+
+</body>
+</html>

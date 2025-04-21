@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor Guitars | Packaging Test 3</title>
+    <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css">
+    <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css">
+
+
+    <style>
+        .box {
+            width: 320px;
+            height: 800px;
+            left: 50%;
+            position: fixed;
+            top: 50%;
+            transform:translate(-50%, -50%);
+            overflow: hidden;
+            background:
+            linear-gradient(150deg, #572977, transparent 30%),
+            linear-gradient(330deg, #1C2855, transparent 30%),
+            linear-gradient(225deg, #093B25, #07353B, #1C2855, #07353B);
+        }
+
+        .model {
+            font-family: dogma-bold, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 30px;
+            position: absolute;
+            left: 15px;
+            bottom: 10px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .logoheader {
+            font-family: dogma-bold, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 60px;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .logosubhead {
+            font-family: century-gothic, sans-serif;
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            right: 15px;
+            top: 72px;
+            letter-spacing: 3.8px;
+        }
+
+        .guitarbody{
+            scale: 70%;
+        }
+
+        .guitarbody img {
+            margin-top: -220px;
+        }
+
+        .soundhole {
+            border-radius: 100%;
+            aspect-ratio: 1;
+            width: 160px;
+            border: 8px solid white;
+            position: absolute;
+            left: -70px;
+            top: 340px;
+            z-index: 20;
+            object-fit: cover;
+            /* background-color: red; */
+        }
+
+        #wood {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            scale: 109%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* background-color: yellow; */
+        }
+
+
+        .strings{
+            scale: 80%;
+            position: absolute;
+            left: -47px;
+            /* background-color: red; */
+            width: 100px;
+            height: 100px;
+            z-index: -1;
+            top: -50px;
+        }
+
+        #woodback {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            object-position: 100%;
+            mix-blend-mode: overlay;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class = "box">
+        <img id="woodback" src = "SVGs/mahogplank.jpg">
+        <div class = "logoheader">Taylor</div>
+        <div class = "logosubhead">Guitars</div>
+        <div class = "model">Academy 12e</div>
+        <div class = "guitarbody">
+            <img src = "SVGs/ConcertNone.svg">
+        </div>
+        <div class = "soundhole">
+            <img id="wood" src = "SVGs/Mahogany.png"></div>
+        <div class = "strings">
+            <img src = "SVGs/6string.svg"></div>
+    </div>
+
+</body>
+</html>
