@@ -44,7 +44,6 @@
         .guitarbody {
           scale: 7.3%;
           z-index: 5;
-          mix-blend-mode: subtract;
         }
 
     
@@ -134,9 +133,9 @@
       height: 100%;
       opacity: 100%;
       object-fit: overlay;
-      z-index: -20;
-      opacity: 100%;
-      mix-blend-mode: overlay;
+      z-index: 0;
+      opacity: 50%;
+      mix-blend-mode: soft-light;
     }
     
     .label {
@@ -268,10 +267,10 @@
         
         function getWoodPlank(wood) {
             const map = {
-                "Rosewood": "SVGs/Rosewoodplank.jpg",
-                "Koa": "SVGs/Koaplank.jpg",
-                "Spruce": "SVGs/spruceplank.jpg",
-                "Mahogany": "SVGs/mahogplank.jpg"
+                "Rosewood": "SVGs/cardRosewoodplank.jpg",
+                "Koa": "SVGs/cardkoaplank.jpg",
+                "Spruce": "SVGs/cardspruceplank.jpg",
+                "Mahogany": "SVGs/cardmahogplank.jpg"
             };
             return map[wood] || "SVGs/mahogplank.jpg";
         }
@@ -298,9 +297,9 @@
                 "Warm": `linear-gradient(150deg, #B73125, transparent 30%),
                         linear-gradient(330deg, #CB8D2E, transparent 30%),
                         linear-gradient(225deg, #EEB741, #F3C6B0, #B73125, #CB8D2E)`,
-                "Sweet": `linear-gradient(150deg, #E65F77, transparent 30%),
-                        linear-gradient(330deg, #F1AAAB, transparent 30%),
-                        linear-gradient(225deg, #FBFBEB, #F9E5C2, #E65F77, #F9E5C2)`,
+               "Sweet": `linear-gradient(150deg, #E65F77, transparent 30%),
+                        linear-gradient(330deg, #E65F77, transparent 30%),
+                        linear-gradient(225deg,  #E65F77, #F9E5C2, #F9E5C2)`,
                 "Cool": `linear-gradient(150deg, #464B89, transparent 30%),
                         linear-gradient(330deg, #56A36B, transparent 30%),
                         linear-gradient(225deg, #235C79, #3D9DCF, #464B89, #3D9DCF)`
