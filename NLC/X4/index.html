@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taylor Guitars | Automated Packaging System</title>
     <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css">
-    <link rel="stylesheet" href="https://use.typekit.net/cap0akz.css">
 
 
     <style>
@@ -18,7 +17,7 @@
           bottom: 100px;
           color: #32190c;
           letter-spacing: 1px;
-          z-index: 2;
+          z-index: 10;
         }
     
         .logoheader {
@@ -28,13 +27,13 @@
           position: absolute;
           right: 15px;
           top: 10px;
-          color: white;
+          color: #BE8F72;
           letter-spacing: 2px;
         }
     
         .logosubhead {
           font-family: century-gothic, sans-serif;
-          color: white;
+          color: #BE8F72;
           font-size: 15px;
           position: absolute;
           right: 15px;
@@ -44,8 +43,10 @@
     
         .guitarbody {
           scale: 7.3%;
-          z-index: 0;
+          z-index: 5;
+          mix-blend-mode: subtract;
         }
+
     
         .guitarbody img {
           position: absolute;
@@ -61,7 +62,7 @@
           position: absolute;
           left: -80px;
           top: 340px;
-          z-index: 20;
+          z-index: 10;
         }
     
         .soundhole img {
@@ -81,10 +82,11 @@
         .strings {
           scale: 80%;
           position: absolute;
-          left: -33px;
+          left: -36px;
           width: 100px;
           height: 100px;
           top: -50px;
+          z-index: 9;
         }
     
         #woodback {
@@ -97,7 +99,7 @@
         body {
       margin: 0;
       font-family: sans-serif;
-      background: #565656;
+      background: #8c6750;
     }
     
     .grid-container {
@@ -113,7 +115,7 @@
       height: 800px;
       overflow: hidden;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-      color: white;
+      /* color: white; */
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -121,6 +123,7 @@
       background-size: cover;
       background-position: center;
       z-index: -2;
+      /* mix-blend-mode: overlay; */
     }
     
     #woodback {
@@ -129,19 +132,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0;
+      opacity: 100%;
       object-fit: overlay;
-      z-index: 0;
+      z-index: -20;
+      opacity: 100%;
+      mix-blend-mode: overlay;
     }
     
     .label {
       font-family: century-gothic, sans-serif;
-      color: white;
+      color: #32190c;
       font-size: 14px;
       text-align: center;
       max-width: 320px;
       margin-top: 0.5rem;
       line-height: 1.4;
+      font-weight: 700;
+      z-index: 10;
     }
         </style>
     </head>
@@ -242,18 +249,18 @@
     function getGuitarBody(shape, cutaway) {
         const key = `${shape}|${cutaway}`;
         const map = {
-            "GS Mini|Venetian Cutaway": "SVGs/GSMVenetian.png",
-            "GS Mini|Beveled Cutaway": "SVGs/GSMBeveled.png",
-            "GS Mini|No Cutaway": "SVGs/GSMNone.png",
-            "Grand Auditorium|Venetian Cutaway": "SVGs/AuditoriumVenetian.png",
-            "Grand Auditorium|Beveled Cutaway": "SVGs/AuditoriumBeveled.png",
-            "Grand Auditorium|No Cutaway": "SVGs/AuditoriumNone.png",
-            "Grand Concert|Venetian Cutaway": "SVGs/ConcertVenetian.png",
-            "Grand Concert|Beveled Cutaway": "SVGs/ConcertBeveled.png",
-            "Grand Concert|No Cutaway": "SVGs/ConcertNone.png",
-            "Dreadnought|Venetian Cutaway": "SVGs/DreadVenetian.png",
-            "Dreadnought|Beveled Cutaway": "SVGs/DreadBeveled.png",
-            "Dreadnought|No Cutaway": "SVGs/DreadNone.png"
+            "GS Mini|Venetian Cutaway": "SVGs/GSMVenetian2.png",
+            "GS Mini|Beveled Cutaway": "SVGs/GSMBeveled2.png",
+            "GS Mini|No Cutaway": "SVGs/GSMNone2.png",
+            "Grand Auditorium|Venetian Cutaway": "SVGs/AuditoriumVenetian2.png",
+            "Grand Auditorium|Beveled Cutaway": "SVGs/AuditoriumBeveled2.png",
+            "Grand Auditorium|No Cutaway": "SVGs/AuditoriumNone2.png",
+            "Grand Concert|Venetian Cutaway": "SVGs/ConcertVenetian2.png",
+            "Grand Concert|Beveled Cutaway": "SVGs/ConcertBeveled2.png",
+            "Grand Concert|No Cutaway": "SVGs/ConcertNone2.png",
+            "Dreadnought|Venetian Cutaway": "SVGs/DreadVenetian2.png",
+            "Dreadnought|Beveled Cutaway": "SVGs/DreadBeveled2.png",
+            "Dreadnought|No Cutaway": "SVGs/DreadNone2.png"
         };
         return map[key] || "SVGs/ConcertNone.svg";
     }
