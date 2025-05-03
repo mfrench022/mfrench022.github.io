@@ -39,14 +39,17 @@
         }
 
         .banner {
-            background-color: rgb(0, 0, 0);
+            background: #F9AE19;
+            background: linear-gradient(90deg, rgba(249, 174, 25, 1) 0%, rgba(242, 147, 46, 1) 100%);
             width: 100%;
             height: 180px;
-            align-items: center;
+            /* align-items: center; */
             /* justify-content: center; */
-            display: flex;
-            flex-wrap: wrap;
-            padding-left: 40px;
+            padding-top: 33px;
+            display: grid;
+            /* flex-wrap: wrap; */
+            grid-template-columns: 0.05fr 0.82fr 0.72fr 0.13666fr 0.05fr 0.13666fr 0.05fr 0.13666fr 0.05fr;
+            overflow-x: hide;
         }
 
         .header {
@@ -76,8 +79,11 @@
 
         .headertext1, .headertext2 {
             font-style: normal;
-            text-shadow: 4px 4px 10px black;
             line-height: 5.1vw;
+        }
+
+        .headertext2 {
+            text-shadow: 4px 4px 10px black;
         }
         
         .headertext3 {
@@ -89,8 +95,10 @@
 
         .headertext1 {
             font-size: 5.45vw;
-            color: rgb(213, 213, 213);
+            color: #F2932E;
+            text-shadow: 4px 4px 10px black;
             right: 10px;
+            
         }
 
         .headertext2{
@@ -101,10 +109,10 @@
         .navbutton1, .navbutton2, .navbutton3 {
             background-color: white;
             border-radius: 2px;
-            width: 100px;
-            position: absolute;
-            top: 30px;
+            width: 100%;
             height: 30px;
+            /* position: absolute; */
+       
             display: flex;
             align-items: center;
             justify-content: center;
@@ -115,20 +123,6 @@
             font-style: normal;
         }
 
-        .navbutton3 {
-            right: 20px;
-            top: 4%;
-        }
-
-        .navbutton2 {
-            right: 140px;
-            top: 4%;
-        }
-
-        .navbutton1 {
-            right: 260px;
-            top: 4%;
-        }
 
         .logo {
             height: 80%;
@@ -151,7 +145,8 @@
         }
         .sidebar {
             width: 100%;
-            background-color: rgb(213, 213, 213);
+            background: #F9AE19;
+            background: linear-gradient(90deg, rgba(249, 174, 25, 1) 0%, rgba(242, 147, 46, 1) 100%);
             display: grid;
             grid-template-columns: 2fr 1fr 0.07fr;
             margin-top: 40px;
@@ -162,7 +157,7 @@
         }
 
         .placeholder, .placeholder2 {
-            background-color: pink;
+            background-color: rgb(212, 212, 212);
             width: 100%;
             height: 100%;
             font-size: 50px;
@@ -180,6 +175,7 @@
             font-weight: 700;
             font-size: 35px;
             margin-top: 20px;
+            color: white;
         }
 
         .sidebartext2 {
@@ -194,10 +190,17 @@
             height: 100%;
         }
 
-        .sidebarline, .headerline {
+        .sidebarline {
             width: 100%;
             height: 5px;
-            background-color: black;
+            background-color: white;
+        }
+
+        .headerline {
+            width: 100%;
+            height: 5px;
+            background: #F9AE19;
+            background: linear-gradient(90deg, rgba(249, 174, 25, 1) 0%, rgba(242, 147, 46, 1) 100%);
         }
 
         .bodyheadline1 {
@@ -207,6 +210,10 @@
             /* position: absolute; */
             /* top: 30px; */
             line-height: 80px;
+            background: -webkit-linear-gradient(#F9AE19, #F2932E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .inlineimage {
@@ -222,6 +229,10 @@
 
         .italic {
             font-style: italic;
+            background: -webkit-linear-gradient(#F9AE19, #F2932E);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .sidebar {
@@ -243,15 +254,25 @@
             box-sizing: border-box; /* ensures padding doesn't cause width to expand */
         }
 
+        .header img {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+
     </style>
 
 </head>
 <body>
     <div class = "banner">
+        <div class = "margin"></div>
         <img src = "Asset 1logo.svg" class = "logo">
-        <a href = "null.html" class = "navbutton1">Home</a>
-        <a href = "null.html" class = "navbutton2">Stories</a>
+        <div class = "margin"></div>
+        <a href = "home.html" class = "navbutton1">Home</a>
+        <div class = "margin"></div>
+        <a href = "null.html" class = "navbutton2">Volumes</a>
+        <div class = "margin"></div>
         <a href = "null.html" class = "navbutton3">About Us</a>
+        <div class = "margin"></div>
     </div>
     <div class = "header">
         <img src = "image1.png" class="image1">
