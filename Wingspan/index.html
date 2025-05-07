@@ -10,6 +10,8 @@
         body {
         margin: 0px;
         overflow-x: hidden;
+        background: #FCAD00;
+            background: linear-gradient(90deg,rgba(252, 173, 0, 1) 0%, rgba(250, 99, 13, 1) 100%);
         }
 
         .header {
@@ -17,30 +19,8 @@
         width: 100%;
         }
 
-        .article1, .article2, .article3 {
-        width: 100%;
-        /* background-color: blue; */
-        display: grid;
-        grid-template-columns: 0.05fr 1fr 0.05fr 1fr 0.05fr;
-        /* position: relative; */
-        }   
-
-        .article2 {
-            margin-top: 40px;
-        }
-
-        .article3 {
-            margin-top: 40px;
-            grid-template-columns: 0.05fr 2.05fr 0.05fr;
-        }
-
-        .section1, .section2, .section3, .section4, .section5 {
-        width: 100%;
-        }
-
         .banner {
-            background: #F9AE19;
-            background: linear-gradient(90deg, rgba(249, 174, 25, 1) 0%, rgba(242, 147, 46, 1) 100%);
+            background: rgba(0, 0, 0);
             width: 100%;
             height: 180px;
             /* align-items: center; */
@@ -50,60 +30,6 @@
             /* flex-wrap: wrap; */
             grid-template-columns: 0.05fr 0.82fr 0.72fr 0.13666fr 0.05fr 0.13666fr 0.05fr 0.13666fr 0.05fr;
             overflow-x: hide;
-        }
-
-        .header {
-            height: 600px;
-            width: 100%;
-            position: relative;
-        }
-
-        .image1, .image4 {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-
-        .headertext {
-            font-family: parry, sans-serif;
-            text-decoration: none;
-            position: absolute;
-            font-family: zuume, sans-serif;
-            font-weight: 700;
-            text-align: end;
-            right: 40px;
-            bottom: 20px;
-        }
-
-        .headertext1, .headertext2 {
-            font-style: normal;
-            line-height: 5.1vw;
-        }
-
-        .headertext2 {
-            text-shadow: 4px 4px 10px black;
-        }
-        
-        .headertext3 {
-            font-style: italic;
-            font-size: 2.465vw;
-            color: rgb(255, 255, 255);
-            text-shadow: 4px 4px 10px black;
-        }
-
-        .headertext1 {
-            font-size: 5.45vw;
-            color: #F2932E;
-            text-shadow: 4px 4px 10px black;
-            right: 10px;
-            
-        }
-
-        .headertext2{
-            font-size: 5.45vw;
-            color: rgb(255, 255, 255);
         }
 
         .navbutton1, .navbutton2, .navbutton3 {
@@ -123,65 +49,9 @@
             font-style: normal;
         }
 
-
         .logo {
             height: 80%;
           
-        }
-
-        .authortext {
-            font-family: parry, serif;
-            font-weight: 700;
-            font-style: normal;
-            font-size: 20px;
-        }
-
-        .section1, .section2 {
-            font-family: parry, serif;
-            font-weight: 600;
-            font-style: normal;
-            font-size: 20px;
-            line-height: 28px;
-        }
-        .sidebar {
-            width: 100%;
-            background: #F9AE19;
-            background: linear-gradient(90deg, rgba(249, 174, 25, 1) 0%, rgba(242, 147, 46, 1) 100%);
-            display: grid;
-            grid-template-columns: 2fr 1fr 0.07fr;
-            margin-top: 40px;
-        }
-
-        .figure1 {
-            width: 60%;
-        }
-
-        .placeholder, .placeholder2 {
-            background-color: rgb(212, 212, 212);
-            width: 100%;
-            height: 100%;
-            font-size: 50px;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-        }
-
-        .placeholder2 {
-            height: 600px;
-        }
-
-        .sidebartext1 {
-            font-family: zuume, sans-serif;
-            font-weight: 700;
-            font-size: 35px;
-            margin-top: 20px;
-            color: white;
-        }
-
-        .sidebartext2 {
-            font-family: parry, serif;
-            font-weight: 600;
-            font-style: normal;
         }
 
         .margin {
@@ -190,74 +60,129 @@
             height: 100%;
         }
 
-        .sidebarline {
-            width: 100%;
-            height: 5px;
-            background-color: white;
-        }
-
-        .headerline {
-            width: 100%;
-            height: 5px;
-            background: #F9AE19;
-            background: linear-gradient(90deg, rgba(249, 174, 25, 1) 0%, rgba(242, 147, 46, 1) 100%);
-        }
-
-        .bodyheadline1 {
-            font-family: zuume, sans-serif;
-            font-weight: 700;
-            font-size: 70px;
-            /* position: absolute; */
-            /* top: 30px; */
-            line-height: 80px;
-            background: -webkit-linear-gradient(#F9AE19, #F2932E);
+        .italic {
+            font-style: italic;
+            background: -webkit-linear-gradient(left, #FCAD00, #fa630d);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .inlineimage {
-            height: 600px;
-        }
-
-        .inlineimage img {
-            width: 100%;
-            height: 100%;
+        .edition img {
+            width: 60%;
+            /* height: 50%; */
             object-fit: cover;
             display: block;
         }
 
-        .italic {
-            font-style: italic;
-            background: -webkit-linear-gradient(#F9AE19, #F2932E);
+        .linksrow {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 0.05fr 1.02fr 0.5125fr 0.05fr 0.5125fr 0.05fr;
+        }
+        .edition {
+            position: relative;
+            padding-left: 20%;
+        }
+
+        .editiontext {
+            position: absolute;
+            text-decoration: none;
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            font-size: 4vw;
+            color: rgb(255, 255, 255);
+            text-align: right;
+            right: 2.2vw;
+            top: 2vw;
+            /* text-shadow: 4px 4px 10px black; */
+        }
+
+        .coverstory {
+            /* background-color: red; */
+            text-decoration: none;
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+            padding-right: 120px;
+            padding-top: 30px;
+        }
+
+        .otherstory {
+            /* background-color: green; */
+            text-decoration: none;
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+            padding-right: 30px;
+            padding-top: 30px;
+        }
+
+        .button, a {
+            font-family: parry, sans-serif;
+            font-size: 20px;
+            background: white;
+            color: black;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 170px;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        .highlight {
+            background: -webkit-linear-gradient(left, #FCAD00, #fa630d);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .sidebar {
-            width: 100%;
-            background-color: rgb(213, 213, 213);
-            display: grid;
-            grid-template-columns: 2fr 1fr 0.07fr;
-            margin-top: 40px;
-            overflow: hidden; /* ensures nothing spills out horizontally */
+        .italics {
+            font-style: italic;
+            font-family: parry, sans-serif;
+            font-size: 16px;
         }
 
-        .sidebartext {
-            width: 100%;
-            overflow-wrap: break-word; /* ensures words wrap if necessary */
+        .editiontext2 {
+            position: absolute;
+            text-decoration: none;
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            font-size: 4vw;
+            color: rgb(255, 255, 255);
+            text-align: right;
+            left: 2.2vw;
+            bottom: 2vw;
+            /* text-shadow: 4px 4px 10px black; */
         }
 
-        .sidebartextinner {
-            padding: 20px; /* control internal spacing */
-            box-sizing: border-box; /* ensures padding doesn't cause width to expand */
+        .edition .left {
+            position: absolute;
+            left: 2.2vw;
+            background-color: rgba(255, 255, 255, 0.37);
+            top: 44%;
+            height: 4vw;
+            width: 4vw;
+            border-radius: 10px;
+            font-size: 1.7vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
-        .header img {
-            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-            filter: grayscale(100%);
+        .edition .left:hover {
+            color: black;
+            background-color: white;
+            transition: 400ms;
         }
+
 
     </style>
 
@@ -267,144 +192,37 @@
         <div class = "margin"></div>
         <img src = "Asset 1logo.svg" class = "logo">
         <div class = "margin"></div>
-        <a href = "home.html" class = "navbutton1">Home</a>
+        <a href = "index.html" class = "navbutton1">Home</a>
         <div class = "margin"></div>
-        <a href = "null.html" class = "navbutton2">Volumes</a>
+        <a href = "AAM.html" class = "navbutton2">Volumes</a>
         <div class = "margin"></div>
         <a href = "null.html" class = "navbutton3">About Us</a>
         <div class = "margin"></div>
     </div>
-    <div class = "header">
-        <img src = "image1.png" class="image1">
-        <div class = "headertext">
-            <span class = "headertext1">Advanced Air Mobility</span><br>
-            <span class = "headertext2">The Disruptive Force Transforing Aviation</span><br>
-            <span class = "headertext3">Advanced Air Mobility paves the way for disruptive innovation in the aviation sector</span>
-        </div>
-    </div>
-    <div class = "article1">
-    <div class = "margin"></div>
-      <div class = "section1">
-        <br><br>
-       <span class = "authortext">MARIA ALONSO, ET AL.</span><br><br>
-       
-       Advanced air mobility (AAM) is spearheading innovative new technology in the aviation industry. Despite a strong history of automation, the sector is yet to create a clear taxonomy towards full autonomy, which is necessary for all stakeholders to agree on the required standards and regulations. This white paper supports a spectrum of human in-, on- and over-the-loop, with increasing levels of remote control and numbers of vehicles handled even as direct human intervention and responsibility for all operations decreases.<br><br>Application opportunities for AAM are manifold across passenger and non-passenger (goods and services) transport clusters. Use cases thereby stretch across various geographic expansions, from urban to regional. Behind respective operationalization, two driving stakeholder groups can be differentiated: private (pure commercial focus) and public-private (societal focus with commercial viability as the baseline). To initially adopt and later scale these opportunities, three categories of enablers are vital: social acceptance, operational feasibility and financial viability.<br><br>The degree of importance of each category of enablers depends on the use case. For the development of passenger-related use cases, social acceptance is most crucial. Non-passenger applications will thrive through financial viability best achieved by increased levels of automation. AAM adoption is expected to benefit various industries (e.g. healthcare: high speed, better coverage and accessibility); different geographies (e.g. remote areas: better accessibility and lower risk in dangerous surroundings); and people (e.g. (sub)urban transit: faster, increased convenience and more pedestrian space). Some use cases are already being piloted in confined regulatory sandboxes designed to test and derive best practices for the mid-term.<br><br>Nevertheless, the ecosystem is not yet ready for large-scale adoption. More cohesive regulations need to be put in place to certify vehicles and autonomous operations. Digital infrastructure needs to be developed to orchestrate seamless airspace operations, while wider physical infrastructure buildup is required to integrate AAM into the existing transport infrastructure.<br><br>Looking ahead, AAM will democratize and enable higher degrees of automation for commercial aviation. Yet, many obstacles are yet to be overcome on the road to wider adoption and autonomy. The industry will benefit from implementation roadmaps that accelerate the rollout of AAM, enabling a more prosperous future for the sector.<br><br>Innovations such as artificial intelligence, cloud computing, 5G (fifth generation telecommunications), smart infrastructure, electric motors and sensor technologies are rapidly disrupting various industries and sectors of the global economy. Aviation is no different. Despite it being a highly regulated industry, a new industry branch is embedding numerous innovations in the air: advanced air mobility.<br><br>Advanced air mobility (AAM) is a broad concept, a playground for innovation that addresses varied topics such as levels of automation, electric aircraft, novel materials and AI route optimization. According to the US Federal Aviation Administration (FAA), advanced air mobility is “an umbrella term for aircraft that are likely highly automated and electric”. This industry branch is still in the research and development (R&D) stage, which allows for strong innovation in the coming years. At the same time, AAM is far enough ahead to consider it a reality and able to already make an impact in the short term.<br><br>The future of AAM is electric and is leveraging increased levels of automation. The electric engines of these aircraft support the sector’s path to reach net-zero by 2050 despite the rapid increase in air travel demand (an estimated 40% increase in the number of flights compared to 2019). Electric engines are also quieter than traditional propulsion engines, contributing to noise reduction.<br><br>Autonomous capabilities enabling unmanned or remotely supervised operations can help the aviation sector in several ways. They can help address the current shortage of pilots driven by the post-COVID rebound in travel, which is expected to accentuate in the near future (Airbus and Boeing estimate between 585,0005 and 649,0006 new pilots will be needed by 2040). Autonomy will also make the business models related to AAM operations more robust. The caveat is: the autonomy timeline is still uncertain. Currently, tasks in conventional aircraft are automated to a high degree, but several additional steps are needed to make these uncrewed operations a reality.<br><br>In order to enable these unmanned or remotely supervised operations, regulation and public acceptance will need to keep pace with the rapid technological developments. All stakeholders must appreciate the positive societal impact that AAM can have in a wide variety of sectors and geographies. This impact can be leveraged with different stages of automated operations on board. This article focuses first on the wide range of AAM use cases. It then highlights key factors to enable further developments and deployments, and areas where the public and private sectors need to work together. Finally, it zooms into three important, early-adopter sectors that are expected to propel the sector further.</div>
-       <div class = "margin"></div>
-       <div class = "section2"></div>
-       <div class = "margin"></div>
+
+    <div class = "edition">
+        <div class = "editiontext">Volume 28<br>Second Quarter 2025</div>
+        <div class = "editiontext2">Featured Articles</div>
+        <img src = "mockup.png">
+        <a class = "left" href = "2025_Q1.html"><div class ="buttonleft">←</div></a>
     </div>
 
-    <div class = "sidebar">
-        
-        <div class = "placeholder">Placeholder for Figure 1</div>
-        <div class = "sidebartext">
-            <div class="sidebartextinner">
-            <div class = "sidebarline"></div>
-            <span class = "sidebartext1">Defining Autonomy Capabilities in Aviation</span><br><br>
-            <span class = "sidebartext2">Automation in self-contained, functional areas (e.g. the autopilot, as a combination of steering and navigation) has been considered an industry standard in aviation for years. However, it will still take time until the industry achieves high levels of automation. A clear taxonomy can help – in the automotive sector, there is a well-established taxonomy on the levels of driving automation, but an automation taxonomy is yet to be agreed upon by the aviation ecosystem.<br><br>Figure 1 presents an automation taxonomy for aviation. It is a simplified framework on the distribution of key responsibilities and actions between the human and the aircraft. This taxonomy identifies three key stages: human-in-the-loop, human-on-the-loop and human-overthe-loop. While the human-in-the-loop still owns and performs tasks itself (e.g. controlling and communicating), the human-on-the-loop may operate multiple aircraft remotely from the ground. Towards full automation, the human eventually moves over-the-loop during the operations, with humans only setting the goal of the mission and supervising fleets in multi-vehicle operations.<br><br>The actions among the key functions of aviation have been clustered into three main categories: aviate, navigate and communicate. Each of these main categories will, for the different automation degrees, have sub-systems that will be manual, automatic, automated or autonomous. This can vary depending on the phase of the flight (e.g. take-off vs. cruising) and the potential hazards (e.g. weather conditions, traffic and technical failure). The first automation functionalities have a safety-enhancing goal and evolve into more efficiency-improving goals once their safety is guaranteed – as technical capabilities and public acceptance increase further.<br><br>The role and location of the pilot changes with increasing automation. For example, in a remotely supervised or autonomous aircraft, the pilot may be located outside of the aircraft. This will have an impact on public perception. However, an aircraft with the two highest degrees of automation should never require the pilot (be there a pilot onboard or not) to take control of an autonomous aircraft to avert an incident – though they may choose to do so voluntarily.</span>
-            </div>  
-        </div>
-        
+    <div class = "linksrow">
         <div class = "margin"></div>
-    </div>
-
-    <div class = "article2">
-        <div class = "margin"></div>
-          <div class = "section1">
-            <div class = "headerline"></div>
-            <span class = "bodyheadline1">SYSTEMATIZING AAM USE CASES</span> <br><br>
-                Different lenses can be applied when clustering AAM use cases. Figure 2 clusters use cases according to three key categories: the nature of what is transported (people, goods or other uses), the key stakeholder type driving the implementation (private or public-private), and the geography where the operations take place (urban, suburban rural or regional).<br><br>The first category of use cases, organized by the nature of what is transported, comprises three main clusters: passenger transport, cargo transport and other services (the final category providing a service rather than transporting people or goods from point a to point b). For the development of passenger-related use cases, social acceptance will be key. As a result, it is expected that increased levels of automation will only be achieved well after 2030. Automation is expected to be taken up more rapidly for the other two categories, which will also rely on autonomous capabilities to be economically attractive.<br><br>These three clusters can be further split according to the interest groups that are key to driving the use-cases’ commercialization into private-driven and public-private driven. Private-driven use cases will require a robust business model with strict emphasis on cost efficiency and operational effectiveness to achieve financial viability, so that they can outperform alternative modes when measured through unit economics. Public-private driven use cases will rely on government funding for their financial viability. This public funding would be backed by the strong societal impact that the use case can unlock (e.g. ambulance services).<br><br>Last, use cases are mapped according to their geographical scope. As seen in Figure 2, a single use case can have value in various geographical contexts. For example, point-to-point shuttles can operate in an urban environment for transporting passengers from train stations to sports events, as well as in regional settings to enhance connectivity between remote communities and nearby urban centres. Depending on the geographic scope, however, some operational considerations differ, and the associated levels of risk can vary (e.g. the difference between performing operations in remote areas with low population density vs. areas that are densely populated – the latter being riskier due to the larger impact in case of an accident).<br><br>
-          </div>
-           <div class = "margin"></div>
-           <div class = "section2">
-                <div class = "placeholder">Placeholder for Figure 2</div>
-           </div>
-           <div class = "margin"></div>
+        <div class = "coverstory">
+            <span class = "highlight">Advanced Air Mobility:</span><br>
+            The Disruptive Force Transforing Aviation<br>
+            <span class ="italics">Advanced Air Mobility paves the way for disruptive innovation in the aviation sector</span><br><br><br>
+            <a href ="AAM.html"><div class="button">Read More</div></a><br>
         </div>
-
-        <div class = "inlineimage">
-            <img src = "image2.png" class="image2">
-        </div>
-
-        <div class = "article2">
+        <div class = "otherstory">Supersonic planes are inching toward takeoff<br><br><br><br>
+            <a href ="XB1.html"><div class="button">Read More</div></a><br></div>
             <div class = "margin"></div>
-              <div class = "section1"></div>
-               <div class = "margin"></div>
-               <div class = "section2">
-                <div class = "headerline"></div>
-                <span class = "bodyheadline1">KEY ENABLING FACTORS</span> <br><br>
-                    Successful, widespread implementation of AAM use cases over the coming years will be driven by three categories of enablers: social acceptance, operational feasibility and financial viability. Figure 3 outlines the key components of these enabler categories. It simplifies the relationships between enabling factors and, due to clarity reasons, does not illustrate the interdependences among the different components. For example, clear understanding of the positive social and environmental impact of AAM technologies will ensure that both funding and the necessary regulation – for both the AAM aircraft and the surrounding infrastructure – are put in place.<br><br>Trust is the first cornerstone of social acceptance, with perceived safety and privacy playing crucial roles. Education and proof of existing capabilities will significantly contribute to this understanding. Beyond establishing trust, achieving social acceptance will be facilitated by a tangible public benefit. This includes deploying AAM instead of more polluting alternatives, and deploying AAM to address current societal challenges, such as improving healthcare or enhancing the inclusivity of remote communities. In order to facilitate adoption, the integration must be seamless for users, providing an intuitive experience that is well-connected with existing systems.<br><br>Operational feasibility is also critical for the implementation of AAM. The technology is maturing sufficiently to soon enable safe, reliable and recurrent operations, and many operators anticipate scaling operations before the decade’s end. Regulations must evolve to keep pace to enable fast and reliable certification of new systems and to enable the standardization of the ecosystem. To this end, infrastructure will be key – see Box 2 that zooms in on infrastructure needs.<br><br>Finally, financial viability is essential as it not only sustains operations but also attracts the necessary funds for the substantial initial capital expenditures. Not only must the sector demonstrate that the economic model is viable and more effective than existing alternatives, it must also prove that there is sufficient market depth and that the timeline towards commercialization will not be too long. Funding should ideally come from both public and private sectors, as both societal and economic benefits are expected from this technology. This multistakeholder approach is crucial for the longterm success, adoption,  and integration of these technologies into mainstream society.<br><br>When referring back to the main use-case clusters of Figure 2, the key enablers that unlock passenger transport are different from those that unlock cargo transport and other services. Hence, a split between passenger- and non-passenger use cases seems pertinent when highlighting the enablers of the different use cases.<br><br>
-               </div>
-               <div class = "margin"></div>
-            </div>
-
-
-            <div class = "inlineimage">
-                <img src = "image3.png" class="image2">
-            </div>
-
-            <div class = "article2">
-                <div class = "margin"></div>
-                  <div class = "section1">
-                    <span class = "italic">The community has identified the following top enablers for passenger use cases:</span>
-                    <br><br>
-                    – Perceived safety and security. Ensuring high levels of safety and increased cybersecurity precautions will enhance public confidence in new AAM systems. Perceived safety will be as relevant as actual safety, highlighting the importance of public acceptance and the need to consider design and user experience implications in AAM development.<br><br>
-                    – Ground infrastructure. Time savings will be a key value offered for passengers in AAM operations. Ground infrastructure should ensure seamless integration of AAM into the wider transport network as well as incorporate timesaving technologies such as biometrics and automated baggage handling systems.<br><br>
-                    – Airspace integration alongside digital infrastructure. Both are crucial for scaling operations and for ensuring safety in busy environments such as cities, which are among the first locations where passenger AAM use cases are expected to take off. Operating over busy cities will require multiple obstacle clearances and the handing of restricted areas and microclimates. Regulators and public authorities will need to advance the work on developing new processes and systems to enable autonomous operations over the medium to long term.<br><br>
-                    <span class = "italic">The top enablers identified for non-passenger use cases include:</span>
-                    <br><br>
-                    – Unit economics. Wider AAM adoption is enabled through expected efficiency gains over alternative modes. Superior unit economics will however only be achieved if scaling is possible.<br><br>
-                    – Airspace integration and digital infrastructure. Like for passenger use cases, this aspect remains a key enabler. Unlike for passenger use cases, this driver is important due to the high volume of operations that is expected for non-passenger use cases. High-volume operations will increase complexity for verbal communication, requiring new processes that are most likely to be automated. Otherwise, long-term sector development will be hindered.<br><br>
-                    – Positive environmental impact. This impact will result from lower CO2 emissions compared to existing alternatives as well as less noise pollution, especially compared to helicopters. Both these benefits can facilitate public acceptance, in line with the evolution of international regulations and the ESG policies of companies.
-                    <br><br>
-                  </div>
-                   <div class = "margin"></div>
-                   <div class = "section2">
-                    <img src = "image4.png" class="image4">
-                   </div>
-                   <div class = "margin"></div>
-                </div>
-
-            
-
-                <div class = "article3">
-                    <div class = "margin"></div>
-                       <div class = "section2">
-                        <div class = "headerline"></div>
-                        <span class = "bodyheadline1">SECTORS PIONEERING AAM</span>
-                       </div>
-                       <div class = "margin"></div>
-                    </div>
-
-                <div class = "article1">
-                    <div class = "margin"></div>
-                      <div class = "section1">
-                        <br>
-                        <span class = "italic">Healthcare</span><br><br>
-                        Healthcare-related use cases, such as transportation of patients, lab samples, organs or medical inventory, are expected to be commercialized first at a large scale. AAM offers cheaper, faster and better coverage of medical services, potentially enabling real-time medical supplies and inventory sharing between facilities. This can reduce the pressure on constrained healthcare capacity for emerging and developed economies. Therefore, these applications receive substantial public support due to their direct impact on healthcare accessibility and efficiency. At the same time, they make the sector more attractive for entrepreneurship as technology is demonstrably used “for good”.<br><br>
-                        However, scalability, required to offset the high costs of vehicles, infrastructure, new processes and training of personnel, remains a significant challenge for related use cases, putting pressure on financial viability and posing funding challenges for providers. Nevertheless, social benefits can be identified in the short term while economic advantages will likely only materialize in the long term. For example, in case of patient transportation, the economic opportunity varies depending on whether the electrical vertical take-off and landing vehicle is dedicated to replacinghelicopter operations or expanded to replace certain ground ambulance activities.<br><br>
-                        For every healthcare-related use case, AAM operations will have to be thoroughly integrated into existing medical processes and systems. This requires specific training for healthcare staff on the new technology to avoid operational disruptions. This will also involve specific regulations for the healthcare system, including the construction of aviation corridors and dedicated airspace integration for operators. Additionally, health insurance providers will need to adapt to evaluate coverage options for these new modes of transport.<br><br>
-                        Medical use cases are paving the way for most other AAM sectors benefitting from its positive societal impact. Emerging economies are likely to roll out these applications on a wider scale first (e.g. India) 11 as they have a higher proportion of underserved areas (with underdeveloped infrastructure and medical supply chains). Notwithstanding this, developed countries will also benefit, e.g. in cases of natural catastrophes.<br><br>
-                      </div>
-                       <div class = "margin"></div>
-                       <div class = "section2">
-                        <br>
-                        <span class = "italic">Logistics for Remote Areas</span><br><br>
-                        For logistics, AAM presents transformative opportunities for both populated areas (e.g. lastmile deliveries) and remote areas (e.g. islands or offshore platforms). The latter initially offers better opportunities with lower risk (and is therefore the focus) as it allows for faster, more cost-effective and more environmentally friendly deliveries without any need for new infrastructure such as roads (huband-spoke-models are often implemented with flexible outlying points). This improves accessibility for remote communities, connecting them to other economies, which can lead to positive economic momentum. Affiliated missions also carry reduced risk; for instance, dangerous destinations do not need to be serviced by a person anymore, while remote areas generally do not require flying over densely populated areas.<br><br> 
-                        However, regulators need to approve beyondvisual-line-of-sight (BVLOS) and simultaneous operations for multiple vehicles for this sector to be commercially viable in the long term. As cost savings through high-volume operations are unlikely, high levels of automation and multi-vehicle operations are essential prerequisites to achieve a sustainable business model. Until then, operations will be subsidized by local governments or other interest groups. In addition to advances in regulations, digital infrastructure should be developed on a global basis with common standards to enable tracking, mapping, and exchange of landing sites and flight paths – ideally in a uniform data structure. To leverage these data during operations, solid network connectivity (potentially satellite-based) in remote areas is a prerequisite.<br><br>
-                        Logistics for remote areas enables a more egalitarian society through better access to more goods “for everyone”. These benefits do not only apply to emerging economies with limited road infrastructure. Developed economies can improve the inclusion of people with reduced mobility, such as ageing populations, or decrease exposure for high-risk missions (e.g. offshore platform delivery). Due to the positive societal impact, there is very limited public opposition to remote logistics AAM use cases.<br><br>
-                       </div>
-                       <div class = "margin"></div>
-                    </div>
-
-
-                    <div class = "inlineimage">
-                        <img src = "image5.png" class="image2">
-                    </div>
-
-
-
-
-   
+        <div class = "otherstory">
+            leveraging the power of supercomputers for jet engine innovation<br><br><br>
+            <a href ="null.html"><div class="button">Read More</div></a><br>
+        </div>
+        <div class = "margin"></div>
+    </div>
 </body>
 </html>

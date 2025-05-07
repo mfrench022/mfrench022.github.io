@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wingspan Magazine | May 2025</title>
+    <link rel="stylesheet" href="https://use.typekit.net/xjz1pxo.css">
+
+    <style>
+        body {
+        margin: 0px;
+        overflow-x: hidden;
+        }
+
+        .header {
+        /* background-color: red; */
+        width: 100%;
+        }
+
+        .article1, .article2, .article3 {
+        width: 100%;
+        /* background-color: blue; */
+        display: grid;
+        grid-template-columns: 0.05fr 1fr 0.05fr 1fr 0.05fr;
+        /* position: relative; */
+        }   
+
+        .article2 {
+            margin-top: 40px;
+        }
+
+        .article3 {
+            margin-top: 40px;
+            grid-template-columns: 0.05fr 2.05fr 0.05fr;
+        }
+
+        .section1, .section2, .section3, .section4, .section5 {
+        width: 100%;
+        }
+
+        .banner {
+            background: #FCAD00;
+            background: linear-gradient(90deg,rgba(252, 173, 0, 1) 0%, rgba(250, 99, 13, 1) 100%);
+            width: 100%;
+            height: 180px;
+            /* align-items: center; */
+            /* justify-content: center; */
+            padding-top: 33px;
+            display: grid;
+            /* flex-wrap: wrap; */
+            grid-template-columns: 0.05fr 0.82fr 0.72fr 0.13666fr 0.05fr 0.13666fr 0.05fr 0.13666fr 0.05fr;
+            overflow-x: hide;
+        }
+
+        .header {
+            height: 600px;
+            width: 100%;
+            position: relative;
+        }
+
+        .image1, .image4, .image5 {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image1 {
+            object-position: 100% 65%;
+        }
+
+        .image2 {
+            object-position: 100% 65%;
+        }
+
+        .image3 {
+            object-position: 100% 50%;
+        }
+
+        .image5 {
+            object-position: 10% 100%;
+        }
+
+        .image4 {
+            object-position: 70% 100%;
+        }
+
+
+        .headertext {
+            font-family: parry, sans-serif;
+            text-decoration: none;
+            position: absolute;
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            text-align: end;
+            right: 40px;
+            bottom: 20px;
+        }
+
+        .headertext1, .headertext2 {
+            font-style: normal;
+            line-height: 5.1vw;
+            font-size: 5.45vw;
+            color: rgb(255, 255, 255);
+            text-shadow: 4px 4px 10px black;
+        }
+        
+        .headertext3 {
+            font-style: italic;
+            font-size: 2.465vw;
+            color: rgb(255, 255, 255);
+            text-shadow: 4px 4px 10px black;
+        }
+
+        .navbutton1, .navbutton2, .navbutton3 {
+            background-color: white;
+            border-radius: 2px;
+            width: 100%;
+            height: 30px;
+            /* position: absolute; */
+       
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+            font-family: parry, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+
+        .logo {
+            height: 80%;
+          
+        }
+
+        .authortext {
+            font-family: parry, serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 20px;
+        }
+
+        .section1, .section2 {
+            font-family: parry, serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .sidebar {
+            width: 100%;
+            background: #FCAD00;
+            background: linear-gradient(90deg,rgba(252, 173, 0, 1) 0%, rgba(250, 99, 13, 1) 100%);
+            display: grid;
+            grid-template-columns: 2fr 1fr 0.07fr;
+            margin-top: 40px;
+        }
+
+        .figure1 {
+            width: 60%;
+        }
+
+        .placeholder, .placeholder2 {
+            background-color: rgb(212, 212, 212);
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .placeholder2 {
+            height: 600px;
+        }
+
+        .sidebartext1 {
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            font-size: 35px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .sidebartext2 {
+            font-family: parry, serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .margin {
+            /* background-color: yellow; */
+            width: 100%;
+            height: 100%;
+        }
+
+        .sidebarline {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+        }
+
+        .headerline {
+            width: 100%;
+            height: 5px;
+            background: #FCAD00;
+background: linear-gradient(90deg,rgba(252, 173, 0, 1) 0%, rgba(250, 99, 13, 1) 100%);
+        }
+
+        .bodyheadline1 {
+            font-family: zuume, sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            /* position: absolute; */
+            /* top: 30px; */
+            line-height: 55px;
+            background: -webkit-linear-gradient(left, #FCAD00, #fa630d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .inlineimage {
+            height: 600px;
+            position: relative;
+        }
+
+        .inlineimage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+           
+        }
+
+        .italic {
+            font-style: italic;
+            background: -webkit-linear-gradient(left, #FCAD00, #fa630d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sidebar {
+            width: 100%;
+            background-color: rgb(213, 213, 213);
+            display: grid;
+            grid-template-columns: 2fr 1fr 0.07fr;
+            margin-top: 40px;
+            overflow: hidden; /* ensures nothing spills out horizontally */
+        }
+
+        .sidebartext {
+            width: 100%;
+            overflow-wrap: break-word; /* ensures words wrap if necessary */
+        }
+
+        .sidebartextinner {
+            padding: 20px; /* control internal spacing */
+            box-sizing: border-box; /* ensures padding doesn't cause width to expand */
+        }
+
+        .bottom {
+            width: 100%;
+            height: 30px;
+            background: #FCAD00;
+background: linear-gradient(90deg,rgba(252, 173, 0, 1) 0%, rgba(250, 99, 13, 1) 100%);
+        }
+
+        .imgcaption {
+            position: absolute;
+            top: 90px;
+            left: 40px;
+            color: white;
+            font-family: parry, serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 28px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .imgcaption2 {
+            position: absolute;
+            top: 70px;
+            left: 40px;
+            color: white;
+            font-family: parry, serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 28px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .imgcaption3 {
+            position: absolute;
+            top: 70px;
+            left: 40px;
+            color: white;
+            font-family: parry, serif;
+            font-weight: 600;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 28px;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .headlineitalic {
+            font-style: italic;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class = "banner">
+        <div class = "margin"></div>
+        <img src = "Asset 1logo.svg" class = "logo">
+        <div class = "margin"></div>
+        <a href = "index.html" class = "navbutton1">Home</a>
+        <div class = "margin"></div>
+        <a href = "null.html" class = "navbutton2">Volumes</a>
+        <div class = "margin"></div>
+        <a href = "null.html" class = "navbutton3">About Us</a>
+        <div class = "margin"></div>
+    </div>
+    <div class = "header">
+        <img src = "SSF_Hero.png" class="image1">
+        <span class = "imgcaption">XB-1 Supersonic Aircraft<br>by Boom Supersonic</span>
+        <div class = "headertext">
+            <span class = "headertext1">Supersonic planes are inching toward</span>
+            <span class = "headertext2">takeoff.<br>That could be a problem.</span><br>
+            <span class = "headertext3">Boom Supersonic broke the sound barrier in a test flight of its XB-1 jet last week</span>
+        </div>
+    </div>
+    <div class = "article1">
+    <div class = "margin"></div>
+      <div class = "section1">
+        <br><br>
+       <span class = "authortext">CASEY CROWNHART</span><br><br>
+       Boom Supersonic broke the sound barrier in a test flight of its XB-1 jet last week, marking an early step in a potential return for supersonic commercial flight. The small aircraft reached a top speed of Mach 1.122 (roughly 750 miles per hour) in a flight over southern California and exceeded the speed of sound for a few minutes. <br><br>
+“XB-1’s supersonic flight demonstrates that the technology for passenger supersonic flight has arrived,” said Boom founder and CEO Blake Scholl in a statement after the test flight. <br><br>
+Boom plans to start commercial operation with a scaled-up version of the XB-1, a 65-passenger jet called Overture, before the end of the decade, and it has already sold dozens of planes to customers including United Airlines and American Airlines. But as the company inches toward that goal, experts warn that such efforts will come with a hefty climate price tag.  <br><br>
+Supersonic planes will burn significantly more fuel than current aircraft, resulting in higher emissions of carbon dioxide, which fuels climate change. Supersonic jets also fly higher than current commercial planes do, introducing atmospheric effects that may warm the planet further. <br><br>
+In response to questions from MIT Technology Review, Boom pointed to alternative fuels as a solution, but those remain in limited supply—and they could have limited use in cutting emissions in supersonic aircraft. Aviation is a significant and growing contributor to human-caused climate change, and supersonic technologies could grow the sector’s pollution, rather than make progress toward shrinking it. <br><br>
+XB-1 follows a long history of global supersonic flight. Humans first broke the sound barrier in 1947, when Chuck Yeager hit 700 miles per hour in a research aircraft (the speed of sound at that flight’s altitude is 660 miles per hour). Just over two decades later, in 1969, the first supersonic commercial airliner, the Concorde, took its first flight. That aircraft regularly traveled at supersonic speeds until the last one was decommissioned in 2003. <br><br>
+Among other issues (like the nuisance of sonic booms), one of the major downfalls of the Concorde was its high operating cost, due in part to the huge amounts of fuel it required to reach top speeds. Experts say today’s supersonic jets will face similar challenges.  <br><br>
+Flying close to the speed of sound changes the aerodynamics required of an aircraft, says Raymond Speth, associate director of the MIT Laboratory for Aviation and the Environment. “All the things you have to do to fly at supersonic speed,” he says, “they reduce your efficiency … There’s a reason we have this sweet spot where airplanes fly today, around Mach 0.8 or so.”
+</div>
+       <div class = "margin"></div>
+       <div class = "section2"><br><br><br><br><br><br><br><br><br><br><br><br><br><span class = "bodyheadline1">Supersonic planes will<br>burn
+                significantly more<br>fuel than
+                current aircraft</span></div>
+       <div class = "margin"></div>
+    </div>
+
+
+    <div class = "article2">
+        <div class = "margin"></div>
+          <div class = "section1"></div>
+           <div class = "margin"></div>
+           <div class = "section2">
+             <br><br>
+             Boom estimates that one of its full-sized Overture jets will burn two to three times as much fuel per passenger as a subsonic plane’s first-class cabin. The company chose this comparison because its aircraft is “designed to deliver an enhanced, productive cabin experience,” similar to what’s available in first- and business-class cabins on today’s aircraft.  <br><br>
+             That baseline, however, isn’t representative of the average traveler today. Compared to standard economy-class travel, first-class cabins tend to have larger seats with more space between them. Because there are fewer seats, more fuel is required per passenger, and therefore more emissions are produced for each person.  <br><br>
+             When passengers crammed into coach are considered in addition to those in first class, each passenger on a Boom Supersonic flight will burn somewhere between five and seven times more fuel per passenger than the average subsonic plane passenger today, according to research from the International Council on Clean Transportation.  <br><br>
+             It’s not just carbon dioxide from burning fuel that could add to supersonic planes’ climate impact. All jet engines release other pollutants as well, including nitrogen oxides, black carbon, and sulfur. <br><br>
+             The difference is that while commercial planes today top out in the troposphere, supersonic aircraft tend to fly higher in the atmosphere, in the stratosphere. The air is less dense at higher altitudes, creating less drag on the plane and making it easier to reach supersonic speeds. <br><br>
+             Flying in the stratosphere, and releasing pollutants there, could increase the climate impacts of supersonic flight, Speth says. For one, nitrogen oxides released in the stratosphere damage the ozone layer through chemical reactions at that altitude. <br><br>
+             It’s not all bad news, to be fair. The drier air in the stratosphere means supersonic jets likely won’t produce significant contrails. That could be a benefit for climate, since contrails contribute to aviation’s warming. <br><br>
+             Boom has also touted plans to make up for its expected climate impacts by making its aircraft compatible with 100% sustainable aviation fuel (SAF), a category of alternative fuels made from biological sources, waste products, or even captured carbon from the air. “Going faster requires more energy, but it doesn’t need to emit more carbon. Overture is designed to fly on net-zero carbon sustainable aviation fuel (SAF), eliminating up to 100% of carbon emissions,” a Boom spokesperson said via email in response to written questions from MIT Technology Review. 
+             <br><br>
+           </div>
+           <div class = "margin"></div>
+        </div>
+
+        <div class = "inlineimage">
+            <img src = "NASA.png" class="image2">
+            <span class = "imgcaption2">X-59 Quiet Supersonic Aircraft<br>by NASA & Lockheed Martin</span>
+        </div>
+
+        <div class = "article1">
+            <div class = "margin"></div>
+              <div class = "section1"><br>
+                However, alternative fuels may not be a saving grace for supersonic flight. Most commercially available SAF today is made with a process that cuts emissions between 50% and 70% compared to fossil fuels. So a supersonic jet running on SAFs may emit less carbon dioxide than one running on fossil fuels, but alternative fuels will likely still come with some level of carbon pollution attached, says Dan Rutherford, senior director of research at the International Council on Clean Transportation.<br><br>
+                “People are pinning a lot of hope on SAFs,” says Rutherford. “But the reality is, today they remain scarce [and] expensive, and they have sustainability concerns of their own.”<br><br>
+                Of the 100 billion gallons of jet fuel used last year, only about 0.5% of it was SAF. Companies are building new factories to produce larger volumes of the fuels and expand the available options, but the fuel is likely going to continue to make up a small fraction of the existing fuel supply, Rutherford says. That means supersonic jets will be competing with other, existing planes for the same supply, and aiming to use more of it. <br><br>
+                Boom Supersonic has secured 10 million gallons of SAF annually from Dimensional Energy and Air Company for the duration of the Overture test flight program, according to the company spokesperson’s email. Ultimately, though, if and when Overture reaches commercial operation, it will be the airlines that purchase its planes hunting for a fuel supply—and paying for it. 
+                
+        </div>
+               <div class = "margin"></div>
+               <div class = "section2"></div>
+               <div class = "margin"></div>
+            </div>
+        
+        
+            <div class = "article2">
+                <div class = "margin"></div>
+                  <div class = "section1">
+                    <br><br><span class = "bodyheadline1">“It’s not the time for aviation to be coming up with new ways of using even more energy, with where we are in the climate crisis.”
+                       </span><span class = "headlineitalic">- RAYMOND SPETH, MIT</span>
+                  </div>
+                   <div class = "margin"></div>
+                   <div class = "section2">
+                     <br><br>
+                     There’s also a chance that using SAFs in supersonic jets could come with unintended consequences, as the fuels have a slightly different chemical makeup than fossil fuels. For example, fossil fuels generally contain sulfur, which has a cooling effect, as sulfur aerosols formed from jet engine exhaust help reflect sunlight. (Intentional release of sulfur is one strategy being touted by groups aiming to start geoengineering the atmosphere.) That effect is stronger in the stratosphere, where supersonic jets are likely to fly. SAFs, however, typically have very low sulfur levels, so using the alternative fuels in supersonic jets could potentially result in even more warming overall. <br><br>
+There are other barriers that Boom and others will need to surmount to get a new supersonic jet industry off the ground. Supersonic travel over land is largely banned, because of the noise and potential damage that comes from the shock wave caused by breaking the sound barrier. While some projects, including one at NASA, are working on changes to aircraft that would result in a less disruptive shock wave, these so-called low-boom technologies are far from proven. <br><br>
+Boom is planning a second supersonic test flight for XB-1, as early as February 10. Once testing in that small aircraft is done, the data will be used to help build Overture, the full-scale plane. The company says it plans to begin production on Overture in its factory in roughly 18 months. <br><br> 
+In the meantime, the world continues to heat up. As MIT’s Speth says, “I feel like it’s not the time for aviation to be coming up with new ways of using even more energy, with where we are in the climate crisis.”
+                     <br><br>
+                   </div>
+                   <div class = "margin"></div>
+                </div>
+
+
+
+<div class = "bottom"></div>
+</body>
+</html>
