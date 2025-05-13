@@ -12,12 +12,14 @@
         .zig-zag-line {
   width: 100%;
   height: 1vw;
-  background-color: lightblue;
+  background: linear-gradient(309deg, #b777db 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, #5f1fe4 100%);
+  rotate: 180deg;
 }
 
 body {
   /* min-height: 100vh;  */
-  background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
+  background: #f3ebff;
+background: linear-gradient(160deg,rgb(253, 252, 255) 0%, rgb(242, 227, 251) 100%);
   margin: 0;
   padding: 0;
 }
@@ -33,12 +35,16 @@ h1 {
   position: absolute;
   left: -0.9vw;
   top: 2.6vw;
-  color: white;
   font-family: "Aldrich", sans-serif;
   white-space: nowrap;
   overflow: hidden;
   transition: 200ms;
   letter-spacing: 0.01vw;
+
+  background: -webkit-linear-gradient(309deg, #b777db 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, #5f1fe4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
 }
 
 h1:hover {
@@ -53,7 +59,7 @@ h2 {
   font-size: 3.145vw;
   right: -0.19vw;
   top: -2.5vw;
-  color: white;
+  color: #5f1fe4;
   font-family: "Aldrich", sans-serif;
   transition: 200ms;
 }
@@ -68,7 +74,7 @@ h2 {
   position: absolute;
   overflow: hidden;
   font-size: 1.9vw;
-  color: white;
+  color: #8968CD;
   font-family: "Aldrich", sans-serif;
   transition: 200ms;
   left: 0;
@@ -123,7 +129,7 @@ h2:hover {
   transition: 200ms;
 }
 
-.row33 {
+.row33, .row33vid {
     /* background-color: blue; */
     height: 36.8vw;
     width: 100%;
@@ -176,7 +182,7 @@ h3 {
     position: relative;
     list-style-type: none;
     line-height: 2.65vw;
-    color: white;
+    color: #8968CD;
     font-family: "Aldrich", sans-serif;
     transition: 200ms;
     margin-right: 1vw;
@@ -194,7 +200,7 @@ h3 {
 }
 
 h3 {
-  color: #8968CD;
+  color: #5f1fe4;
   text-decoration: none;
   font-family: "Aldrich", sans-serif;
 }
@@ -205,7 +211,7 @@ h3 {
   font-size: 3.145vw;
   top: -2.4vw;
   transition: 200ms;
-  color: #8968CD;
+  color: #5f1fe4;
 }
 
 .button2 {
@@ -224,7 +230,7 @@ h3 {
   font-size: 3.145vw;
   top: -2.4vw;
   transition: 200ms;
-  color: #8968CD;
+  color: #5f1fe4;
 }
 
 .box5 {
@@ -261,7 +267,29 @@ h3 {
   border-bottom-left-radius: 1vw;
 }
 
+
+.box55vid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+}
+
 .box5vid img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures it fully covers the div */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+}
+
+
+.box55vid img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -275,7 +303,20 @@ h3 {
   object-fit: cover; /* Ensures video fills the container */
 }
 
+
+.box55vid video {
+  width: 100%;
+  height: 90%;
+  object-fit: cover; /* Ensures video fills the container */
+}
+
+
 .row3vid:hover img {
+  opacity: 0;
+  transition: 200ms;
+}
+
+.row33vid:hover img {
   opacity: 0;
   transition: 200ms;
 }
@@ -316,7 +357,7 @@ h3 {
   margin: auto;
   border-top-left-radius: 1vw;
   border-bottom-right-radius: 1vw;
-  background-color: white;
+  background-color: lightblue;
 }
 
 .box555 img {
@@ -338,17 +379,17 @@ padding: 0;
   font-size: 0.7vw;
   margin-left:0vw;
   position: static;
-  color: white;
+  color: #8968CD;
 }
 
 a {
-  color: lightblue;
+  color: #5f1fe4;
 }
 
 * {box-sizing:border-box}
 
 /* Slideshow container */
-.slideshow-container4, .slideshow-container3, .slideshow-container2, .slideshow-container1 {
+.slideshow-container4, .slideshow-container3, .slideshow-container2, .slideshow-container1, .slideshow-container5, .slideshow-container6, .slideshow-container7, .slideshow-container8{
   /* max-width: 1000px; */
   position: relative;
   margin: auto;
@@ -359,12 +400,12 @@ a {
   overflow: hidden;
 }
 
-.slideshow-container3, .slideshow-container1 {
+.slideshow-container3, .slideshow-container1, .slideshow-container8, .slideshow-container6 {
   border-top-left-radius: 1vw;
   border-bottom-right-radius: 1vw;
 }
 
-.slideshow-container4, .slideshow-container2 {
+.slideshow-container4, .slideshow-container2, .slideshow-container5, .slideshow-container7 {
   border-top-right-radius: 1vw;
   border-bottom-left-radius: 1vw;
 }
@@ -382,7 +423,7 @@ a {
   width: auto;
   margin-top: -3vw;
   padding: 1vw;
-  color: #8968CD;
+  color: #5d1fe48e;
   font-weight: bold;
   font-size: 3vw;
   transition: 0.6s ease;
@@ -484,6 +525,214 @@ a {
   
     <div class="zig-zag-line"></div>
     <div class ="spacer"></div>  
+
+    <div class ="row33vid">
+      <div class ="side"></div>
+      <!-- THIS ONE: -->
+      <div class ="box55vid">
+        <img src ="Portfolio/Paththumb.jpg">
+        <video controls>
+          <source src="Portfolio/PATH.mp4" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
+      </div>
+    
+      <div class ="box4"></div>
+      <div class ="box33">
+          <div class = "button2"><h3>path rebrand</h3></div>
+      <div class = "paragraph"><p>motion identity + brand system for path, a transit system in new york + new jersey.</p></div></div>
+      <div class ="side"></div>
+  </div>
+<!-- 
+  <div class ="spacer"></div>  -->
+  <div class ="spacer"></div> 
+  
+  <div class="zig-zag-line"></div>
+  <div class ="spacer"></div>  
+
+
+
+  <div class ="row3">
+    <div class ="side"></div>
+    <div class ="box33">
+        <div class = "button"><h3>taylor guitars</h3></div>
+        <div class = "paragraph"><p><a href = "NLC/X4/index.html" target="_blank">automated packaging system</a> built with code in order to generate custom packaging designs for each guitar model based on their tone, wood type, + body shape.</p></div>
+    </div>
+    <div class ="box4"></div>
+    <!-- THIS ONE: -->
+    <div class="slideshow-container5">
+      <div class="mySlides-5 fade">
+          <img src="Portfolio/Out of Home Mockup.jpg" style="width:100%">
+      </div>
+  <div class="mySlides-5 fade">
+          <img src="Portfolio/TaylorTeaser2.gif" style="width:100%">
+      </div>
+      <div class="mySlides-5 fade">
+        <img src="Portfolio/Legend Mockup.jpg" style="width:100%">
+    </div>
+    <div class="mySlides-5 fade">
+        <img src="Portfolio/Packaging Mockup 2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides-5 fade">
+      <img src="Portfolio/Instagram Mockups.jpg" style="width:100%">
+  </div>
+      <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+  </div>
+  
+    <div class ="side"></div>
+    </div>
+
+<div class ="spacer"></div>
+<!-- <div class ="spacer"></div>  -->
+
+<div class="zig-zag-line"></div>
+<div class ="spacer"></div>  
+  
+
+<div class ="row33">
+  <div class ="side"></div>
+  <!-- THIS ONE: -->
+  <div class="slideshow-container6">
+    <div class="mySlides-6 fade">
+        <img src="Portfolio/shifting1.jpg" style="width:100%">
+    </div>
+    <div class="mySlides-6 fade">
+        <img src="Portfolio/Shifting2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides-6 fade">
+        <img src="Portfolio/Story.gif" style="width:100%">
+    </div>
+   
+
+    <a class="prev" onclick="plusSlides(-1, 6)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 6)">&#10095;</a>
+</div>
+
+  <div class ="box4"></div>
+  <div class ="box33">
+      <div class = "button2"><h3>shifting seasons</h3></div>
+  <div class = "paragraph"><p>poster + instagram story design for a hypothetical staging of vivaldi's the four seasons, produced fka twigs, arca, + marc morris.</p></div></div>
+  <div class ="side"></div>
+</div>
+<!-- 
+<div class ="spacer"></div>  -->
+<div class ="spacer"></div> 
+
+<div class="zig-zag-line"></div>
+<div class ="spacer"></div>  
+
+
+<div class ="row3">
+  <div class ="side"></div>
+  <div class ="box33">
+      <div class = "button"><h3>gen rebrand</h3></div>
+      <div class = "paragraph"><p><a href = "NLC/X3/GENLogoGenerator.html" target="_blank">periodical logo</a> for genetic engineering + biotech news, made with code. the logo evolves over time using an api to follow united states fda drug approvals.</p></div>
+  </div>
+  <div class ="box4"></div>
+  <!-- THIS ONE: -->
+  <div class="slideshow-container7">
+    <div class="mySlides-7 fade">
+        <img src="Portfolio/GEN.gif" style="width:100%">
+    </div>
+    <div class="mySlides-7 fade">
+        <img src="Portfolio/GEN1.jpg" style="width:100%">
+    </div>
+    <div class="mySlides-7 fade">
+      <img src="Portfolio/GEN2.jpg" style="width:100%">
+  </div>  <div class="mySlides-7 fade">
+    <img src="Portfolio/GEN3.jpg" style="width:100%">
+</div>
+    <a class="prev" onclick="plusSlides(-1, 7)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 7)">&#10095;</a>
+</div>
+
+  <div class ="side"></div>
+  </div>
+
+  <div class ="spacer"></div> 
+
+<div class="zig-zag-line"></div>
+<div class ="spacer"></div>  
+
+<div class ="row33vid">
+  <div class ="side"></div>
+  <!-- THIS ONE: -->
+  <div class ="box55vid">
+    <img src ="Portfolio/RootedThumb.jpg">
+    <video controls>
+      <source src="Portfolio/Rooted1920.mp4" type="video/mp4">
+      <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class ="box4"></div>
+  <div class ="box33">
+      <div class = "button2"><h3>rooted video</h3></div>
+  <div class = "paragraph"><p>advertisement created with motion design to promote my digital product prototype, rooted, including logo animation</p></div></div>
+  <div class ="side"></div>
+</div>
+<!-- 
+<div class ="spacer"></div>  -->
+<div class ="spacer"></div> 
+
+<div class="zig-zag-line"></div>
+<div class ="spacer"></div>  
+
+
+<div class ="row3">
+  <div class ="side"></div>
+  <div class ="box33">
+      <div class = "button"><h3>wingspan</h3></div>
+      <div class = "paragraph"><p>editorial design system, branding, web design + typography, for wingspan, a hypothetical quarterly aviation technology magazine.</p></div>
+  </div>
+  <div class ="box4"></div>
+  <!-- THIS ONE: -->
+  <div class="slideshow-container8">
+    <div class="mySlides-8 fade">
+        <img src="Portfolio/Wingspan1.jpg" style="width:100%">
+    </div>
+    <div class="mySlides-8 fade">
+      <img src="Portfolio/Wingspan2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides-8 fade">
+    <img src="Portfolio/Wingspan3.jpg" style="width:100%">
+</div>
+<div class="mySlides-8 fade">
+  <img src="Portfolio/Wingspan4.jpg" style="width:100%">
+</div>
+<div class="mySlides-8 fade">
+  <img src="Portfolio/Wingspan5.jpg" style="width:100%">
+</div>
+<div class="mySlides-8 fade">
+  <img src="Portfolio/Wingspan6.jpg" style="width:100%">
+</div>
+<div class="mySlides-8 fade">
+  <img src="Portfolio/Wingspan7.jpg" style="width:100%">
+</div>
+<div class="mySlides-8 fade">
+  <img src="Portfolio/Wingspan8.jpg" style="width:100%">
+</div>
+<div class="mySlides-8 fade">
+  <img src="Portfolio/WingspanWeb.gif" style="width:100%">
+</div>
+   
+    <a class="prev" onclick="plusSlides(-1, 8)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 8)">&#10095;</a>
+</div>
+
+  <div class ="side"></div>
+  </div>
+
+<div class ="spacer"></div>
+<!-- <div class ="spacer"></div>  -->
+
+<div class="zig-zag-line"></div>
+<div class ="spacer"></div>  
+
 
     <div class ="row33">
         <div class ="side"></div>
@@ -614,7 +863,6 @@ a {
 
     <div class ="spacer"></div> 
     <!-- <div class ="spacer"></div>  -->
-    
     <div class="zig-zag-line"></div>
     <div class ="spacer"></div>  
 
@@ -703,11 +951,11 @@ a {
     <div class ="spacer"></div> 
     <!-- <div class ="spacer"></div>  -->
     <div class ="spacer">
-        <h3>site by michael french | mockup templates created by originalmockup on freepik</h3>
+        <h3>site by michael french</h3>
     </div> 
     
     <script>
-      let slideIndexes = [1, 1, 1, 1]; // Now includes the original slideshow (index 0)
+      let slideIndexes = [1, 1, 1, 1, 1, 1, 1, 1]; // Now includes the original slideshow (index 0)
   
       function plusSlides(n, slideshowNum) {
           showSlides(slideIndexes[slideshowNum - 1] += n, slideshowNum);
