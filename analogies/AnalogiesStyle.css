@@ -115,7 +115,7 @@ body{
   }
   
   span {
-    opacity: 0;
+    opacity: 1;
     font-size: 1vw;
     transition: 300ms;
     margin-left: 0.7vw;
