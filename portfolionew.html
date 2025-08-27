@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>michaelfrench.co New</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/qyq1fyf.css">
+
+  <style>
+    /* Reset / globals */
+    html, body { margin: 0; }
+    /* Hide native cursor everywhere on precision pointers */
+    html, body, * { cursor: none !important; }
+
+    /* Layout styles (your original) */
+    .gridbody {
+      width: 100%;
+      height: 40vw;
+      /* background-color: red; */
+    }
+
+    h3 { font-weight: 500; }
+
+    .spacer { width: 100%; height: 100%; /* background: pink; */ }
+
+    .column { width: 100%; height: 100%; /* background: green; */ }
+
+    .row1 {
+      display: grid;
+      grid-template-columns: 1fr 23fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr 11fr 1fr;
+      height: 3.4vw;
+      transition: 300ms ease-in-out;
+    }
+
+    .filter-bar {
+      display: grid;
+      grid-template-columns: 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr;
+      height: 50px;
+      transition: 300ms ease-in-out;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 25px;
+      margin-left: 1.65vw;
+      margin-right: 1.65vw;
+      transition: 300ms ease-in-out;
+    }
+
+    button {
+      background-color: #D9D9D9;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      border: 2px solid #242424;
+      color: #242424;
+      font-family: aldrich;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2px;
+      text-align: center;
+      -webkit-text-stroke-width: 0.9px;
+      -webkit-text-stroke-color: #242424;
+      transition: 300ms ease-in-out;
+    }
+
+    .spacerrow { height: 25px; width: 100%; }
+
+    .project {
+      background-color: #D9D9D9;
+      object-fit: contain;
+      padding: 25px;
+      position: relative;
+      transition: 300ms ease-in-out;
+    }
+
+    .tags {
+      position: absolute;
+      bottom: 25px;
+      display: grid;
+      gap: 25px;
+      width: 77.5%;
+      transition: 300ms ease-in-out;
+    }
+
+    .tag {  height: 25px;
+            font-size: 16px;
+            border-radius: 7px; 
+          }
+
+    .project h3 {
+      color: #4D4356;
+      -webkit-text-stroke-width: 1.2px;
+      -webkit-text-stroke-color: #242424;
+    }
+
+    .project h2 { color: #242424; }
+
+    h2 {
+      font-family: "franklin-gothic-atf", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 19px;
+    }
+
+    .projectcontainer {
+      background-color: #4D4356;
+      width: 99.5%;
+      height: 600px;
+      border-radius: 12px;
+      border: 2px solid #242424;
+      color: #242424;
+      font-family: aldrich;
+      font-size: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1.41fr;
+      overflow: hidden;
+      clip-path: inset(0 round 12px);
+      transition: 300ms ease-in-out;
+    }
+
+    .imagecontainer { overflow: hidden; position: relative; transition: 300ms ease-in-out; }
+
+    .imagecontainer img {
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform 300ms ease-in-out;
+      will-change: transform;
+    }
+
+    .line {
+      height: 100%;
+      width: 2px;
+      background-color: #242424;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 10;
+    }
+
+    .projectcontainer:hover .imagecontainer img { transform: scale(1.1); }
+
+    .projectcontainer:hover { border: 7px solid #4D4356; }
+
+    .filter-bar button.active,
+    .project .tag.active {
+      background-color: #4D4356;
+      color: #D9D9D9;
+      box-shadow: inset 2px 0px 15px #11031d;
+      border: 2px solid #D9D9D9;
+    }
+
+    button h3 { line-height: 0.001px; }
+
+    button:hover {
+      border: 4px solid #4D4356;
+      transition: 300ms ease-in-out;
+    }
+
+    .filter-bar button h3 { 
+      color: inherit; 
+      transition: 300ms ease-in-out; }
+    .filter-bar button:hover h3 { color: #4D4356; transition: 300ms ease-in-out;}
+
+    .filter-bar button.active h3 { color: #D9D9D9; transition: 300ms ease-in-out;}
+
+    button.active:hover {
+      background-color: #7c688d;
+      border: 4px solid #D9D9D9;
+    }
+
+    .tag.active:hover {
+      background-color: #7c688d;
+      border: 4px solid #D9D9D9;
+    }
+
+
+    .header { position: relative; width: 100%; height: 100%; transition: 300ms ease-in-out; }
+
+    .name {
+      position: absolute;
+      font-family: aldrich;
+      font-size: 4.23vw;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #242424;
+      color: #D9D9D9;
+      letter-spacing: -0.28vw;
+    }
+
+    .co {
+      position: absolute;
+      font-family: aldrich;
+      font-size: 2.25vw;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #242424;
+      color: #D9D9D9;
+      left: 35.02vw;
+      transform: rotate(270deg);
+      letter-spacing: -0.05vw;
+      top: 0.59vw;
+    }
+
+    .cd {
+      color: #242424;
+      font-family: "franklin-gothic-atf", sans-serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 2.45vw;
+      text-align: right;
+      position: absolute;
+      right: 0px; top: -0.7vw;
+      line-height: 2.1vw;
+      transition: 300ms ease-in-out;
+    }
+
+    .cdparent { position: relative; transition: 300ms ease-in-out; }
+
+    body {
+      background: linear-gradient(112deg,rgba(245, 245, 245, 1) 0%, rgba(245, 242, 235, 1) 50%, rgba(239, 228, 245, 1) 100%);
+      overflow-x: hidden;
+    }
+
+    /* -------- Custom Cursor -------- */
+
+    .custom-cursor {
+      position: fixed;
+      left: 0; top: 0;
+      width: 64px; height: 64px;        /* set to your PNG size */
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(var(--s, 1));
+      transition: opacity .20s ease, transform .06s linear;
+    }
+
+    .custom-cursor .state {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity .12s ease;
+    }
+
+    .custom-cursor.is-base  .state.base  { opacity: 1; }
+    .custom-cursor.is-hover .state.hover { opacity: 1; }
+    .custom-cursor.is-down  .state.down  { opacity: 1; }
+    .custom-cursor.is-down { --s: .96; }
+
+    /* Touch devices: keep native cursor/touch */
+    @media (pointer: coarse) {
+      html, body, * { cursor: auto !important; }
+      .custom-cursor { display: none !important; }
+    }
+
+    @media (max-width: 1014px) {
+      .filter-bar button { font-size: 14px; }
+    }
+
+    @media (max-width: 536px) {
+      .projects { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+      h2 { font-size: 18px; }
+      .tag { font-size: 12px; }
+      .filter-bar button { font-size: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gridbody">
+    <!-- Custom cursor element (no stray images after this) -->
+    <div class="custom-cursor site-wide" aria-hidden="true">
+      <img class="state base"  src="newportfolio/cursor.png"       alt="">
+      <img class="state hover" src="newportfolio/cursorhover.png"  alt="">
+      <img class="state down"  src="newportfolio/cursorpress.png"  alt="">
+    </div>
+
+    <div class="spacerrow"></div>
+
+    <div class="row1">
+      <div class="spacer"></div>
+      <div class="column">
+        <div class="header">
+          <div class="name">MICHAEL FRENCH</div>
+          <div class="co">.co</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column">
+        <div class="cdparent">
+          <div class="cd">communication designer</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="spacerrow"></div>
+
+    <div class="filter-bar">
+      <div class="spacer"></div>
+      <button data-tag="ux/ui"><h3>UX/UI</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="branding"><h3>BRANDING</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="motion"><h3>MOTION</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="code"><h3>CODING + WEB</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="type"><h3>TYPE</h3></button>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="spacerrow"></div>
+
+    <div class="projects">
+
+      <div class="projectcontainer clickable" data-tags="ux/ui branding">
+        <div class="imagecontainer">
+          <img src="newportfolio/Rooted Mockup copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ROOTED</h3>
+          <h2>user research, user flow mapping, wireframe creation, user testing, brand design, + final prototype construction for an app designed to address urbanization’s impacts on both human + ecological health.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectcontainer clickable" data-tags="branding code type">
+        <div class="imagecontainer">
+          <img src="newportfolio/Wingspan1 copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>WINGSPAN</h3>
+          <h2>
+editorial design system, branding, web design + typography, for wingspan, a hypothetical quarterly aviation technology magazine.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODING + WEB</button>
+             <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="projectcontainer clickable" data-tags="branding code">
+        <div class="imagecontainer">
+          <img src="portfolio/GEN1.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>GEN REBRAND</h3>
+          <h2>periodical logo for genetic engineering + biotech news, made with code. the logo evolves over time using an api to follow united states fda drug approvals.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODING + WEB</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectcontainer clickable" data-tags="motion type">
+        <div class="imagecontainer">
+          <img src="newportfolio/Story copy.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>THROUGH SHIFTING SEASONS</h3>
+          <h2>poster + instagram story design for a hypothetical staging of vivaldi's the four seasons, produced fka twigs, arca, + mark morris.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="projectcontainer clickable" data-tags="code type">
+        <div class="imagecontainer">
+          <img src="newportfolio/DoctorsMockup2 copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ANNUAL REPORT</h3>
+          <h2>typography, web + interaction design for doctors without borders’ yearly financial reporting.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="code">CODING + WEB</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectcontainer clickable" data-tags="branding code">
+        <div class="imagecontainer">
+          <img src="newportfolio/LegendMockup copy.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>TAYLOR GUITARS</h3>
+          <h2>automated packaging system built with code in order to generate custom packaging designs for each guitar model based on its tone, wood type, + body shape.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODING + WEB</button>
+          </div>
+        </div>
+      </div>
+
+       <div class="projectcontainer clickable" data-tags="branding motion">
+        <div class="imagecontainer">
+          <img src="newportfolio/chiswell.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>CAMP CHISWELL</h3>
+          <h2>brand identity + motion design for camp chiswell, a family vacation site in vermont.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </div>
+
+        <div class="projectcontainer clickable" data-tags="branding motion">
+        <div class="imagecontainer">
+          <img src="newportfolio/2 copy.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>PATH REBRAND</h3>
+          <h2>motion identity + brand system for path, a transit system in new york + new jersey.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+          </div>
+        </div>
+      </div>
+
+<div class="projectcontainer clickable" data-tags="code">
+        <div class="imagecontainer">
+          <img src="newportfolio/3 copy.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ANALOGIES</h3>
+          <h2>a web-based visual archive comparing natural + man-made structures + their associated functions in order to highlight the ways in which human design takes inspiration from nature in order to achieve a common functional goal.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="code">CODING + WEB</button>
+          </div>
+        </div>
+      </div>
+
+       <div class="projectcontainer clickable" data-tags="code">
+        <div class="imagecontainer">
+          <img src="newportfolio/beyoncegif copy.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>BEYONCÉ</h3>
+          <h2>editorial artwork for a new york times’ op-ed designed with creative coding in order to engage the reader.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="code">CODING + WEB</button>
+          </div>
+        </div>
+      </div>
+
+ 
+
+       <div class="projectcontainer clickable" data-tags="branding type">
+        <div class="imagecontainer">
+          <img src="newportfolio/BusinessCardMockup copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>POMODORO</h3>
+          <h2>development of logo + brand materials for a new restaurant, with design inspiration taken from both the cuisine served + the restaurant name, + a focus on typography.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="projectcontainer clickable" data-tags="ux/ui branding motion">
+        <div class="imagecontainer">
+          <img src="newportfolio/Screenshot 2025-08-27 at 4.26.45 PM.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ROOTED VIDEO</h3>
+          <h2>advertisement created with motion design to promote my digital product prototype, rooted, including logo animation.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spacerrow"></div>
+  </div>
+
+  <script>
+    // -------- Custom Cursor --------
+    (() => {
+      const cursor = document.querySelector('.custom-cursor.site-wide');
+      if (!cursor) return;
+
+      const setPos = (e) => {
+        cursor.style.transform =
+          `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%) scale(var(--s,1))`;
+      };
+
+      let shown = false;
+      document.addEventListener('mouseenter', () => { cursor.style.opacity = 1; shown = true; });
+      document.addEventListener('mouseleave', () => { cursor.style.opacity = 0; shown = false; });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!shown) cursor.style.opacity = 1;
+        setPos(e);
+      });
+
+      document.addEventListener('mousedown', () => {
+        cursor.classList.remove('is-base', 'is-hover');
+        cursor.classList.add('is-down');
+      });
+      document.addEventListener('mouseup', () => {
+        cursor.classList.remove('is-down');
+        cursor.classList.add(isInteractive(lastHoverTarget) ? 'is-hover' : 'is-base');
+      });
+
+      const INTERACTIVE_SELECTOR = `
+        a, button, [role="button"], [data-tag],
+        input, select, textarea, label,
+        .clickable
+      `;
+
+      let lastHoverTarget = null;
+      const isInteractive = (el) => !!(el && el.closest(INTERACTIVE_SELECTOR));
+
+      document.addEventListener('pointerover', (e) => {
+        lastHoverTarget = e.target;
+        if (isInteractive(e.target) && !cursor.classList.contains('is-down')) {
+          cursor.classList.remove('is-base');
+          cursor.classList.add('is-hover');
+        }
+      });
+
+      document.addEventListener('pointerout', (e) => {
+        if (!cursor.classList.contains('is-down')) {
+          const stillOnInteractive = isInteractive(e.relatedTarget);
+          cursor.classList.toggle('is-hover', !!stillOnInteractive);
+          cursor.classList.toggle('is-base', !stillOnInteractive);
+        }
+        lastHoverTarget = e.relatedTarget;
+      });
+
+      cursor.classList.add('is-base');
+    })();
+
+    // -------- Filtering System --------
+    const selectedTags = new Set();
+
+    function toggleTag(tag) {
+      if (selectedTags.has(tag)) selectedTags.delete(tag);
+      else selectedTags.add(tag);
+      updateUI();
+    }
+
+    function updateUI() {
+      const projects = document.querySelectorAll(".projectcontainer");
+      projects.forEach(project => {
+        const tags = (project.dataset.tags || "").split(" ");
+        const matches = [...selectedTags].every(tag => tags.includes(tag));
+        project.style.display = selectedTags.size === 0 || matches ? "grid" : "none";
+      });
+
+      const allButtons = document.querySelectorAll('[data-tag]');
+      allButtons.forEach(btn => {
+        const tag = btn.dataset.tag;
+        btn.classList.toggle("active", selectedTags.has(tag));
+      });
+    }
+
+    document.querySelectorAll('[data-tag]').forEach(btn => {
+      btn.addEventListener("click", () => toggleTag(btn.dataset.tag));
+    });
+  </script>
+</body>
+</html>
