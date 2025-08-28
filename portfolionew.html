@@ -19,7 +19,8 @@
     /* Layout styles (your original) */
     .gridbody {
       width: 100%;
-      height: 40vw;
+      height: 100%;
+      position: relative;
       /* background-color: red; */
     }
 
@@ -219,6 +220,17 @@
       position: absolute;
       right: 0px; top: -0.7vw;
       line-height: 2.1vw;
+      transition: 300ms ease-in-out;
+    }
+
+    .footer {
+      height: 50px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      background-color: #7c688d;
+      display: grid;
+      grid-template-columns: 1fr 23fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr 11fr 1fr;
       transition: 300ms ease-in-out;
     }
 
@@ -562,8 +574,34 @@ editorial design system, branding, web design + typography, for wingspan, a hypo
 
     </div>
 
+ 
     <div class="spacerrow"></div>
+    <div class="spacerrow"></div>
+    <div class="spacerrow"></div>
+    <div class ="footer">
+      <div class="spacer"></div>
+      <div class="column">
+        <div class="header">
+          <div class = socials></div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column">
+        <div class = contact></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
   </div>
+
+  
 
   <script>
     // -------- Custom Cursor --------
