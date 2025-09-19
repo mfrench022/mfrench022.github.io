@@ -2,18 +2,48 @@ em {
       font-style: italic;
     }
 
-    p {
-      line-height: 24px;
+p {
+      line-height: 1.3rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
 
-    body {
+body {
       font-family: "Libre Bodoni", serif;
-    }
+      padding: 2rem;
+    } 
 
-    h1 {
+h1 {
       text-decoration: underline;
+      font-size: 3rem;
+      transition: ease-in-out 300ms;
     }
 
-    h2, h3 {
+h1:hover {
+    font-size: 5rem;
+    transition: ease-in-out 300ms;
+    color: tomato;
+}
+
+blockquote:hover {
+    font-size: 2rem;
+    transition: ease-in-out 300ms;
+    color: tomato;
+}
+
+h2, h3 {
       font-style: italic;
+      font-size: 1.5rem;
+    }
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+blockquote {
+        font-size: 1.5rem;
+        font-style: italic;
+        padding: 2rem;
     }
