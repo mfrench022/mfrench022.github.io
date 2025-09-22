@@ -29,6 +29,6 @@ function draw() {
   fill('goldenrod');
   arc(300, 300, 300, 300, 120, hourCap, PIE);
 
-  fill(230)
+  fill('#D9d9d9')
   circle(300, 300, 180)
 }
