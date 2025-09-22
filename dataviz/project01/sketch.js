@@ -5,7 +5,7 @@ function setup() {
 }
 
 function draw() {
-  background(230);
+  background('#D9d9d9');
 
   let now = new Date();
   let sec = now.getSeconds() + now.getMilliseconds() / 1000;
