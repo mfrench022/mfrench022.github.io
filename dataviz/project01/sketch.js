@@ -19,7 +19,18 @@ function draw() {
   let minCap = map(oneMinute, 0, 1, 0, 120);           
   let hourCap = map(oneHour,   0, 1, 120, 240);         
   let dayCap = map(oneDay, 0, 1, 240, 360);
+
+  noStroke()
+  fill('#add8e65d');
+  arc(300, 300, 306, 306, 240, 360, PIE);
   
+  fill('#ff634857');
+  arc(300, 300, 306, 306, 0, 120, PIE);
+
+  fill('#90ee925d');
+  arc(300, 300, 306, 306, 120, 240, PIE);
+  
+  stroke('black')
   fill('lightblue');
   arc(300, 300, 300, 300, 240, dayCap, PIE);
   
