@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(625, 625);
   angleMode(DEGREES);
-  strokeWeight(6);
+  strokeWeight(5.5);
 }
 
 function draw() {
