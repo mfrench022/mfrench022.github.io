@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(625, 625);
   angleMode(DEGREES);
-  strokeWeight(5.5);
+  strokeWeight(6);
 }
 
 function draw() {
@@ -26,7 +26,7 @@ function draw() {
   fill('tomato');
   arc(300, 300, 300, 300, 0, minCap, PIE);
 
-  fill('goldenrod');
+  fill('lightgreen');
   arc(300, 300, 300, 300, 120, hourCap, PIE);
 
   fill('#D9d9d9')
