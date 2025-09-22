@@ -30,5 +30,5 @@ function draw() {
   arc(300, 300, 300, 300, 120, hourCap, PIE);
 
   fill(230)
-  circle(300, 300, 30)
+  circle(300, 300, 180)
 }
