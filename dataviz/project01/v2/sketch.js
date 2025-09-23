@@ -5,7 +5,7 @@ function setup() {
 }
 
 function draw() {
-  background('#D9d9d9');
+  background('#6b6b6b');
 
   let now = new Date();
   let sec = now.getSeconds() + now.getMilliseconds() / 1000;
@@ -43,6 +43,6 @@ strokeWeight(6);
   fill('tomato');
   arc(300, 300, 150, 150, 0, minCap, PIE);
   
-  fill('#D9d9d9')
+  fill('#6b6b6b')
   circle(300, 300, 50)
 }
