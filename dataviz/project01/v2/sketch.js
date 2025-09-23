@@ -12,34 +12,34 @@ function draw() {
   let min = now.getMinutes() + sec / 60;
   let hrs = now.getHours() + min / 60;
 
-  let oneMinute = sec / 60;                
+  let oneMinute = sec / 60;
   let oneHour   = (min * 60 + sec) / 3600;
   let oneDay    = (hrs * 3600 + min * 60) / 86400;
 
-  let minCap = map(oneMinute, 0, 1, 0, 360);           
-  let hourCap = map(oneHour,   0, 1, 0, 360);         
+  let minCap = map(oneMinute, 0, 1, 0, 360);
+  let hourCap = map(oneHour,   0, 1, 0, 360);
   let dayCap = map(oneDay, 0, 1, 0, 360);
   
-  strokeWeight(2);
-   fill('#add8e65d');
+strokeWeight(2);
+   fill('#def7ffff');
   arc(300, 300, 504, 504, 0, 360, PIE);
 
-
-  fill('#90ee925d');
-  arc(300, 306, 304, 304, 0, 360, PIE);
-  
-  fill('#ff634857');
-  arc(300, 300, 154, 154, 0, 360, PIE);
-  
-  
   strokeWeight(6);
   fill('lightblue');
   arc(300, 300, 500, 500, 0, dayCap, PIE);
 
-
+strokeWeight(2);
+  fill('#ddf6ddff');
+  arc(300, 300, 306, 306, 0, 360, PIE);
+strokeWeight(6);
   fill('lightgreen');
-  arc(300, 300, 300, 300, 0, hourCap, PIE);
+  arc(300, 300, 304, 304, 0, hourCap, PIE);
+
+strokeWeight(2);
+  fill('#f8c7beff');
+  arc(300, 300, 154, 154, 0, 360, PIE);
   
+strokeWeight(6);
   fill('tomato');
   arc(300, 300, 150, 150, 0, minCap, PIE);
   
