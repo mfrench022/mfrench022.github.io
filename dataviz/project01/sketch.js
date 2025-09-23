@@ -20,17 +20,17 @@ function draw() {
   let hourCap = map(oneHour,   0, 1, 120, 240);         
   let dayCap = map(oneDay, 0, 1, 240, 360);
 
-  noStroke()
+  strokeWeight(2);
   fill('#add8e65d');
-  arc(300, 300, 306, 306, 240, 360, PIE);
+  arc(300, 300, 304, 304, 240, 360, PIE);
   
   fill('#ff634857');
-  arc(300, 300, 306, 306, 0, 120, PIE);
+  arc(300, 300, 304, 304, 0, 120, PIE);
 
   fill('#90ee925d');
-  arc(300, 300, 306, 306, 120, 240, PIE);
+  arc(300, 300, 304, 304, 120, 240, PIE);
   
-  stroke('black')
+  strokeWeight(6);
   fill('lightblue');
   arc(300, 300, 300, 300, 240, dayCap, PIE);
   
