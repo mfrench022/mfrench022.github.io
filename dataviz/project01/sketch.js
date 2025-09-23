@@ -5,7 +5,7 @@ function setup() {
 }
 
 function draw() {
-  background('#D9d9d9');
+  background('#6b6b6b');
 
   let now = new Date();
   let sec = now.getSeconds() + now.getMilliseconds() / 1000;
@@ -40,6 +40,6 @@ function draw() {
   fill('lightgreen');
   arc(300, 300, 300, 300, 120, hourCap, PIE);
 
-  fill('#D9d9d9')
+  fill('#6b6b6b')
   circle(300, 300, 180)
 }
