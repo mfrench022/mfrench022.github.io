@@ -4,7 +4,6 @@ function setup() {
   strokeWeight(6);
 }
 
-
 function draw() {
   background('#6b6b6b');
 
@@ -14,8 +13,8 @@ function draw() {
   let hrs = now.getHours() + min / 60;
 
   let oneMinute = sec / 60;
-  let oneHour   = (min * 60 + sec) / 3600;
-  let oneDay    = (hrs * 3600 + min * 60) / 86400;
+  let oneHour   = min / 60;
+  let oneDay    = (now.getHours()*3600 + now.getMinutes()*60 + sec) / 86400;
 
   let minCap = map(oneMinute, 0, 1, 0, 360);
   let hourCap = map(oneHour,   0, 1, 0, 360);
