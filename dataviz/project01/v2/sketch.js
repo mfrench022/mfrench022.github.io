@@ -30,10 +30,11 @@ strokeWeight(2);
 
 strokeWeight(2);
   fill('#ddf6ddff');
-  arc(300, 300, 306, 306, 0, 360, PIE);
+  arc(300, 300, 304, 304, 0, 360, PIE);
+
 strokeWeight(6);
   fill('lightgreen');
-  arc(300, 300, 304, 304, 0, hourCap, PIE);
+  arc(300, 300, 300, 300, 0, hourCap, PIE);
 
 strokeWeight(2);
   fill('#f8c7beff');
