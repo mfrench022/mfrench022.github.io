@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Clockpit</title>
+    <script src="../p5.min.js"></script>
+	<script src="sketch.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+      background: lightblue;
+    }
+
+    .container1 {
+      display: grid;
+      background: #2d2d2d;
+      grid-template-columns: 1fr 10fr 2fr 10fr 2fr 10fr 1fr;
+      width: 94%;
+      height: 100vh;
+      position: fixed;
+      top: 50vh;
+      border-radius: 10vw;
+      z-index: 0;
+      left: 3%;
+    }
+
+     .container1stroke {
+      background: #0c0c0cff;
+      width: 96%;
+      height: 100vh;
+      position: fixed;
+      top: 48vh;
+      border-radius: 10.75vw;
+      z-index: -1;
+      left: 2%;
+    }
+
+    .spacer {
+      /* background-color: pink; */
+      width: 100%;
+    }
+
+    .panel1 {
+      background-color: #fffbed;
+      border-radius: 100%;
+      aspect-ratio: 1;
+      border: 15px solid #0c0c0cff;
+      position: absolute;
+      width: 70%;
+      left: 12%;
+      top: 5.45%;
+      z-index: -2;
+    }
+
+    .panel2 {
+      background-color: #fffbed;
+      border-radius: 100%;
+      aspect-ratio: 1;
+      border: 15px solid #0c0c0cff;
+      position: absolute;
+      width: 70%;
+      right: 12%;
+      top: 5.45%;
+      z-index: -2;
+    }
+
+    #clock1, #clock2 {
+      width: 100%;
+      /* background-color: green; */
+      position: relative;
+      z-index: 20;
+    }
+
+    #clock3 {
+      width: 100%;
+      /* background-color: green; */
+      position: relative;
+      z-index: 20;
+      bottom: 48%;
+    }
+
+    .inner-curve {
+  --r: 8px;  /* control the rounded part */
+  --s: 170px;  /* control the size of the cut */
+  --a: 30deg; /* control the depth of the curvature */
+  --p: 50%;   /* control the position */
+
+  bottom: 52.85%;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 5/1;
+  background: #0c0c0cff;
+  border-radius: var(--r);
+  --_m:var(--r),#000 calc(100% - 1px),#0000;
+  --_d:(var(--s) + var(--r))*cos(var(--a));
+  mask:
+    radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+    radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+    radial-gradient(var(--s) at var(--p) calc(-1*sin(var(--a))*var(--s)),
+      #0000 100%,#000 calc(100% + 1px)) 0 calc(var(--r)*(1 - sin(var(--a)))) no-repeat,
+    linear-gradient(90deg,#000 calc(var(--p) - var(--_d)),#0000 0 calc(var(--p) + var(--_d)),#000 0);
+}
+
+  .wheel {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    z-index: 20;
+    /* background-color: yellowgreen; */
+    bottom: 0px;
+    left: 25%;
+}
+
+.wheel img {
+  display: cover;
+  bottom: 0px;
+  position: absolute;
+}
+
+.captions {
+  width: 100%;
+  /* background-color: green; */
+  height: 60px;
+  position: fixed;
+  font-family: aldrich, sans-serif;
+  font-size: 2vw;
+  margin-top: 20px;
+  color: #0c0c0cff;
+}
+
+.right {
+  position: absolute;
+  right: 2%;
+}
+
+.left {
+  position: absolute;
+  left: 2%;
+}
+
+  </style>
+  </head>
+  <body>
+    <div class = "captions">
+      <div class = "left">The Clockpit</div>
+      <div class = "right">A Time Visualization Exercise by Michael French</div>
+    </div>
+    <div class = "wheel">
+      <img src ="Asset 1wheel.svg">
+    </div>
+    <div class = "container1stroke"></div>
+    <div class = "container1">
+      <div class ="spacer"></div>
+      <div id="clock1">
+        <div class = "panel1"></div>
+      </div>
+      <div class ="spacer"></div>
+      <div id="clock3">
+        <div class ="inner-curve"></div>
+      </div>
+      <div class ="spacer"></div>
+      <div id="clock2">
+        <div class = "panel2"></div>
+      </div>
+      <div class ="spacer"></div>
+    </div>
+
+    <div class ="container2">
+      <div id="clock4" class ="window"></div>
+    </div>
+
+
+  </body> 
+</html>
