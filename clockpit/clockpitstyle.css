@@ -129,6 +129,8 @@
   text-decoration: underline;
   cursor: help;
   transition: 300ms ease-in-out;
+  height: 600%;
+  width: 33%;
 }
 
 .key {
@@ -137,13 +139,12 @@
   top: 70px;
   left: 2%;
   border-radius: 20px;
-  transition: 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
   max-width: 30%;
   font-size: 1.35rem;
   padding: 1rem;
   padding-left: 2rem;
   z-index: 100;
-  opacity: 0.5;
   
 }
 
@@ -169,10 +170,27 @@
 
 
 li {
-    padding: 0.3rem;
+    padding: 0.4rem;
 }
 
-.left:hover ~ .key {
+/* Keep the captions bar on top so it can receive hover */
+.captions {
+  z-index: 200; /* higher than your .key (100) and .wheel (40) */
+}
+
+/* Define + animate opacity on .key */
+.captions .key {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Make .key fully visible when .left is hovered (or focused via keyboard) */
+.captions .left:hover ~ .key,
+.captions .left:focus ~ .key {
   opacity: 1;
 }
 
+ul {
+list-style-type: none;
+margin-left: -2rem;
+}
