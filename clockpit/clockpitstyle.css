@@ -19,7 +19,7 @@
     .container1 {
       background: #2d2d2d;
       width: 96vw;
-      height: 30rem;
+      height: 28rem;
       position: absolute;
       border-radius: 11rem;
       border-bottom-left-radius: 0px;
@@ -32,7 +32,7 @@
      .container1stroke {
       background: #0c0c0cff;
       width: 98vw;
-      height: 31rem;
+      height: 29rem;
       position: absolute;
       bottom: 0rem;
       border-radius: 12rem;
@@ -45,21 +45,21 @@
     #clock2 {
       position: absolute;
       z-index: 20;
-      bottom: 0rem;
+      bottom: -2rem;
       right: 1rem;
     }
 
        #clock1 {
       position: absolute;
       z-index: 20;
-      bottom: 0rem;
+      bottom: -2rem;
       left: 1rem;
     }
 
     #clock3 {
       position: absolute;
       z-index: 20;
-      bottom: 26rem;
+      bottom: 24rem;
       left: 50%;
       transform: translateX(-50%);
       
@@ -72,7 +72,7 @@
   --a: 28deg; /* control the depth of the curvature */
   --p: 50%;   /* control the position */
 
-  bottom: 30rem;
+  bottom: 28rem;
   position: absolute;
   width: 30rem;
   
@@ -111,11 +111,12 @@
 
 .captions {
   width: 100%;
-  height: 60px;
+  height: 3.2rem;
   position: fixed;
-  font-size: 2vw;
-  margin-top: 20px;
+  font-size: 2.2rem;
+  padding-top: 1.25rem;
   color: #0c0c0cff;
+  background-color: #fffbed;
 }
 
 .right {
@@ -129,14 +130,12 @@
   text-decoration: underline;
   cursor: help;
   transition: 300ms ease-in-out;
-  height: 600%;
-  width: 33%;
 }
 
 .key {
   position: fixed;
   background-color: #fffbed;
-  top: 70px;
+  top: 5.65rem;
   left: 2%;
   border-radius: 20px;
   transition: opacity 300ms ease-in-out;
