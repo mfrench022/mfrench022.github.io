@@ -1,3 +1,5 @@
+// CLOCKS 1-3
+
 let makeClock1 = (opts) => (p) => {
     p.setup = () => {
         p.createCanvas(opts.w || 300, opts.h || 300).parent(opts.parent);
@@ -137,5 +139,44 @@ let makeClock3 = (opts) => (p) => {
 let clockSketch1 = new p5(makeClock1({ parent: 'clock1', w: 500, h:  500 }));
 let clockSketch2 = new p5(makeClock2({ parent: 'clock2', w: 500, h:  500 }));
 let clockSketch3 = new p5(makeClock3({ parent: 'clock3', w: 500, h:  500 }));
+
+// BACKGROUND CLOCK (some AI troubleshooting done here)
+
+let COLOR_NIGHT = [0x00, 0x05, 0x45]; // #000545
+let COLOR_DAY   = [0xD6, 0xF3, 0xFF]; // #D6F3FF
+
+function lerp(a, b, t) { return a + (b - a) * t; }
+function toHex(n) { return n.toString(16).padStart(2, '0'); }
+function rgbToHex(r, g, b) { return `#${toHex(r)}${toHex(g)}${toHex(b)}`; }
+
+function dayWeight(t) {
+  return 0.5 * (1 - Math.cos(2 * Math.PI * t));
+}
+
+function getDayFraction(now = new Date()) {
+  const s = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds() + now.getMilliseconds() / 1000;
+  return (s / 86400);
+}
+
+function computeSkyColor() {
+  let w = dayWeight(getDayFraction());
+  let r = Math.round(lerp(COLOR_NIGHT[0], COLOR_DAY[0], w));
+  let g = Math.round(lerp(COLOR_NIGHT[1], COLOR_DAY[1], w));
+  let b = Math.round(lerp(COLOR_NIGHT[2], COLOR_DAY[2], w));
+  return rgbToHex(r, g, b);
+}
+
+function applySkyColor() {
+  let color = computeSkyColor();
+  document.body.style.backgroundColor = color;
+
+  document.querySelectorAll('em.background').forEach(el => {
+    el.style.color = color;
+    el.style.fontStyle = 'normal';
+  });
+  requestAnimationFrame(applySkyColor);
+}
+
+document.addEventListener('DOMContentLoaded', applySkyColor);
 
 
