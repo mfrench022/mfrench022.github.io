@@ -22,6 +22,11 @@ let makeClock1 = (opts) => (p) => {
   let dayCap = p.map(oneDay, 0, 1, 240, 360);
 
   p.stroke('#0c0c0cff');
+
+  p.strokeWeight(18);
+  p.fill('#FFFBED')
+  p.circle(lengthx, lengthy, 370)
+  
   p.strokeWeight(2);
   p.fill('#E4FFFF');
   p.arc(lengthx, lengthy, 304, 304, 240, 360, p.PIE);
@@ -70,6 +75,10 @@ let makeClock2 = (opts) => (p) => {
   let dayCap = p.map(oneDay, 0, 1, 0, 360);
 
   p.stroke('#0c0c0cff');
+   p.strokeWeight(18);
+  p.fill('#FFFBED')
+  p.circle(lengthx, lengthy, 370)
+
   p.strokeWeight(2);
 
   p.fill('#E4FFFF');
@@ -125,7 +134,8 @@ let makeClock3 = (opts) => (p) => {
 }
 }
 
-let clockSketch1 = new p5(makeClock1({ parent: 'clock1', w: 500, h:  480 }));
-let clockSketch2 = new p5(makeClock2({ parent: 'clock2', w: 500, h:  480 }));
-let clockSketch3 = new p5(makeClock3({ parent: 'clock3', w: 500, h:  480 }));
+let clockSketch1 = new p5(makeClock1({ parent: 'clock1', w: 500, h:  500 }));
+let clockSketch2 = new p5(makeClock2({ parent: 'clock2', w: 500, h:  500 }));
+let clockSketch3 = new p5(makeClock3({ parent: 'clock3', w: 500, h:  500 }));
+
 
