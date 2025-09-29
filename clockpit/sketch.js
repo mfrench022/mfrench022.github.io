@@ -101,7 +101,6 @@ let makeClock1 = (opts) => (p) => {
     p.fill('lightgreen');
     p.arc(cx, cy, ringMain, ringMain, 120, hourCap, p.PIE);
 
-    p.noStroke();
     p.fill('#FFFBED');
     p.circle(cx, cy, center);
   };
@@ -171,7 +170,6 @@ let makeClock2 = (opts) => (p) => {
     p.fill('tomato');
     p.arc(cx, cy, ringXS, ringXS, 0, minCap, p.PIE);
 
-    p.noStroke();
     p.fill('#FFFBED');
     p.circle(cx, cy, center);
   };
