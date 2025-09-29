@@ -204,9 +204,77 @@ em.background {
     text-shadow: 0.06rem 0.06rem 0.08rem #000545;
 }
 
+:root { --clock-size: 32rem; }
+
+#clock1, #clock2, #clock3 {
+  width: var(--clock-size);
+  height: var(--clock-size);
+  position: absolute;
+}
+
 @media (max-width: 1152px) {
   :root {
     font-size: 85%;
+  }
+}
+
+
+@media (max-width: 964px) {
+  :root {
+    font-size: 65%;
+  }
+}
+
+@media (max-width: 738px) {
+  :root {
+    font-size: 45%;
+  }
+}
+
+
+@media (max-width: 509px) {
+  :root {
+    font-size: 35%;
+    --clock-size: 20rem;
+
+    #clock2 {
+    
+      bottom: 4rem;
+      right: -0.25rem;
+    }
+
+       #clock1 {
+      position: absolute;
+      z-index: 20;
+      bottom: 4rem;
+      left: -0.25rem;;
+    }
+
+    #clock3 {
+      bottom: 27.5rem; 
+    }
+
+
+.key {
+  max-width: 96%;
+  padding-right: 2rem;
+}
+
+
+    
+  }
+}
+
+@media (max-width: 341px) {
+  :root {
+    font-size: 25%;
+  }
+}
+
+
+@media (max-width: 282px) {
+  :root {
+    font-size: 20%;
   }
 }
 

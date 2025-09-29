@@ -1,161 +1,239 @@
-// CLOCKS 1-3
+function setupCanvasToParent(p, parentId, useWebGL = false) {
+  const parent = document.getElementById(parentId);
+  if (!parent) {
+    console.warn(`[setupCanvasToParent] Missing parent element: #${parentId}`);
+    return;
+  }
 
+  const renderer = useWebGL ? p.WEBGL : undefined;
+
+  // Create initial canvas sized to parent’s box.
+  function sizeFromParent() {
+    const rect = parent.getBoundingClientRect();
+    // Guard against 0x0 boxes on first layout pass.
+    const w = Math.max(1, Math.floor(rect.width));
+    const h = Math.max(1, Math.floor(rect.height));
+    return { w, h };
+  }
+
+  const { w, h } = sizeFromParent();
+
+  // Keep pixel density reasonable for performance on high-DPI screens.
+  p.pixelDensity(Math.min(2, window.devicePixelRatio || 1));
+  p.createCanvas(w, h, renderer).parent(parentId);
+
+  // Resize handler keeps canvas in sync with CSS changes / viewport changes.
+  function resizeToParent() {
+    const { w: nw, h: nh } = sizeFromParent();
+    if (nw !== p.width || nh !== p.height) {
+      p.resizeCanvas(nw, nh);
+    }
+  }
+
+  // Respond to window resizes.
+  window.addEventListener('resize', resizeToParent);
+
+  // Respond to parent box changes not caused by window events.
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(() => resizeToParent());
+    ro.observe(parent);
+    // Store to detach if p5 instance is removed (optional)
+    p._clockpitRO = ro;
+  }
+}
+
+/* ==============================
+   Clock 1: Single circle with 3 arcs
+   ============================== */
 let makeClock1 = (opts) => (p) => {
-    p.setup = () => {
-        p.createCanvas(opts.w || 300, opts.h || 300).parent(opts.parent);
-        p.angleMode(p.DEGREES);
-      };
-    p.draw = () => {
+  p.setup = () => {
+    setupCanvasToParent(p, opts.parent, false);
+    p.angleMode(p.DEGREES);
+  };
 
-  let lengthx = p.width/2
-  let lengthy = p.height/2 
+  p.draw = () => {
+    const cx = p.width / 2, cy = p.height / 2;
+    const d = Math.min(p.width, p.height);
 
-  let now = new Date();
-  let sec = now.getSeconds() + now.getMilliseconds() / 1000;
-  let min = now.getMinutes() + sec / 60;
-  let hrs = now.getHours() + min / 60;
+    // Proportional sizes (relative to d)
+    const outer    = d * 0.74; // ~370 @ 500
+    const ringBig  = d * 0.61; // ~304 @ 500
+    const ringMain = d * 0.60; // ~300 @ 500
+    const center   = d * 0.10; // ~50  @ 500
 
-  let oneMinute = sec / 60;                
-  let oneHour   = min / 60;
-  let oneDay    = (now.getHours()*3600 + now.getMinutes()*60 + sec) / 86400;
+    const now = new Date();
+    const sec = now.getSeconds() + now.getMilliseconds() / 1000;
+    const min = now.getMinutes() + sec / 60;
+    const hrs = now.getHours() + min / 60;
 
-  let minCap = p.map(oneMinute, 0, 1, 0, 120);           
-  let hourCap = p.map(oneHour,   0, 1, 120, 240);         
-  let dayCap = p.map(oneDay, 0, 1, 240, 360);
+    const oneMinute = sec / 60;
+    const oneHour   = min / 60;
+    const oneDay    = (hrs * 3600) / 86400;
 
-  p.stroke('#0c0c0cff');
+    const minCap  = p.map(oneMinute, 0, 1, 0, 120);
+    const hourCap = p.map(oneHour,   0, 1, 120, 240);
+    const dayCap  = p.map(oneDay,    0, 1, 240, 360);
 
-  p.strokeWeight(18);
-  p.fill('#FFFBED')
-  p.circle(lengthx, lengthy, 370)
-  
-  p.strokeWeight(2);
-  p.fill('#E4FFFF');
-  p.arc(lengthx, lengthy, 304, 304, 240, 360, p.PIE);
-  
-  p.fill('#FF9B80');
-  p.arc(lengthx, lengthy, 304, 304, 0, 120, p.PIE);
+    p.clear(); // avoid trails if using transparency elsewhere
 
-  p.fill('#C8FFC9');
-  p.arc(lengthx, lengthy, 304, 304, 120, 240, p.PIE);
-  
-  p.strokeWeight(6);
-  p.fill('lightblue');
-  p.arc(lengthx, lengthy, 300, 300, 240, dayCap, p.PIE);
-  
-  p.fill('tomato');
-  p.arc(lengthx, lengthy, 300, 300, 0, minCap, p.PIE);
+    p.stroke('#0c0c0cff');
+    p.strokeWeight(d * 0.036); // ~18 @ 500
+    p.fill('#FFFBED');
+    p.circle(cx, cy, outer);
 
-  p.fill('lightgreen');
-  p.arc(lengthx, lengthy, 300, 300, 120, hourCap, p.PIE);
+    p.strokeWeight(d * 0.004); // ~2 @ 500
+    p.fill('#E4FFFF');
+    p.arc(cx, cy, ringBig, ringBig, 240, 360, p.PIE);
 
-  p.fill('#FFFBED')
-  p.circle(lengthx, lengthy, 50)
-}
-}
+    p.fill('#FF9B80');
+    p.arc(cx, cy, ringBig, ringBig, 0, 120, p.PIE);
 
+    p.fill('#C8FFC9');
+    p.arc(cx, cy, ringBig, ringBig, 120, 240, p.PIE);
+
+    p.strokeWeight(d * 0.012); // ~6 @ 500
+    p.fill('lightblue');
+    p.arc(cx, cy, ringMain, ringMain, 240, dayCap, p.PIE);
+
+    p.fill('tomato');
+    p.arc(cx, cy, ringMain, ringMain, 0, minCap, p.PIE);
+
+    p.fill('lightgreen');
+    p.arc(cx, cy, ringMain, ringMain, 120, hourCap, p.PIE);
+
+    p.noStroke();
+    p.fill('#FFFBED');
+    p.circle(cx, cy, center);
+  };
+};
+
+/* ==============================
+   Clock 2: Concentric circles
+   ============================== */
 let makeClock2 = (opts) => (p) => {
-    p.setup = () => {
-        p.createCanvas(opts.w || 300, opts.h || 300).parent(opts.parent);
-        p.angleMode(p.DEGREES);
-      };
-    p.draw = () => {
+  p.setup = () => {
+    setupCanvasToParent(p, opts.parent, false);
+    p.angleMode(p.DEGREES);
+  };
 
-  let lengthx = p.width/2
-  let lengthy = p.height/2 
+  p.draw = () => {
+    const cx = p.width / 2, cy = p.height / 2;
+    const d = Math.min(p.width, p.height);
 
-  let now = new Date();
-  let sec = now.getSeconds() + now.getMilliseconds() / 1000;
-  let min = now.getMinutes() + sec / 60;
+    const outer  = d * 0.74; // ~370
+    const ringL  = d * 0.61; // ~304
+    const ringM  = d * 0.37; // ~184
+    const ringS  = d * 0.21; // ~104
+    const ringXS = d * 0.20; // ~100
+    const center = d * 0.10; // ~50
 
-  let oneMinute = sec / 60;                
-  let oneHour   = min / 60;
-  let oneDay    = (now.getHours()*3600 + now.getMinutes()*60 + sec) / 86400;
+    const now = new Date();
+    const sec = now.getSeconds() + now.getMilliseconds() / 1000;
+    const min = now.getMinutes() + sec / 60;
+    const hrs = now.getHours() + min / 60;
 
-  let minCap = p.map(oneMinute, 0, 1, 0, 360);
-  let hourCap = p.map(oneHour,   0, 1, 0, 360);
-  let dayCap = p.map(oneDay, 0, 1, 0, 360);
+    const oneMinute = sec / 60;
+    const oneHour   = min / 60;
+    const oneDay    = (hrs * 3600) / 86400;
 
-  p.stroke('#0c0c0cff');
-   p.strokeWeight(18);
-  p.fill('#FFFBED')
-  p.circle(lengthx, lengthy, 370)
+    const minCap  = p.map(oneMinute, 0, 1, 0, 360);
+    const hourCap = p.map(oneHour,   0, 1, 0, 360);
+    const dayCap  = p.map(oneDay,    0, 1, 0, 360);
 
-  p.strokeWeight(2);
+    p.clear();
 
-  p.fill('#E4FFFF');
-  p.arc(lengthx, lengthy, 304, 304, 0, 360, p.PIE);
+    p.stroke('#0c0c0cff');
+    p.strokeWeight(d * 0.036);
+    p.fill('#FFFBED');
+    p.circle(cx, cy, outer);
 
-  p.strokeWeight(6);
-  p.fill('lightblue');
-  p.arc(lengthx, lengthy, 300, 300, 0, dayCap, p.PIE);
-  
-  p.strokeWeight(2);
-  p.fill('#C8FFC9');
-  p.arc(lengthx, lengthy, 184, 184, 0, 360, p.PIE);
-  
-  p.strokeWeight(6);
-  p.fill('lightgreen');
-  p.arc(lengthx, lengthy, 180, 180, 0, hourCap, p.PIE);
-  
-  p.strokeWeight(2);
-  p.fill('#FF9B80');
-  p.arc(lengthx, lengthy, 104, 104, 0, 360, p.PIE);
+    p.strokeWeight(d * 0.004);
+    p.fill('#E4FFFF');
+    p.arc(cx, cy, ringL, ringL, 0, 360, p.PIE);
 
-  p.strokeWeight(6);
-  p.fill('tomato');
-  p.arc(lengthx, lengthy, 100, 100, 0, minCap, p.PIE);
-  
-  p.fill('#FFFBED')
-  p.circle(lengthx, lengthy, 50)
-}
-}
+    p.strokeWeight(d * 0.012);
+    p.fill('lightblue');
+    p.arc(cx, cy, ringL, ringL, 0, dayCap, p.PIE);
 
+    p.strokeWeight(d * 0.004);
+    p.fill('#C8FFC9');
+    p.arc(cx, cy, ringM, ringM, 0, 360, p.PIE);
+
+    p.strokeWeight(d * 0.012);
+    p.fill('lightgreen');
+    p.arc(cx, cy, ringM, ringM, 0, hourCap, p.PIE);
+
+    p.strokeWeight(d * 0.004);
+    p.fill('#FF9B80');
+    p.arc(cx, cy, ringS, ringS, 0, 360, p.PIE);
+
+    p.strokeWeight(d * 0.012);
+    p.fill('tomato');
+    p.arc(cx, cy, ringXS, ringXS, 0, minCap, p.PIE);
+
+    p.noStroke();
+    p.fill('#FFFBED');
+    p.circle(cx, cy, center);
+  };
+};
+
+/* ==============================
+   Clock 3: “Compass” WEBGL sphere
+   ============================== */
 let makeClock3 = (opts) => (p) => {
-    p.setup = () => {
-        p.createCanvas(opts.w || 300, opts.h || 300, p.WEBGL).parent(opts.parent);
-        p.angleMode(p.DEGREES);
-      };
-    p.draw = () => {
+  p.setup = () => {
+    setupCanvasToParent(p, opts.parent, true); // WEBGL
+    p.angleMode(p.DEGREES);
+  };
 
-  let now = new Date();
-  let sec = now.getSeconds() + now.getMilliseconds() / 1000;
+  p.draw = () => {
+    const d = Math.min(p.width, p.height);
 
-  let oneMinute = sec / 60;
+    const now = new Date();
+    const sec = now.getSeconds() + now.getMilliseconds() / 1000;
+    const oneMinute = sec / 60;
 
-  let minCap = p.map(oneMinute, 0, 1, 0, 14);
-  let minCap2 = p.map(oneMinute, 0, 1, 0, 360);
+    const minCap = p.map(oneMinute, 0, 1, 0, 14);
+    const rot    = p.map(oneMinute, 0, 1, 0, 360);
 
-  p.strokeWeight(minCap);
-  p.stroke('#fcff5cff');
-  p.fill('#0c0c0cff');
+    p.clear();
+    p.strokeWeight(minCap);
+    p.stroke('#fcff5cff');
+    p.fill('#0c0c0cff');
 
-  let axis = p.createVector(1, 1, 0);
-  p.rotate(minCap2, axis);
-  p.sphere(150, 24, 24)
-}
-}
+    const axis = p.createVector(1, 1, 0);
+    p.rotate(rot, axis);
 
-let clockSketch1 = new p5(makeClock1({ parent: 'clock1', w: 500, h:  500 }));
-let clockSketch2 = new p5(makeClock2({ parent: 'clock2', w: 500, h:  500 }));
-let clockSketch3 = new p5(makeClock3({ parent: 'clock3', w: 500, h:  500 }));
+    const radius = d * 0.30; // ~150 @ 500
+    p.sphere(radius, 24, 24);
+  };
+};
 
-// BACKGROUND CLOCK (some AI troubleshooting done here)
+/* ==============================
+   Instantiate sketches (CSS controls size)
+   ============================== */
+let clockSketch1 = new p5(makeClock1({ parent: 'clock1' }));
+let clockSketch2 = new p5(makeClock2({ parent: 'clock2' }));
+let clockSketch3 = new p5(makeClock3({ parent: 'clock3' }));
 
-let COLOR_NIGHT = [0x00, 0x05, 0x45]; // #000545
-let COLOR_DAY   = [0xD6, 0xF3, 0xFF]; // #D6F3FF
+/* ==============================
+   Viz #4: Background color day/night cycle
+   ============================== */
+const COLOR_NIGHT = [0x00, 0x05, 0x45]; // #000545
+const COLOR_DAY   = [0xD6, 0xF3, 0xFF]; // #D6F3FF
 
 function lerp(a, b, t) { return a + (b - a) * t; }
 function toHex(n) { return n.toString(16).padStart(2, '0'); }
 function rgbToHex(r, g, b) { return `#${toHex(r)}${toHex(g)}${toHex(b)}`; }
 
+// Smooth, symmetric weighting peaking at noon, trough at midnight.
 function dayWeight(t) {
   return 0.5 * (1 - Math.cos(2 * Math.PI * t));
 }
 
 function getDayFraction(now = new Date()) {
   const s = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds() + now.getMilliseconds() / 1000;
-  return (s / 86400);
+  return s / 86400;
 }
 
 function computeSkyColor() {
@@ -178,5 +256,3 @@ function applySkyColor() {
 }
 
 document.addEventListener('DOMContentLoaded', applySkyColor);
-
-
