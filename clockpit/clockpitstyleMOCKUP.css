@@ -1,0 +1,212 @@
+ body {
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+      background: lightblue;
+      position: relative;
+      font-family: aldrich, sans-serif;
+    }
+
+    html, body {
+  height: 100%;
+}
+
+.wrap {
+  position: relative;
+  height: 100%;
+}
+
+    .container1 {
+      background: #2d2d2d;
+      width: 96vw;
+      height: 28rem;
+      position: absolute;
+      border-radius: 11rem;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      z-index: 0;
+      bottom: 0rem;
+      right: 2vw;
+    }
+
+     .container1stroke {
+      background: #0c0c0cff;
+      width: 98vw;
+      height: 29rem;
+      position: absolute;
+      bottom: 0rem;
+      border-radius: 12rem;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      z-index: -1;
+      right: 1vw;
+    }
+
+    #clock2 {
+      position: absolute;
+      z-index: 20;
+      bottom: -2rem;
+      right: 1rem;
+    }
+
+       #clock1 {
+      position: absolute;
+      z-index: 20;
+      bottom: -2rem;
+      left: 1rem;
+    }
+
+    #clock3 {
+      position: absolute;
+      z-index: 20;
+      bottom: 24rem;
+      left: 50%;
+      transform: translateX(-50%);
+      
+    }
+
+    /* .inner-curve obtained from https://css-shape.com/inner-curve/ */
+    .inner-curve {
+  --r: 1rem;  /* control the rounded part */
+  --s: 11rem;  /* control the size of the cut */
+  --a: 28deg; /* control the depth of the curvature */
+  --p: 50%;   /* control the position */
+
+  bottom: 28rem;
+  position: absolute;
+  width: 30rem;
+  
+  inset-inline: 0;
+  margin-inline: auto;
+  
+  aspect-ratio: 4/1;
+  background: #0c0c0cff;
+
+  border-radius: var(--r);
+  --_m:var(--r),#000 calc(100% - 1px),#0000;
+  --_d:(var(--s) + var(--r))*cos(var(--a));
+  mask:
+    radial-gradient(var(--r) at calc(var(--p) + var(--_d)) var(--_m)),
+    radial-gradient(var(--r) at calc(var(--p) - var(--_d)) var(--_m)),
+    radial-gradient(var(--s) at var(--p) calc(-1*sin(var(--a))*var(--s)),
+      #0000 100%,#000 calc(100% + 1px)) 0 calc(var(--r)*(1 - sin(var(--a)))) no-repeat,
+    linear-gradient(90deg,#000 calc(var(--p) - var(--_d)),#0000 0 calc(var(--p) + var(--_d)),#000 0);
+}
+
+  .wheel {
+    position: absolute;
+    width: 55rem;
+    width: 50%;
+    z-index: 40;
+    bottom: 0px;
+    left: 25%;
+}
+
+.wheel img {
+  object-fit: cover;
+  display: block;
+  bottom: 0px;
+  position: absolute;
+}
+
+.captions {
+  width: 100%;
+  height: 3.2rem;
+  position: fixed;
+  font-size: 2.2rem;
+  padding-top: 1.25rem;
+  color: #0c0c0cff;
+  background-color: #fffbed;
+}
+
+.right {
+  position: absolute;
+  right: 2%;
+}
+
+.left {
+  position: absolute;
+  left: 2%;
+  text-decoration: underline;
+  cursor: help;
+  transition: 300ms ease-in-out;
+}
+
+.key {
+  position: fixed;
+  background-color: #fffbed;
+  top: 5.65rem;
+  left: 2%;
+  border-radius: 20px;
+  transition: opacity 300ms ease-in-out;
+  max-width: 30%;
+  font-size: 1.35rem;
+  padding: 1rem;
+  padding-left: 2rem;
+  z-index: 100;
+  
+}
+
+.sec {
+    background-color: tomato;
+    font-style: normal;
+}
+
+.min {
+    background-color: lightgreen;
+    font-style: normal;
+}
+
+.hours {
+    background-color: lightblue;
+    font-style: normal;
+}
+
+.yellow {
+   background-color: #fcff5cff;
+   font-style: normal; 
+}
+
+
+li {
+    padding: 0.4rem;
+}
+
+/* Keep the captions bar on top so it can receive hover */
+.captions {
+  z-index: 200; /* higher than your .key (100) and .wheel (40) */
+}
+
+/* Define + animate opacity on .key */
+.captions .key {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Make .key fully visible when .left is hovered (or focused via keyboard) */
+.captions .left:hover ~ .key,
+.captions .left:focus ~ .key {
+  opacity: 1;
+}
+
+ul {
+list-style-type: none;
+margin-left: -2rem;
+line-height: 2.1ex;
+}
+
+body,
+em.background {
+  transition: color 1s linear;
+}
+
+.background {
+    text-shadow: 0.06rem 0.06rem 0.08rem #000545;
+}
+
+@media (max-width: 1152px) {
+  :root {
+    font-size: 85%;
+  }
+}
+
