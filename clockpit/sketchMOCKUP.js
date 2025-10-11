@@ -5,7 +5,6 @@
 const SPEED = 3600; // 86400 / 24
 const DAY_SECONDS = 86400;
 
-// Start reference for real time (ms)
 const t0 = performance.now();
 
 /**

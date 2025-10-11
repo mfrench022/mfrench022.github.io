@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+html {
+  font-size: 90%;
+  --padding: 1rem;
+  --header-offset: 11.5rem;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 900;
+  color: black;
+  font-size: 1.75rem;
+   margin-block-end: calc(2 * var(--padding));
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 1.75rem;
+  margin-block-end: var(--padding);
+}
+
+
+body {
+  padding-block-end: var(--padding);
+  padding-block-start: 0;
+  margin-block-start: 0;
+  background: #e0ebff;
+background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  font-family: "SUSE Mono", sans-serif;
+  margin-inline: 0;
+  font-weight: 200;
+}
+
+.main {
+  background: #e0ebff;
+  background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  padding-block: calc(2 * var(--padding));
+  border-block-end: solid 0.25rem black;
+}
+
+
+
+.day {
+  padding: var(--padding);
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.75rem;
+  border: solid 0.25rem black;
+  margin-block-end: calc(2* var(--padding));
+  margin-inline: var(--padding);
+  border-radius: 3rem;
+   background: #e0ebff;
+background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+}
+
+.activity {
+  padding-block: var(--padding);
+  padding-inline: calc(2*var(--padding));
+  position: relative;
+  margin-block: var(--padding);
+  margin-inline: var(--padding);
+  margin-block-end: calc(2 * var(--padding));
+  border-radius: 3rem;
+  border: solid 0.25rem black;
+}
+
+footer {
+  font-family: aldrich;
+  position: fixed;
+  inset-block-end: 0rem;
+  font-size: 0.75rem;
+  background: #e0ebff;
+  background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  width: 100%;
+  padding: var(--padding);
+  height: calc(3*var(--padding));
+  border-block-start: solid 0.25rem black;
+}
+
+.buttons {
+  display: flex;
+  gap: var(--padding);
+  font-weight: 900;
+  margin-block-start: var(--padding);
+}
+
+.linkbutton {
+  padding: var(--padding);
+  padding-inline: var(--padding);
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  border: solid 0.25rem black;
+}
+
+.linkbutton:hover {
+  background-color: olive;
+  color: white;
+}
+
+time {
+  inset-inline-end: calc(2*var(--padding));
+  position: absolute;
+  font-weight: 300;
+  font-size: 1.75rem;
+}
+
+#thursday {
+  padding-block-start: calc(12 * var(--padding));
+}
+
+#sunday {
+  padding-block-end: calc(2 * var(--padding));
+}
+
+span {
+  font-size: 1rem;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: black;
+}
+
+footer a {
+  color: black;
+}
+
+.headerlinks a{
+  color: black;
+  font-weight: 900;
+  padding-inline: calc(var(--padding) / 2);
+}
+
+.headerlinks {
+  text-align: center;
+  font-size: 1rem;
+}
+
+article[id] {
+  scroll-margin-top: var(--header-offset);
+}
