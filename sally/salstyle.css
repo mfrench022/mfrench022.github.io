@@ -101,6 +101,7 @@ footer {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
   color: white;
+  font-size: 1rem;
 }
 
 time {
