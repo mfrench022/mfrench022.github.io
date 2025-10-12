@@ -96,7 +96,7 @@ footer {
 .linkbutton {
   padding: calc(var(--padding) / 2);
   padding-inline: var(--padding);
-  border-radius: 2rem;
+  border-radius: 1rem;
   font-size: 0.75rem;
   border: solid 0.25rem black;
 }
@@ -106,6 +106,14 @@ footer {
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
   color: white;
   font-size: 1rem;
+}
+
+.headerlinks a:hover {
+   background: #e0ebff;
+   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  color: white;
+  font-size: 1rem;
+  border: solid 0.25rem black;
 }
 
 time {
@@ -140,7 +148,9 @@ footer a {
 .headerlinks a{
   color: black;
   font-weight: 900;
-  padding-inline: calc(var(--padding) / 2);
+  border-block-end: solid 0.25rem black;
+  margin-inline: calc(var(--padding) / 2);
+  border-radius: 0.2rem;
 }
 
 .headerlinks {
