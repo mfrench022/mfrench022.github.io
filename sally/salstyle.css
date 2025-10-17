@@ -99,21 +99,22 @@ footer {
   border-radius: 1rem;
   font-size: 0.75rem;
   border: solid 0.25rem black;
+  transition: 300ms ease-in-out;
 }
 
 .linkbutton:hover {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  color: white;
   font-size: 1rem;
+  transition: 300ms ease-in-out;
 }
 
 .headerlinks a:hover {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  color: white;
   font-size: 1rem;
   border: solid 0.25rem black;
+  transition: 300ms ease-in-out;
 }
 
 time {
@@ -151,11 +152,13 @@ footer a {
   border-block-end: solid 0.25rem black;
   margin-inline: calc(var(--padding) / 2);
   border-radius: 0.2rem;
+  transition: 300ms ease-in-out;
 }
 
 .headerlinks {
   text-align: center;
   font-size: 1rem;
+  transition: 300ms ease-in-out;
 }
 
 article[id] {
