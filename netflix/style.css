@@ -1,0 +1,79 @@
+svg text {
+  font-family: "Aldrich", sans-serif;
+  fill: #ffffff;
+}
+
+body {
+    font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+    color: white;
+    margin-inline: 80px;
+}
+
+h1 {
+    padding-block-start: 20px;
+    max-width: 39ch;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 908px;
+    margin-block-start: 20px;
+    /* background-color: pink; */
+    column-gap: 13.5px;
+}
+
+p {
+    height: 30px;
+    width: 140px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.animation {
+    background-color: #8B102A;
+}
+
+.documentary {
+    background-color: #C87D9C;
+}
+
+.gameshow {
+    background-color: #DAAC9C;
+}
+
+.sports {
+    background-color: #C1705F;
+}
+
+.reality {
+    background-color: #8A8AD0;
+}
+
+.talkshow {
+    background-color: #89CBCA;
+}
+
+.variety {
+    background-color: #489EE3;
+}
+
+.scripted {
+    background-color: #0A287E;
+}
+
+@media (max-width: 1087px) {
+  section {
+    width: 100%;
+    margin-inline: 0px;
+  }
+
+  h1 {
+    margin-inline: 20px;
+}
+}

@@ -1,33 +1,20 @@
 const width = 928;
 const marginTop = 30;
 const marginRight = 20;
-const marginBottom = 0;
-const marginLeft = 60;
+const marginBottom = 30;
+const marginLeft = 35;
 
 d3.csv("tv-views-by-genre.csv", d3.autoType).then(data => {
+  const keys = data.columns.slice(1);
 
-  // Reformat data: turn columns into long-form array
-  const formatted = data.columns.slice(1).flatMap((genre) => 
-    data.map((d) => ({
-      year: d.year,
-      genre,
-      views: d[genre]
-    }))
-  );
-
-  // Determine stacked series
   const series = d3.stack()
-    .keys(d3.union(formatted.map(d => d.genre))) // genre names
-    .value(([, D], key) => D.get(key).views)
-    .offset(d3.stackOffsetExpand)
-  (d3.index(formatted, d => d.year, d => d.genre));
+    .keys(keys)
+    .offset(d3.stackOffsetExpand)(data);
 
-  // Compute chart height based on number of years
-  const height = series[0].length * 25 + marginTop + marginBottom;
+  const height = data.length * 25 + marginTop + marginBottom;
 
-  // Scales
   const x = d3.scaleLinear()
-    .domain([0, d3.max(series, d => d3.max(d, d => d[1]))])
+    .domain([0, 1])
     .range([marginLeft, width - marginRight]);
 
   const y = d3.scaleBand()
@@ -36,38 +23,29 @@ d3.csv("tv-views-by-genre.csv", d3.autoType).then(data => {
     .padding(0.08);
 
   const color = d3.scaleOrdinal()
-    .domain(series.map(d => d.key))
-    .range(d3.schemeSpectral[series.length])
+    .domain(keys)
+    .range(d3.schemeSpectral[keys.length])
     .unknown("#ccc");
 
-  // Tooltip formatter
-  const formatValue = x => isNaN(x) ? "N/A" : x.toLocaleString("en");
-
-  // SVG container
   const svg = d3.create("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("viewBox", [0, 0, width, height])
-    .attr("style", "max-width: 100%; height: auto;")
-    .attr("id", "chart");
+    .attr("style", "max-width:100%;height:auto;");
 
-  // Bars
   svg.append("g")
-    .selectAll()
+    .selectAll("g")
     .data(series)
     .join("g")
       .attr("fill", d => color(d.key))
     .selectAll("rect")
-    .data(D => D.map(d => (d.key = D.key, d)))
+    .data(d => d)
     .join("rect")
       .attr("x", d => x(d[0]))
-      .attr("y", d => y(d.data[0]))
-      .attr("height", y.bandwidth())
+      .attr("y", (d, i) => y(data[i].year))
       .attr("width", d => x(d[1]) - x(d[0]))
-    .append("title")
-      .text(d => `${d.data[0]} ${d.key}\n${formatValue(d.data[1].get(d.key).views)}`);
+      .attr("height", y.bandwidth());
 
-  // Axes
   svg.append("g")
     .attr("transform", `translate(0,${marginTop})`)
     .call(d3.axisTop(x).ticks(width / 100, "%"))
@@ -78,6 +56,5 @@ d3.csv("tv-views-by-genre.csv", d3.autoType).then(data => {
     .call(d3.axisLeft(y).tickSizeOuter(0))
     .call(g => g.selectAll(".domain").remove());
 
-  // Add to DOM
   document.getElementById("container").appendChild(svg.node());
 });
