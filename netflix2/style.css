@@ -43,7 +43,6 @@ section {
 	justify-content: start;
 	flex-wrap: wrap;
 	width: 908px;
-	margin-block-start: 20px;
 	/* background-color: pink; */
 	column-gap: 13.5px;
 }
