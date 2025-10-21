@@ -1,8 +1,8 @@
 const width = 1570;
 const marginTop = 30;
-const marginRight = 15;
+const marginRight = 20;
 const marginBottom = 50;
-const marginLeft = 42;
+const marginLeft = 55;
 
 d3.csv("tv-views-by-genre2.csv", d3.autoType).then(data => {
   const keys = data.columns.slice(1);
