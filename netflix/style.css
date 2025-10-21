@@ -59,6 +59,7 @@ p {
 	text-align: center;
 	line-height: 32px;
 	font-size: 18px;
+	color: black;
 }
 
 @media (max-width: 1087px) {
