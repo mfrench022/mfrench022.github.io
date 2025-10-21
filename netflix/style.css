@@ -34,7 +34,12 @@ body {
 
 h1 {
 	padding-block-start: 20px;
-	max-width: 39ch;
+	font-size: 28px;
+	/* max-width: 39ch; */
+}
+
+h2 {
+	font-size: 18px;
 }
 
 section {
@@ -42,9 +47,10 @@ section {
 	flex-direction: row;
 	justify-content: start;
 	flex-wrap: wrap;
-	width: 908px;
+	width: 100%;
 	/* background-color: pink; */
-	column-gap: 13.5px;
+	column-gap: 61.75px;
+	padding-bottom: 20px;
 }
 
 p {
@@ -52,6 +58,7 @@ p {
 	width: 140px;
 	text-align: center;
 	line-height: 32px;
+	font-size: 18px;
 }
 
 @media (max-width: 1087px) {
