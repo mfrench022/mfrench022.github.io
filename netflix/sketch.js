@@ -1,7 +1,7 @@
 const width = 1570;
 const marginTop = 30;
 const marginRight = 15;
-const marginBottom = 10;
+const marginBottom = 50;
 const marginLeft = 42;
 
 d3.csv("tv-views-by-genre2.csv", d3.autoType).then(data => {
@@ -11,7 +11,7 @@ d3.csv("tv-views-by-genre2.csv", d3.autoType).then(data => {
 	.keys(keys)
 	.offset(d3.stackOffsetExpand)(data);
 
-  const height = data.length * 25 + marginTop + marginBottom;
+  const height = data.length * 60 + marginTop + marginBottom;
 
   const x = d3.scaleLinear()
 	.domain([0, 1])

@@ -28,6 +28,8 @@ body {
 	font-weight: 400;
 	font-style: normal;
 	color: white;
+	margin: 0px;
+	padding: 0px;
 	margin-inline: 80px;
 	background: #000000;
 	background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgb(42, 42, 42) 100%);
@@ -61,6 +63,19 @@ p {
 	line-height: 32px;
 	font-size: 18px;
 	color: black;
+}
+
+header {
+	position: fixed;
+	backdrop-filter: blur(20px);
+	margin-inline-start: -80px;
+	padding-inline: 80px;
+	bottom: 0px;
+}
+
+#container {
+	padding-block-start: 40px;
+	padding-block-end: 160px;
 }
 
 @media (max-width: 1087px) {
