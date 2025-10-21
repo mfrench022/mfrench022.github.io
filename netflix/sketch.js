@@ -4,7 +4,7 @@ const marginRight = 20;
 const marginBottom = 20;
 const marginLeft = 42;
 
-d3.csv("tv-views-by-genre.csv", d3.autoType).then(data => {
+d3.csv("tv-views-by-genre2.csv", d3.autoType).then(data => {
   const keys = data.columns.slice(1);
 
   const series = d3.stack()
