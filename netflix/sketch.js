@@ -38,7 +38,6 @@ const getVar = (name) =>
 	.getPropertyValue(name)
 	.trim();
 
-
 const palette = keys.map(k => getVar(`--color-${keyToCss[k]}`));
 
 // D3 color scale using CSS-driven colors
