@@ -9,6 +9,21 @@
   --color-variety: #489EE3;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Aldrich", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(42, 42, 42) 100%);
+  background-attachment: fixed; /* optional: keeps gradient anchored on scroll */
+}
+
 .animation {background-color: var(--color-animation); }
 .documentary {background-color: var(--color-documentary); }
 .gameshow {background-color: var(--color-gameshow); }
@@ -24,16 +39,6 @@ svg text {
   font-size: 14px;
 }
 
-body {
-	font-family: "Aldrich", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	color: white;
-	margin: 0px;
-	padding: 0px;
-	background: #000000;
-	background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgb(42, 42, 42) 100%);
-}
 
 .guide {
 	bottom: 0px;
