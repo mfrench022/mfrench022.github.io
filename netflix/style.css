@@ -49,11 +49,12 @@ body {
 
 h1 {
 	font-size: 28px;
+	margin-inline: 80px;
 }
 
 h2 {
 	font-size: 18px;
-	color: white;
+	margin-inline: 80px;
 }
 
 p {
@@ -70,7 +71,8 @@ header {
 	backdrop-filter: blur(20px);
 	top: 0px;
 	left: 0px;
-	padding-block-start: 20px;
+	/* background-color: green; */
+	width: 100%;
 }
 
 #container {
@@ -94,32 +96,27 @@ header {
   line-height: 18px;
 }
 
-header {
-	padding-inline: 80px;
-
-}
 
 #container:hover {
 	cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+#container {
+	padding-inline: 30px;
+}
+
 h1 {
 	font-size: 20px;
+	padding-inline: 0px;
 }
 
 h2 {
 	font-size: 12px;
 	color: white;
+	padding-inline: 0px;
 }
 
-header {
-padding-inline: 30px;
-}
 
-#container {
-
-	padding-inline: 30px;
-}
 
 }
