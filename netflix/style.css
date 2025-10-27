@@ -22,7 +22,6 @@ svg text {
   font-family: "Aldrich", sans-serif;
   fill: #ffffff;
   font-size: 14px;
-
 }
 
 body {
@@ -37,7 +36,15 @@ body {
 }
 
 .guide {
-	display: none;
+	bottom: 0px;
+	position: fixed;
+	backdrop-filter: blur(20px);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	/* background-color: green; */
+	width: 100%;
 }
 
 h1 {
@@ -46,42 +53,29 @@ h1 {
 
 h2 {
 	font-size: 18px;
+	color: white;
 }
-/* 
-section {
-	display: flex;
-	flex-direction: row;
-	justify-content: start;
-	flex-wrap: wrap;
-	width: 100%;
-	column-gap: 61.75px;
-	padding-bottom: 20px;
-} */
 
 p {
-	height: 30px;
-	width: 140px;
+	height: 20px;
+	width: 100px;
 	text-align: center;
-	line-height: 32px;
-	font-size: 18px;
-	color: black;
+	line-height: 22px;
+	font-size: 12px;
+	color: white;
 }
 
 header {
 	position: fixed;
-	/* background-color: green; */
 	backdrop-filter: blur(20px);
-	padding-inline: 90px;
 	top: 0px;
 	left: 0px;
-	width: 90%;
 	padding-block-start: 20px;
-	padding-inline-end: 300px;
 }
 
 #container {
 	padding-block-start: 160px;
-	padding-block-end: 20px;
+	padding-block-end: 80px;
 	padding-inline: 80px;
 }
 
@@ -100,18 +94,32 @@ header {
   line-height: 18px;
 }
 
+header {
+	padding-inline: 80px;
+
+}
+
 #container:hover {
 	cursor: pointer;
 }
 
-@media (max-width: 1087px) {
-  section {
-	width: 100%;
-	margin-inline: 0px;
-  }
+@media (max-width: 600px) {
+h1 {
+	font-size: 20px;
+}
 
+h2 {
+	font-size: 12px;
+	color: white;
+}
+
+header {
+padding-inline: 30px;
+}
 
 #container {
-	padding-block-start: 190px;
+
+	padding-inline: 30px;
 }
+
 }

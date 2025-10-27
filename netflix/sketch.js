@@ -91,8 +91,7 @@ const color = d3.scaleOrdinal()
     .style("background", colorVar)
     .style("color", textColor)
     .html(
-      `<strong>${label}</strong><br><br>` +
-      `Year: ${year}<br>` +
+      `<strong>${label}</strong> | ${year}<br><br>` +
       `Views: ${rawValue.toLocaleString()}<br>` +
       `Share: ${pct}%`
     )
