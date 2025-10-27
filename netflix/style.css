@@ -32,31 +32,31 @@ body {
 	color: white;
 	margin: 0px;
 	padding: 0px;
-	margin-inline: 80px;
 	background: #000000;
 	background: linear-gradient(0deg,rgba(0, 0, 0, 1) 0%, rgb(42, 42, 42) 100%);
 }
 
+.guide {
+	display: none;
+}
+
 h1 {
-	padding-block-start: 20px;
 	font-size: 28px;
-	/* max-width: 39ch; */
 }
 
 h2 {
 	font-size: 18px;
 }
-
+/* 
 section {
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
 	flex-wrap: wrap;
 	width: 100%;
-	/* background-color: pink; */
 	column-gap: 61.75px;
 	padding-bottom: 20px;
-}
+} */
 
 p {
 	height: 30px;
@@ -69,16 +69,39 @@ p {
 
 header {
 	position: fixed;
+	/* background-color: green; */
 	backdrop-filter: blur(20px);
 	padding-inline: 90px;
 	top: 0px;
 	left: 0px;
-	width: 100%;
+	width: 90%;
+	padding-block-start: 20px;
+	padding-inline-end: 300px;
 }
 
 #container {
 	padding-block-start: 160px;
 	padding-block-end: 20px;
+	padding-inline: 80px;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: "Aldrich", sans-serif;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  line-height: 18px;
+}
+
+#container:hover {
+	cursor: pointer;
 }
 
 @media (max-width: 1087px) {

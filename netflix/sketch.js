@@ -58,13 +58,51 @@ const color = d3.scaleOrdinal()
 	.data(series)
 	.join("g")
 	  .attr("fill", d => color(d.key))
-	.selectAll("rect")
-	.data(d => d)
-	.join("rect")
-	  .attr("x", d => x(d[0]))
-	  .attr("y", (d, i) => y(data[i].year))
-	  .attr("width", d => x(d[1]) - x(d[0]))
-	  .attr("height", y.bandwidth());
+	
+	  
+	  .selectAll("rect")
+.data(d => d.map(v => ({...v, key: d.key})))
+.join("rect")
+  .attr("x", d => x(d[0]))
+  .attr("y", (d, i) => y(data[i].year))
+  .attr("width", d => x(d[1]) - x(d[0]))
+  .attr("height", y.bandwidth())
+
+  .on("mousemove", (event, d) => {
+  const tooltip = d3.select("#tooltip");
+  const year = d.data.year;
+  const label = d.key;
+  const rawValue = d.data[label];
+  const pct = ((d[1] - d[0]) * 100).toFixed(1);
+
+  // Fetch the CSS variable color for this label
+  const colorVar = getVar(`--color-${keyToCss[label]}`);
+
+  // Decide if the tooltip text should be white or black
+  const [r, g, b] = colorVar
+    .replace(/[^\d,]/g, "")
+    .split(",")
+    .map(Number);
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  const textColor = brightness > 150 ? "black" : "white";
+
+  tooltip
+    .style("opacity", 1)
+    .style("background", colorVar)
+    .style("color", textColor)
+    .html(
+      `<strong>${label}</strong><br><br>` +
+      `Year: ${year}<br>` +
+      `Views: ${rawValue.toLocaleString()}<br>` +
+      `Share: ${pct}%`
+    )
+    .style("left", `${event.pageX + 15}px`)
+    .style("top", `${event.pageY - 28}px`);
+})
+.on("mouseout", () => {
+  d3.select("#tooltip").style("opacity", 0);
+});
+
 
   svg.append("g")
 	.attr("transform", `translate(0,${marginTop})`)
