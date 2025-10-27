@@ -1,484 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>michael french</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>michaelfrench.co | work</title>
 
-    <style>
-        .zig-zag-line {
-  width: 100%;
-  height: 1vw;
-  background-color: lightblue;
-  transition: 200ms;
-  }
-
-  body {
-    /* min-height: 100vh;  */
-    background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
-    margin: 0;
-    padding: 0;
-    transition: 200ms;
-  }
-
-body::-webkit-scrollbar {
-    display: none;
-  }
-  
-  h1 {
-    padding: 0px;
-    margin: 0px;
-    font-size: 10vw;
-    letter-spacing: 0.01vw;
-    position: absolute;
-    left: -0.9vw;
-    top: 2.6vw;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: 200ms;
-  }
-  
-  h2 {
-    position: absolute;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 3.145vw;
-    right: -0.3vw;
-    top: -2.5vw;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-    transition: 200ms;
-  }
-
-  h1:hover {
-    cursor: pointer;
-  }
-
-  h2:hover {
-    cursor: default;
-  }
-
-  .row1 {
-    /* background-color: red; */
-    height: 12.2vw;
-    width: 100%;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: 200ms;
-  }
-  
-  .row2 {
-    /* background-color: blue; */
-    height: 3vw;
-    width: 100%;
-    position: relative;
-    transition: 200ms;
-    
-  }
-  
-  .spacer {
-    width: 100%;
-    height: 2vw;
-    /* background-color: green; */
-  }
-  
-  .row3 {
-    /* background-color: blue; */
-    height: 36.8vw;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 0.35fr 5fr .3fr 9fr 0.35fr;
-    transition: 200ms;
-  }
-
-  .row33 {
-    /*   background-color: blue; */
-      height: 36.8vw;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 0.35fr 9fr .3fr 5fr 0.35fr;
-      transition: 200ms;
-    }
-  
-  .side {
-    width: 100%;
-    height: 100%;
-    transition: 200ms;
-  /*   background-color: purple; */
-  }
-  
-  .box3 {
-    width: 100%;
-    height: 100%;
-    transition: 200ms;
-    /* margin-top: 2vw; */
-    display: flex; /* Enables Flexbox */
-    flex-direction: column; /* Stacks elements vertically */
-    justify-content: center; /* Centers elements vertically */
-    transition: 200ms;
-    /* background-color: red; */
-  }
-
-  .box33 {
-    width: 100%;
-    height: 100%;
-    transition: 200ms;
-    /* margin-top: 2vw; */
-    display: flex; /* Enables Flexbox */
-    flex-direction: column; /* Stacks elements vertically */
-    justify-content: center; /* Centers elements vertically */
-    transition: 200ms;
-    /* background-color: red; */
-  }
-  
-  .box4 {
-    width: 2vw;
-    height: 100%;
-    transition: 200ms;
-    /* background-color: orange; */
-  }
-  
-  h3 {
-    font-size: 3.145vw;
-    font-family: "Aldrich", sans-serif;
-    transition: 200ms;
-  }
-  
-  .box3 ul {
-    font-weight: 400;
-    font-size: 3.145vw;
-    position: relative;
-    line-height: 5vw;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-    transition: 200ms;
-    padding-left: 1.5vw;
-    list-style-type: none
-  }
-
-  .paragraph p {
-    font-weight: 400;
-    font-size: 2.2vw;
-    /* left: 1.8vw; */
-    position: relative;
-    list-style-type: none;
-    line-height: 2.8vw;
-    color: white;
-    font-family: "Aldrich", sans-serif;
-    transition: 200ms;
-    margin-right: 0.4vw;
-    margin-left: 1.5vw;
-  }
-  
-  .button {
-    background-color: white;
-    height: 4vw;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: 200ms;
-    border-top-left-radius: 1vw;
-    border-bottom-right-radius: 1vw;
-  }
-  
-  .button:hover {
-    background-color: lightblue;
-    transition: 200ms;
-  }
-  
-  a {
-    color: #8968CD;
-    text-decoration: none;
-    font-family: "Aldrich", sans-serif;
-    transition: 200ms;
-  }
-
-  .button h3 {
-    position: relative;
-    left: 1.5vw;
-    font-size: 3.145vw;
-    top: 0.7vw;
-    transition: 200ms;
-  }
-
-  .button2 {
-    background-color: white;
-    height: 4vw;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: 200ms;
-    border-top-right-radius: 1vw;
-    border-bottom-left-radius: 1vw;
-    transition: 200ms;
-  }
-  
-  .button2:hover {
-    background-color: lightblue;
-    transition: 200ms;
-  }
-
-  .button2 h3 {
-    position: relative;
-    left: 1.5vw;
-    font-size: 3.145vw;
-    top: 0.7vw;
-    transition: 200ms;
-  }
-
-  .coding:hover {
-    /* color: lightblue; */
-    cursor: default;
-    transition: 200ms;
-  }
-
-  .coding:hover {
-    /* color: lightblue; */
-    cursor: default;
-    transition: 200ms;
-  }
-
-  .type:hover {
-    /* color: lightblue; */
-    cursor: default;
-    transition: 200ms;
-  }
-
-  .brand:hover {
-    /* color: lightblue; */
-    cursor: default;
-    transition: 200ms;
-  }
-
-  .ux:hover {
-    /* color: lightblue; */
-    cursor: default;
-    transition: 200ms;
-  }
-/* 
-  .licontainer:hover {
-    cursor: none;
-  } */
-  
-  .box5 {
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow;  */
-    display: flex; /* Enable flexbox for alignment */
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    overflow: hidden; /* Prevent any overflow from the image */
-    transition: 200ms;
-    border-top-right-radius: 1vw;
-    border-bottom-left-radius: 1vw;
-}
-
-.box5 img {
-    height: auto; /* Fill the div vertically */
-    width: 100%; /* Adjust width to maintain aspect ratio */
-    object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
-    transition: 200ms;
-}
-
-.box55 {
-    width: 100%;
-    height: 100%;
-    /* background-color: yellow; */
-    display: flex; /* Enable flexbox for alignment */
-    justify-content: center; /* Horizontally center the image */
-    align-items: center; /* Vertically center the image */
-    overflow: hidden; /* Prevent any overflow from the image */
-    transition: 200ms;
-    border-top-right-radius: 1vw;
-    border-bottom-left-radius: 1vw;
-}
-
-.box55 img {
-    height: auto; /* Fill the div vertically */
-    width: 100%; /* Adjust width to maintain aspect ratio */
-    transition: 200ms;
-    object-fit: cover; /* Ensure the image fills the container, potentially cropping the sides */
-}
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.spacer h3 {
-  font-size: 0.7vw;
-  margin-left:0vw;
-  position: static;
-  color: white;
-}
-
-.socials {
-  width: 25vw;
-  height: 100%;
-  /* background-color: green; */
-}
-
-.socials h2 {
-  position: absolute;
-  overflow: hidden;
-  font-size: 1.9vw;
-  color: white;
-  font-family: "Aldrich", sans-serif;
-  transition: 200ms;
-  left: 0;
-  top: -0.8vw;
-}
-
-.socials a {
-  
-    color: lightblue;
-    text-decoration: underline;
-  }
-
-h2, h3, p, a, span {
-    font-family: 'Aldrich', sans-serif;
-    font-weight: normal; 
-    letter-spacing: normal;
-}
-
-h2 {
-  letter-spacing: .015vw;
-}
-  
-  
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/qyq1fyf.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <div class ="row1"><h1>michael french</h1></div>
-    <div class ="row2"><h2>communication design student portfolio</h2>
-        <div class = "socials"><h2>
-            <a href="mailto:michael@michaelfrench.co">contact</a> | <a href="https://www.instagram.com/michaelfrench.co/" target="_blank">instagram</a> | <a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank">linkedin</a>
-          </h2></div>
-    </div> 
-    <div class ="spacer"></div>
-    <div class="zig-zag-line"></div>
-    <div class ="spacer"></div>
-    <div class ="row3">
-      <div class ="side"></div>
-      <div class ="box3">
-        <a href="work.html"><div class = "button"><h3>student work</h3></div></a>
-        <div class = "licontainer"><p><ul>
-            <li><div class = "ux">product design</div></li>
-            <li><div class = "type">typography</div></li>
-            <li><div class = "brand">branding</div></li>
-            <li><div class = "coding">creative coding</div></li>
-        </ul></p>
-            </div>
+
+  <div class="gridbody">
+    <!-- Custom cursor element (no stray images after this) -->
+    <div class="custom-cursor site-wide" aria-hidden="true">
+      <img class="state base"  src="images/cursor.png"       alt="">
+      <img class="state hover" src="images/cursorhover.png"  alt="">
+      <img class="state down"  src="images/cursorpress.png"  alt="">
+    </div>
+
+    <div class="spacerrow"></div>
+
+    <header class="row1">
+      <div class="spacer"></div>
+      <div class="column">
+        <a href="about.html"><div class="header">
+          <div class="name">MICHAEL FRENCH<sup><span> </span>.co</sup></div>
+        </div></a>
       </div>
-      <div class ="box4"></div>
-      <div class ="box5"><img src="Portfolio/SquareMockup.jpg"></div>
-      <div class ="side"></div>
-    </div>
-    <!-- <div class ="spacer"></div> -->
-    <div class ="spacer"></div>  
-    
-    <div class="zig-zag-line"></div>
-    <div class ="spacer"></div>  
-
-    <div class ="row33">
-      <div class ="side"></div>
-      <div class ="box55"><img src="Portfolio/BookMockup.jpg"></div>
-      <div class ="box4"></div>
-      <div class ="box33">
-        <a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank">
-            <div class = "button2"><h3>about me</h3></div></a>
-       <div class = "paragraph"> <p>i am a former science communicator + marine biologist turned graphic artist, currently pursuing my master’s degree  in communication design at parsons in nyc</p></div></div>
-      <div class ="side"></div>
-    </div>
-
-    <!-- <div class ="spacer"></div>  -->
-    <div class ="spacer"></div> 
-    
-    <div class="zig-zag-line"></div>
-    <div class ="spacer"></div> 
-    
-    <div class ="row3">
-      <div class ="side"></div>
-      <div class ="box33">
-        <a href="scicomms.html"><div class = "button"><h3>science comms</h3></div></a>
-        <div class = "paragraph"><p>prior to my design studies,<br>i spent four years working as director of social media at a boutique pr agency specializing in science communications for life science, biotech, + pharmaceutical companies</p></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column">
+          <div class="cd">communication<br>designer</div>
       </div>
-      <div class ="box4"></div>
-      <div class ="box5"><img src="Portfolio/SocialsMockup.gif"></div>
-      <div class ="side"></div>
-    </div>
-  <!-- <div class ="spacer"></div> -->
-  <div class ="spacer"></div>
-   
-    <div class="zig-zag-line"></div>
-    <div class ="spacer"></div>  
+      <div class="spacer"></div>
+    </header>
 
-    <div class ="row33">
-      <div class ="side"></div>
-      <div class ="box55"><img src="Portfolio/gchawksbill2 copy.jpg"></div>
-      <div class ="box4"></div>
-      <div class ="box33">
-        <a href="photography.html">
-            <div class = "button2"><h3>photography</h3></div></a>
-       <div class = "paragraph"> <p>my passion for underwater photography began at a young age and flourished during my time studying marine science and biology at the university of miami</p></div></div>
-      <div class ="side"></div>
+    <div class="filter-bar">
+      <div class="spacer"></div>
+      <button data-tag="ux/ui"><h3>UX/UI</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="branding"><h3>BRANDING</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="motion"><h3>MOTION</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="code"><h3>CODE/WEB</h3></button>
+      <div class="spacer"></div>
+      <button data-tag="type"><h3>TYPE</h3></button>
+      <div class="spacer"></div>
     </div>
 
-    <!-- <div class ="spacer"></div>  -->
-    <div class ="spacer"></div> 
-    <div class ="spacer">
-        <h3>site by michael french | mockup templates created by originalmockup on freepik</h3>
-    </div> 
-    <script>
-        const codingDiv = document.querySelector('.coding');
-        const typeDiv = document.querySelector('.type');
-        const brandDiv = document.querySelector('.brand');
-        const uxDiv = document.querySelector('.ux');
-        const box5Image = document.querySelector('.box5 img');
+    <div class="projects">
 
-        codingDiv.addEventListener('mouseenter', () => {
-            box5Image.src = "Portfolio/beyoncemockup2.jpg";
-        });
 
-        codingDiv.addEventListener('mouseleave', () => {
-            box5Image.src = "Portfolio/SquareMockup.jpg";
-        });
+      <section class="projectcontainer clickable" data-tags="ux/ui branding motion">
+        <a href ="work/fieldtrip.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/fieldtripmockup.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>FIELDTRIP</h3>
+          <h2>product research, development, + ux design for a mobile application designed to help adults rediscover group learning.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+            
+          </div>
+        </div>
+      </a>
+        
+      </section>
 
-        typeDiv.addEventListener('mouseenter', () => {
-            box5Image.src = "Portfolio/DoctorsMockup2.jpg";
-        });
+      <section class="projectcontainer clickable" data-tags="branding code">
+        <a href ="work/taylorguitars.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/LegendMockup copy.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>TAYLOR GUITARS</h3>
+          <h2>automated packaging system built with code in order to generate custom packaging designs for each guitar model based on its tone, wood type, + body shape.</h2>
+        <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
 
-        typeDiv.addEventListener('mouseleave', () => {
-            box5Image.src = "Portfolio/SquareMockup.jpg";
-        });
 
-        brandDiv.addEventListener('mouseenter', () => {
-            box5Image.src = "Portfolio/BusinessCardMockup.jpg";
-        });
+      <section class="projectcontainer clickable" data-tags="motion type">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/post2.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>JACKFIR</h3>
+          <h2>email marketing, web design, + motion advertising design for jackfir, a skincare startup focused on clean products for men.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
 
-        brandDiv.addEventListener('mouseleave', () => {
-            box5Image.src = "Portfolio/SquareMockup.jpg";
-        });
+       <section class="projectcontainer clickable" data-tags="branding code type">
+         <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/Wingspan1 copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>WINGSPAN</h3>
+          <h2>
+editorial design system, branding, web design + typography, for wingspan, a hypothetical quarterly aviation technology magazine.</h2> 
+       <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODE/WEB</button>
+             <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+      </section>
 
-        uxDiv.addEventListener('mouseenter', () => {
-            box5Image.src = "Portfolio/Rooted Mockup.jpg";
-        });
 
-        uxDiv.addEventListener('mouseleave', () => {
-            box5Image.src = "Portfolio/SquareMockup.jpg";
-        });
+      <section class="projectcontainer clickable" data-tags="ux/ui branding">
+        <a href ="rooted.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/Rooted Mockup copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ROOTED</h3>
+          <h2>user research, user flow mapping, wireframe creation, user testing, brand design, + final prototype construction for an app designed to address urbanization’s impacts on both human + ecological health.</h2>
+          <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+          </div>
+        </div></a>
+        
+      </section>
 
-        if (window.location.pathname.endsWith("index.html")) {
-    window.location.replace("/");
-  }
-    </script>
+        <section class="projectcontainer clickable" data-tags="branding code">
+          <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/GEN2 copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>GEN REBRAND</h3>
+          <h2>periodical logo for genetic engineering + biotech news, made with code. the logo evolves over time using an api to follow united states fda drug approvals.</h2>
+          
+       <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+       <section class="projectcontainer clickable" data-tags="motion type">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/Story copy.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>THROUGH SHIFTING SEASONS</h3>
+          <h2>poster + instagram story design for a hypothetical staging of vivaldi's the four seasons, produced fka twigs, arca, + mark morris.</h2>
+        <div class="tags">
+            <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+
+      <section class="projectcontainer clickable" data-tags="code type">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/DoctorsMockup2 copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ANNUAL REPORT</h3>
+          <h2>typography, web + interaction design for doctors without borders’ yearly financial reporting.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="code">CODE/WEB</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+
+ <section class="projectcontainer clickable" data-tags="code">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/clockpitheader.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>THE CLOCKPIT</h3>
+          <h2>data exploration that features multiple creative visualizations of time.</h2>
+        <div class="tags">
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+       <section class="projectcontainer clickable" data-tags="branding motion">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/chiswell.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>CAMP CHISWELL</h3>
+          <h2>brand identity + motion design for camp chiswell, a family vacation site in vermont.</h2>
+        <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+        </a>
+        
+      </section>
+
+
+        <section class="projectcontainer clickable" data-tags="branding motion">
+          <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/2 copy.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>PATH REBRAND</h3>
+          <h2>motion identity + brand system for path, a transit system in new york + new jersey.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+<section class="projectcontainer clickable" data-tags="code">
+  <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/3 copy.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ANALOGIES</h3>
+          <h2>a web-based visual archive comparing natural + man-made structures + their associated functions in order to highlight the ways in which human design takes inspiration from nature in order to achieve a common functional goal.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+       <section class="projectcontainer clickable" data-tags="code">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/beyoncegif copy.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>BEYONCÉ</h3>
+          <h2>editorial artwork for a new york times’ op-ed designed with creative coding in order to engage the reader.</h2>
+          
+       <div class="tags">
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+       <section class="projectcontainer clickable" data-tags="branding type">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/BusinessCardMockup copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>POMODORO</h3>
+          <h2>development of logo + brand materials for a new restaurant, with design inspiration taken from both the cuisine served + the restaurant name, + a focus on typography.</h2>
+          
+       <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+
+         <section class="projectcontainer clickable" data-tags="branding code">
+          <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/ummockup2 copy.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>UMIAMI</h3>
+          <h2>logo redesign for the university of miami using only creative coding, with a focus on creating a generative design with various permutations.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+     
+
+      <section class="projectcontainer clickable" data-tags="ux/ui branding motion">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/Screenshot 2025-08-27 at 4.26.45 PM.png" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>ROOTED VIDEO</h3>
+          <h2>advertisement created with motion design to promote my digital product prototype, rooted, including logo animation.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+      <section class="projectcontainer clickable" data-tags="type">
+        <a href ="404.html" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/UrbanType copy.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>URBAN TYPE</h3>
+          <h2>a mini archive exploring urban ecology, consisting of manipulated images + typography scans.</h2>
+          
+        <div class="tags">
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+    </div>
+
+ 
+    <div class="spacerrow"></div>
+    <div class="spacerrow"></div>
+    <div class="spacerrow"></div>
+    <div class ="footerstroke"></div>
+    <div class ="footer">
+      <div class="spacer"></div>
+      <a href="about.html"><button><h3>ABOUT ME</h3></button></a>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <button><a href="mailto:michael@michaelfrench.co"><h3>CONTACT</h3></a></button>
+      <div class="spacer"></div>
+      <button><a href="https://www.instagram.com/michaelfrench.co/" target="_blank"><h3>INSTAGRAM</h3></a></button>
+      <div class="spacer"></div>
+      <button><a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank"><h3>LINKEDIN</h3></a></button>
+      <div class="spacer"></div>
+      
+    </div>
+
+
+  </div>
+
+  
+
+  <script>
+    // -------- Custom Cursor --------
+    (() => {
+      const cursor = document.querySelector('.custom-cursor.site-wide');
+      if (!cursor) return;
+
+      const setPos = (e) => {
+        cursor.style.transform =
+          `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%) scale(var(--s,1))`;
+      };
+
+      let shown = false;
+      document.addEventListener('mouseenter', () => { cursor.style.opacity = 1; shown = true; });
+      document.addEventListener('mouseleave', () => { cursor.style.opacity = 0; shown = false; });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!shown) cursor.style.opacity = 1;
+        setPos(e);
+      });
+
+      document.addEventListener('mousedown', () => {
+        cursor.classList.remove('is-base', 'is-hover');
+        cursor.classList.add('is-down');
+      });
+      document.addEventListener('mouseup', () => {
+        cursor.classList.remove('is-down');
+        cursor.classList.add(isInteractive(lastHoverTarget) ? 'is-hover' : 'is-base');
+      });
+
+      const INTERACTIVE_SELECTOR = `
+        a, button, [role="button"], [data-tag],
+        input, select, textarea, label,
+        .clickable
+      `;
+
+      let lastHoverTarget = null;
+      const isInteractive = (el) => !!(el && el.closest(INTERACTIVE_SELECTOR));
+
+      document.addEventListener('pointerover', (e) => {
+        lastHoverTarget = e.target;
+        if (isInteractive(e.target) && !cursor.classList.contains('is-down')) {
+          cursor.classList.remove('is-base');
+          cursor.classList.add('is-hover');
+        }
+      });
+
+      document.addEventListener('pointerout', (e) => {
+        if (!cursor.classList.contains('is-down')) {
+          const stillOnInteractive = isInteractive(e.relatedTarget);
+          cursor.classList.toggle('is-hover', !!stillOnInteractive);
+          cursor.classList.toggle('is-base', !stillOnInteractive);
+        }
+        lastHoverTarget = e.relatedTarget;
+      });
+
+      cursor.classList.add('is-base');
+    })();
+
+    // -------- Filtering System --------
+    const selectedTags = new Set();
+
+    function toggleTag(tag) {
+      if (selectedTags.has(tag)) selectedTags.delete(tag);
+      else selectedTags.add(tag);
+      updateUI();
+    }
+
+    function updateUI() {
+      const projects = document.querySelectorAll(".projectcontainer");
+      projects.forEach(project => {
+        const tags = (project.dataset.tags || "").split(" ");
+        const matches = [...selectedTags].every(tag => tags.includes(tag));
+        project.style.display = selectedTags.size === 0 || matches ? "grid" : "none";
+      });
+
+      const allButtons = document.querySelectorAll('[data-tag]');
+      allButtons.forEach(btn => {
+        const tag = btn.dataset.tag;
+        btn.classList.toggle("active", selectedTags.has(tag));
+      });
+    }
+
+    document.querySelectorAll('[data-tag]').forEach(btn => {
+      btn.addEventListener("click", () => toggleTag(btn.dataset.tag));
+    });
+
+//-------- Tag/link override ---------
+  document.querySelectorAll('.tag').forEach(button => {
+    button.addEventListener('click', event => {
+      event.stopPropagation();  // stops click from bubbling up
+      event.preventDefault();   // stops the link navigation
+      const tag = button.dataset.tag;
+      // do whatever you want the tag to do:
+      console.log("Tag clicked:", tag);
+      // e.g. trigger a filter function here
+    });
+  });
+
+  </script>
 </body>
 </html>
