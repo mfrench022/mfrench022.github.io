@@ -10,6 +10,10 @@
       --stroke: 0.15rem;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
     .gridbody {
       width: 100%;
       height: 100%;
@@ -80,9 +84,9 @@
     .projectrow1, .projectrow2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-      gap: var(--padding);
-      margin-left: 1.65vw;
-      margin-right: 1.65vw;
+        margin-inline: var(--padding);
+        gap: var(--padding);
+        padding-inline: 0;
       transition: 300ms ease-in-out;
       padding-block: calc(var(--padding) / 2);
     }
@@ -160,8 +164,8 @@
 
     .projectcontainer {
       background-color: #4D4356;
-      width: 99.5%;
       height: 30rem;
+      width: 100%;
       border-radius: var(--radius);
       border: var(--stroke) solid #242424;
       color: #242424;
@@ -177,7 +181,7 @@
 
     .projectcontainer2{
       background-color: #4D4356;
-      width: 99.5%;
+      width: 100%;
       height: 100%;
       border-radius: var(--radius);
       border: var(--stroke) solid #242424;
@@ -349,6 +353,8 @@
       color: inherit;
       text-decoration: none;
     }
+
+    
 
     /* -------- Custom Cursor -------- */
 
