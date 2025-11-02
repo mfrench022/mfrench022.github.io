@@ -1,12 +1,12 @@
 :root{
-  --color-animation: #8B102A;
-  --color-documentary: #A53A5D;
-  --color-gameshow: #BB5E3A;
-  --color-reality: #8A8AD0;
-  --color-scripted: #0A3A7C;
-  --color-sports: #D19096;
-  --color-talkshow: #89CBCA;
-  --color-variety: #489EE3;
+  --color-animation: #005F73;
+  --color-documentary: #0A9396;
+  --color-gameshow: #94D2BD;
+  --color-reality: #EE9B00;
+  --color-scripted: #9B2226;
+  --color-sports: #E9D8A6;
+  --color-talkshow: #CA6702;
+  --color-variety: #BB3E03;
 }
 
 html {
@@ -68,7 +68,7 @@ p {
 	text-align: center;
 	line-height: 22px;
 	font-size: 12px;
-	color: white;
+	color: black;
 }
 
 header {
