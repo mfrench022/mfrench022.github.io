@@ -1,0 +1,127 @@
+:root{
+  --color-animation: #005F73;
+  --color-documentary: #0A9396;
+  --color-gameshow: #94D2BD;
+  --color-reality: #EE9B00;
+  --color-scripted: #9B2226;
+  --color-sports: #E9D8A6;
+  --color-talkshow: #CA6702;
+  --color-variety: #BB3E03;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Aldrich", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(42, 42, 42) 100%);
+  background-attachment: fixed; /* optional: keeps gradient anchored on scroll */
+}
+
+.animation {background-color: var(--color-animation); }
+.documentary {background-color: var(--color-documentary); }
+.gameshow {background-color: var(--color-gameshow); }
+.reality {background-color: var(--color-reality); }
+.scripted {background-color: var(--color-scripted); }
+.sports {background-color: var(--color-sports); }
+.talkshow {background-color: var(--color-talkshow); }
+.variety{background-color: var(--color-variety); }
+
+svg text {
+  font-family: "Aldrich", sans-serif;
+  fill: #ffffff;
+  font-size: 14px;
+}
+
+
+.guide {
+	bottom: 0px;
+	position: fixed;
+	backdrop-filter: blur(20px);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	/* background-color: green; */
+	width: 100%;
+}
+
+h1 {
+	font-size: 28px;
+	margin-inline: 80px;
+}
+
+h2 {
+	font-size: 18px;
+	margin-inline: 80px;
+}
+
+p {
+	height: 20px;
+	width: 100px;
+	text-align: center;
+	line-height: 22px;
+	font-size: 12px;
+	color: black;
+}
+
+header {
+	position: fixed;
+	padding-block-start: 10px;
+	backdrop-filter: blur(20px);
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#container {
+	padding-block-start: 160px;
+	padding-block-end: 80px;
+	padding-inline: 80px;
+}
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: "Aldrich", sans-serif;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  line-height: 18px;
+}
+
+
+#container:hover {
+	cursor: pointer;
+}
+
+@media (max-width: 700px) {
+#container {
+	padding-inline: 30px;
+}
+
+h1 {
+	font-size: 20px;
+	padding-inline: 0px;
+}
+
+h2 {
+	font-size: 12px;
+	color: white;
+	padding-inline: 0px;
+}
+
+
+
+}
