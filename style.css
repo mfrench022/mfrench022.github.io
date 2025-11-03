@@ -7,8 +7,17 @@
 }
 
         html {
-        background: linear-gradient(112deg,rgba(245,245,245,1) 0%, rgba(245,242,235,1) 51%, rgba(239,228,245,1) 100%);
-    }
+  min-height: 100%;
+  background: linear-gradient(
+    112deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(245, 242, 235, 1) 51%,
+    rgba(239, 228, 245, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;     /* ensures gradient covers viewport */
+  background-size: cover;           /* stretch to fill visible area */
+        }
 
     :root {
       font-size: 120%;
@@ -325,8 +334,10 @@
 
     body {
       background: transparent;
-      overflow-x: hidden;
-      padding-block: calc(1 * var(--padding));
+  min-height: 100vh;                /* keep body at least viewport tall */
+  margin: 0;
+  padding-block: var(--padding);
+  padding-block-end:calc(1.5 *var(--padding));
     }
 
     a {
