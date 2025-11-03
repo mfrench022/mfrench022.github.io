@@ -7,9 +7,18 @@
   box-sizing: border-box;
 }
 
-    html {
-        background: linear-gradient(112deg,rgba(245,245,245,1) 0%, rgba(245,242,235,1) 51%, rgba(239,228,245,1) 100%);
-    }
+   html {
+  min-height: 100%;
+  background: linear-gradient(
+    112deg,
+    rgba(245, 245, 245, 1) 0%,
+    rgba(245, 242, 235, 1) 51%,
+    rgba(239, 228, 245, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;     /* ensures gradient covers viewport */
+  background-size: cover;           /* stretch to fill visible area */
+}
 
     :root {
       font-size: 120%;
@@ -27,14 +36,13 @@
       width: 100%;
       /* height: 100%; */
       position: relative;
-      padding-block-end: calc(2 *var(--padding));
     }
 
     h3 { font-weight: 500; }
 
-    .spacer { width: 100%; height: 100%; /* background: pink; */ }
+    .spacer { width: 100%; height: auto; /* background: pink; */ }
 
-    .column { width: 100%; height: 100%; /* background: green; */ }
+    .column { width: 100%; height: auto; /* background: green; */ }
 
     .row1 {
       transition: 300ms ease-in-out;
@@ -105,6 +113,7 @@
 
     .projectrow2 {
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
     }
 
     .projectrow1 {
@@ -202,7 +211,6 @@
     .projectcontainer2{
       background-color: #4D4356;
       width: 100%;
-      height: 100%;
       border-radius: var(--radius);
       border: var(--stroke) solid #242424;
       color: #242424;
@@ -212,6 +220,7 @@
       clip-path: inset(0 round var(--radius));
       transition: 300ms ease-in-out;
       outline: none;
+      height: auto;
     }
 
   
@@ -344,6 +353,7 @@
       bottom: 0;
       background: linear-gradient(299deg,rgba(245, 245, 245, 1) 0%, rgba(245, 242, 235, 1) 51%, rgba(239, 228, 245, 1) 100%);
       transition: 300ms ease-in-out;
+      margin-block-start: 0;
     }
 
     footer button {
@@ -363,12 +373,14 @@
       transition: 300ms ease-in-out;
     }
 
-    body {
-      background: transparent;
-      overflow-x: hidden;
-      padding-block: calc(1 * var(--padding));
-
-    }
+    
+body {
+  background: transparent;
+  min-height: 100vh;                /* keep body at least viewport tall */
+  margin: 0;
+  padding-block: var(--padding);
+  padding-block-end:calc(3 *var(--padding));
+}
 
     a {
       color: inherit;
