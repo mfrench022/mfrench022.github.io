@@ -2,6 +2,15 @@
  
     html, body, * { cursor: none !important; }
 
+
+    * {
+  box-sizing: border-box;
+}
+
+    html {
+        background: linear-gradient(112deg,rgba(245,245,245,1) 0%, rgba(245,242,235,1) 51%, rgba(239,228,245,1) 100%);
+    }
+
     :root {
       font-size: 120%;
       scroll-behavior: smooth;
@@ -16,9 +25,9 @@
 
     .gridbody {
       width: 100%;
-      height: 100%;
+      /* height: 100%; */
       position: relative;
-      padding-block-end: calc(3 *var(--padding));
+      padding-block-end: calc(2 *var(--padding));
     }
 
     h3 { font-weight: 500; }
@@ -29,9 +38,8 @@
 
     .row1 {
       transition: 300ms ease-in-out;
-      /* background-color: blue; */
       position: relative;
-      height: calc(5 * var(--padding));
+      height: calc(4 * var(--padding));
     }
 
      .name {
@@ -42,7 +50,7 @@
       -webkit-text-stroke-color: #242424;
       color: #D9D9D9;
       letter-spacing: -0.26vw;
-      inset-block-start: var(--padding);
+      inset-block-end: calc(1 * var(--padding));
       inset-inline-start: var(--padding);
     }
 
@@ -67,18 +75,22 @@
       position: absolute;
       line-height: 2.1vw;
       inset-inline-end: var(--padding);
-      inset-block-start: var(--padding);
+      inset-block-end: calc(1 * var(--padding));
     }
 
-    .filter-bar, .footer {
+    .filter-bar, footer {
       display: grid;
-      grid-template-columns: 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr;
+      grid-template-columns: 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr;
       transition: 300ms ease-in-out;
+      padding-inline: var(--padding);
+      width: 100%;
     }
 
     .filter-bar {
       height: 100%;
       position: sticky;
+      top: var(--padding);
+      z-index: 100;
     }
 
     .projectrow1, .projectrow2 {
@@ -99,8 +111,6 @@
         padding-block-start: var(--padding);
     }
 
-    
-
     button {
       background-color: #D9D9D9;
       width: 100%;
@@ -119,6 +129,16 @@
       transition: 300ms ease-in-out;
       outline: none;
     }
+
+    footer button {
+      padding-top: calc(1.5 * var(--stroke));
+    }
+
+    footer button:hover{
+       outline: calc(var(--radius) / 4) solid #4D4356;
+      outline-offset: -0.25rem;
+    }
+
 
     .project {
       background-color: #D9D9D9;
@@ -282,7 +302,7 @@
     }
     
 
-    .footer button:hover h3 { color: #4D4356; transition: 300ms ease-in-out;}
+    footer button:hover h3 { color: #4D4356; transition: 300ms ease-in-out;}
 
     button.active:hover {
       background-color: #7c688d;
@@ -318,16 +338,15 @@
       transition: 300ms ease-in-out;
      }
 
-    .footer {
+    footer {
       height: calc(2 * var(--padding));
-      width: 100%;
       position: fixed;
       bottom: 0;
       background: linear-gradient(299deg,rgba(245, 245, 245, 1) 0%, rgba(245, 242, 235, 1) 51%, rgba(239, 228, 245, 1) 100%);
       transition: 300ms ease-in-out;
     }
 
-    .footer button {
+    footer button {
       height: var(--padding);
       margin-top: calc(var(--padding) / 2);
       font-size: 0.8rem;
@@ -345,8 +364,10 @@
     }
 
     body {
-      background: linear-gradient(112deg,rgba(245, 245, 245, 1) 0%, rgba(245, 242, 235, 1) 51%, rgba(239, 228, 245, 1) 100%);
+      background: transparent;
       overflow-x: hidden;
+      padding-block: calc(1 * var(--padding));
+
     }
 
     a {
@@ -393,7 +414,6 @@
       :root {
         font-size: 90%;
       }
-
     }
 
 
@@ -424,5 +444,10 @@
     sup {
       font-size: 4vw;
     }
+
+    .cd {
+      inset-block-end: calc(1.5 * var(--padding));
+    }
+
     }
 
