@@ -472,33 +472,40 @@ body {
 
     /* PROJECT CONTAINER ZOOM */
 
-  .projectcontainer2.zoomed {
+.projectcontainer2.zoomed {
   position: fixed;
-  top: var(--padding);
-  left: var(--padding);
-  max-width: calc(100vw - 2 * var(--padding));
-  max-height: calc(100vh - 2 * var(--padding));
-  width: auto;
-  height: auto;
+  inset: 0;
+  margin: auto;
   z-index: 2000;
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  cursor: default;
-  background-color: transparent; /* no purple visible */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* Key changes below */
+  width: fit-content;
+  height: fit-content;
+  max-width: calc(100vw - 2 * var(--padding));
+  max-height: calc(100vh - 2 * var(--padding));
+
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: transparent;
+  border: none; /* hides border bleed from container */
+  transition: all 0.5s ease-in-out;
+  cursor: default;
 }
 
 .projectcontainer2.zoomed img {
-  width: 100%;
+  display: block;
+  width: auto;
   height: auto;
+  max-width: calc(100vw - 2 * var(--padding));
   max-height: calc(100vh - 2 * var(--padding));
   object-fit: contain;
   background: transparent;
+  border-radius: var(--radius);
+  border: var(--stroke) solid #242424; /* move border here instead */
 }
-
 
 .projectcontainer2 .close-btn {
   position: absolute;
