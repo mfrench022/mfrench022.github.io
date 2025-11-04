@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>michaelfrench.co | urban type</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/qyq1fyf.css">
+  <link rel="stylesheet" href="../projectstyle.css">
+
+</head>
+<body>
+
+  <div class="gridbody">
+    <!-- Custom cursor element (no stray images after this) -->
+    <div class="custom-cursor site-wide" aria-hidden="true">
+      <img class="state base"  src="../images/cursor.png"       alt="">
+      <img class="state hover" src="../images/cursorhover.png"  alt="">
+      <img class="state down"  src="../images/cursorpress.png"  alt="">
+    </div>
+
+    <div class="spacerrow"></div>
+
+    <header class="row1">
+      <div class="spacer"></div>
+      <div class="column">
+        <a href="../about/index.html"><div class="header">
+          <div class="name">MICHAEL FRENCH<sup><span> </span>.co</sup></div>
+        </div></a>
+      </div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <div class="column">
+          <div class="cd">communication<br>designer</div>
+      </div>
+      <div class="spacer"></div>
+    </header>
+
+       <div class="filter-bar">
+      <a href = "../index.html"><button><h3>↵ ALL PROJECTS</h3></button></a>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+     <div class="spacer"></div>
+      <div class="spacer"></div>
+      <a href = "../fieldtrip/index.html"><button><h3>NEXT PROJECT →</h3></button></a>
+    </div>
+
+    <div class="projectrow1">
+
+
+      <section class="projectcontainer">
+        <div class="imagecontainer">
+          <img src="../workimages/urbantype/urbantype1.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+ <h3>URBAN TYPE</h3>
+          <h2>a mini archive exploring urban ecology, consisting of manipulated images + typography scans.</h2>
+        </div>
+      </section>
+
+    </div>
+
+  <div class="projectrow2">
+
+<section class="projectcontainer2">
+        <div class="imagecontainer2">
+          <img src="../workimages/urbantype/urbantype1.jpg" alt="">
+        </div>
+      </section>
+
+<section class="projectcontainer2">
+        <div class="imagecontainer2">
+          <img src="../workimages/urbantype/urbantype1.jpg" alt="">
+        </div>
+      </section>
+
+      <section class="projectcontainer2">
+        <div class="imagecontainer2">
+          <img src="../workimages/urbantype/urbantype1.jpg" alt="">
+        </div>
+      </section>
+
+        <section class="projectcontainer2">
+        <div class="imagecontainer2">
+          <img src="../workimages/urbantype/urbantype1.jpg" alt="">
+        </div>
+      </section>
+
+        <section class="projectcontainer2">
+        <div class="imagecontainer2">
+          <img src="../workimages/urbantype/urbantype1.jpg" alt="">
+        </div>
+      </section>
+
+       <section class="projectcontainer2">
+        <div class="imagecontainer2">
+          <img src="../workimages/urbantype/urbantype1.jpg" alt="">
+        </div>
+      </section>
+
+</div>
+
+
+    <div class ="footerstroke"></div>
+    <footer>
+      <a href="about.html"><button><h3>ABOUT ME</h3></button></a>
+      <div class="spacer"></div>
+      <div class="column"></div>
+      <div class="spacer"></div>
+      <button><a href="mailto:michael@michaelfrench.co"><h3>CONTACT</h3></a></button>
+      <div class="spacer"></div>
+      <button><a href="https://www.instagram.com/michaelfrench.co/" target="_blank"><h3>INSTAGRAM</h3></a></button>
+      <div class="spacer"></div>
+      <button><a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank"><h3>LINKEDIN</h3></a></button>
+    </footer>
+
+
+  </div>
+
+  
+
+  <script>
+    // -------- Custom Cursor --------
+    (() => {
+      const cursor = document.querySelector('.custom-cursor.site-wide');
+      if (!cursor) return;
+
+      const setPos = (e) => {
+        cursor.style.transform =
+          `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%) scale(var(--s,1))`;
+      };
+
+      let shown = false;
+      document.addEventListener('mouseenter', () => { cursor.style.opacity = 1; shown = true; });
+      document.addEventListener('mouseleave', () => { cursor.style.opacity = 0; shown = false; });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!shown) cursor.style.opacity = 1;
+        setPos(e);
+      });
+
+      document.addEventListener('mousedown', () => {
+        cursor.classList.remove('is-base', 'is-hover');
+        cursor.classList.add('is-down');
+      });
+      document.addEventListener('mouseup', () => {
+        cursor.classList.remove('is-down');
+        cursor.classList.add(isInteractive(lastHoverTarget) ? 'is-hover' : 'is-base');
+      });
+
+      const INTERACTIVE_SELECTOR = `
+        a, button, [role="button"], [data-tag],
+        input, select, textarea, label,
+        .clickable
+      `;
+
+      let lastHoverTarget = null;
+      const isInteractive = (el) => !!(el && el.closest(INTERACTIVE_SELECTOR));
+
+      document.addEventListener('pointerover', (e) => {
+        lastHoverTarget = e.target;
+        if (isInteractive(e.target) && !cursor.classList.contains('is-down')) {
+          cursor.classList.remove('is-base');
+          cursor.classList.add('is-hover');
+        }
+      });
+
+      document.addEventListener('pointerout', (e) => {
+        if (!cursor.classList.contains('is-down')) {
+          const stillOnInteractive = isInteractive(e.relatedTarget);
+          cursor.classList.toggle('is-hover', !!stillOnInteractive);
+          cursor.classList.toggle('is-base', !stillOnInteractive);
+        }
+        lastHoverTarget = e.relatedTarget;
+      });
+
+      cursor.classList.add('is-base');
+    })();
+
+
+    // --------ZOOM IN ON IMAGE-------
+
+   const projectContainers = document.querySelectorAll('.projectcontainer2');
+
+  function enableZoom() {
+    projectContainers.forEach(container => {
+      container.addEventListener('click', zoomHandler);
+    });
+  }
+
+  function disableZoom() {
+    projectContainers.forEach(container => {
+      container.removeEventListener('click', zoomHandler);
+    });
+  }
+
+  function zoomHandler(e) {
+    // Prevent reopening if already zoomed
+    if (this.classList.contains('zoomed')) return;
+
+    // Close any open zoomed container
+    document.querySelectorAll('.projectcontainer2.zoomed').forEach(open => {
+      open.classList.remove('zoomed');
+      const btn = open.querySelector('.close-btn');
+      if (btn) btn.remove();
+    });
+
+    // Add zoomed state
+    this.classList.add('zoomed');
+
+    // Create close button
+    const closeBtn = document.createElement('button');
+    closeBtn.classList.add('close-btn');
+    closeBtn.innerHTML = '×';
+    this.appendChild(closeBtn);
+
+    // Close on click of the button
+    closeBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      this.classList.remove('zoomed');
+      closeBtn.remove();
+    });
+  }
+
+  // ---- Enable/disable based on viewport ----
+  function checkViewport() {
+    if (window.innerWidth >= 1031) {
+      enableZoom();
+    } else {
+      disableZoom();
+      // Also ensure nothing stays zoomed
+      document.querySelectorAll('.projectcontainer2.zoomed').forEach(open => {
+        open.classList.remove('zoomed');
+        const btn = open.querySelector('.close-btn');
+        if (btn) btn.remove();
+      });
+    }
+  }
+
+  // Run on load and on resize
+  window.addEventListener('load', checkViewport);
+  window.addEventListener('resize', checkViewport);
+
+  </script>
+</body>
+</html>
