@@ -470,3 +470,64 @@ body {
 
     }
 
+    /* PROJECT CONTAINER ZOOM */
+
+  .projectcontainer2.zoomed {
+  position: fixed;
+  top: var(--padding);
+  left: var(--padding);
+  max-width: calc(100vw - 2 * var(--padding));
+  max-height: calc(100vh - 2 * var(--padding));
+  width: auto;
+  height: auto;
+  z-index: 2000;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  cursor: default;
+  background-color: transparent; /* no purple visible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectcontainer2.zoomed img {
+  width: 100%;
+  height: auto;
+  max-height: calc(100vh - 2 * var(--padding));
+  object-fit: contain;
+  background: transparent;
+}
+
+
+.projectcontainer2 .close-btn {
+  position: absolute;
+  top: calc(0.5 * var(--padding));
+  right: calc(0.5 * var(--padding));
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2100;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.projectcontainer2.zoomed .close-btn {
+  opacity: 1;
+}
+
+@media (max-width: 1030px) {
+  .projectcontainer2:hover .imagecontainer2 img {
+    transform: none !important;
+  }
+  .projectcontainer2 {
+    cursor: default;
+  }
+}
