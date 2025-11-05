@@ -88,11 +88,19 @@
 
     .filter-bar, footer {
       display: grid;
-      grid-template-columns: 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr;
       transition: 300ms ease-in-out;
       padding-inline: var(--padding);
       width: 100%;
     }
+
+  footer {
+      grid-template-columns: 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr 11fr;
+    }
+
+      .filter-bar {
+      grid-template-columns: 11fr 1fr 11fr 1fr 11fr 1fr 11fr 1fr 5fr 1fr 5fr;
+    }
+
 
     .filter-bar {
       height: 100%;
