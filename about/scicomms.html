@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>michael french | science communications</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">   
+
+    <style>
+
+.zig-zag-line {
+  width: 100%;
+  height: 1vw;
+  background-color: lightblue;
+  transition: 200ms;
+  }
+
+  body {
+    /* min-height: 100vh;  */
+    background: linear-gradient(309deg, rgba(183,119,219,1) 0%, rgba(137,104,205,1) 26%, rgba(137,104,205,1) 51%, rgba(95,31,228,1) 100%);
+    margin: 0;
+    padding: 0;
+    transition: 200ms;
+  }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  h1 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 10vw;
+    letter-spacing: 0.01vw;
+    position: absolute;
+    left: -0.9vw;
+    top: 2.6vw;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 200ms;
+  }
+
+  h1:hover {
+    color: lightblue;
+    transition: 200ms;
+  }
+  
+  h2 {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 3.145vw;
+    right: -0.3vw;
+    top: -2.5vw;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+    transition: 200ms;
+  }
+
+  h1:hover {
+    cursor: pointer;
+  }
+
+  h2:hover {
+    cursor: default;
+  }
+
+  .row1 {
+    /* background-color: red; */
+    height: 12.2vw;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 200ms;
+  }
+  
+  .row2 {
+    /* background-color: blue; */
+    height: 3vw;
+    width: 100%;
+    position: relative;
+    transition: 200ms;
+    
+  }
+  
+  .spacer {
+    width: 100%;
+    height: 2vw;
+    /* background-color: green; */
+  }
+  
+  .row3 {
+    /* background-color: blue; */
+    height: 106.5vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.35fr 5fr .3fr 9fr 0.35fr;
+    transition: 200ms;
+  }
+
+  .side {
+    width: 100%;
+    height: 100%;
+    transition: 200ms;
+    /* background-color: purple; */
+  }
+
+
+  .box33 {
+    width: 100%;
+    height: 90%;
+    transition: 200ms;
+    margin-top: 2vw;
+    /* background-color: red; */
+  }
+
+  
+  .box4 {
+    width: 2vw;
+    height: 100%;
+    transition: 200ms;
+    /* background-color: orange; */
+  }
+  
+  h3 {
+    font-size: 3.145vw;
+    font-family: "Aldrich", sans-serif;
+    transition: 200ms;
+  }
+  
+  .paragraph p {
+    font-weight: 400;
+    font-size: 2.2vw;
+    list-style-type: none;
+    line-height: 2.8vw;
+    color: white;
+    font-family: "Aldrich", sans-serif;
+    transition: 200ms;
+    margin-right: 1vw;
+    margin-left: 1.5vw;
+  }
+  
+  .button {
+    background-color: white;
+    height: 4vw;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 200ms;
+    border-top-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+  }
+  
+  a {
+    color: #8968CD;
+    text-decoration: none;
+    font-family: "Aldrich", sans-serif;
+    transition: 200ms;
+  }
+
+  .button h3 {
+    position: relative;
+    left: 1.5vw;
+    font-size: 3.145vw;
+    top: 0.7vw;
+    color: #8968CD;
+    transition: 200ms;
+  }
+
+  .button2 {
+    background-color: white;
+    height: 4vw;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 200ms;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+    transition: 200ms;
+  }
+
+
+  .button2 h3 {
+    position: relative;
+    left: 1.5vw;
+    font-size: 3.145vw;
+    top: 0.7vw;
+    transition: 200ms;
+  }
+  
+  .box5 {
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    overflow: hidden; /* Prevent any overflow from the image */
+    transition: 200ms;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.spacer h3 {
+  font-size: 0.7vw;
+  margin-left:0vw;
+  position: static;
+  color: white;
+}
+
+.socials {
+  width: 25vw;
+  height: 100%;
+  /* background-color: green; */
+}
+
+.socials h2 {
+  position: absolute;
+  overflow: hidden;
+  font-size: 1.9vw;
+  color: white;
+  font-family: "Aldrich", sans-serif;
+  transition: 200ms;
+  left: 0;
+  top: -0.8vw;
+}
+
+.socials a {
+  
+    color: lightblue;
+    text-decoration: underline;
+  }
+
+h2, h3, p, a, span {
+    font-family: 'Aldrich', sans-serif;
+    font-weight: normal; 
+    letter-spacing: normal;
+}
+
+h2 {
+  letter-spacing: .015vw;
+}
+
+.photorow1 {
+    width: 100%;
+    /* background-color: aqua; */
+    height: 16vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 2vw;
+    grid-column-gap: 2vw;
+}
+
+.photo1 {
+    width: 100%;
+    height: 100%;
+    background-color:lightblue;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
+.photo2 {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    border-top-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+
+.photorow2 {
+    width: 100%;
+    /* background-color: aqua; */
+    height: 16vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 2vw;
+    grid-column-gap: 2vw;
+}
+
+.photo4 {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    border-top-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
+.photo3 {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    border-top-left-radius: 1vw;
+    border-bottom-right-radius: 1vw;
+}
+  
+ img {
+      width: 90%;
+      transition: 200ms;
+  }
+
+  .photo1, .photo2, .photo3, .photo4 {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    overflow: hidden; /* Ensures images don't overflow */
+}
+
+.photo1 img, .photo2 img, .photo3 img, .photo4 img {
+    max-width: 100%; /* Ensures images do not exceed their container width */
+    max-height: 100%; /* Ensures images do not exceed their container height */
+    object-fit: contain; /* Ensures the whole image is visible without distortion */
+}
+
+    </style>
+
+</head>
+<body>
+    <a href ="index.html"><div class ="row1"><h1>michael french</h1></div></a>
+    <div class ="row2"><h2>science communications</h2>
+        <div class = "socials"><h2>
+            <a href="mailto:michael@michaelfrench.co">contact</a> | <a href="https://www.instagram.com/michaelfrench.co/" target="_blank">instagram</a> | <a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank">linkedin</a>
+          </h2></div>
+    </div> 
+    <div class ="spacer"></div>
+    <div class="zig-zag-line"></div>
+    <div class ="spacer"></div>
+    
+    <div class ="row3">
+      <div class ="side"></div>
+      <div class ="box33">
+        <div class = "button"><h3>social media</h3></div>
+        <div class = "paragraph"><p>
+            prior to my design studies, i spent four years working as director of social media at a boutique pr agency specializing in science communications for life science, biotech, + pharmaceutical companies <br> <br>
+        
+            during this time i leveraged my education in biology to deliver high quality video + graphic assets to a variety of clients developing novel healthcare solutions, from companies developing medical training simulators + robotic surgical systems to oncology + neurology drug developers<br><br>
+        
+            in addition to design + social media work, i also handled various copy-writing + press release drafting responsibilities, media outreach + pitching, social + traditional media metrics reporting, project management, + client relations activities</p></div>
+      </div>
+      <div class ="box4"></div>
+      <div class ="box5">
+        <div class ="photorow1">
+            <div class ="photo1">
+                <img src = "Old Work/DeepakClip.gif">
+            </div>
+            <div class ="photo2">
+                <img src = "Old Work/1611338767643.jpeg">
+            </div>
+        </div>
+        <div class ="spacer"></div> 
+        <div class ="photorow2">
+            <div class ="photo3">
+                <img src = "Old Work/Glympsev2.png">
+            </div>
+            <div class ="photo4">
+                <img src = "Old Work/video (6).gif">
+            </div>
+        </div>
+        <div class ="spacer"></div> 
+        <div class ="photorow1">
+            <div class ="photo1">
+                <img src = "Old Work/LineageCell - 1448325951201370115.gif">
+            </div>
+            <div class ="photo2">
+                <img src = "Old Work/Natural Immunity.png">
+            </div>
+        </div>
+        <div class ="spacer"></div> 
+        <div class ="photorow2">
+            <div class ="photo3">
+                <img src = "Old Work/Unmet Need V2.jpg">
+            </div>
+            <div class ="photo4">
+                <img src = "Old Work/1671035179050.jpeg">
+            </div>
+        </div>
+        <div class ="spacer"></div> 
+        <div class ="photorow1">
+            <div class ="photo1">
+                <img src = "Old Work/video (3).gif">
+            </div>
+            <div class ="photo2">
+                <img src = "Old Work/EO3021 MOA.png">
+            </div>
+        </div>
+        <div class ="spacer"></div> 
+        <div class ="photorow2">
+            <div class ="photo3">
+                <img src = "Old Work/1685113689254.gif">
+            </div>
+            <div class ="photo4">
+                <img src = "Old Work/Invivyd - 1719019877946847383.gif">
+            </div>
+        </div>
+        <div class ="spacer"></div> 
+      </div>
+      <div class ="side"></div>
+    </div>
+    <div class ="spacer"></div> 
+    <div class ="spacer">
+        <h3>site by michael french</h3>
+    </div> 
+</body>
+</html>
