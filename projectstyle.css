@@ -189,14 +189,14 @@
 			-webkit-text-stroke-color: #242424;
 		}
 
-		.project h2 { color: #242424; }
+		.project p { color: #242424; }
 
-		h2 {
+		p {
 			font-family: "franklin-gothic-atf", sans-serif;
 			font-weight: 300;
 			font-style: normal;
-			font-size: 1rem;
-			line-height: 1.2rem;
+			font-size: 0.9rem;
+			line-height: 1.1rem;
 		}
 
 		.projectcontainer {
@@ -398,7 +398,7 @@ body {
 		 .inlinelink {
 			font-family: aldrich, sans serif;
 			text-decoration: underline;
-			font-size: 1.05rem;
+			font-size: 1rem;
 			color:#4D4356;
 		}
 

@@ -173,14 +173,14 @@
 			-webkit-text-stroke-color: #242424;
 		}
 
-		.project h2 { color: #242424; }
+		.project p { color: #242424; }
 
-		h2 {
+		p {
 			font-family: "franklin-gothic-atf", sans-serif;
 			font-weight: 300;
 			font-style: normal;
-			font-size: 1rem;
-			line-height: 1.2rem;
+			font-size: 0.9rem;
+			line-height: 1.1rem;
 		}
 
 		.projectlink {
@@ -463,7 +463,7 @@
  .inlinelink {
 			font-family: aldrich, sans serif;
 			text-decoration: underline;
-			font-size: 1.05rem;
+			font-size: 1rem;
 			color:#4D4356;
 		}
 
@@ -473,7 +473,7 @@
 			.custom-cursor { display: none !important; }
 		}
 
-		@media (width < 700px){
+		@media (width < 800px){
 			:root {
 				font-size: 90%;
 			}
@@ -481,14 +481,14 @@
 		}
 
 
-		@media (width < 509px){
+		@media (width < 600px){
 			:root {
 				font-size: 70%;
 			}
 
 		}
 
-				@media (width < 408px){
+				@media (width < 422px){
 			:root {
 				font-size: 50%;
 			}
