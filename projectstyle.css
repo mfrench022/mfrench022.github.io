@@ -201,7 +201,7 @@
 
 		.projectcontainer {
 			background-color: #4D4356;
-			height: 30rem;
+			min-height: 30rem;
 			width: 100%;
 			border-radius: var(--radius);
 			border: var(--stroke) solid #242424;
@@ -398,7 +398,7 @@ body {
 		 .inlinelink {
 			font-family: aldrich, sans serif;
 			text-decoration: underline;
-			font-size: 1rem;
+			font-size: 0.9rem;
 			color:#4D4356;
 		}
 
@@ -438,21 +438,21 @@ body {
 			.custom-cursor { display: none !important; }
 		}
 
-		@media (width < 700px){
+		@media (width < 701px){
 			:root {
 				font-size: 90%;
 			}
 		}
 
 
-		@media (width < 509px){
+		@media (width < 531px){
 			:root {
 				font-size: 70%;
 			}
 
 		}
 
-				@media (width < 408px){
+				@media (width < 410px){
 			:root {
 				font-size: 50%;
 			}
