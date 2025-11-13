@@ -1,0 +1,191 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="reset.css" rel="stylesheet">
+    <title>michaelfrench.co | junonia tracker</title>
+
+
+    <style>
+   
+
+        @import url('https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+      svg { 
+        background: #ece9e3;
+        display: block;
+        margin: 40 auto;
+        scale: 110%;
+      }
+
+      h1 { 
+        font-family: "Raleway Dots", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 4.5rem;
+        color: rgb(52, 29, 20);
+        margin-block-end: 0.75rem;
+      }
+
+
+      h2 {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.915rem;
+        color: rgb(52, 29, 20);
+        line-height: 1.3rem;
+      }
+
+      section{
+        position: fixed;
+        z-index: 100;
+        padding: 2rem;
+        top: 2rem;
+        right: 2rem;
+        padding-top: 1.3rem;
+        border-radius: 1.5rem;
+        border-color: rgb(52, 29, 20);
+        border-style: dotted;
+        border-width: 0.5rem;
+        width: 37.5rem;
+      }
+
+      body {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-color: lightblue;
+        /* background-color: black; */
+      }
+
+      h3 { 
+        margin-top: 3rem; 
+        margin-bottom: 1rem;
+      }
+
+      a {
+        color: rgb(52, 29, 20);
+        font-weight: 600;
+      }
+
+      .container {
+        width: 90%;
+        margin: auto;
+        padding-top: 2rem;
+      }
+      
+      .ms-label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.6em;
+        color: red;
+
+      }
+     
+     .ms-circle {
+        fill: rgba(52, 29, 20, 0.292);
+        stroke:  rgb(52, 29, 20);
+      }
+
+      .country {
+        fill: lightblue;
+        stroke: tan;
+        stroke-width: 3;
+      }
+
+      /* Tooltip */
+.tooltip {
+  background: #fff;
+  border: 1px solid rgb(52, 29, 20);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  width: 19rem;
+  word-break: break-word;
+  font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8rem;
+}
+
+.tooltip {
+  position: fixed !important;
+  left: 20px;
+  bottom: 20px;
+  max-height: 50vh;       /* prevent overflow on tall tooltips */
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.tooltip .tt-row + .tt-row { margin-top: 2px; }
+
+p .tt-label{ 
+  font-weight: 600;
+}
+
+  p .tt-row{ 
+  font-weight: 600;
+}
+
+  p strong {
+    font-weight: 600;
+  }
+
+  p {
+    margin-block: 0.4rem;
+  }
+
+  .header {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+/* Circles (base + hover affordance) */
+.ms-circle { cursor: pointer; }
+
+/* Visual cue for locked circle */
+.ms-circle.locked {
+  stroke: white;         /* stands out against map */
+  stroke-width: 4;     /* slightly thicker */
+  fill:  rgb(52, 29, 20);;
+}
+
+.tooltip .tt-entry:first-of-type { margin-top: 6px; }
+
+/* Keep same color/weight as your page links, but force underline in tooltip */
+.tooltip a.tt-readmore {
+  text-decoration: underline; 
+
+}
+
+.tt-entry {
+    margin-bottom: 1rem;
+}
+
+
+    </style>
+  </head>
+</head> 
+<body>
+<section>
+<h1>Junonia Tracker</h1>
+<h2>Locations of <a href ="https://en.wikipedia.org/wiki/Scaphella_junonia" target="_blank">junonia</a> shells found on Sanibel and Captiva Islands since March 18, 2024 as reported by the <a href="https://www.captivasanibel.com/" target="_blank">Sanibel Captiva Island Reporter</h2></a>
+</section>
+<div class="container">
+
+
+<!-- this will hold the D3 graph -->
+  <div id="chart"></div>
+  
+
+  <!-- loading in the D3 library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+
+  <script src="map.js"></script>
+</div>
+</body>
+</html>
