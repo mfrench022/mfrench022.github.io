@@ -144,6 +144,50 @@
         }
       });
 
+    // === LABEL POSITIONING ===
+
+    const LABEL1_LON = -82.09219243124836;
+    const LABEL1_LAT = 26.434876025646844;
+
+    const LABEL2_LON = -82.18853996165424;
+    const LABEL2_LAT = 26.52194936113601;
+
+    function positionLabels() {
+      const container = document.querySelector(".container");
+      const svgEl = document.querySelector("#chart svg");
+      const label1 = document.querySelector(".label1");
+      const label2 = document.querySelector(".label2");
+
+      if (!container || !svgEl || !label1 || !label2) return;
+
+      // Where is the SVG inside the container?
+      const containerRect = container.getBoundingClientRect();
+      const svgRect = svgEl.getBoundingClientRect();
+      const offsetLeft = svgRect.left - containerRect.left;
+      const offsetTop  = svgRect.top  - containerRect.top;
+
+      // Project lon/lat -> SVG coordinates (inside the <g> with margin)
+      const [x1, y1] = projection([LABEL1_LON, LABEL1_LAT]);
+      const [x2, y2] = projection([LABEL2_LON, LABEL2_LAT]);
+
+      // Label heights for bottom-alignment
+      const h1 = label1.offsetHeight;
+      const h2 = label2.offsetHeight;
+
+      // Because the <g> is translated by margin,
+      // add margin.left / margin.top to the projected coords.
+      label1.style.left = (offsetLeft + margin.left + x1) + "px";
+      label1.style.top  = (offsetTop  + margin.top  + y1 - h1) + "px";
+
+      label2.style.left = (offsetLeft + margin.left + x2) + "px";
+      label2.style.top  = (offsetTop  + margin.top  + y2 - h2) + "px";
+    }
+
+    // Initial placement
+    positionLabels();
+    // Recalculate on resize in case layout shifts
+    window.addEventListener("resize", positionLabels);
+
     // Global click: close locked tooltip when clicking outside circles/tooltip
     document.addEventListener("click", (e) => {
       if (!locked) return;

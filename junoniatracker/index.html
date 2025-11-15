@@ -18,7 +18,7 @@
         background: #ece9e3;
         display: block;
         margin: 40 auto;
-        scale: 110%;
+        scale: 100%;
       }
 
       h1 { 
@@ -166,8 +166,15 @@ p .tt-label{
     margin-bottom: 1rem;
 }
 
+.container {
+  width: 90%;
+  margin: auto;
+  padding-top: 2rem;
+  position: relative;   /* NEW: to anchor absolute labels */
+}
+
+/* Base label styles */
 .label1, .label2, .label3 {
-  position: absolute;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -178,49 +185,20 @@ p .tt-label{
   padding-block: 0.5rem;
 }
 
-.label1, .label2 {
-  background-color: rgba(210, 180, 140, 0.804);
-}
-
+/* Map-pinned labels */
+.label1,
 .label2 {
-  top: 13rem;
-  left: 22vw;
+  position: absolute;
 }
 
-.label1 {
-  top: 44rem;
-  left: 54vw;
-}
-
-
+/* Legend label stays fixed in the corner */
 .label3 {
+  position: fixed;              /* keep this one fixed */
   bottom: 1rem;
   right: 2rem;
   background-color: rgb(125, 175, 193);
 }
 
-#chart {
-  position: relative;
-}
-
-@media (max-width: 1200px) {
-  .label2 {
-    left: 10.3vw;
-    top: 16rem;
-  }
-
-  .label1 {
-    left: 65vw;
-  }
-}
-
-@media (max-width: 1000px) {
-
-  .label1 {
-    right: 2rem;
-    left: initial;
-  }
-}
 
 @media (max-width: 800px) {
    h1 { 
@@ -268,8 +246,8 @@ p .tt-label{
 
 <!-- this will hold the D3 graph -->
   <div id="chart"></div>
-  <p class ="label1">Sanibel Island</p>
-  <p class ="label2">Captiva Island</p>
+  <p class ="label1">Sanibel Island</p>
+  <p class ="label2">Captiva Island</p>
   <p class ="label3">Gulf of Mexico</p>
   
 
