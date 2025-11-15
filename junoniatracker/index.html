@@ -194,14 +194,14 @@ p .tt-label{
 
 /* Legend label stays fixed in the corner */
 .label3 {
-  position: fixed;              /* keep this one fixed */
-  bottom: 1rem;
+  position: absolute;              /* keep this one fixed */
+  bottom: -5rem;
   right: 40%;
   background-color: rgb(125, 175, 193);
 }
 @media (max-width: 1000px) {
 #chart {
-        margin-bottom: 10rem;
+        margin-bottom: 5rem;
         margin-top: 10rem;
       }
 }
@@ -223,7 +223,12 @@ p .tt-label{
       }
 
       .label3 {
-        right: 2rem;
+        right: 1rem;
+        bottom: -6rem;
+      }
+
+      #chart {
+        margin-bottom: 5rem;
       }
 }
 
