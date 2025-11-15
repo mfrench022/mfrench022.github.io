@@ -166,6 +166,62 @@ p .tt-label{
     margin-bottom: 1rem;
 }
 
+.label1, .label2, .label3 {
+  position: absolute;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.915rem;
+  color: rgb(52, 29, 20);
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+}
+
+.label1, .label2 {
+  background-color: rgba(210, 180, 140, 0.804);
+}
+
+.label2 {
+  top: 13rem;
+  left: 22vw;
+}
+
+.label1 {
+  top: 44rem;
+  left: 54vw;
+}
+
+
+.label3 {
+  bottom: 1rem;
+  right: 2rem;
+  background-color: rgb(125, 175, 193);
+}
+
+#chart {
+  position: relative;
+}
+
+@media (max-width: 1200px) {
+  .label2 {
+    left: 10.3vw;
+    top: 16rem;
+  }
+
+  .label1 {
+    left: 65vw;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .label1 {
+    right: 2rem;
+    left: initial;
+  }
+}
+
 @media (max-width: 800px) {
    h1 { 
         font-size: 2.7rem;
@@ -212,6 +268,9 @@ p .tt-label{
 
 <!-- this will hold the D3 graph -->
   <div id="chart"></div>
+  <p class ="label1">Sanibel Island</p>
+  <p class ="label2">Captiva Island</p>
+  <p class ="label3">Gulf of Mexico</p>
   
 
   <!-- loading in the D3 library -->
