@@ -122,6 +122,19 @@
   padding-bottom: 0.5rem;
 }
 
+footer {
+  color: rgb(52, 29, 20);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+footer h2 {
+  font-size: 0.75rem;
+}
+
 .tooltip .tt-row + .tt-row { margin-top: 2px; }
 
 p .tt-label{ 
@@ -234,9 +247,10 @@ body {
         width: 25rem;
       }
 
-      .label3 {
-        right: 1rem;
-        bottom: -6rem;
+     .label3 {
+        right: initial;
+        left: 0rem;
+        bottom: 14rem;
       }
 
       #chart {
@@ -270,12 +284,6 @@ body {
 
       svg { 
         scale: 100%;
-      }
-
-      .label3 {
-        right: initial;
-        left: 0rem;
-        bottom: 14rem;
       }
 
 .tooltip {
@@ -314,5 +322,9 @@ body {
 
   <script src="map.js"></script>
 </div>
+
+<footer>
+  <h2>designed and developed by <a href="https://michaelfrench.co/" target="_blank">michaelfrench.co</a></h2>
+</footer>
 </body>
 </html>
