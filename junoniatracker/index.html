@@ -199,6 +199,14 @@ p .tt-label{
   right: 40%;
   background-color: rgb(125, 175, 193);
 }
+
+@media (min-width: 1700px) {
+
+.tooltip {
+  max-height: calc(100vh - 3rem); 
+}
+}
+
 @media (max-width: 1000px) {
 #chart {
         margin-bottom: 5rem;
@@ -245,7 +253,7 @@ p .tt-label{
       }
 
       section{      
-        width: auto;
+        width: calc(100% - 4rem);
         margin-left: 2rem;
         background-color: #ece9e3c8;
       }
