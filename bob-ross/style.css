@@ -79,6 +79,10 @@ button {
     font-family: 'Aldrich', sans-serif;
 }
 
+a {
+    height: 100%;
+}
+
 button:hover {
    background-color: rgb(175, 148, 111); 
    transition: 300ms ease-in-out;
@@ -106,7 +110,7 @@ h1 {
 
 .slice-label {
   font-family: "Aldrich", sans-serif;
-  font-size: 12px;
+  font-size: 7px;
   fill: rgb(26, 26, 26);
   pointer-events: none;
 }
@@ -115,6 +119,10 @@ h1 {
     body {
         margin-block-start: 200px;
     }
+
+    .slice-label {
+  font-size: 10px;
+}
 }
 
 @media (max-width:600px) {
@@ -131,4 +139,7 @@ h1 {
     .right {
         text-align: left;
     }
+       .slice-label {
+  font-size: 13px;
+}
 }

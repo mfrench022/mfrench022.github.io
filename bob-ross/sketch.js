@@ -5,11 +5,11 @@ const data = [
 	{ name: "Yellow", apples: 1, oranges: 1, bananas: 0 },
 	{ name: "Green", apples: 3, oranges: 3,  bananas: 4 },
 	{ name: "Blue", apples: 1, oranges: 2, bananas: 3 },
-	{ name: "Purple", apples: 0, oranges: 3, bananas: 1 },
 	{ name: "Pink", apples: 2, oranges: 1, bananas: 1 },
+	{ name: "Purple", apples: 0, oranges: 3, bananas: 1 },
+	{ name: "Brown", apples: 0, oranges: 1, bananas: 2 },
 	{ name: "Grey", apples: 2, oranges: 1, bananas: 0 },
 	{ name: "Black", apples: 0, oranges: 0, bananas: 1 },
-	{ name: "Brown", apples: 0, oranges: 1, bananas: 2 },
 	{ name: "White", apples: 3, oranges: 0, bananas: 0 }
 ];
 
@@ -70,8 +70,6 @@ const labels = svg
   .attr("class", "slice-label") 
   .attr("text-anchor", "middle")
   .attr("alignment-baseline", "middle")
-  .style("font-family", "sans-serif")
-  .style("font-size", "10px")
   .attr("transform", d => `translate(${labelArc.centroid(d)})`)
   .text(d => d.data.name);
 
