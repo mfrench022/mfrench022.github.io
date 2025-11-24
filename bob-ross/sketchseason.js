@@ -16,9 +16,9 @@ const innerRadius = outerRadius * 0.75;
 // Metric definitions
 // id = data property, label = UI text
 const metrics = [
-  { id: "apples",  label: "Season 1" },
-  { id: "oranges", label: "Season 2" },
-  { id: "bananas", label: "Season 3" }
+  { id: "apples",  label: "Series 1" },
+  { id: "oranges", label: "Series 2" },
+  { id: "bananas", label: "Series 3" }
 ];
 
 const defaultMetric = "apples";
