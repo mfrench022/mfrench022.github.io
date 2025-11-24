@@ -1,48 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
-.slice-Red {
+.slice-Red, .slice-Autumn {
     fill: #ffadad;
 }
 
-.slice-Orange {
+.slice-Orange, .slice-Forest {
     fill: #ffd6a5;
 }
 
-.slice-Yellow {
+.slice-Yellow, .slice-Summer {
     fill: #fdffb6;
 }
 
-.slice-Green {
+.slice-Green, .slice-Spring, .slice-Tree {
     fill: #caffbf;
 }
 
-.slice-Blue {
+.slice-Blue, .slice-Ocean {
     fill: #a0c4ff;
 }
 
-.slice-Purple {
+.slice-Purple, .slice-Winter, .slice-River {
     fill: #bdb2ff;
 }
 
-.slice-Pink {
+.slice-Pink, .slice-Waterfall {
     fill: #ffc6ff;
 }
 
-.slice-Brown {
+.slice-Brown, .slice-Building {
     fill: #6c584c;
 }
 
-.slice-White {
+.slice-White, .slice-Lake {
     fill: rgb(255, 255, 255);
 }
 
-.slice-Grey {
+.slice-Grey, .slice-Mountain {
     fill: rgb(194, 191, 191);
 }
 
-.slice-Black {
+.slice-Black, .slice-Path {
     fill: rgb(26, 26, 26);
 }
+
 
 body {
     background-color: rgb(255, 242, 226);
@@ -131,8 +132,8 @@ h1 {
     }
     
     footer {
-        row-gap: 20px;
-        height: 100px;
+        row-gap: 1px;
+        height: 200px;
         padding-bottom: 25px;
     }
 
