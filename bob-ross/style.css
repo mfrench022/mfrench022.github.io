@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+.slice-Red {
+    fill: #ffadad;
+}
+
+.slice-Orange {
+    fill: #ffd6a5;
+}
+
+.slice-Yellow {
+    fill: #fdffb6;
+}
+
+.slice-Green {
+    fill: #caffbf;
+}
+
+.slice-Blue {
+    fill: #a0c4ff;
+}
+
+.slice-Purple {
+    fill: #bdb2ff;
+}
+
+.slice-Pink {
+    fill: #ffc6ff;
+}
+
+.slice-Brown {
+    fill: #6c584c;
+}
+
+.slice-White {
+    fill: rgb(255, 255, 255);
+}
+
+.slice-Grey {
+    fill: rgb(194, 191, 191);
+}
+
+.slice-Black {
+    fill: rgb(26, 26, 26);
+}
+
+body {
+    background-color: rgb(255, 242, 226);
+    margin-inline: 50px;
+    font-family: 'Aldrich', sans-serif;
+    margin-block-end: 0;
+    margin-block-start: 70px;
+    padding: 0;
+    overflow: hidden;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 100px);
+    height: 75px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 50px;
+    align-items: center;
+}
+
+button {
+    width: 180px;
+    height: 50%;
+    background-color:rgb(255, 242, 226);
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 300ms ease-in-out;
+    font-family: 'Aldrich', sans-serif;
+}
+
+button:hover {
+   background-color: rgb(175, 148, 111); 
+   transition: 300ms ease-in-out;
+}
+
+header {
+    display: flex;
+    /* background-color: blue; */
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 50px;
+    width: calc(100% - 100px);
+    column-gap: 65px;
+    padding-top: 10px;
+}
+
+.right {
+    text-align: right;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.slice-label {
+  font-family: "Aldrich", sans-serif;
+  font-size: 12px;
+  fill: rgb(26, 26, 26);
+  pointer-events: none;
+}
+
+@media (max-width: 1500px) {
+    body {
+        margin-block-start: 200px;
+    }
+}
+
+@media (max-width:600px) {
+    header, footer {
+        flex-direction: column;
+    }
+    
+    footer {
+        row-gap: 20px;
+        height: 100px;
+        padding-bottom: 25px;
+    }
+
+    .right {
+        text-align: left;
+    }
+}
