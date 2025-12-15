@@ -431,6 +431,21 @@ body {
 		.custom-cursor.is-down  .state.down  { opacity: 1; }
 		.custom-cursor.is-down { --s: .96; }
 
+.imagecontainer {
+  position: relative;
+  width: 100%;
+  height: 100%;         /* will fill whatever height the grid cell ends up with */
+  overflow: hidden;
+}
+
+.imagecontainer iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;            /* optional, since you set border inline */
+  display: block;
+}
 
 		/* Touch devices: keep native cursor/touch */
 		@media (pointer: coarse) {
