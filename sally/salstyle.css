@@ -3,7 +3,7 @@
 html {
   font-size: 110%;
   --padding: 1rem;
-  --header-offset: 11.5rem;
+  --header-offset: 2rem;
   scroll-behavior: smooth;
 }
 
@@ -40,14 +40,24 @@ background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250
 .main {
   background: #e0ebff;
   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  position: fixed;
+  position: sticky;
   z-index: 10;
   width: 100%;
-  padding-block: calc(2 * var(--padding));
+  padding-block-end: calc(2 * var(--padding));
+  padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
+  inset-block-start: -27rem;
 }
 
+header img {
+  width: 30rem;
+}
 
+.fleximg {
+  display: flex;
+  justify-content: center;
+  padding-block-end: var(--padding);
+}
 
 .day {
   padding: var(--padding);
