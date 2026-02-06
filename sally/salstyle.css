@@ -210,11 +210,11 @@ font-style: normal;
   position: fixed;
   right: 1.5rem;
   bottom: calc(3 * var(--padding) + 1rem); /* above your fixed footer */
-  width: 4rem;
+  width: 3rem;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
-  align-items: last baseline;
+  align-items: center;
   border: solid 0.25rem black;
   border-radius: 1.25rem;
   background: linear-gradient(118deg,
