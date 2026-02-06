@@ -62,7 +62,7 @@ body {
   padding-block-end: calc(1 * var(--padding));
   padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
-  inset-block-start: -30.45rem;
+  inset-block-start: -29.45rem;
 }
 
 
@@ -73,7 +73,7 @@ header img {
 .fleximg {
   display: flex;
   justify-content: center;
-  padding-block-end: calc(2 * var(--padding));
+  padding-block-end: calc(1 * var(--padding));
 }
 
 .day {
@@ -84,7 +84,7 @@ header img {
   text-align: center;
   border: solid 0.25rem black;
   margin-block-end: calc(1* var(--padding));
-  margin-block-start: calc(3 * var(--padding));
+  margin-block-start: calc(6 * var(--padding));
   margin-inline: var(--padding);
   border-radius: 1.4rem;
    background: #e0ebff;
@@ -131,6 +131,7 @@ footer {
   font-size: 0.75rem;
   border: solid 0.25rem black;
   transition: 300ms ease-in-out;
+  font-weight: 600;
 }
 
 .linkbutton:hover {
@@ -183,7 +184,7 @@ footer a {
   border-radius: 0.2rem;
   transition: 300ms ease-in-out;
   padding-inline: calc(var(--padding) * 1);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .headerlinks {
@@ -264,9 +265,9 @@ html {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 420px) {
 html {
-  font-size: 60%;
+  font-size: 70%;
 }
 
 .headerlinks a{
