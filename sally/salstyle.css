@@ -134,21 +134,6 @@ footer {
   font-weight: 600;
 }
 
-.linkbutton:hover {
-   background: #e0ebff;
-   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  font-size: 1.1rem;
-  transition: 300ms ease-in-out;
-}
-
-.headerlinks a:hover {
-   background: #e0ebff;
-   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  font-size: 1.65rem;
-  border: solid 0.25rem black;
-  transition: 300ms ease-in-out;
-}
-
 .activityheader {
   display: flex;
   justify-content: space-between;
@@ -241,6 +226,22 @@ svg {
   height: 80%;
 }
 
+@media (width > 700px) {
+  .linkbutton:hover {
+   background: #e0ebff;
+   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  font-size: 1.1rem;
+  transition: 300ms ease-in-out;
+}
+
+.headerlinks a:hover {
+   background: #e0ebff;
+   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  font-size: 1.65rem;
+  border: solid 0.25rem black;
+  transition: 300ms ease-in-out;
+}
+}
 
 @media (max-width: 1100px) {
 
