@@ -62,7 +62,7 @@ header img {
 
 .day {
   position: sticky;
-  inset-block-start: 6rem;
+  inset-block-start: 5.5rem;
   z-index: 10;
   padding: var(--padding);
   text-align: center;
