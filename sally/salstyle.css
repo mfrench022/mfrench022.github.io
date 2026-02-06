@@ -278,6 +278,10 @@ html {
 #main {
   inset-block-start: -25.45rem;
 }
+
+.day {
+  inset-block-start: 8.5rem;
+}
 }
 
 
