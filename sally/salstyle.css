@@ -3,7 +3,7 @@
 html {
   font-size: 110%;
   --padding: 1rem;
-  --header-offset: 2rem;
+  --header-offset: 20rem;
   scroll-behavior: smooth;
 }
 
@@ -41,16 +41,16 @@ background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250
   background: #e0ebff;
   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
   position: sticky;
-  z-index: 10;
+  z-index: 13;
   width: 100%;
   padding-block-end: calc(2 * var(--padding));
   padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
-  inset-block-start: -27rem;
+  inset-block-start: -32.5rem;
 }
 
 header img {
-  width: 30rem;
+  width: 36rem;
 }
 
 .fleximg {
@@ -60,9 +60,12 @@ header img {
 }
 
 .day {
+  position: sticky;
+  inset-block-start: 7rem;
+  z-index: 10;
   padding: var(--padding);
   text-align: center;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 1.75rem;
   border: solid 0.25rem black;
   margin-block-end: calc(2* var(--padding));
@@ -136,7 +139,7 @@ time {
 }
 
 #thursday {
-  padding-block-start: calc(12 * var(--padding));
+  padding-block-start: calc(2 * var(--padding));
 }
 
 #sunday {
@@ -171,14 +174,23 @@ footer a {
   transition: 300ms ease-in-out;
 }
 
-article[id] {
-  scroll-margin-top: var(--header-offset);
+#thursday, #friday, #saturday, #sunday {
+   padding-inline: 25%;
+}
+
+@media (max-width: 1100px) {
+
+  #thursday, #friday, #saturday, #sunday {
+   padding-inline: var(--padding);
+}
+
 }
 
 @media (max-width: 700px) {
 html {
   font-size: 90%;
 }
+
 }
 
 
