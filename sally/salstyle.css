@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url("https://use.typekit.net/ifm1dvz.css");
 
 html {
   font-size: 110%;
-  --padding: 0.8rem;
+  --padding: 1rem;
   --header-offset: 20rem;
   scroll-behavior: smooth;
 }
@@ -17,37 +18,51 @@ h1 {
 }
 
 h2 {
-  font-weight: 900;
   font-size: 1.75rem;
-  margin-block-end: var(--padding);
-  /* background-color: green; */
-  margin-inline-end: calc(6 * var(--padding));
   line-height: 1.65rem;
+  font-family: "bettoni-variable", serif;
+  font-variation-settings: "opsz" 0, "wght" 130;
 }
 
+.activity h2 {
+  margin-block-end: var(--padding);
+  /* background-color: green; */
+}
 
+.activity p {
+  font-size: 1.2rem;
+}
+
+.buttons p {
+  font-size: 0.9rem;
+}
+
+.day h2 {
+  font-variation-settings: "opsz" 0, "wght" 400;
+   font-style: italic;
+}
 
 body {
   padding-block-end: var(--padding);
   padding-block-start: 0;
   margin-block-start: 0;
   background: #e0ebff;
-background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  font-family: "SUSE Mono", sans-serif;
+  background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  /* font-family: "SUSE Mono", sans-serif; */
   margin-inline: 0;
   font-weight: 200;
 }
 
 .main {
-  background: #e0ebff;
-  background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  background: #DDEBFF;
+  /* background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%); */
   position: sticky;
   z-index: 13;
   width: 100%;
   padding-block-end: calc(2 * var(--padding));
   padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
-  inset-block-start: -32rem;
+  inset-block-start: -29.35rem;
 }
 
 header img {
@@ -62,14 +77,13 @@ header img {
 
 .day {
   position: sticky;
-  inset-block-start: 5.5rem;
+  inset-block-start: 7rem;
   z-index: 10;
   padding: var(--padding);
   text-align: center;
-  font-weight: 700;
-  font-size: 1.75rem;
   border: solid 0.25rem black;
-  margin-block-end: calc(2* var(--padding));
+  margin-block-end: calc(1* var(--padding));
+  margin-block-start: calc(3 * var(--padding));
   margin-inline: var(--padding);
   border-radius: 1.4rem;
    background: #e0ebff;
@@ -78,7 +92,7 @@ background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250
 
 .activity {
   padding-block: var(--padding);
-  padding-inline: calc(2*var(--padding));
+  padding-inline: calc(1.3*var(--padding));
   position: relative;
   margin-block: var(--padding);
   margin-inline: var(--padding);
@@ -99,6 +113,7 @@ footer {
   padding: var(--padding);
   height: calc(3*var(--padding));
   border-block-start: solid 0.25rem black;
+  z-index: 100;
 }
 
 .buttons {
@@ -120,32 +135,31 @@ footer {
 .linkbutton:hover {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: 300ms ease-in-out;
 }
 
 .headerlinks a:hover {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  font-size: 1rem;
+  font-size: 1.65rem;
   border: solid 0.25rem black;
   transition: 300ms ease-in-out;
 }
 
-time {
-  inset-inline-end: calc(2*var(--padding));
-  inset-block-start: calc(1.35*var(--padding));
-  position: absolute;
-  font-weight: 900;
-  font-size: 1rem;
+.activityheader {
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--padding);
 }
 
 #thursday {
-  padding-block-start: calc(2 * var(--padding));
+  padding-block-start: calc(1 * var(--padding));
+  margin-block-start: calc(-3 * var(--padding));
 }
 
 #sunday {
-  padding-block-end: calc(2 * var(--padding));
+  padding-block-end: calc(1 * var(--padding));
 }
 
 span {
@@ -163,27 +177,37 @@ footer a {
 
 .headerlinks a{
   color: black;
-  font-weight: 900;
   border-block-end: solid 0.25rem black;
   margin-inline: calc(var(--padding) / 2);
   border-radius: 0.2rem;
   transition: 300ms ease-in-out;
+  padding-inline: calc(var(--padding) * 1);
+  font-size: 1.5rem;
 }
 
 .headerlinks {
   text-align: center;
   font-size: 1rem;
   transition: 300ms ease-in-out;
+  font-family: "bettoni-variable", serif;
+  font-variation-settings: "opsz" 0, "wght" 400;
+  font-style: italic;
 }
 
 #thursday, #friday, #saturday, #sunday {
-   padding-inline: 25%;
+   padding-inline: 25vw;
 }
 
-@media (max-width: 1300px) {
+p {
+  font-family: "brandon-grotesque", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+@media (max-width: 1100px) {
 
   #thursday, #friday, #saturday, #sunday {
-   padding-inline: var(--padding);
+   padding-inline: calc(var(--padding) /2);
 }
 
 }
