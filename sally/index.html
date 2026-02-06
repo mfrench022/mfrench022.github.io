@@ -9,7 +9,8 @@
 </head>
 
 <body>
-	<header class ="main">
+	<div id="top"></div>
+	<header id ="main">
 		<div class="fleximg"><img src="animation.webp"></div>
 		<section class="headerlinks">
 			<a href="#thursday">Thursday</a>
@@ -47,7 +48,27 @@
 			</div>
 		</section>
 		
-		
+		<section class = "activity">
+			<div class="activityheader">
+				<h2>Title</h2><time><h2>X:XXpm</h2></time>
+			</div>
+			<p>Event description</p>
+			<div class = "buttons">
+				<a href="https://maps.app.goo.gl/BBHyHQRDZZU9GXm96" target=_blank><p class = "linkbutton"><span>&#x1F4CD;</span> XXXXXX st</p></a>
+				<a href="https://www.jfkairport.com/to-from-airport/public-transportation" target=_blank><p class = "linkbutton"><span>&#128279;</span> XXXXX.com</p></a>
+			</div>
+		</section>
+
+		<section class = "activity">
+			<div class="activityheader">
+				<h2>Title</h2><time><h2>X:XXpm</h2></time>
+			</div>
+			<p>Event description</p>
+			<div class = "buttons">
+				<a href="https://maps.app.goo.gl/BBHyHQRDZZU9GXm96" target=_blank><p class = "linkbutton"><span>&#x1F4CD;</span> XXXXXX st</p></a>
+				<a href="https://www.jfkairport.com/to-from-airport/public-transportation" target=_blank><p class = "linkbutton"><span>&#128279;</span> XXXXX.com</p></a>
+			</div>
+		</section>
  
 	</article>
 	
@@ -223,10 +244,26 @@
  
 	</article>
 
-	<button></button>
+	<a class="toTop" href="#top" aria-label="Back to top">
+		<svg width="50" height="20" viewBox="0 0 116 178" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M57.7351 0L2.2483e-05 100L115.47 100L57.7351 0ZM57.735 178L67.735 178L67.7351 90L57.7351 90L47.7351 90L47.735 178L57.735 178Z" fill="black"/>
+</svg>
+	</a>
 
 <footer>designed by <a href="https://michaelfrench.co/" target=_blank>michaelfrench.co</a></footer>
 	
 		
+
+<script>
+  const btn = document.querySelector(".toTop");
+  const showAfter = 400; // px
+
+  const onScroll = () => {
+    btn.classList.toggle("is-visible", window.scrollY > showAfter);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>
 </body>
 </html>

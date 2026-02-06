@@ -53,17 +53,18 @@ body {
   font-weight: 200;
 }
 
-.main {
+#main {
   background: #DDEBFF;
   /* background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%); */
   position: sticky;
   z-index: 13;
   width: 100%;
-  padding-block-end: calc(2 * var(--padding));
+  padding-block-end: calc(1 * var(--padding));
   padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
-  inset-block-start: -29.35rem;
+  inset-block-start: -30.45rem;
 }
+
 
 header img {
   width: 36rem;
@@ -77,7 +78,7 @@ header img {
 
 .day {
   position: sticky;
-  inset-block-start: 7rem;
+  inset-block-start: 4.5rem;
   z-index: 10;
   padding: var(--padding);
   text-align: center;
@@ -155,11 +156,11 @@ footer {
 
 #thursday {
   padding-block-start: calc(1 * var(--padding));
-  margin-block-start: calc(-3 * var(--padding));
+  /* margin-block-start: calc(-3 * var(--padding)); */
 }
 
 #sunday {
-  padding-block-end: calc(1 * var(--padding));
+  padding-block-end: calc(2 * var(--padding));
 }
 
 span {
@@ -204,6 +205,42 @@ font-weight: 300;
 font-style: normal;
 }
 
+.toTop{
+  position: fixed;
+  right: 1.5rem;
+  bottom: calc(3 * var(--padding) + 1rem); /* above your fixed footer */
+  width: 4rem;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+  border: solid 0.25rem black;
+  border-radius: 1.25rem;
+  background: linear-gradient(118deg,
+    rgba(224, 235, 255, 1) 0%,
+    rgba(250, 210, 250, 1) 54%,
+    rgba(220, 189, 255, 1) 100%);
+  z-index: 1000;
+
+  /* hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 200ms ease;
+}
+
+.toTop.is-visible{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+svg {
+  aspect-ratio: 1;
+  height: 80%;
+}
+
+
 @media (max-width: 1100px) {
 
   #thursday, #friday, #saturday, #sunday {
@@ -227,7 +264,7 @@ html {
 }
 
 
-@media (max-width: 380px) {
+@media (max-width: 500px) {
 html {
   font-size: 60%;
 }
