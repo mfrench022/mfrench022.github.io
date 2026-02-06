@@ -71,7 +71,7 @@ header img {
   border: solid 0.25rem black;
   margin-block-end: calc(2* var(--padding));
   margin-inline: var(--padding);
-  border-radius: 3rem;
+  border-radius: 1.4rem;
    background: #e0ebff;
 background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
 }
