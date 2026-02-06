@@ -56,7 +56,7 @@ header img {
 .fleximg {
   display: flex;
   justify-content: center;
-  padding-block-end: var(--padding);
+  padding-block-end: calc(2 * var(--padding));
 }
 
 .day {
