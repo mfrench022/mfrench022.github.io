@@ -168,7 +168,7 @@ footer a {
   margin-inline: calc(var(--padding) / 2);
   border-radius: 0.2rem;
   transition: 300ms ease-in-out;
-  padding-inline: calc(var(--padding) * 1);
+  padding-inline: calc(var(--padding) * 0.5);
   font-size: 1.3rem;
 }
 
@@ -266,13 +266,17 @@ html {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 450px) {
 html {
   font-size: 70%;
 }
 
 .headerlinks a{
   padding-inline: calc(var(--padding) / 8);
+}
+
+#main {
+  inset-block-start: -25.45rem;
 }
 }
 
