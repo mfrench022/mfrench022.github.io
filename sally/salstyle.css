@@ -235,7 +235,7 @@ svg {
 .headerlinks a:hover {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  font-size: 1.65rem;
+  /* font-size: 1.65rem; */
   border: solid 0.25rem black;
   transition: 300ms ease-in-out;
 }
@@ -265,15 +265,17 @@ html {
 
 
 @media (max-width: 450px) {
-html {
-  font-size: 70%;
-}
 
 .headerlinks a{
   padding-inline: calc(var(--padding) / 8);
 }
 }
 
+@media (max-width: 345px) {
+html {
+  font-size: 70%;
+}
+}
 
 @media (max-width: 240px) {
 html {
