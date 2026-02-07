@@ -7,12 +7,13 @@ html {
   --padding: 1rem;
   --header-offset: 20rem;
   scroll-behavior: smooth;
+  --black: rgb(14, 14, 14);
 }
 
 h1 {
   text-align: center;
   font-weight: 900;
-  color: black;
+  color: var(--black);
   font-size: 1.75rem;
    margin-block-end: calc(2 * var(--padding));
 }
@@ -43,7 +44,6 @@ h2 {
 }
 
 body {
-  padding-block-end: var(--padding);
   padding-block-start: 0;
   margin-block-start: 0;
   background: #e0ebff;
@@ -82,7 +82,7 @@ header img {
   z-index: 10;
   padding: var(--padding);
   text-align: center;
-  border: solid 0.25rem black;
+  border: solid 0.25rem var(--black);;
   margin-block-end: calc(1* var(--padding));
   margin-block-start: calc(6 * var(--padding));
   margin-inline: var(--padding);
@@ -98,22 +98,20 @@ background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250
   margin-block: var(--padding);
   margin-inline: var(--padding);
   border-radius: 1.25rem;
-  border: solid 0.25rem black;
+  border: solid 0.25rem var(--black);
 }
 
 footer {
   font-family: aldrich, sans-serif;
   font-weight: 400;
   font-style: normal;
-  position: fixed;
-  inset-block-end: 0rem;
   font-size: 0.75rem;
   background: #e0ebff;
   background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
   width: 100%;
   padding: var(--padding);
   height: calc(3*var(--padding));
-  border-block-start: solid 0.25rem black;
+  border-block-start: solid 0.25rem var(--black);
   z-index: 100;
 }
 
@@ -130,7 +128,7 @@ footer {
   padding-inline: var(--padding);
   border-radius: 1rem;
   font-size: 0.75rem;
-  border: solid 0.25rem black;
+  border: solid 0.25rem var(--black);
   transition: 300ms ease-in-out;
   font-weight: 600;
 }
@@ -141,31 +139,22 @@ footer {
   column-gap: var(--padding);
 }
 
-#thursday {
-  padding-block-start: calc(1 * var(--padding));
-  /* margin-block-start: calc(-3 * var(--padding)); */
-}
-
-#sunday {
-  padding-block-end: calc(2 * var(--padding));
-}
-
 span {
   font-size: 1rem;
 }
 
 .buttons a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 footer a {
-  color: black;
+  color: var(--black);
 }
 
-.headerlinks a{
-  color: black;
-  border-block-end: solid 0.25rem black;
+.headerlinks a {
+  color: var(--black);
+  border-block-end: solid 0.25rem var(--black);
   margin-inline: calc(var(--padding) / 2);
   border-radius: 0.2rem;
   transition: 300ms ease-in-out;
@@ -194,26 +183,34 @@ font-style: normal;
 
 .toTop{
   position: fixed;
-  right: 1.5rem;
-  bottom: calc(3 * var(--padding) + 1rem); /* above your fixed footer */
-  width: 3rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 3.5rem;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 0.25rem black;
-  border-radius: 1.25rem;
+  border: solid 0.25rem var(--black);
+  border-radius: 100%;
   background: linear-gradient(118deg,
-    rgba(224, 235, 255, 1) 0%,
-    rgba(250, 210, 250, 1) 54%,
-    rgba(220, 189, 255, 1) 100%);
+    rgba(224, 235, 255, 0.4) 0%,
+    rgba(250, 210, 250, 0.4) 54%,
+    rgba(220, 189, 255, 0.4) 100%);
   z-index: 1000;
+  backdrop-filter: blur(0.25rem);
 
   /* hidden by default */
   opacity: 0;
   pointer-events: none;
   transform: translateY(1rem);
   transition: 200ms ease;
+}
+
+.toTop:hover {
+  background: linear-gradient(118deg,
+    rgba(224, 235, 255, 1) 0%,
+    rgba(250, 210, 250, 1) 54%,
+    rgba(220, 189, 255, 1) 100%);
 }
 
 .toTop.is-visible{
