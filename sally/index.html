@@ -247,6 +247,17 @@
 
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+	// Selected states for header links
+
+	const links = document.querySelectorAll(".headerlinks a");
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
 </script>
 </body>
 </html>

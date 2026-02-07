@@ -207,6 +207,7 @@ font-style: normal;
 }
 
 .toTop:hover {
+  transition: 200ms ease;
   background: linear-gradient(118deg,
     rgba(224, 235, 255, 1) 0%,
     rgba(250, 210, 250, 1) 54%,
@@ -222,6 +223,14 @@ font-style: normal;
 svg {
   aspect-ratio: 1;
   height: 80%;
+}
+
+.headerlinks a.active {
+  background: linear-gradient(118deg,
+    rgba(224, 235, 255, 1) 0%,
+    rgba(250, 210, 250, 1) 54%,
+    rgba(220, 189, 255, 1) 100%);
+  border: solid 0.25rem black;
 }
 
 @media (width > 700px) {
