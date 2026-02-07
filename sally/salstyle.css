@@ -263,6 +263,15 @@ html {
   font-size: 90%;
 }
 
+header img {
+  width: 20rem;
+}
+
+
+#main {
+  inset-block-start: -16.6rem;
+}
+
 }
 
 
@@ -272,15 +281,7 @@ html {
 }
 }
 
-
-@media (max-width: 450px) {
-
-.headerlinks a{
-  padding-inline: calc(var(--padding) / 8);
-}
-}
-
-@media (max-width: 345px) {
+@media (max-width: 370px) {
 html {
   font-size: 70%;
 }
