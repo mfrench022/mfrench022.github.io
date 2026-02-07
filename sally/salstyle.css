@@ -62,7 +62,7 @@ body {
   padding-block-end: calc(1 * var(--padding));
   padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
-  inset-block-start: -29.45rem;
+  inset-block-start: -29.2rem;
 }
 
 
@@ -83,10 +83,10 @@ header img {
   padding: var(--padding);
   text-align: center;
   border: solid 0.25rem var(--black);;
-  margin-block-end: calc(1* var(--padding));
+  /* margin-block-end: calc(1* var(--padding)); */
   margin-block-start: calc(6 * var(--padding));
   margin-inline: var(--padding);
-  border-radius: 1.4rem;
+  border-radius: 100rem;
    background: #e0ebff;
 background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
 }
@@ -97,7 +97,7 @@ background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250
   position: relative;
   margin-block: var(--padding);
   margin-inline: var(--padding);
-  border-radius: 1.25rem;
+  border-radius: 2rem;
   border: solid 0.25rem var(--black);
 }
 
@@ -126,7 +126,7 @@ footer {
 .linkbutton {
   padding: calc(var(--padding) / 2);
   padding-inline: var(--padding);
-  border-radius: 1rem;
+  border-radius: 100rem;
   font-size: 0.75rem;
   border: solid 0.25rem var(--black);
   transition: 300ms ease-in-out;
@@ -154,11 +154,11 @@ footer a {
 
 .headerlinks a {
   color: var(--black);
-  border-block-end: solid 0.25rem var(--black);
   margin-inline: calc(var(--padding) / 2);
-  border-radius: 0.2rem;
+  border-radius: 100rem;
   transition: 300ms ease-in-out;
   padding-inline: calc(var(--padding) * 0.5);
+  padding-block: calc(var(--padding) * 0.2);
   font-size: 1.3rem;
 }
 
@@ -245,7 +245,7 @@ svg {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
   /* font-size: 1.65rem; */
-  border: solid 0.25rem black;
+  /* border: solid 0.25rem black; */
   transition: 300ms ease-in-out;
 }
 }

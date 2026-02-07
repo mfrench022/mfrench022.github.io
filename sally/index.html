@@ -248,16 +248,25 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-	// Selected states for header links
+  // Selected states for header links
+  const links = document.querySelectorAll(".headerlinks a");
 
-	const links = document.querySelectorAll(".headerlinks a");
-
-links.forEach(link => {
-  link.addEventListener("click", () => {
+  const clearActiveLinks = () => {
     links.forEach(l => l.classList.remove("active"));
-    link.classList.add("active");
+  };
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      clearActiveLinks();
+      link.classList.add("active");
+    });
   });
-});
+
+  // Clear selected state when "back to top" is clicked
+  btn.addEventListener("click", () => {
+    clearActiveLinks();
+  });
 </script>
+
 </body>
 </html>
