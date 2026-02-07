@@ -122,6 +122,7 @@ footer {
   gap: var(--padding);
   font-weight: 900;
   margin-block-start: var(--padding);
+  flex-wrap: wrap;
 }
 
 .linkbutton {
