@@ -173,7 +173,8 @@ footer a {
 }
 
 #thursday, #friday, #saturday, #sunday {
-   padding-inline: 25vw;
+   width: 50rem;
+   margin-inline: calc(50vw - 25rem);
 }
 
 p {
@@ -254,7 +255,8 @@ svg {
 @media (max-width: 1100px) {
 
   #thursday, #friday, #saturday, #sunday {
-   padding-inline: calc(var(--padding) /2);
+   margin-inline: calc(var(--padding) /2);
+   width: calc(100% - var(--padding));
 }
 
 }
