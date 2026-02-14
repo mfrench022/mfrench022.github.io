@@ -235,6 +235,7 @@ svg {
     rgba(250, 210, 250, 1) 54%,
     rgba(220, 189, 255, 1) 100%);
   border: solid 0.25rem black;
+  transition: 300ms ease-in-out;
 }
 
 
