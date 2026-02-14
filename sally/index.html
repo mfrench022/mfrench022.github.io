@@ -11,6 +11,10 @@
 <body>
 	<div id="top"></div>
 	<header id ="main">
+		<section class ="dates">
+			<p>March 26 – 29</p>
+			<p id="countdown"></p>
+		</section>
 		<div class="fleximg"><img src="animation.webp"></div>
 		<section class="headerlinks">
 			<a href="#thursday">Thursday</a>
@@ -18,6 +22,7 @@
 			<a href="#saturday">Saturday</a>
 			<a href="#sunday">Sunday</a>
 		</section>
+		
 	</header>
 	
 	
@@ -341,6 +346,47 @@
   btn.addEventListener("click", () => {
     clearActiveLinks();
   });
+
+
+//   COUNTDOWN
+
+function startCountdown() {
+	// Set target date (March 26 at 4:30 PM)
+	const now = new Date();
+	const currentYear = now.getFullYear();
+
+	let target = new Date(currentYear, 2, 26, 16, 30, 0); 
+	// Month is 0-based → 2 = March
+
+	// If March 26 has already passed this year, use next year
+	if (now > target) {
+		target = new Date(currentYear + 1, 2, 26, 16, 30, 0);
+	}
+
+	function updateCountdown() {
+		const now = new Date();
+		const diff = target - now;
+
+		if (diff <= 0) {
+			document.getElementById("countdown").textContent = "Party time!";
+			return;
+		}
+
+		const minutesTotal = Math.floor(diff / (1000 * 60));
+		const days = Math.floor(minutesTotal / (60 * 24));
+		const hours = Math.floor((minutesTotal % (60 * 24)) / 60);
+		const minutes = minutesTotal % 60;
+
+		document.getElementById("countdown").textContent =
+			`Party starts in ${days}d ${hours}h ${minutes}m`;
+	}
+
+	updateCountdown();
+	setInterval(updateCountdown, 60000); // update every minute
+}
+
+startCountdown();
+
 </script>
 
 </body>

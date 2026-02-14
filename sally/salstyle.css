@@ -62,9 +62,8 @@ body {
   padding-block-end: calc(1 * var(--padding));
   padding-block-start: calc(1 * var(--padding));
   border-block-end: solid 0.25rem black;
-  inset-block-start: -29.2rem;
+  inset-block-start: -29.9rem;
 }
-
 
 header img {
   width: 36rem;
@@ -78,18 +77,22 @@ header img {
 
 .day {
   position: sticky;
-  inset-block-start: 4.75rem;
+  inset-block-start: 4.7rem;
   z-index: 10;
   padding: var(--padding);
   text-align: center;
   border: solid 0.25rem var(--black);;
   /* margin-block-end: calc(1* var(--padding)); */
   margin-block-start: calc(6 * var(--padding));
-  margin-block-end: calc(5.75 * var(--padding));
+  margin-block-end: 0;
   margin-inline: var(--padding);
   border-radius: 100rem;
-   background: #e0ebff;
-background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+  background: #e0ebff;
+  background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
+}
+
+#thursday section.activity:first-of-type, #friday section.activity:first-of-type, #saturday section.activity:first-of-type, #sunday section.activity:first-of-type {
+margin-block-start: var(--padding);
 }
 
 .activity {
@@ -165,7 +168,6 @@ footer a {
 
 .headerlinks {
   text-align: center;
-  font-size: 1rem;
   transition: 300ms ease-in-out;
   font-family: "bettoni-variable", serif;
   font-variation-settings: "opsz" 0, "wght" 400;
@@ -178,7 +180,7 @@ footer a {
 }
 
 p {
-  font-family: "brandon-grotesque", sans-serif;
+font-family: "brandon-grotesque", sans-serif;
 font-weight: 300;
 font-style: normal;
 }
@@ -235,6 +237,28 @@ svg {
   border: solid 0.25rem black;
 }
 
+
+.dates {
+  display: flex;
+  position: sticky;
+  width: 100%;
+  inset-block-start: 1.4rem;
+  flex-direction: row;
+  row-gap: calc(var(--padding) / 2);
+  justify-content: space-between;
+  padding-inline: 1rem;
+  z-index: 10000;
+}
+
+.dates p {
+  font-size: 1rem;
+  transition: 300ms ease-in-out;
+  font-family: "brandon-grotesque", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin-block: -0.3rem;
+}
+
 @media (width > 700px) {
   .linkbutton:hover {
    background: #e0ebff;
@@ -246,9 +270,7 @@ svg {
 .headerlinks a:hover {
    background: #e0ebff;
    background: linear-gradient(118deg,rgba(224, 235, 255, 1) 0%, rgba(250, 210, 250, 1) 54%, rgba(220, 189, 255, 1) 100%);
-  /* font-size: 1.65rem; */
-  /* border: solid 0.25rem black; */
-  transition: 300ms ease-in-out;
+   transition: 300ms ease-in-out;
 }
 }
 
@@ -257,6 +279,14 @@ svg {
   #thursday, #friday, #saturday, #sunday {
    margin-inline: calc(var(--padding) /2);
    width: calc(100% - var(--padding));
+}
+
+}
+
+@media (max-width: 1000px) {
+.dates {
+  position: static;
+  inset-block-start: 0.75rem;
 }
 
 }
@@ -272,7 +302,7 @@ header img {
 
 
 #main {
-  inset-block-start: -16.6rem;
+  inset-block-start: -17.5rem;
 }
 
 }
