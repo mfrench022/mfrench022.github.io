@@ -32,7 +32,7 @@ h2 {
 }
 
 .activity p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .buttons p {
@@ -249,7 +249,7 @@ svg {
   display: flex;
   position: sticky;
   width: 100%;
-  inset-block-start: 1.4rem;
+  inset-block-start: 1.75rem;
   flex-direction: row;
   row-gap: calc(var(--padding) / 2);
   justify-content: space-between;
