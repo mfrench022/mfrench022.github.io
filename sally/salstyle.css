@@ -255,6 +255,7 @@ svg {
   justify-content: space-between;
   padding-inline: 1rem;
   z-index: 10000;
+  pointer-events: none;
 }
 
 .dates p {
@@ -325,4 +326,11 @@ html {
 html {
   font-size: 40%;
 }
+}
+
+.headerlinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
