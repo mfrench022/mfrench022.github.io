@@ -456,6 +456,8 @@
 			outline: none;
 }
 
+
+
 .projectcontainer a.project-link > * {
 	pointer-events: none; /* ensures buttons inside still work visually */
 }
@@ -516,3 +518,12 @@
 
 		}
 
+@media (width > 910px) {
+	.aboutcontainer1, .aboutcontainer2 {
+	width: 71%;
+}
+
+.aboutcontainer2 {
+	justify-self: end;
+}
+}
