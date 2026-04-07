@@ -29,7 +29,8 @@
       const INTERACTIVE_SELECTOR = `
         a, button, [role="button"], [data-tag],
         input, select, textarea, label,
-        .clickable
+        .clickable,
+        .imagecontainer2
       `;
 
       let lastHoverTarget = null;
@@ -60,6 +61,64 @@
 
    const projectContainers = document.querySelectorAll('.projectcontainer2');
 
+  function removeZoomControls(container) {
+    container.querySelectorAll('.close-btn, .zoom-nav-btn').forEach((el) => el.remove());
+  }
+
+  function closeAllZoomed() {
+    document.querySelectorAll('.projectcontainer2.zoomed').forEach((open) => {
+      open.classList.remove('zoomed');
+      removeZoomControls(open);
+    });
+  }
+
+  function openZoomed(container) {
+    closeAllZoomed();
+    container.classList.add('zoomed');
+
+    const closeBtn = document.createElement('button');
+    closeBtn.classList.add('close-btn');
+    closeBtn.type = 'button';
+    closeBtn.innerHTML = '×';
+    closeBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      container.classList.remove('zoomed');
+      removeZoomControls(container);
+    });
+
+    const prevBtn = document.createElement('button');
+    prevBtn.classList.add('zoom-nav-btn', 'zoom-prev');
+    prevBtn.type = 'button';
+    prevBtn.setAttribute('aria-label', 'Previous image');
+    prevBtn.innerHTML = '‹';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.classList.add('zoom-nav-btn', 'zoom-next');
+    nextBtn.type = 'button';
+    nextBtn.setAttribute('aria-label', 'Next image');
+    nextBtn.innerHTML = '›';
+
+    const allContainers = () => Array.from(document.querySelectorAll('.projectcontainer2'));
+    const navigate = (delta) => {
+      const list = allContainers();
+      const idx = list.indexOf(container);
+      if (idx === -1) return;
+      const nextIdx = (idx + delta + list.length) % list.length;
+      openZoomed(list[nextIdx]);
+    };
+
+    prevBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navigate(-1);
+    });
+    nextBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      navigate(1);
+    });
+
+    container.append(closeBtn, prevBtn, nextBtn);
+  }
+
   function enableZoom() {
     projectContainers.forEach(container => {
       container.addEventListener('click', zoomHandler);
@@ -73,31 +132,8 @@
   }
 
   function zoomHandler(e) {
-    // Prevent reopening if already zoomed
     if (this.classList.contains('zoomed')) return;
-
-    // Close any open zoomed container
-    document.querySelectorAll('.projectcontainer2.zoomed').forEach(open => {
-      open.classList.remove('zoomed');
-      const btn = open.querySelector('.close-btn');
-      if (btn) btn.remove();
-    });
-
-    // Add zoomed state
-    this.classList.add('zoomed');
-
-    // Create close button
-    const closeBtn = document.createElement('button');
-    closeBtn.classList.add('close-btn');
-    closeBtn.innerHTML = '×';
-    this.appendChild(closeBtn);
-
-    // Close on click of the button
-    closeBtn.addEventListener('click', (event) => {
-      event.stopPropagation();
-      this.classList.remove('zoomed');
-      closeBtn.remove();
-    });
+    openZoomed(this);
   }
 
   // ---- Enable/disable based on viewport ----
@@ -107,10 +143,9 @@
     } else {
       disableZoom();
       // Also ensure nothing stays zoomed
-      document.querySelectorAll('.projectcontainer2.zoomed').forEach(open => {
+      document.querySelectorAll('.projectcontainer2.zoomed').forEach((open) => {
         open.classList.remove('zoomed');
-        const btn = open.querySelector('.close-btn');
-        if (btn) btn.remove();
+        removeZoomControls(open);
       });
     }
   }
