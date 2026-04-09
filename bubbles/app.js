@@ -247,26 +247,83 @@ function initials(name) {
 }
 
 /**
- * Compute positions for N avatars distributed in a loose cluster
- * within a circle of given radius, centred at (0, 0).
- * Returns array of { x, y } offsets from centre.
+ * Check whether two circles overlap once padding is included.
  */
-function avatarOffsets(count, bubbleRadius, avatarSize) {
-  if (count === 0) return [];
+function circlesOverlap(a, b, padding = 0) {
+  const dx = a.x - b.x;
+  const dy = a.y - b.y;
+  const minDistance = a.r + b.r + padding;
+  return (dx * dx) + (dy * dy) < minDistance * minDistance;
+}
 
-  // Place avatars in a natural scattered pattern inside the bubble.
-  // The golden angle gives a good distribution.
+/**
+ * Compute positions for N avatars inside a bubble without overlap.
+ * Exclusion circles reserve room for labels or nested bubbles.
+ */
+function layoutAvatars(count, bubbleRadius, initialAvatarSize, options = {}) {
+  if (count === 0) return { avatarSize: initialAvatarSize, offsets: [] };
+
+  const {
+    exclusionCircles = [],
+    minAvatarSize = 18,
+    spacing = 8,
+    edgePadding = 10,
+  } = options;
+
   const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-  const maxR = bubbleRadius * 0.62 - avatarSize / 2;
 
-  const positions = [];
-  for (let i = 0; i < count; i++) {
-    const t     = (i + 0.5) / count;
-    const r     = Math.sqrt(t) * maxR;
-    const angle = i * goldenAngle;
-    positions.push({ x: r * Math.cos(angle), y: r * Math.sin(angle) });
+  for (let avatarSize = Math.round(initialAvatarSize); avatarSize >= minAvatarSize; avatarSize -= 2) {
+    const avatarRadius = avatarSize / 2;
+    const maxR = bubbleRadius - avatarRadius - edgePadding;
+    if (maxR <= 0) continue;
+
+    const positions = [];
+    const candidateCount = Math.max(count * 36, 180);
+
+    for (let candidateIndex = 0; candidateIndex < candidateCount && positions.length < count; candidateIndex++) {
+      const t = (candidateIndex + 0.5) / candidateCount;
+      const r = Math.sqrt(t) * maxR;
+      const angle = candidateIndex * goldenAngle;
+      const candidate = {
+        x: r * Math.cos(angle),
+        y: r * Math.sin(angle),
+        r: avatarRadius,
+      };
+
+      const insideBubble = Math.hypot(candidate.x, candidate.y) + avatarRadius <= bubbleRadius - edgePadding;
+      if (!insideBubble) continue;
+
+      const hitsExclusion = exclusionCircles.some(exclusion =>
+        circlesOverlap(candidate, exclusion, spacing)
+      );
+      if (hitsExclusion) continue;
+
+      const hitsAvatar = positions.some(position =>
+        circlesOverlap(candidate, { ...position, r: avatarRadius }, spacing)
+      );
+      if (hitsAvatar) continue;
+
+      positions.push({ x: candidate.x, y: candidate.y });
+    }
+
+    if (positions.length === count) {
+      return { avatarSize, offsets: positions };
+    }
   }
-  return positions;
+
+  // Fallback: evenly distribute tiny avatars around a ring.
+  const avatarSize = minAvatarSize;
+  const avatarRadius = avatarSize / 2;
+  const ringRadius = Math.max(0, bubbleRadius - avatarRadius - edgePadding - 2);
+  const offsets = Array.from({ length: count }, (_, i) => {
+    const angle = (i / count) * Math.PI * 2 - Math.PI / 2;
+    return {
+      x: Math.cos(angle) * ringRadius * 0.72,
+      y: Math.sin(angle) * ringRadius * 0.72,
+    };
+  });
+
+  return { avatarSize, offsets };
 }
 
 /**
@@ -274,16 +331,159 @@ function avatarOffsets(count, bubbleRadius, avatarSize) {
  * avatarSize is in pixels.
  */
 function createAvatarEl(contact, avatarSize) {
-  const el = document.createElement('div');
+  const el = document.createElement('button');
+  el.type = 'button';
   el.className = 'avatar';
   el.style.width  = avatarSize + 'px';
   el.style.height = avatarSize + 'px';
   el.style.background = contact.color;
+  el.dataset.contactId = contact.id;
+  el.setAttribute('aria-label', `Open ${contact.name}`);
+  el.title = contact.name;
 
   if (avatarSize >= 28) {
     el.textContent = initials(contact.name);
   }
   return el;
+}
+
+function getNestedBubbleExclusions(parentBubble, chartW, chartH, positionedSubBubbles = null) {
+  const parentPxX = (parentBubble.x / 100) * chartW;
+  const parentPxY = (parentBubble.y / 100) * chartH;
+  const parentRadius = ((parentBubble.size / 100) * chartW) / 2;
+  const parentCx = parentPxX + parentRadius;
+  const parentCy = parentPxY + parentRadius;
+
+  if (positionedSubBubbles) {
+    return positionedSubBubbles.map(subBubble => {
+      const subPxX = (subBubble.x / 100) * chartW;
+      const subPxY = (subBubble.y / 100) * chartH;
+      const subRadius = ((subBubble.size / 100) * chartW) / 2;
+
+      return {
+        x: subPxX + subRadius - parentCx,
+        y: subPxY + subRadius - parentCy,
+        r: subRadius,
+      };
+    });
+  }
+
+  return (parentBubble.subBubbleIds || [])
+    .map(getBubble)
+    .filter(Boolean)
+    .map(subBubble => {
+      const subPxX = (subBubble.x / 100) * chartW;
+      const subPxY = (subBubble.y / 100) * chartH;
+      const subRadius = ((subBubble.size / 100) * chartW) / 2;
+      return {
+        x: subPxX + subRadius - parentCx,
+        y: subPxY + subRadius - parentCy,
+        r: subRadius,
+      };
+    });
+}
+
+function bubbleToPxCircle(bubble, chartW, chartH) {
+  const size = (bubble.size / 100) * chartW;
+  const radius = size / 2;
+  const x = (bubble.x / 100) * chartW;
+  const y = (bubble.y / 100) * chartH;
+  return {
+    ...bubble,
+    pxSize: size,
+    r: radius,
+    cx: x + radius,
+    cy: y + radius,
+  };
+}
+
+function pxCircleToBubble(circle, chartW, chartH) {
+  return {
+    ...circle,
+    x: ((circle.cx - circle.r) / chartW) * 100,
+    y: ((circle.cy - circle.r) / chartH) * 100,
+    size: (circle.pxSize / chartW) * 100,
+  };
+}
+
+function clampCircleToChart(circle, chartW, chartH, padding) {
+  circle.cx = Math.min(chartW - padding - circle.r, Math.max(padding + circle.r, circle.cx));
+  circle.cy = Math.min(chartH - padding - circle.r, Math.max(padding + circle.r, circle.cy));
+}
+
+function clampCircleToParent(circle, parentCircle, padding) {
+  const maxDistance = Math.max(0, parentCircle.r - circle.r - padding);
+  const dx = circle.cx - parentCircle.cx;
+  const dy = circle.cy - parentCircle.cy;
+  const distance = Math.hypot(dx, dy);
+
+  if (distance > maxDistance && distance > 0) {
+    const ratio = maxDistance / distance;
+    circle.cx = parentCircle.cx + dx * ratio;
+    circle.cy = parentCircle.cy + dy * ratio;
+  } else if (distance === 0 && maxDistance > 0) {
+    circle.cy = parentCircle.cy + maxDistance;
+  }
+}
+
+function resolveBubbleCollisions(circles, gap, clampFn) {
+  if (circles.length < 2) return circles;
+
+  for (let iteration = 0; iteration < 160; iteration++) {
+    let moved = false;
+
+    for (let i = 0; i < circles.length; i++) {
+      for (let j = i + 1; j < circles.length; j++) {
+        const a = circles[i];
+        const b = circles[j];
+        const dx = b.cx - a.cx;
+        const dy = b.cy - a.cy;
+        const distance = Math.hypot(dx, dy) || 0.0001;
+        const minDistance = a.r + b.r + gap;
+
+        if (distance >= minDistance) continue;
+
+        const overlap = (minDistance - distance) / 2;
+        const ux = dx / distance;
+        const uy = dy / distance;
+
+        a.cx -= ux * overlap;
+        a.cy -= uy * overlap;
+        b.cx += ux * overlap;
+        b.cy += uy * overlap;
+        clampFn(a);
+        clampFn(b);
+        moved = true;
+      }
+    }
+
+    if (!moved) break;
+  }
+
+  return circles;
+}
+
+function layoutTopLevelBubbles(chartW, chartH, gap = 6, padding = 6) {
+  const circles = BUBBLES
+    .filter(bubble => !bubble.parentId)
+    .map(bubble => bubbleToPxCircle(bubble, chartW, chartH));
+
+  circles.forEach(circle => clampCircleToChart(circle, chartW, chartH, padding));
+  resolveBubbleCollisions(circles, gap, circle => clampCircleToChart(circle, chartW, chartH, padding));
+
+  return new Map(circles.map(circle => [circle.id, pxCircleToBubble(circle, chartW, chartH)]));
+}
+
+function layoutNestedBubbles(parentBubble, nestedBubbles, chartW, chartH, gap = 4, padding = 4) {
+  if (!nestedBubbles.length) return [];
+
+  const parentCircle = bubbleToPxCircle(parentBubble, chartW, chartH);
+  const circles = nestedBubbles.map(bubble => bubbleToPxCircle(bubble, chartW, chartH));
+
+  circles.forEach(circle => clampCircleToParent(circle, parentCircle, padding));
+  resolveBubbleCollisions(circles, gap, circle => clampCircleToParent(circle, parentCircle, padding));
+
+  return circles.map(circle => pxCircleToBubble(circle, chartW, chartH));
 }
 
 /**
@@ -293,8 +493,17 @@ function createAvatarEl(contact, avatarSize) {
  * bubble       — BUBBLES entry
  * chartW/H     — pixel dimensions of the chart area
  * avatarScale  — optional multiplier for avatar size
+ * options      — rendering controls
  */
-function renderBubble(containerEl, bubble, chartW, chartH, avatarScale = 1) {
+function renderBubble(containerEl, bubble, chartW, chartH, avatarScale = 1, options = {}) {
+  const {
+    showLabel = true,
+    showAvatars = true,
+    avatarsInteractive = true,
+    exclusionCircles = [],
+    reserveLabelSpace = showLabel,
+  } = options;
+
   const pxX    = (bubble.x    / 100) * chartW;
   const pxY    = (bubble.y    / 100) * chartH;
   const pxSize = (bubble.size / 100) * chartW;
@@ -314,27 +523,62 @@ function renderBubble(containerEl, bubble, chartW, chartH, avatarScale = 1) {
   bubbleEl.style.height = pxSize + 'px';
   bubbleEl.dataset.id   = bubble.id;
 
-  const labelEl = document.createElement('span');
-  labelEl.className = 'bubble__label';
-  // Support line breaks in label (e.g. "Drinks\nCrew")
-  labelEl.innerHTML = bubble.label.replace(/\n/g, '<br>');
-  bubbleEl.appendChild(labelEl);
+  if (!showLabel) {
+    bubbleEl.classList.add('bubble--label-hidden');
+  }
+
+  if (showLabel) {
+    const labelEl = document.createElement('span');
+    labelEl.className = 'bubble__label';
+    // Support line breaks in label (e.g. "Drinks\nCrew")
+    labelEl.innerHTML = bubble.label.replace(/\n/g, '<br>');
+    bubbleEl.appendChild(labelEl);
+  }
 
   containerEl.appendChild(bubbleEl);
 
+  if (!showAvatars) {
+    return bubbleEl;
+  }
+
   // --- Avatars ---
   const rawAvatarSize = Math.max(18, radius * 0.38) * avatarScale;
-  const avatarSize    = Math.round(rawAvatarSize);
   const contacts      = bubble.contactIds.map(getContact).filter(Boolean);
-  const offsets       = avatarOffsets(contacts.length, radius, avatarSize);
+  const labelReserveRadius = reserveLabelSpace
+    ? Math.min(radius * 0.34, Math.max(26, bubble.label.replace(/\n/g, '').length * 4.2))
+    : 0;
+  const layoutExclusions = exclusionCircles.slice();
+
+  if (labelReserveRadius > 0) {
+    layoutExclusions.push({ x: 0, y: 0, r: labelReserveRadius });
+  }
+
+  const { avatarSize, offsets } = layoutAvatars(contacts.length, radius, rawAvatarSize, {
+    exclusionCircles: layoutExclusions,
+    minAvatarSize: bubble.parentId ? 16 : 18,
+    spacing: bubble.parentId ? 6 : 8,
+    edgePadding: bubble.parentId ? 8 : 10,
+  });
 
   contacts.forEach((contact, i) => {
     const avatarEl = createAvatarEl(contact, avatarSize);
     // Position relative to chart container
     avatarEl.style.left = (cx + offsets[i].x - avatarSize / 2) + 'px';
     avatarEl.style.top  = (cy + offsets[i].y - avatarSize / 2) + 'px';
+    if (!avatarsInteractive) {
+      avatarEl.disabled = true;
+      avatarEl.setAttribute('aria-hidden', 'true');
+      avatarEl.tabIndex = -1;
+    } else {
+      avatarEl.addEventListener('click', event => {
+        event.stopPropagation();
+        goToContactDetail(contact.id);
+      });
+    }
     containerEl.appendChild(avatarEl);
   });
+
+  return bubbleEl;
 }
 
 
@@ -520,9 +764,36 @@ function renderBubbleChart() {
 
   const chartW = chart.clientWidth;
   const chartH = chart.clientHeight;
+  const topLevelLayout = layoutTopLevelBubbles(chartW, chartH);
+  const renderPlan = [];
 
   BUBBLES.forEach(bubble => {
-    renderBubble(chart, bubble, chartW, chartH);
+    if (bubble.parentId) return;
+
+    const laidOutBubble = topLevelLayout.get(bubble.id) || bubble;
+    const nestedBubbles = (bubble.subBubbleIds || [])
+      .map(getBubble)
+      .filter(Boolean);
+    const laidOutNested = layoutNestedBubbles(laidOutBubble, nestedBubbles, chartW, chartH);
+    renderPlan.push({ bubble: laidOutBubble, nested: laidOutNested });
+  });
+
+  renderPlan.forEach(({ nested }) => {
+    nested.forEach(bubble => {
+      renderBubble(chart, bubble, chartW, chartH, 1, {
+        showAvatars: true,
+        avatarsInteractive: false,
+        exclusionCircles: getNestedBubbleExclusions(bubble, chartW, chartH),
+      });
+    });
+  });
+
+  renderPlan.forEach(({ bubble, nested }) => {
+    renderBubble(chart, bubble, chartW, chartH, 1, {
+      showAvatars: true,
+      avatarsInteractive: false,
+      exclusionCircles: getNestedBubbleExclusions(bubble, chartW, chartH, nested),
+    });
   });
 
   // Attach click handlers to bubble elements
@@ -562,30 +833,39 @@ function renderBubbleDetail(bubbleId) {
     // In the detail view don't recurse into sub-bubbles' contacts —
     // render all contacts directly in the main bubble
   };
-
-  renderBubble(chart, scaledBubble, chartW, chartH, 1.4);
+  const positionedSubBubbles = [];
 
   // Render sub-bubbles if any
   if (bubble.subBubbleIds) {
-    bubble.subBubbleIds.forEach(subId => {
-      const sub = getBubble(subId);
-      if (!sub) return;
+    const rawSubBubbles = bubble.subBubbleIds
+      .map(subId => getBubble(subId))
+      .filter(Boolean)
+      .map((sub, index) => {
+        const subSize = mainSize * 0.42;
+        const ringRadius = mainSize * 0.2;
+        const angle = (Math.PI * 0.78) + index * 0.8;
+        const subCx = mainX + (mainSize / 2) + Math.cos(angle) * ringRadius;
+        const subCy = mainY + (mainSize / 2) + Math.sin(angle) * ringRadius;
 
-      // Place sub-bubble in bottom-left quadrant of the main bubble
-      const subSize  = mainSize * 0.42;
-      const subX     = mainX + mainSize * 0.08;
-      const subY     = mainY + mainSize * 0.50;
+        return {
+          ...sub,
+          x: ((subCx - subSize / 2) / chartW) * 100,
+          y: ((subCy - subSize / 2) / chartH) * 100,
+          size: (subSize / chartW) * 100,
+        };
+      });
 
-      const scaledSub = {
-        ...sub,
-        x:    (subX / chartW) * 100,
-        y:    (subY / chartH) * 100,
-        size: (subSize / chartW) * 100,
-      };
-
+    positionedSubBubbles.push(...layoutNestedBubbles(scaledBubble, rawSubBubbles, chartW, chartH));
+    positionedSubBubbles.forEach(scaledSub => {
       renderBubble(chart, scaledSub, chartW, chartH, 1.1);
     });
   }
+
+  renderBubble(chart, scaledBubble, chartW, chartH, 1.4, {
+    showLabel: false,
+    reserveLabelSpace: false,
+    exclusionCircles: getNestedBubbleExclusions(scaledBubble, chartW, chartH, positionedSubBubbles),
+  });
 
   // Sub-bubbles in detail can drill further
   chart.querySelectorAll('.bubble--sub').forEach(el => {
