@@ -763,3 +763,21 @@ window.addEventListener('resize', () => {
 
 // Boot
 goToBubbles();
+
+// Service worker for Progressive Web App
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+
+  globalThis.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then((registration) => {
+        console.log("SW registered:", registration.scope);
+      })
+      .catch((error) => {
+        console.error("SW registration failed:", error);
+      });
+  });
+}
+
+registerServiceWorker();
