@@ -1,34 +1,24 @@
 {
-  "name": "offkilter",
-  "short_name": "offkilter",
-  "description": "Split images across multiple screens using Are.na",
-  "start_url": "/",
+  "name": "Bubbles",
+  "short_name": "Bubbles",
+  "description": "Reinventing the address book. Organize your contacts into bubbles.",
+  "start_url": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#020325",
+  "theme_color": "#020325",
   "icons": [
     {
-      "src": "/icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-maskable-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/icons/icon-maskable-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }

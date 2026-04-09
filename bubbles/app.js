@@ -764,13 +764,25 @@ window.addEventListener('resize', () => {
 // Boot
 goToBubbles();
 
-// Service worker for Progressive Web App
+// Service worker for Progressive Web App (register URL relative to this page so it works under a subpath, e.g. GitHub Pages /repo-name/)
 function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
 
+  function directoryBaseHref() {
+    const u = new URL(window.location.href);
+    const last = u.pathname.split("/").pop() ?? "";
+    if (last.includes(".")) {
+      u.pathname = u.pathname.slice(0, u.pathname.lastIndexOf("/") + 1);
+    } else if (!u.pathname.endsWith("/")) {
+      u.pathname += "/";
+    }
+    return u.href;
+  }
+
   globalThis.addEventListener("load", () => {
+    const swUrl = new URL("serviceworker.js", directoryBaseHref());
     navigator.serviceWorker
-      .register("/sw.js")
+      .register(swUrl)
       .then((registration) => {
         console.log("SW registered:", registration.scope);
       })

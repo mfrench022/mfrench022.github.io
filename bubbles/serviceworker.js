@@ -1,8 +1,16 @@
-const STATIC_CACHE = "offkilter-static-v1";
-const API_CACHE = "offkilter-api-v1";
-const IMAGE_CACHE = "offkilter-images-v1";
+const STATIC_CACHE = "bubbles-static-v3";
+const API_CACHE = "bubbles-api-v1";
+const IMAGE_CACHE = "bubbles-images-v1";
 
-const STATIC_ASSETS = ["/", "/index.html", "/manifest.json"];
+// Paths relative to this script so precache works when the app is served from a subpath (e.g. /bubbles/)
+const STATIC_ASSETS = [
+  new URL("./index.html", self.location).href,
+  new URL("./manifest.json", self.location).href,
+  new URL("./style.css", self.location).href,
+  new URL("./app.js", self.location).href,
+  new URL("./icons/icon-192.png", self.location).href,
+  new URL("./icons/icon-512.png", self.location).href,
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
