@@ -26,12 +26,10 @@
 
 html {
   height: 100%;
-  height: 100dvh;
 }
 
 body {
   height: 100%;
-  height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
@@ -54,11 +52,13 @@ button {
    APP SHELL
    ============================================================ */
 .app {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   max-width: 430px;
-  height: 100%;
-  height: 100dvh;
   margin: 0 auto;
   overflow: hidden;
 }
