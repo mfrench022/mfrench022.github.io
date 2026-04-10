@@ -12,11 +12,8 @@
   --font:           -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
   --safe-top:       env(safe-area-inset-top, 0px);
   --safe-bottom:    env(safe-area-inset-bottom, 0px);
-  --safe-top-effective: var(--safe-top);
-  --safe-bottom-effective: var(--safe-bottom);
-  --app-height: 100dvh;
   --header-top-gap: 44px;
-  --nav-safe-bottom: var(--safe-bottom-effective);
+  --nav-safe-bottom: var(--safe-bottom);
   --content-bottom-gap: 88px;
 }
 
@@ -32,12 +29,12 @@
 
 html {
   height: 100%;
-  height: var(--app-height);
+  height: 100dvh;
 }
 
 body {
   height: 100%;
-  height: var(--app-height);
+  height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
@@ -64,7 +61,7 @@ button {
   width: 100%;
   max-width: 430px;
   height: 100%;
-  height: var(--app-height);
+  height: 100dvh;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -119,7 +116,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(var(--safe-top-effective) + var(--header-top-gap)) 17px 0;
+  padding: calc(var(--safe-top) + var(--header-top-gap)) 17px 0;
   flex-shrink: 0;
   gap: 8px;
 }
@@ -561,10 +558,12 @@ button {
   gap: 21px;
 }
 
-.app-standalone {
-  --header-top-gap: 18px;
-  --content-bottom-gap: 74px;
-  --nav-safe-bottom: var(--safe-bottom-effective);
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  :root {
+    --header-top-gap: 16px;
+    --nav-safe-bottom: min(var(--safe-bottom), 10px);
+    --content-bottom-gap: 80px;
+  }
 }
 
 .profile-scroll::-webkit-scrollbar { display: none; }

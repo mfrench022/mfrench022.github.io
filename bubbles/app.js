@@ -246,38 +246,6 @@ function initials(name) {
   return name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
 }
 
-function isStandaloneApp() {
-  return window.matchMedia('(display-mode: standalone)').matches
-    || window.matchMedia('(display-mode: fullscreen)').matches
-    || window.navigator.standalone === true;
-}
-
-function syncViewportMetrics() {
-  const root = document.documentElement;
-  const standalone = isStandaloneApp();
-  const viewport = window.visualViewport;
-  const viewportHeight = standalone && viewport
-    ? viewport.height
-    : window.innerHeight;
-
-  root.style.setProperty('--app-height', `${Math.round(viewportHeight)}px`);
-  root.classList.toggle('app-standalone', standalone);
-
-  if (!standalone) {
-    root.style.removeProperty('--safe-top-effective');
-    root.style.removeProperty('--safe-bottom-effective');
-    return;
-  }
-
-  const topInset = viewport ? Math.max(0, viewport.offsetTop) : 0;
-  const bottomInset = viewport
-    ? Math.max(0, window.innerHeight - viewport.height - viewport.offsetTop)
-    : 0;
-
-  root.style.setProperty('--safe-top-effective', `${Math.round(topInset)}px`);
-  root.style.setProperty('--safe-bottom-effective', `${Math.round(bottomInset)}px`);
-}
-
 /**
  * Check whether two circles overlap once padding is included.
  */
@@ -1069,18 +1037,11 @@ document.getElementById('contacts-list').addEventListener('click', e => {
    Re-render bubble chart if window resizes (e.g. orientation change)
    ============================================================ */
 window.addEventListener('resize', () => {
-  syncViewportMetrics();
   if (currentView === 'bubbles') renderBubbleChart();
   if (currentView === 'detail' && activeBubble) renderBubbleDetail(activeBubble);
 });
 
-if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', syncViewportMetrics);
-  window.visualViewport.addEventListener('scroll', syncViewportMetrics);
-}
-
 // Boot
-syncViewportMetrics();
 goToBubbles();
 
 // Service worker for Progressive Web App (register URL relative to this page so it works under a subpath, e.g. GitHub Pages /repo-name/)
