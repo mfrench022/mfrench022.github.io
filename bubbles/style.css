@@ -12,6 +12,9 @@
   --font:           -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
   --safe-top:       env(safe-area-inset-top, 0px);
   --safe-bottom:    env(safe-area-inset-bottom, 0px);
+  --header-top-gap: 44px;
+  --nav-safe-bottom: var(--safe-bottom);
+  --content-bottom-gap: 88px;
 }
 
 
@@ -113,7 +116,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(var(--safe-top) + 44px) 17px 0;
+  padding: calc(var(--safe-top) + var(--header-top-gap)) 17px 0;
   flex-shrink: 0;
   gap: 8px;
 }
@@ -346,7 +349,7 @@ button {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 16px 17px calc(88px + var(--safe-bottom));
+  padding: 16px 17px calc(var(--content-bottom-gap) + var(--nav-safe-bottom));
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -447,8 +450,8 @@ button {
   left: 50%;
   transform: translateX(-50%);
   width: min(396px, 92%);
-  height: calc(72px + var(--safe-bottom));
-  padding-bottom: var(--safe-bottom);
+  height: calc(72px + var(--nav-safe-bottom));
+  padding-bottom: var(--nav-safe-bottom);
   background: var(--glass);
   border-radius: 200px 200px 0 0;
   display: flex;
@@ -548,11 +551,19 @@ button {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 16px 17px calc(88px + var(--safe-bottom));
+  padding: 16px 17px calc(var(--content-bottom-gap) + var(--nav-safe-bottom));
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 21px;
+}
+
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  :root {
+    --header-top-gap: 16px;
+    --nav-safe-bottom: min(var(--safe-bottom), 10px);
+    --content-bottom-gap: 80px;
+  }
 }
 
 .profile-scroll::-webkit-scrollbar { display: none; }
