@@ -256,13 +256,9 @@ function syncViewportMetrics() {
   const root = document.documentElement;
   const standalone = isStandaloneApp();
   const viewport = window.visualViewport;
-  const measuredHeights = [
-    window.innerHeight,
-    document.documentElement.clientHeight,
-    document.body ? document.body.clientHeight : 0,
-    viewport ? viewport.height : 0,
-  ].filter(value => Number.isFinite(value) && value > 0);
-  const viewportHeight = Math.max(...measuredHeights);
+  const viewportHeight = standalone && viewport
+    ? viewport.height
+    : window.innerHeight;
 
   root.style.setProperty('--app-height', `${Math.round(viewportHeight)}px`);
   root.classList.toggle('app-standalone', standalone);
@@ -280,20 +276,6 @@ function syncViewportMetrics() {
 
   root.style.setProperty('--safe-top-effective', `${Math.round(topInset)}px`);
   root.style.setProperty('--safe-bottom-effective', `${Math.round(bottomInset)}px`);
-}
-
-function scheduleViewportStabilization() {
-  const refresh = () => {
-    syncViewportMetrics();
-    if (currentView === 'bubbles') renderBubbleChart();
-    if (currentView === 'detail' && activeBubble) renderBubbleDetail(activeBubble);
-  };
-
-  refresh();
-  requestAnimationFrame(refresh);
-  window.setTimeout(refresh, 120);
-  window.setTimeout(refresh, 350);
-  window.setTimeout(refresh, 700);
 }
 
 /**
@@ -1092,20 +1074,13 @@ window.addEventListener('resize', () => {
   if (currentView === 'detail' && activeBubble) renderBubbleDetail(activeBubble);
 });
 
-window.addEventListener('load', scheduleViewportStabilization);
-window.addEventListener('pageshow', scheduleViewportStabilization);
-
-if ('onorientationchange' in window) {
-  window.addEventListener('orientationchange', scheduleViewportStabilization);
-}
-
 if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', scheduleViewportStabilization);
+  window.visualViewport.addEventListener('resize', syncViewportMetrics);
   window.visualViewport.addEventListener('scroll', syncViewportMetrics);
 }
 
 // Boot
-scheduleViewportStabilization();
+syncViewportMetrics();
 goToBubbles();
 
 // Service worker for Progressive Web App (register URL relative to this page so it works under a subpath, e.g. GitHub Pages /repo-name/)
