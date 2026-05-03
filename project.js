@@ -56,6 +56,45 @@
       cursor.classList.add('is-base');
     })();
 
+    // -------- Fixed footer spacing on project pages -------
+    (() => {
+      const footer = document.querySelector('footer');
+      const footerSubtitle = footer?.querySelector('h4');
+      if (!footer || !footerSubtitle) return;
+
+      const root = document.documentElement;
+      const cssLengthToPx = (value) => {
+        const number = parseFloat(value) || 0;
+        if (value.includes('rem')) {
+          return number * (parseFloat(getComputedStyle(root).fontSize) || 16);
+        }
+        return number;
+      };
+
+      const updateFooterReserve = () => {
+        const rootStyles = getComputedStyle(root);
+        const padding = cssLengthToPx(rootStyles.getPropertyValue('--padding')) || 20;
+        const stroke = cssLengthToPx(rootStyles.getPropertyValue('--stroke')) || 2;
+        const footerTop = footer.getBoundingClientRect().top || 0;
+        const subtitleTop = footerSubtitle.getBoundingClientRect().top || 0;
+        const footerIsWrapped = (subtitleTop - footerTop) > (padding * 1.5);
+        const baseReserve = padding * 3;
+        const baseFooterHeight = (padding * 2) + stroke;
+        const extraWrappedHeight = Math.max(0, footer.getBoundingClientRect().height - baseFooterHeight);
+
+        root.style.setProperty(
+          '--project-footer-reserved-space',
+          footerIsWrapped
+            ? `${(baseReserve + extraWrappedHeight).toFixed(2)}px`
+            : `${baseReserve.toFixed(2)}px`
+        );
+      };
+
+      window.addEventListener('load', updateFooterReserve);
+      window.addEventListener('resize', updateFooterReserve);
+      updateFooterReserve();
+    })();
+
 
     // --------ZOOM IN ON IMAGE-------
 

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/qyq1fyf.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="headerInitial.css">
 
 </head>
 <body>
@@ -22,28 +23,25 @@
       <img class="state down"  src="images/cursorpress.png"  alt="">
     </div>
 
-    <div class="spacerrow"></div>
+    <header class="row1 hero-header" data-hero-header>
+      <div class="hero-brand">
+        <div class="name">MICHAEL FRENCH<sup><span> </span>.co</sup></div>
+      </div>
 
-    <header class="row1">
-      <div class="spacer"></div>
-      <div class="column">
-        <a href="index.html"><div class="header">
-          <div class="name">MICHAEL FRENCH<sup><span> </span>.co</sup></div>
-        </div></a>
+      <div class="hero-intro" data-hero-fade>
+        <img class="hero-headshot" src="images/mfheadshot.jpeg" alt="Michael French">
+        <div class="hero-copy">
+          <p class="hero-bio">i’m a multidisciplinary graphic designer with a background in science communications + marine biology, currently pursuing a master’s degree in communication design at parsons school of design in nyc. i’m focused on ux + digital product design, building on a strong foundation in typography, creative coding, motion graphics, branding, + data visualization.</p>
+          <nav class="hero-actions" aria-label="Contact links">
+            <button><a href="resume/MichaelFrench_Resume_26.pdf" target="_blank"><h3>RÉSUMÉ</h3></a></button>
+            <button><a href="mailto:michael@michaelfrench.co"><h3>CONTACT</h3></a></button>
+            <button><a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank"><h3>LINKEDIN</h3></a></button>
+            <button><a href="https://www.instagram.com/michaelfrench.co/" target="_blank"><h3>INSTAGRAM</h3></a></button>
+          </nav>
+        </div>
       </div>
-      <div class="spacer"></div>
-      <div class="column"></div>
-      <div class="spacer"></div>
-      <div class="column"></div>
-      <div class="spacer"></div>
-      <div class="column"></div>
-      <div class="spacer"></div>
-      <div class="column"></div>
-      <div class="spacer"></div>
-      <div class="column">
-          <div class="cd">communication<br>designer</div>
-      </div>
-      <div class="spacer"></div>
+
+      <div class="cd">ux + visual<br>designer</div>
     </header>
 
     <div class="filter-container">
@@ -62,42 +60,45 @@
 
     <div class="projects">
 
-      <section class="projectcontainer clickable featured" data-tags="ux/ui">
-        <a href ="/expedia/" class="projectlink">
+      <section class="projectcontainer clickable featured" data-tags="ux/ui branding motion code">
+        <a href ="/bubbles/index.html" class="projectlink">
         <div class="imagecontainer">
-          <img src="images/Expedia Eco 1.jpg" alt="">
+          <img src="workimages/bubbles/BubblesTemp.jpg" alt="">
         </div>
         <div class="project">
           <div class = "line"></div>
-          <h3>EXPEDIA ECO</h3>
-          <p>speculative feature design for expedia, focused on creating a climate-positive improvement to the service. eco mode makes climate impact visible to users when making important travel decisions.</p>
-        <div class="tags">
-            <button class="tag" data-tag="ux/ui">UX/UI</button>
-          </div>
-        </div>
-      </a>
-        
-      </section>
-
-       <section class="projectcontainer clickable featured" data-tags="ux/ui branding motion">
-        <a href ="/sociahaus/" class="projectlink">
-        <div class="imagecontainer">
-          <img src="images/sociahaus2.gif" alt="">
-        </div>
-        <div class="project">
-          <div class = "line"></div>
-          <h3>SOCIAHAUS</h3>
-          <p>product development, ux design, AI system design, and video mockup creation for sociahaus, an events curation and social connectivity platform.</p>
+          <h3>BUBBLES</h3>
+          <p>the modern day address book. parsons capstone project, coming soon.</p>
         <div class="tags">
             <button class="tag" data-tag="ux/ui">UX/UI</button>
             <button class="tag" data-tag="branding">BRANDING</button>
             <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="code">CODE/WEB</button>
           </div>
         </div>
       </a>
         
       </section>
 
+      <section class="projectcontainer clickable featured" data-tags="ux/ui branding motion code">
+        <a href ="/gutcheck/" class="projectlink">
+        <div class="imagecontainer">
+          <img src="workimages/gutcheck/gutcheckhero.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>GUTCHECK</h3>
+          <p>design + development of a chrome extension designed to help users reduce impulse shopping on amazon while providing local shopping alternatives. parsons capstone project, coming soon.</p>
+        <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
+            <button class="tag" data-tag="code">CODE/WEB</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
 
       <section class="projectcontainer clickable featured" data-tags="ux/ui branding">
         <a href ="/parameter/" class="projectlink">
@@ -111,27 +112,6 @@
         <div class="tags">
             <button class="tag" data-tag="ux/ui">UX/UI</button>
             <button class="tag" data-tag="branding">BRANDING</button>
-          </div>
-        </div>
-      </a>
-        
-      </section>
-
-      
-
-      <section class="projectcontainer clickable" data-tags="code type">
-        <a href ="/pansycrazes/" class="projectlink">
-        <div class="imagecontainer">
-          <img src="images/PansyCrazeTest.jpg" alt="">
-        </div>
-        <div class="project">
-          <div class = "line"></div>
-          <h3>PANSY CRAZES</h3>
-          <p>an interactive timeline of ‘pansy crazes’ (periods of heightened queer visibility) in the united states.</p>
-          
-        <div class="tags">
-            <button class="tag" data-tag="code">CODE/WEB</button>
-            <button class="tag" data-tag="type">TYPE</button>
           </div>
         </div>
       </a>
@@ -153,6 +133,61 @@
             <button class="tag" data-tag="branding">BRANDING</button>
             <button class="tag" data-tag="motion">MOTION</button>
             
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+      <section class="projectcontainer clickable" data-tags="code type">
+        <a href ="/pansycrazes/" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/PansyCrazeTest.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>PANSY CRAZES</h3>
+          <p>an interactive timeline of ‘pansy crazes’ (periods of heightened queer visibility) in the united states.</p>
+          
+        <div class="tags">
+            <button class="tag" data-tag="code">CODE/WEB</button>
+            <button class="tag" data-tag="type">TYPE</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+      <section class="projectcontainer clickable" data-tags="ux/ui">
+        <a href ="/expedia/" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/Expedia Eco 1.jpg" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>EXPEDIA ECO</h3>
+          <p>speculative feature design for expedia, focused on creating a climate-positive improvement to the service. eco mode makes climate impact visible to users when making important travel decisions.</p>
+        <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+          </div>
+        </div>
+      </a>
+        
+      </section>
+
+        <section class="projectcontainer clickable" data-tags="ux/ui branding motion">
+        <a href ="/sociahaus/" class="projectlink">
+        <div class="imagecontainer">
+          <img src="images/sociahaus2.gif" alt="">
+        </div>
+        <div class="project">
+          <div class = "line"></div>
+          <h3>SOCIAHAUS</h3>
+          <p>product development, ux design, ai system design, + video mockup creation for sociahaus, an events curation + social connectivity platform.</p>
+        <div class="tags">
+            <button class="tag" data-tag="ux/ui">UX/UI</button>
+            <button class="tag" data-tag="branding">BRANDING</button>
+            <button class="tag" data-tag="motion">MOTION</button>
           </div>
         </div>
       </a>
@@ -216,7 +251,7 @@ editorial design system, branding, web design + typography, for wingspan, a hypo
       </section>
 
 
-      <section class="projectcontainer clickable" data-tags="ux/ui branding motion">
+      <!-- <section class="projectcontainer clickable" data-tags="ux/ui branding motion">
         <a href ="/rooted/" class="projectlink">
         <div class="imagecontainer">
           <img src="images/Rooted Mockup copy.jpg" alt="">
@@ -232,10 +267,10 @@ editorial design system, branding, web design + typography, for wingspan, a hypo
           </div>
         </div></a>
         
-      </section>
+      </section> -->
 
         <section class="projectcontainer clickable" data-tags="branding code">
-          <a href ="/gen/"" class="projectlink">
+          <a href="/gen/" class="projectlink">
         <div class="imagecontainer">
           <img src="images/GEN2 copy.jpg" alt="">
         </div>
@@ -261,7 +296,7 @@ editorial design system, branding, web design + typography, for wingspan, a hypo
         <div class="project">
           <div class = "line"></div>
           <h3>THROUGH SHIFTING SEASONS</h3>
-          <p>poster + instagram story design for a hypothetical staging of vivaldi's the four seasons, produced fka twigs, arca, + mark morris.</p>
+          <p>poster + instagram story design for a hypothetical staging of vivaldi’s the four seasons, produced by fka twigs, arca, + mark morris.</p>
         <div class="tags">
             <button class="tag" data-tag="motion">MOTION</button>
             <button class="tag" data-tag="type">TYPE</button>
@@ -428,14 +463,14 @@ editorial design system, branding, web design + typography, for wingspan, a hypo
       <button><a href="mailto:michael@michaelfrench.co"><h3>CONTACT</h3></a></button>
       <button><a href="https://www.linkedin.com/in/michael-french-66b8b2169/" target="_blank"><h3>LINKEDIN</h3></a></button>
       <button><a href="https://www.instagram.com/michaelfrench.co/" target="_blank"><h3>INSTAGRAM</h3></a></button>
-      <h4>Site Designed + Developed by Michael French</h4>
+      <h4>SITE DESIGNED + DEVELOPED BY MICHAEL FRENCH</h4>
     </footer>
 
 
   </div>
 
-  
-
+  <script src="contactCopy.js"></script>
+  <script src="headerHero.js"></script>
   <script>
     // -------- Custom Cursor --------
     (() => {
@@ -525,12 +560,8 @@ editorial design system, branding, web design + typography, for wingspan, a hypo
 //-------- Tag/link override ---------
   document.querySelectorAll('.tag').forEach(button => {
     button.addEventListener('click', event => {
-      event.stopPropagation();  // stops click from bubbling up
-      event.preventDefault();   // stops the link navigation
-      const tag = button.dataset.tag;
-      // do whatever you want the tag to do:
-      console.log("Tag clicked:", tag);
-      // e.g. trigger a filter function here
+      event.stopPropagation();
+      event.preventDefault();
     });
   });
 
