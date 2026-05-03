@@ -110,7 +110,7 @@
 			width: 100%;
 			height: 100%;
 			position: sticky;
-			inset-block-start: calc(var(--padding) - var(--stroke));
+			inset-block-start: var(--padding);
 			z-index: 100;
 
 			& button {
@@ -137,7 +137,7 @@
 
 		.filter-container {
 			position: sticky;
-			inset-block-start: calc(-1 * var(--stroke));
+			inset-block-start: 0;
 			z-index: 100;
 			background: linear-gradient(299deg,rgba(245, 245, 245, 1) 0%, rgba(245, 242, 235, 1) 51%, rgba(239, 228, 245, 1) 100%);
 			border-block: var(--stroke) solid #242424;
@@ -149,11 +149,12 @@
 			height: auto;
 			padding-block: calc(var(--padding) / 2);
 			width: 100%;
+			box-sizing: border-box;
 			position: fixed;
 			inset-block-end: 0;
 			background: linear-gradient(299deg,rgba(245, 245, 245, 1) 0%, rgba(245, 242, 235, 1) 51%, rgba(239, 228, 245, 1) 100%);
 			transition: 300ms ease-in-out;
-			border-block-start: var(--stroke) solid #242424;
+			border-block: var(--stroke) solid #242424;
 			display: flex;
 			column-gap: var(--padding);
 			justify-content: flex-start;

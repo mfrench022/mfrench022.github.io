@@ -168,7 +168,7 @@
 			flex-direction: column;
 			row-gap: 0;
 			position: sticky;
-			inset-block-start: var(--sticky-tag-offset, calc(-1 * var(--stroke)));
+			inset-block-start: var(--sticky-tag-offset, 0px);
 			z-index: 100;
 		}
 
@@ -368,6 +368,7 @@
 			height: auto;
 			padding-block: calc(var(--padding) / 2);
 			width: 100%;
+			box-sizing: border-box;
 			position: fixed;
 			inset-block-end: 0;
 			background: var(--site-gradient);
@@ -376,7 +377,7 @@
 			background-size: 100vw 100vh;
 			background-position: 0 0;
 			transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
-			border-block-start: var(--stroke) solid #242424;
+			border-block: var(--stroke) solid #242424;
 			display: flex;
 			column-gap: var(--padding);
 			justify-content: flex-start;

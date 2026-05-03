@@ -92,10 +92,10 @@
       headerHeight,
       blockY + unitHeight + padding
     );
-    const compactStickyOffset = compactHeight - stroke;
+    const compactStickyOffset = compactHeight;
     const triggerStickyOffset = clamp(
       brandTextHeight + (padding * 2),
-      -stroke,
+      0,
       compactStickyOffset
     );
 
@@ -156,7 +156,7 @@
     const fade = clamp(1 - collapseProgress * 2.25, 0, 1);
     const visibleHeaderHeight = metrics.compactHeight * (1 - headerLiftProgress);
     const holdStickyOffset = mix(metrics.compactStickyOffset, metrics.triggerStickyOffset, holdEase);
-    const exitStickyOffset = mix(metrics.triggerStickyOffset, -metrics.stroke, exitProgress);
+    const exitStickyOffset = mix(metrics.triggerStickyOffset, 0, exitProgress);
     const stickyOffset = exitProgress > 0 ? exitStickyOffset : holdStickyOffset;
     const maskHeight = exitProgress > 0
       ? Math.max(0, stickyOffset + metrics.stroke)

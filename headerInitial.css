@@ -21,7 +21,7 @@
 			--hero-cd-y: 0px;
 			--hero-mask-height: var(--hero-compact-height);
 			--hero-compact-height: calc(4 * var(--padding));
-			--sticky-tag-offset: calc(var(--hero-compact-height) - var(--stroke));
+			--sticky-tag-offset: var(--hero-compact-height);
 			--hero-collapse-trigger-y: var(--sticky-tag-offset);
 		}
 
