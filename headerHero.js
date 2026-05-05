@@ -179,6 +179,10 @@
     root.style.setProperty('--footer-opacity', footerProgress.toFixed(4));
     root.style.setProperty('--footer-y', `${mix(100, 0, easeOutCubic(footerProgress)).toFixed(2)}%`);
     root.style.setProperty('--footer-pointer-events', footerProgress > 0.98 ? 'auto' : 'none');
+    root.style.setProperty(
+      '--hero-background-height',
+      `${Math.max(0, filterContainer.getBoundingClientRect().top).toFixed(2)}px`
+    );
   }
 
   function requestUpdate() {

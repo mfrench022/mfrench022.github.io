@@ -302,7 +302,7 @@
 			border: calc(2 * var(--stroke)) solid var(--michael-purple);
 		}
 
-.filter-bar button.active h3 { color: #D9D9D9; transition: 300ms ease-in-out;}
+		.filter-bar button.active h3 { color: #D9D9D9; transition: 300ms ease-in-out;}
 
  .filter-bar button h3 { 
 			color: inherit; 

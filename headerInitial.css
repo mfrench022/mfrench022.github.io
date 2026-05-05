@@ -1,6 +1,8 @@
-		:root {
+
+:root {
 			--hero-progress: 0;
 			--hero-exit: 0;
+			--hero-background-height: 0px;
 			--hero-initial-offset-multiplier: 1;
 			--hero-initial-offset-y: calc(var(--padding) * var(--hero-initial-offset-multiplier));
 			--hero-brand-x: var(--padding);
@@ -40,6 +42,17 @@
 
 		.hero-header {
 			background: transparent;
+		}
+
+		.hero-transition-background {
+			position: fixed;
+			inset-inline: 0;
+			inset-block-start: 0;
+			z-index: 90;
+			height: var(--hero-background-height);
+			/* background: red; */
+			pointer-events: none;
+			will-change: height;
 		}
 
 		.hero-brand {
