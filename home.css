@@ -1,0 +1,51 @@
+/* =========================================================
+   HOMEPAGE — loaded after style.css + header.css
+   ========================================================= */
+
+.hero-bio {
+	display: flex;
+	align-items: center;
+	column-gap: var(--padding);
+	max-width: 52rem;
+	margin: calc(3 * var(--padding)) auto calc(4 * var(--padding));
+	padding-inline: calc(2 * var(--padding));
+}
+
+.hero-headshot {
+	width: 25vw;
+	max-width: 15rem;
+	aspect-ratio: 1;
+	border: var(--border);
+	border-radius: 50%;
+}
+
+.filter-bar {
+	justify-content: space-between;
+	padding-block: calc(var(--padding) / 2);
+	background: var(--site-bg);
+	border-block: var(--border);
+
+	/* Stack buttons when the bar would overflow horizontally */
+	@media (max-width: 56rem) {
+		flex-direction: column;
+		align-items: stretch;
+		row-gap: calc(var(--padding) / 2);
+	}
+}
+
+.projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+	gap: var(--padding);
+	margin-inline: var(--edge-padding) calc(var(--edge-padding) - 0.15rem);
+	padding-block: var(--padding);
+	transition: var(--transition);
+
+	.featured { grid-column: 1 / -1; }
+}
+
+.projectlink {
+	height: 30rem;
+
+	&:hover { border: calc(2 * var(--stroke)) solid var(--michael-purple); }
+}

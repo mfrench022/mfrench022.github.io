@@ -1,0 +1,57 @@
+/* ---------------------------------------------------------------
+   Shared site header (.row1) — used by every page.
+   Height is driven by content + var(--padding) above and below,
+   so spacing stays constant as the wordmark scales.
+   --------------------------------------------------------------- */
+
+.row1 {
+	--wordmark-size: clamp(2.1rem, 5.55cqi, 3.95rem);
+	--tagline-size: clamp(0.987rem, 2.444vw, 1.8565rem); /* 0.47 × clamp(2.1rem, 5.2vw, 3.95rem) */
+
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	column-gap: var(--padding);
+	padding: var(--padding) var(--edge-padding);
+	container-type: inline-size;
+	transition: var(--transition);
+
+	/* On project pages the wordmark links home */
+	a:hover .name { color: var(--michael-purple-light); }
+}
+
+.name,
+.cd {
+	font-family: var(--font-display);
+	/* Trim the line box to the visible cap height / baseline so the
+	   padding above and below is measured from the actual letters. */
+	text-box: trim-both cap alphabetic;
+}
+
+.name {
+	font-size: var(--wordmark-size);
+	-webkit-text-stroke: var(--stroke) var(--michael-black);
+	color: var(--michael-gray);
+	letter-spacing: -0.065em;
+	line-height: 0.84;
+	white-space: nowrap;
+	transition: var(--transition);
+
+	sup {
+		font-size: 0.7em;
+		letter-spacing: -0.035em;
+		line-height: 0; /* keep the raised ".co" from growing the line box */
+	}
+
+	span { letter-spacing: -0.18em; }
+}
+
+.cd {
+	z-index: 4;
+	color: var(--michael-black);
+	font-size: var(--tagline-size);
+	line-height: 0.95;
+	text-align: right;
+	text-transform: uppercase;
+}
