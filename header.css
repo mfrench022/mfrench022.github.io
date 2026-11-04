@@ -5,9 +5,6 @@
    --------------------------------------------------------------- */
 
 .row1 {
-	--wordmark-size: clamp(2.1rem, 5.55cqi, 3.95rem);
-	--tagline-size: clamp(0.987rem, 2.444vw, 1.8565rem); /* 0.47 × clamp(2.1rem, 5.2vw, 3.95rem) */
-
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -16,6 +13,7 @@
 	padding: var(--padding) var(--edge-padding);
 	container-type: inline-size;
 	transition: var(--transition);
+	/* background-color: red; */
 
 	/* On project pages the wordmark links home */
 	a:hover .name { color: var(--michael-purple-light); }
@@ -30,7 +28,7 @@
 }
 
 .name {
-	font-size: var(--wordmark-size);
+	font-size: var(--text-wordmark);
 	-webkit-text-stroke: var(--stroke) var(--michael-black);
 	color: var(--michael-gray);
 	letter-spacing: -0.065em;
@@ -39,7 +37,7 @@
 	transition: var(--transition);
 
 	sup {
-		font-size: 0.7em;
+		font-size: var(--text-sup);
 		letter-spacing: -0.035em;
 		line-height: 0; /* keep the raised ".co" from growing the line box */
 	}
@@ -50,7 +48,7 @@
 .cd {
 	z-index: 4;
 	color: var(--michael-black);
-	font-size: var(--tagline-size);
+	font-size: var(--text-tagline);
 	line-height: 0.95;
 	text-align: right;
 	text-transform: uppercase;

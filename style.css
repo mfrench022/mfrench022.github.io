@@ -20,13 +20,31 @@
 	--font-display: aldrich, sans-serif;
 	--font-body: "franklin-gothic-atf", sans-serif;
 
-	font-size: 120%;
+	/* -------- Type scale --------
+	   Every font size on the site lives here. rem values scale with
+	   the root size below; em values are relative to their parent. */
+	--root-size:       120%;  /* 1rem at desktop widths */
+	--root-size-md:    90%;   /* < 701px */
+	--root-size-sm:    70%;   /* < 531px */
+	--root-size-xs:    50%;   /* < 410px */
+
+	--text-wordmark:   2.5rem;  /* header "michaelfrench.co" */
+	--text-sup:        0.7em;   /* raised ".co" in the wordmark */
+	--text-card:       1.3rem;  /* project cards */
+	--text-tagline:    1rem;    /* header tagline */
+	--text-body:       0.9rem;  /* paragraphs, inline links */
+	--text-ui:         0.7rem;  /* buttons, toast */
+	--text-ui-xs:      0.5rem;  /* project-page nav buttons < 410px */
+	--text-h3:         1.17em;  /* h3 (browser default), relative to parent */
+
+	font-size: var(--root-size);
 	scroll-behavior: smooth;
 
-	@media (width > 1200px) { --edge-padding: calc(4 * var(--padding)); }
-	@media (width < 701px)  { font-size: 90%; }
-	@media (width < 531px)  { font-size: 70%; }
-	@media (width < 410px)  { font-size: 50%; }
+	@media (width > 1000px) { --edge-padding: calc(4 * var(--padding)); }
+	@media (width > 1400px) { --edge-padding: calc(8 * var(--padding)); }
+	@media (width < 701px)  { font-size: var(--root-size-md); }
+	@media (width < 531px)  { font-size: var(--root-size-sm); }
+	@media (width < 410px)  { font-size: var(--root-size-xs); }
 }
 
 /* -------- Base -------- */
@@ -51,18 +69,21 @@ a {
 	text-decoration: none;
 }
 
-h3 { font-weight: 500; }
+h3 {
+	font-size: var(--text-h3);
+	font-weight: 500;
+}
 
 p {
 	font-family: var(--font-body);
 	font-weight: 300;
-	font-size: 0.9rem;
+	font-size: var(--text-body);
 	line-height: 1.1rem;
 }
 
 .inlinelink {
 	font-family: var(--font-display);
-	font-size: 0.9rem;
+	font-size: var(--text-body);
 	color: var(--michael-purple);
 	text-decoration: underline;
 }
@@ -74,14 +95,14 @@ button {
 	justify-content: center;
 	align-items: center;
 	height: var(--padding);
-	padding: 0 var(--padding);
+	padding-inline: calc(var(--padding) / 1.5);
 	border: var(--border);
 	border-radius: calc(var(--radius) / 2);
 	outline: none;
 	background-color: var(--michael-gray);
 	color: var(--michael-black);
 	font-family: var(--font-display);
-	font-size: 0.8rem;
+	font-size: var(--text-ui);
 	text-align: center;
 	-webkit-text-stroke-width: 0.04rem;
 	transition: var(--transition);
@@ -151,7 +172,7 @@ button {
 	background-color: var(--michael-purple);
 	color: var(--michael-black);
 	font-family: var(--font-display);
-	font-size: 1.3rem;
+	font-size: var(--text-card);
 	transition: var(--transition);
 }
 
@@ -263,7 +284,7 @@ button {
 	box-shadow: 0 0.6rem 1.5rem rgb(36 36 36 / 0.16);
 	color: var(--michael-black);
 	font-family: var(--font-display);
-	font-size: 0.8rem;
+	font-size: var(--text-ui);
 	line-height: 1;
 	letter-spacing: 0.02em;
 	text-align: center;

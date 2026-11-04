@@ -9,7 +9,7 @@ body {
 /* -------- Top nav: "all projects" flush left, prev/next trailing -------- */
 
 .filter-container {
-	margin-block-start: calc(3 * var(--padding));
+	/* margin-block-start: calc(3 * var(--padding)); */
 	padding-block: calc(var(--padding) / 2);
 	background: var(--site-bg);
 	border-block: var(--border);
@@ -59,6 +59,6 @@ footer {
 	}
 
 	@media (width < 410px) {
-		button { font-size: 0.5rem; }
+		button { font-size: var(--text-ui-xs); }
 	}
 }
