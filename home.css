@@ -5,11 +5,28 @@
 .hero-bio {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	column-gap: var(--padding);
-	max-width: 52rem;
+	/* max-width: 52rem; */
 	margin: calc(3 * var(--padding)) auto calc(4 * var(--padding));
-	padding-inline: calc(2 * var(--padding));
+	margin-inline: var(--edge-padding) calc(var(--edge-padding) - 0.15rem);
+	padding-inline: 0;
+	/* background-color: red; */
+	width: calc(100% - 2 * var(--edge-padding));
+	width: auto;
+	transition: var(--transition);
+
+	p {
+		background-color: var(--michael-gray);
+		padding: var(--padding);
+		border: var(--border);
+		border-radius: var(--radius);
+		max-width: 60ch;
+	}
+	
 }
+
+
 
 .hero-headshot {
 	width: 25vw;
